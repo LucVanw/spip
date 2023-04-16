@@ -672,3 +672,23 @@ function filtre_styles_inline_page_login_pass_dist(&$Pile, ...$dummy) {
 	}
 	return $styles;
 }
+
+/**
+ * Fonction interne pour le calcul de la balise LAYOUT_PRIVE
+ *
+ * @internal
+ * @param string|null $identifiant
+ *     Si on souhaite définir une nouvelle disposition
+ * @return string
+ *     Soit une classe correspondante à la disposition actuelle, chaîne vide si aucune n'est définie
+ *     Soit une chaîne vide si on vient de définir une disposition
+ */
+function calculer_balise_LAYOUT_PRIVE(?string $identifiant = null): string {
+	static $class = '';
+	if ($identifiant === null) {
+		return $class;
+	}
+	$class = 'layout-' . $identifiant;
+
+	return '';
+}

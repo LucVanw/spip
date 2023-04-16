@@ -2862,13 +2862,20 @@ function balise_PRODUIRE_dist($p) {
 }
 
 /**
- * Compile la balise `#LARGEUR_ECRAN` qui définit la largeur d'écran
- * dans l'espace privé
+ * Compile la balise `#LAYOUT_PRIVE` relative à la disposition de l'espace privé.
+ *
+ * - Avec param : pour définir une nouvelle disposition.
+ * - Sans param : pour récupérer la classe correspondante à la disposition
+ *   courante sous la forme 'layout-<disposition>'
+ *
+ * Les dispositions possibles sont listées dans la CSS layout.css
+ * Cette balise n'a pas vocation à être utilisée en dehors du privé.
  *
  * @balise
  * @example
  *     ```
- *     #LARGEUR_ECRAN{pleine_largeur}
+ *     #LAYOUT_PRIVE{pleine-largeur} : définit une nouvelle valeur
+ *     #LAYOUT_PRIVE : retourne la valeur actuelle
  *     ```
  *
  * @param Champ $p
@@ -2876,15 +2883,31 @@ function balise_PRODUIRE_dist($p) {
  * @return Champ
  *     Pile complétée par le code à générer
  */
-function balise_LARGEUR_ECRAN_dist($p) {
-	$_class = interprete_argument_balise(1, $p);
-	if (!$_class) {
-		$_class = 'null';
-	}
-	$p->code = "(is_string($_class)?vide(\$GLOBALS['largeur_ecran']=$_class):(isset(\$GLOBALS['largeur_ecran'])?\$GLOBALS['largeur_ecran']:''))";
+function balise_LAYOUT_PRIVE_dist($p) {
+	$_identifiant = interprete_argument_balise(1, $p) ?? 'null';
+	$p->code = "calculer_balise_LAYOUT_PRIVE($_identifiant)";
 
 	return $p;
 }
+
+
+/**
+ * Compile la balise `#LARGEUR_ECRAN` qui définit ou renvoie la disposition
+ * dans l'espace privé
+ *
+ * @deprecated 5.0 Utiliser `#LAYOUT_PRIVE`
+ * @uses balise_LAYOUT_PRIVE_dist()
+ *
+ * @param Champ $p
+ *     Pile au niveau de la balise
+ * @return Champ
+ *     Pile complétée par le code à générer
+ */
+function balise_LARGEUR_ECRAN_dist($p) {
+	trigger_deprecation('spip', '4.4', 'Using "%s" tag is deprecated, use "%s" tag instead', '#LARGEUR_ECRAN', '#LAYOUT_PRIVE');
+	return balise_LAYOUT_PRIVE_dist($p);
+}
+
 
 /**
  * Compile la balise `#CONST` qui retourne la valeur de la constante passée en argument
