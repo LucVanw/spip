@@ -2038,7 +2038,9 @@ function balise_INCLURE_dist($p) {
 /**
  * Compile la balise `#TRAD` qui traduit une clé de langue
  *
- * Signature: `#TRAD{module:cle, args = []}` ou `#TRAD{module:cle, #ARRAY{arg,val,..}}`
+ * Signature:
+ * `#TRAD{module:cle, args = []}`
+ * ou `#TRAD{module:cle, #ARRAY{arg,val,..}}` ou `#TRAD{module:cle, #ARRAY{arg,val,..}, #ARRAY{sanitize,0}}`
  *
  * @balise
  *
@@ -2063,6 +2065,10 @@ function balise_TRAD_dist($p) {
 		$_contexte = interprete_argument_balise(2, $p);
 		if (!empty($_contexte)) {
 			$args = ',' . $_contexte;
+			$_options = interprete_argument_balise(3, $p);
+			if (!empty($_options)) {
+				$args .= ',' . $_options;
+			}
 		}
 	}
 	// syntaxe inclure
@@ -2095,7 +2101,6 @@ function balise_TRAD_dist($p) {
 	else {
 		$p->code = "_T({$_chaine}{$args})";
 	}
-
 
 	$p->interdire_scripts = false; // la securite est assuree par _T
 	return $p;
