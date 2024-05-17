@@ -10,9 +10,9 @@
  */
 
 /**
- * Gestion de l'action ajouter_lien
+ * Action pour associer 2 objets
  *
- * @package SPIP\Core\Liens
+ * @package SPIP\Core\Liens\API
  */
 
 if (!defined('_ECRIRE_INC_VERSION')) {
@@ -20,10 +20,23 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 }
 
 /**
- * Action pour lier 2 objets entre eux
+ * Action pour lier 2 objets entre eux avec en option un qualificatif
  *
- * L'argument attendu est `objet1-id1-objet2-id2` (type d'objet, identifiant)
- * tel que `mot-7-rubrique-3`.
+ * L'argument attendu est de la forme :
+ * - `objet1-id1-objet2-id2` (type d'objet, identifiant)
+ * - `objet1-id1-objet2-id2-qualif-valeur_qualif` pour définir une qualification en même temps
+ * La table de liaison est celle de l'objet passé en premier argument
+ *
+ * @example
+ * ```
+ * // associer le mot 7 à la rubrique 3 (table de liaison : mots_liens)
+ * `mot-7-rubrique-3`
+ * // associer le mot 7 qui a la qualification rôle = gestion à la rubrique 3 (table de liaison : mots_liens)
+ * `mot-7-rubrique-3-role-gestion`
+ * // associer le contact 2 qui a la qualification fonction = volontaire à l'orga 10  (table de liaison : spip_contacts)
+ * `contact-2-organisation-10-fonction-volontaire`
+ * ```
+ *
  *
  * @uses objet_associer()
  *
@@ -37,9 +50,14 @@ function action_ajouter_lien_dist($arg = null) {
 		$arg = $securiser_action();
 	}
 
-	$arg = explode('-', (string) $arg);
-	[$objet_source, $ids, $objet_lie, $idl] = $arg;
+	$args = explode('-', (string) $arg, 6);
 
 	include_spip('action/editer_liens');
-	objet_associer([$objet_source => $ids], [$objet_lie => $idl]);
+	if (count($args) === 6) {
+		[$objet_source, $ids, $objet_lie, $idl, $qualif, $valeur_qualif] = $args;
+		objet_associer([$objet_source => $ids], [$objet_lie => $idl], [$qualif => $valeur_qualif ]);
+	} else {
+		[$objet_source, $ids, $objet_lie, $idl] = $args;
+		objet_associer([$objet_source => $ids], [$objet_lie => $idl]);
+	}
 }
