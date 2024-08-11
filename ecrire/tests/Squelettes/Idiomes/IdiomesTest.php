@@ -75,9 +75,17 @@ class IdiomesTest extends SquelettesTestCase {
 				trim(_T('ecrire:avis_acces_interdit_prive', ['exec' => 'chose'])),
 				"<:{=#VAL{ecrire:avis_acces_interdit_prive},exec=[(#VAL{chose})]}|trim:>",
 			],
-			'balise_trad_args_inclure' => [
+			'balise_trad_idiome_sans_arg' => [
+				_T('ecrire:avis_acces_interdit_prive'),
+				"[(#TRAD_IDIOME{ecrire:avis_acces_interdit_prive})]",
+			],
+			'balise_trad_idiome_args_inclure' => [
 				_T('ecrire:avis_acces_interdit_prive', ['exec' => 'chose']),
-				"[(#TRAD{ecrire:avis_acces_interdit_prive,exec=[(#VAL{chose})]})]",
+				"[(#TRAD_IDIOME{ecrire:avis_acces_interdit_prive,exec=[(#VAL{chose})]})]",
+			],
+			'balise_trad_sans_arg' => [
+				_T('ecrire:avis_acces_interdit_prive'),
+				"[(#TRAD{ecrire:avis_acces_interdit_prive})]",
 			],
 			'balise_trad_args_array' => [
 				_T('ecrire:avis_acces_interdit_prive', ['exec' => 'chose']),

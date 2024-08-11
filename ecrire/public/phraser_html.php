@@ -166,7 +166,7 @@ function phraser_polyglotte($texte, $ligne, $result) {
  * - `<:{=#VAL{module:chaine},arg1=texte1,arg2=[(#BALISE)]}|filtre1{texte2,#BALISE}|filtre2:>`
  *
  * Pour permettre une syntaxe complète dans les arguments, on transforme la syntaxe <:..:> en une syntaxe standard de balises
- * `[(#TRAD{module:chaine,arg1=texte1,arg2=[(#BALISE)]}|filtre1{texte2,#BALISE}|filtre2)]`
+ * `[(#TRAD_IDIOME{module:chaine,arg1=texte1,arg2=[(#BALISE)]}|filtre1{texte2,#BALISE}|filtre2)]`
  *
  * qui est ensuite parsée comme une balise standard
  *
@@ -219,14 +219,14 @@ function phraser_preparer_idiomes(string $texte, int $ligne, string $sep, array 
 			// cas simple, on gere directement ici pour aller vite
 			$champ = new Champ();
 			$champ->ligne = $nbl;
-			$champ->nom_champ = 'TRAD';
+			$champ->nom_champ = 'TRAD_IDIOME';
 
 			// arguments de la balise
 			$suite = '{' . $idiome . ($args ? ',' . $args : '') . '}';
 			phraser_arg($suite, '', [], $champ);
 		} else {
 			// sinon on fait un parsing propre de la balise pour en déduire le $champ qui correspond
-			$texte_idiome = '[(#TRAD{' . ($idiome ?: "''") . ($args ? "," . $args : '') . '}'.$filtres.')]';
+			$texte_idiome = '[(#TRAD_IDIOME{' . ($idiome ?: "''") . ($args ? "," . $args : '') . '}'.$filtres.')]';
 			$champs = phraser_champs_interieurs($texte_idiome, $nbl, $sep);
 			// on doit trouver un et un seul champ, celui de notre balise #IDIOME
 			if (count($champs) !== 1) {

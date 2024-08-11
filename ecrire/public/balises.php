@@ -2039,15 +2039,13 @@ function balise_INCLURE_dist($p) {
  * Compile la balise `#TRAD` qui traduit une clé de langue
  *
  * Signature:
- * `#TRAD{module:cle, args = []}`
- * ou `#TRAD{module:cle, #ARRAY{arg,val,..}}` ou `#TRAD{module:cle, #ARRAY{arg,val,..}, #ARRAY{sanitize,0}}`
+ * `#TRAD{module:cle, #ARRAY{arg,val,..}}` ou `#TRAD{module:cle, #ARRAY{arg,val,..}, #ARRAY{sanitize,0}}`
  *
  * @balise
  *
  * @example
  *     ```
  *     #TRAD{voir_en_ligne}
- *     [(#TRAD{forum:message, lang=en})]
  *     [(#TRAD{forum:message, #ARRAY{lang,en}})]
  *     ```
  * @uses _T()
@@ -2058,44 +2056,62 @@ function balise_TRAD_dist($p) {
 	$id_boucle = $p->id_boucle;
 
 	$args = '';
-	// un seul argument ou syntaxe #ARRAY{} en second argument ?
-	if (empty($p->param[0][2])
-		or ($arg_start_with = reset($p->param[0][2]) and $arg_start_with->type !== 'texte') ) {
-		$_chaine = interprete_argument_balise(1, $p);
-		$_contexte = interprete_argument_balise(2, $p);
-		if (!empty($_contexte)) {
-			$args = ',' . $_contexte;
-			$_options = interprete_argument_balise(3, $p);
-			if (!empty($_options)) {
-				$args .= ',' . $_options;
-			}
-		}
-	}
-	// syntaxe inclure
-	else {
-		$_contexte = argumenter_inclure($p->param, true, $p, $p->boucles, $id_boucle, false, false);
-		// $_contexte[1] est la chaine
-		$_chaine = $_contexte[1];
-		unset($_contexte[1]);
-
-		// cas de la chaine de langue dynamique issue de <:module:{=#VAL{truc}}:>
-		if (!empty($_contexte) && isset($_contexte[''])) {
-			$keys = array_keys($_contexte);
-			// uniquement si c'est bien la première clé
-			if (reset($keys) === '') {
-				$first_arg = explode('=>', array_shift($_contexte), 2);
-				$first_arg = end($first_arg);
-				$_chaine .= " . " . $first_arg;
-			}
-		}
-
-		if (!empty($_contexte)) {
-			$args = ', [' . join(",\n\t", $_contexte) . ']';
+	$_chaine = interprete_argument_balise(1, $p);
+	$_contexte = interprete_argument_balise(2, $p);
+	if (!empty($_contexte)) {
+		$args = ',' . $_contexte;
+		$_options = interprete_argument_balise(3, $p);
+		if (!empty($_options)) {
+			$args .= ',' . $_options;
 		}
 	}
 
 	if ($_chaine === null or $_chaine === "''") {
 		$msg = ['zbug_balise_sans_argument', ['balise' => ' TRAD']];
+		erreur_squelette($msg, $p);
+	}
+	else {
+		$p->code = "_T({$_chaine}{$args})";
+	}
+
+	$p->interdire_scripts = false; // la securite est assuree par _T
+	return $p;
+}
+
+/**
+ * Compile la balise `#TRAD_IDIOME` utilisée par le compilateur pour compiler les idiomes
+ * @internal
+ * @uses _T()
+ * @param Champ $p
+ * @return Champ
+ */
+function balise_TRAD_IDIOME_dist($p) {
+	$id_boucle = $p->id_boucle;
+
+	$args = '';
+	// syntaxe inclure
+	$_contexte = argumenter_inclure($p->param, true, $p, $p->boucles, $id_boucle, false, false);
+	// $_contexte[1] est la chaine
+	$_chaine = $_contexte[1];
+	unset($_contexte[1]);
+
+	// cas de la chaine de langue dynamique issue de <:module:{=#VAL{truc}}:>
+	if (!empty($_contexte) && isset($_contexte[''])) {
+		$keys = array_keys($_contexte);
+		// uniquement si c'est bien la première clé
+		if (reset($keys) === '') {
+			$first_arg = explode('=>', array_shift($_contexte), 2);
+			$first_arg = end($first_arg);
+			$_chaine .= " . " . $first_arg;
+		}
+	}
+
+	if (!empty($_contexte)) {
+		$args = ', [' . join(",\n\t", $_contexte) . ']';
+	}
+
+	if ($_chaine === null or $_chaine === "''") {
+		$msg = ['zbug_balise_sans_argument', ['balise' => ' TRAD_IDIOME']];
 		erreur_squelette($msg, $p);
 	}
 	else {
