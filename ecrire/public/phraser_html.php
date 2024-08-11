@@ -182,10 +182,7 @@ function phraser_preparer_idiomes(string $texte, int $ligne, string $sep, array 
 	}
 
 	// definir un placholder pour les idiomes dont on est certain d'avoir aucune occurence dans le squelette
-	do {
-		$idiomes_placeholder = 'PLACEHOLDER_IDIOME_' . strtoupper(substr(md5(uniqid()),0,8));
-	} while (str_contains((string) $texte, $idiomes_placeholder));
-
+	$idiomes_placeholder = phraser_placeholder_hash($texte, 'PLACEHOLDER_IDIOME_');
 
 	$search_pos = 0;
 	$nbl = $ligne;
@@ -1032,6 +1029,20 @@ function public_trouver_fin_boucle($texte, $id_parent, $boucle, $pos_debut_texte
 
 	return $boucle;
 }
+/**
+ * Définir un placeholder avec un hash unique pour substitution dans un texte donné
+ * on s'assure de n'avoir aucune occurence existante dans le texte
+ * @param string $texte
+ * @param string $placeholder_prefixe
+ * @return string
+ */
+function phraser_placeholder_hash(string &$texte, string $placeholder_prefixe) {
+	// definir un placholder pour les boucles dont on est sur d'avoir aucune occurence dans le squelette
+	do {
+		$placeholder = $placeholder_prefixe . strtoupper(substr(md5(uniqid()),0,8));
+	} while (str_contains($texte, $placeholder));
+	return $placeholder;
+}
 
 
 /**
@@ -1139,10 +1150,8 @@ function public_phraser_html_dist(
 
 	$all_res = [];
 	// definir un placholder pour les boucles dont on est sur d'avoir aucune occurence dans le squelette
-	if (is_null($boucle_placeholder)) {
-		do {
-			$boucle_placeholder = 'PLACEHOLDER_BOUCLE_' . strtoupper(substr(md5(uniqid()),0,8));
-		} while (str_contains((string) $texte, $boucle_placeholder));
+	if ($boucle_placeholder === null) {
+		$boucle_placeholder = phraser_placeholder_hash($texte, 'PLACEHOLDER_BOUCLE_');
 	}
 
 	$ligne_debut_initial = $ligne_debut_texte;
