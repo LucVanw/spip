@@ -611,6 +611,7 @@ et vous reconnecter au site.
 	'pass_quitter_fenetre' => 'Quitter cette fenêtre',
 	'pass_rappel_login' => 'Rappel : votre identifiant (login) est « @login@ ».',
 	'pass_recevoir_mail' => 'Un lien de réinitialisation de votre mot de passe vous a été envoyé sur votre adresse email (si celle-ci est valide).',
+	'pass_reset_url' => 'mot de passe à définir ou modifier en vous rendant sur',
 	'pass_retour_public' => 'Retour sur le site public',
 	'pass_rien_a_faire_ici' => 'Rien à faire ici.',
 	'pass_vousinscrire' => 'Vous inscrire sur ce site',

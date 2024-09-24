@@ -66,7 +66,7 @@ return [
 	'bouton_relancer_inscription' => 'Relancer l’inscription',
 	'bouton_relancer_inscriptions' => 'Relancer les inscriptions',
 	'bouton_relancer_installation' => 'Relancer l’installation',
-	'bouton_reset_password' => 'Générer un nouveau mot de passe et l’envoyer par email',
+	'bouton_reset_password' => 'Envoyer une lien pour choisir son mot de passe',
 	'bouton_suivant' => 'Suivant',
 	'bouton_tenter_recuperation' => 'Tenter une réparation',
 	'bouton_test_proxy' => 'Essayer le proxy',

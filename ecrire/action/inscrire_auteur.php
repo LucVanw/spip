@@ -233,6 +233,10 @@ function envoyer_inscription_dist($desc, $nom, $mode, $options = []) {
 	if (isset($options['redirect'])) {
 		$contexte['url_confirm'] = parametre_url($contexte['url_confirm'], 'redirect', $options['redirect']);
 	}
+	
+	$token = auteur_attribuer_jeton($desc['id_auteur']);
+
+	$contexte['url_reset'] = generer_url_public('spip_pass', "p=$token", false, false );
 
 	$modele_mail = 'modeles/mail_inscription';
 	if (isset($options['modele_mail']) && $options['modele_mail']) {
