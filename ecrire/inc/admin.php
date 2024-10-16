@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'administration d'un SPIP
  *
@@ -113,10 +115,10 @@ function admin_verifie_session($script, $anonymous = false) {
 				|| (int) $l[2] != $GLOBALS['visiteur_session']['id_auteur']
 			)
 		) {
-			include_spip('inc/minipres');
 			spip_logger()
 				->info("refus de lancer $script, priorite a $valeur");
-			return minipres(_T('info_travaux_texte'), '', ['status' => 503]);
+			$minipage = new MinipageAdmin();
+			return $minipage->page('', ['titre' => _T('info_travaux_texte'), 'status' => 503]);
 		}
 	}
 	$journal = 'spip';
@@ -194,9 +196,9 @@ function debut_admin($script, $action = '', $corps = '') {
 		!$action
 		|| !autoriser('webmestre') && !autoriser('chargerftp')
 	) {
-		include_spip('inc/minipres');
+		$minipage = new MinipageAdmin();
 
-		return minipres();
+		return $minipage->page();
 	}
 	$dir = dir_admin();
 	$signal = fichier_admin($script);
@@ -205,7 +207,6 @@ function debut_admin($script, $action = '', $corps = '') {
 
 		return '';
 	}
-	include_spip('inc/minipres');
 
 	// Si on est un super-admin, un bouton de validation suffit
 	// sauf dans les cas destroy
@@ -224,7 +225,7 @@ function debut_admin($script, $action = '', $corps = '') {
 	} else {
 		// cet appel permet d'assurer un copier-coller du nom du repertoire a creer dans tmp (esj)
 		// l'insertion du script a cet endroit n'est pas xhtml licite
-		// mais evite de l'embarquer dans toutes les pages minipres
+		// mais evite de l'embarquer dans toutes les pages Minipage
 		$corps .= http_script('', 'spip_barre.js');
 
 		$corps .= '<fieldset><legend>'
@@ -257,8 +258,9 @@ function debut_admin($script, $action = '', $corps = '') {
 	}
 	$form = copy_request($script, $corps, $suivant);
 	$info_action = _T('info_action', ['action' => "$action"]);
+	$minipage = new MinipageAdmin();
 
-	return minipres($info_action, $form, ['onload' => $js]);
+	return $minipage->page($form, ['titre' => $info_action, 'onload' => $js]);
 
 }
 

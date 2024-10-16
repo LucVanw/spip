@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Réparation de la base de données
  *
@@ -43,11 +45,11 @@ function base_repair_dist($titre = '', $reprise = '') {
 		calculer_rubriques();
 		propager_les_secteurs();
 	}
-	include_spip('inc/minipres');
 	$res .= pipeline('base_admin_repair', $res);
-	echo minipres(
-		_T('texte_tentative_recuperation'),
-		$res . generer_form_ecrire('accueil', '', '', _T('public:accueil_site'))
+	$minipage = new MinipageAdmin();
+	echo $minipage->page(
+		$res . generer_form_ecrire('accueil', '', '', _T('public:accueil_site')),
+		['titre' => _T('texte_tentative_recuperation')]
 	);
 }
 

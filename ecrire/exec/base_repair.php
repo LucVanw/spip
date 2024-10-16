@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'affichage de la page de réparation de la base de données
  *
@@ -47,7 +49,7 @@ function exec_base_repair_dist() {
 		$admin = charger_fonction('admin', 'inc');
 		echo $admin('repair', $action, $message, true);
 	} else {
-		include_spip('inc/minipres');
-		echo minipres(_T('titre_reparation'), "<p>$message</p>");
+		$minipage = new MinipageAdmin();
+		echo $minipage->page("<p>$message</p>", ['titre' => _T('titre_reparation')]);
 	}
 }

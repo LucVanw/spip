@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion de l'action activer_plugins
  *
@@ -100,7 +102,7 @@ function action_api_transmettre_dist($arg = null) {
 }
 
 function action_api_transmettre_fail($arg): never {
-	include_spip('inc/minipres');
-	echo minipres(_T('info_acces_interdit'), $arg);
+	$minipage = new MinipageAdmin();
+	echo $minipage->page($arg, ['titre' => _T('info_acces_interdit')]);
 	exit;
 }

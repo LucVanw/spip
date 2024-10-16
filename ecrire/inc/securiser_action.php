@@ -16,6 +16,7 @@
  */
 
 use Spip\Chiffrer\SpipCles;
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
 
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
@@ -60,8 +61,8 @@ function inc_securiser_action_dist($action = '', $arg = '', $redirect = '', $mod
 	if ($a = verifier_action_auteur("$action-$arg", $hash)) {
 		return $arg;
 	}
-	include_spip('inc/minipres');
-	echo minipres();
+	$minipage = new MinipageAdmin();
+	echo $minipage->page();
 	exit;
 
 }
@@ -101,8 +102,8 @@ function demander_confirmation_avant_action($titre, $titre_bouton, $url_action =
 	$bouton_action = bouton_action($titre_bouton, $url_confirm);
 	$corps = "<div style='text-align:center;'>$bouton_action</div>";
 
-	include_spip('inc/minipres');
-	echo minipres($titre, $corps);
+	$minipage = new MinipageAdmin();
+	echo $minipage->page($corps, ['titre' => $titre]);
 	exit;
 }
 
@@ -208,8 +209,8 @@ function caracteriser_auteur($id_auteur = null) {
 		if ($t) {
 			return $caracterisation[$id_auteur] = [$t['id_auteur'], $t['pass']];
 		}
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 		exit;
 	} // Visiteur anonyme, pour ls forums par exemple
 
@@ -240,8 +241,8 @@ function _action_get_alea(string $alea): string {
 			include_spip('inc/acces');
 			charger_aleas();
 			if (empty($GLOBALS['meta'][$alea])) {
-				include_spip('inc/minipres');
-				echo minipres();
+				$minipage = new MinipageAdmin();
+				echo $minipage->page();
 				spip_logger()
 					->info("$alea indisponible");
 				exit;

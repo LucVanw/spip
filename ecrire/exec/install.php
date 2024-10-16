@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Affichage des étapes d'installation de SPIP
  *
@@ -19,7 +21,6 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
 
-include_spip('inc/minipres');
 include_spip('inc/install');
 include_spip('inc/autoriser');
 
@@ -57,7 +58,8 @@ function exec_install_dist() {
 	}
 	if ($deja) {
 		// Rien a faire ici
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 	} else {
 		include_spip('base/create');
 		$fonc = charger_fonction("etape_$etape", 'install');

@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'affichage de la page de destruction des tables de SPIP
  *
@@ -25,18 +27,18 @@ if (!defined('_ECRIRE_INC_VERSION')) {
 function exec_base_delete_all_dist() {
 	include_spip('inc/autoriser');
 	if (!autoriser('detruire')) {
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 	} else {
 		include_spip('base/dump');
 		$res = base_lister_toutes_tables('', [], [], true);
 		if (!$res) {
-			include_spip('inc/minipres');
 			spip_logger()
 				->info('Erreur base de donnees');
-			echo minipres(
-				_T('info_travaux_titre'),
-				_T('titre_probleme_technique') . '<p><code>' . sql_errno() . ' ' . sql_error() . '</code></p>'
+			$minipage = new MinipageAdmin();
+			echo $minipage->page(
+				_T('titre_probleme_technique') . '<p><code>' . sql_errno() . ' ' . sql_error() . '</code></p>',
+				['titre' => _T('info_travaux_titre')]
 			);
 		} else {
 			$res = base_saisie_tables('delete', $res);

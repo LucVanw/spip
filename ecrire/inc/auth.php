@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion des authentifications
  *
@@ -85,7 +87,7 @@ function auth_controler_password_auteur_connecte(#[\SensitiveParameter] string $
  * @return array|string
  */
 function auth_echec($raison) {
-	include_spip('inc/minipres');
+	$minipage = new MinipageAdmin();
 	include_spip('inc/headers');
 	include_spip('inc/filtres');
 	// pas authentifie. Pourquoi ?
@@ -96,17 +98,16 @@ function auth_echec($raison) {
 		$raison = redirige_formulaire($raison);
 	} elseif (is_int($raison)) {
 		// erreur SQL a afficher
-		$raison = minipres(
-			_T('info_travaux_titre'),
-			_T('titre_probleme_technique') . '<p><code>' . sql_errno() . ' ' . sql_error() . '</code></p>'
+		$raison = $minipage->page(
+			_T('titre_probleme_technique') . '<p><code>' . sql_errno() . ' ' . sql_error() . '</code></p>',
+			['titre' => _T('info_travaux_titre')]
 		);
 	} elseif (@$raison['statut']) {
 		// un simple visiteur n'a pas acces a l'espace prive
 		spip_logger()
 			->info('connexion refusee a ' . @$raison['id_auteur']);
 		$est_connecte = (!empty($GLOBALS['visiteur_session']['login']) && !empty($GLOBALS['visiteur_session']['statut'])); // idem test balise #URL_LOGOUT
-		$raison = minipres(
-			_T('avis_erreur_connexion'),
+		$raison = $minipage->page(
 			_T('avis_erreur_visiteur')
 				// Lien vers le site public
 				. '<br><a href="' . attribut_url(url_de_base()) . '">' . _T('login_retour_public') . '</a>'
@@ -114,19 +115,20 @@ function auth_echec($raison) {
 				. ($est_connecte ? ' | <a href="' . generer_url_public(
 					'',
 					'action=logout&amp;logout=prive'
-				) . '">' . _T('icone_deconnecter') . '</a>' : '')
+				) . '">' . _T('icone_deconnecter') . '</a>' : ''),
+			['titre' => _T('avis_erreur_connexion')]
 		);
 	} else {
 		// auteur en fin de droits ...
 		$h = $raison['site'];
-		$raison = minipres(
-			_T('avis_erreur_connexion'),
+		$raison = $minipage->page(
 			'<br><br><p>'
 			. _T('texte_inc_auth_1', ['auth_login' => $raison['login']])
 			. " <a href='" . attribut_url($h) . "'>"
 			. _T('texte_inc_auth_2')
 			. '</a>'
-			. _T('texte_inc_auth_3')
+			. _T('texte_inc_auth_3'),
+			['titre' => _T('avis_erreur_connexion')]
 		);
 	}
 
@@ -439,8 +441,8 @@ function auth_formulaire_login($flux) {
  */
 function auth_retrouver_login($login, $serveur = '') {
 	if (!spip_connect($serveur)) {
-		include_spip('inc/minipres');
-		echo minipres(_T('info_travaux_titre'), _T('titre_probleme_technique'));
+		$minipage = new MinipageAdmin();
+		echo $minipage->page(_T('titre_probleme_technique'), ['titre' => _T('info_travaux_titre')]);
 		exit;
 	}
 
@@ -779,8 +781,6 @@ function lire_php_auth($login, #[\SensitiveParameter] $pw, $serveur = '') {
 /**
  * entête php_auth (est-encore utilisé ?)
  *
- * @uses minipres()
- *
  * @param string $pb
  * @param string $raison
  * @param string $retour
@@ -803,7 +803,7 @@ function ask_php_auth($pb, $raison, $retour = '', $url = '', $re = '', $lien = '
 	if ($lien) {
 		$corps .= " [<a href='" . attribut_url($ecrire) . "'>" . _T('login_espace_prive') . '</a>]';
 	}
-	include_spip('inc/minipres');
-	echo minipres($pb, $corps);
+	$minipage = new MinipageAdmin();
+	echo $minipage->page($corps, ['titre' => $pb]);
 	exit;
 }

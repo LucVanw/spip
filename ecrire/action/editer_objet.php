@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion générique de modification des objets éditoriaux
  *
@@ -41,8 +43,8 @@ function action_editer_objet_dist($id = null, $objet = null, $set = null) {
 
 	// appel incorrect ou depuis une url erronnée interdit
 	if ($id === null || $objet === null) {
-		include_spip('inc/minipres');
-		echo minipres(_T('info_acces_interdit'));
+		$minipage = new MinipageAdmin();
+		echo $minipage->page('', ['titre' => _T('info_acces_interdit')]);
 		die();
 	}
 

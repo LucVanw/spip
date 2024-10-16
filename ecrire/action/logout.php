@@ -9,6 +9,7 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
 use function SpipLeague\Component\Kernel\param;
 
 /**
@@ -56,13 +57,12 @@ function action_logout_dist() {
 			$action = generer_url_action('logout', "jeton=$jeton");
 			$action = parametre_url($action, 'logout', _request('logout'));
 			$action = parametre_url($action, 'url', _request('url'));
-			include_spip('inc/minipres');
 			include_spip('inc/filtres');
 			$texte = bouton_action(_T('spip:icone_deconnecter'), $action);
 			$texte = "<div class='boutons'>$texte</div>";
 			$texte .= '<script>document.write("<style>body{visibility:hidden;}</style>");window.document.forms[0].submit();</script>';
-			$res = minipres(_T('spip:icone_deconnecter'), $texte, ['all_inline' => true]);
-			echo $res;
+			$minipage = new MinipageAdmin();
+			echo $minipage->page($texte, ['titre' => _T('spip:icone_deconnecter'), 'all_inline' => true]);
 
 			return;
 		}

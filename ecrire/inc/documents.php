@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion des documents et de leur emplacement sur le serveur
  *
@@ -270,7 +272,6 @@ function deplacer_fichier_upload($source, $dest, $move = false) {
  * @link http://php.net/manual/fr/features.file-upload.errors.php
  *     Explication sur les messages d'erreurs de chargement de fichiers.
  * @uses propre()
- * @uses minipres()
  *
  * @global string $spip_lang_right
  * @param integer $error
@@ -330,12 +331,12 @@ function check_upload_error($error, $msg = '', $return = false) {
 		exit;
 	}
 
-	include_spip('inc/minipres');
-	echo minipres(
-		$msg,
+	$minipage = new MinipageAdmin();
+	echo $minipage->page(
 		"<div style='text-align: " . $GLOBALS['spip_lang_right'] . "'><a href='" . attribut_url(
 			rawurldecode((string) $GLOBALS['redirect'])
-		) . "'><button type='button'>" . _T('ecrire:bouton_suivant') . '</button></a></div>'
+		) . "'><button type='button'>" . _T('ecrire:bouton_suivant') . '</button></a></div>',
+		['titre' => $msg]
 	);
 	exit;
 }

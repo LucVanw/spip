@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion de recherche et d'écriture de répertoire ou fichiers
  *
@@ -388,16 +390,15 @@ function lire_fichier_securise($fichier, &$contenu, $options = []) {
  *
  * Arrête le script PHP par un exit;
  *
- * @uses minipres() Pour afficher le message
  */
 function raler_fichier(string $fichier): never {
 	if (!defined('_SPIP_ECRIRE_SCRIPT')) {
 		spip_initialisation_suite();
 	}
-	include_spip('inc/minipres');
 	$dir = dirname($fichier);
 	http_response_code(401);
-	echo minipres(_T('texte_inc_meta_2'), "<h4 style='color: red'>"
+	$minipage = new MinipageAdmin();
+	echo $minipage->page("<h4 style='color: red'>"
 		. _T('texte_inc_meta_1', ['fichier' => $fichier])
 		. " <a href='"
 		. generer_url_ecrire('install', "etape=chmod&test_dir=$dir")
@@ -408,7 +409,9 @@ function raler_fichier(string $fichier): never {
 			'texte_inc_meta_3',
 			['repertoire' => joli_repertoire($dir)]
 		)
-		. "</h4>\n");
+		. "</h4>\n",
+		['titre' => _T('texte_inc_meta_2')]
+	);
 	exit;
 }
 

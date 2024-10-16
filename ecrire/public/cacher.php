@@ -12,6 +12,7 @@
 use Psr\SimpleCache\CacheInterface;
 use SpipLeague\Component\Cache\Adapter\LimitedFilesystem;
 use SpipLeague\Component\Hasher\Hash32;
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
 
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
@@ -382,9 +383,8 @@ function public_cacher_dist($contexte, &$use_cache, &$cache_key, &$page, &$lastm
 			$use_cache = 0;
 		} else {
 			spip_logger()->info("Erreur base de donnees, impossible utiliser $cache_key");
-			include_spip('inc/minipres');
-
-			return minipres(_T('info_travaux_titre'), _T('titre_probleme_technique'), ['status' => 503]);
+			$minipage = new MinipageAdmin();
+			return $minipage->page(_T('titre_probleme_technique'), ['titre' => _T('info_travaux_titre'), 'status' => 503]);
 		}
 	}
 

@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'affichage de l'administration des plugins
  *
@@ -37,8 +39,8 @@ include_spip('inc/securiser_action');
 function exec_admin_plugin_dist($retour = '') {
 
 	if (!autoriser('configurer', '_plugins')) {
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 	} else {
 		// on fait la verif du path avant tout,
 		// et l'installation des qu'on est dans la colonne principale

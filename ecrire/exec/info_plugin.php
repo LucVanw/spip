@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
@@ -25,8 +27,8 @@ include_spip('inc/actions');
  */
 function exec_info_plugin_dist() {
 	if (!autoriser('configurer', '_plugins')) {
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 	} else {
 		$plug = _DIR_RACINE . htmlspecialchars((string) _request('plugin'));
 		$get_infos = charger_fonction('get_infos', 'plugins');

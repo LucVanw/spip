@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 use function SpipLeague\Component\Kernel\app;
 
 /**
@@ -207,8 +209,8 @@ function ajouter_session($auteur) {
 		$fichier_session = chemin_fichier_session('alea_ephemere', $cookie);
 		if (!ecrire_fichier_session($fichier_session, $auteur)) {
 			spip_logger('session')->emergency('Echec ecriture fichier session ' . $fichier_session);
-			include_spip('inc/minipres');
-			echo minipres();
+			$minipage = new MinipageAdmin();
+			echo $minipage->page();
 			exit;
 		}
 		// verifier et limiter le nombre maxi de sessions
@@ -722,8 +724,8 @@ function chemin_fichier_session(string $alea, string $cookie_session, bool $tant
 	if (empty($GLOBALS['meta'][$alea])) {
 		if (!$tantpis) {
 			spip_logger('session')->info("fichier session ($tantpis): $alea indisponible");
-			include_spip('inc/minipres');
-			echo minipres();
+			$minipage = new MinipageAdmin();
+			echo $minipage->page();
 		}
 
 		return ''; // echec mais $tanpis

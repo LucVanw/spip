@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Utilitaires indispensables autour des serveurs SQL
  *
@@ -211,8 +213,8 @@ function spip_connect_sql($version, $ins = '', $serveur = '', $continue = false)
 	if ($ins) {
 		spip_logger()->error("Le serveur '$serveur' version $version n'a pas '$ins'");
 	}
-	include_spip('inc/minipres');
-	echo minipres(_T('info_travaux_titre'), _T('titre_probleme_technique'), ['status' => 503]);
+	$minipage = new MinipageAdmin();
+	echo $minipage->page(_T('titre_probleme_technique'), ['titre' => _T('info_travaux_titre'), 'status' => 503]);
 	exit;
 }
 

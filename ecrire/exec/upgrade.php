@@ -9,6 +9,8 @@
  * Ce programme est un logiciel libre distribué sous licence GNU/GPL.
  */
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion de l'installation et de la mise à jour de SPIP
  *
@@ -33,9 +35,8 @@ function exec_upgrade_dist() {
 
 	// Si reinstallation necessaire, message ad hoc
 	if (_request('reinstall') == 'oui') {
-		include_spip('inc/minipres');
-		$r = minipres(
-			_T('titre_page_upgrade'),
+		$minipage = new MinipageAdmin();
+		echo $minipage->page(
 			'<p><b>'
 			. _T('texte_nouvelle_version_spip_1')
 			. '</b><p> '
@@ -48,9 +49,9 @@ function exec_upgrade_dist() {
 				"<input type='hidden' name='reinstall' value='non'>",
 				'',
 				_T('bouton_relancer_installation')
-			)
+			),
+			['titre' => _T('titre_page_upgrade')]
 		);
-		echo $r;
 	} elseif (_request('fin')) {
 		include_spip('inc/plugin');
 		actualise_plugins_actifs();

@@ -11,6 +11,7 @@
 
 use Psr\Log\LogLevel;
 use Spip\ErrorHandler;
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
 
 /**
  * Initialisation de SPIP
@@ -159,11 +160,13 @@ if (
 		// Si on est dans le site public, dire que qq s'en occupe
 		include_spip('inc/lang');
 		utiliser_langue_visiteur();
-		include_spip('inc/minipres');
-		echo minipres(
-			_T('info_travaux_titre'),
+		$minipage = new MinipageAdmin();
+		echo $minipage->page(
 			"<p style='text-align: center;'>" . _T('info_travaux_texte') . '</p>',
-			['status' => 503]
+			[
+				'titre' => _T('info_travaux_titre'),
+				'status' => 503
+			]
 		);
 		exit;
 	}
