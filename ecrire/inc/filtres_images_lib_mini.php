@@ -520,6 +520,10 @@ function _image_valeurs_trans(
 		#ecrire_fichier($ret['fichier_dest'].'.src',serialize($ret),true);
 	}
 
+	// Ajouter à la "description" de l'image son EXIF d'orientation.
+	include_spip('inc/exif');
+	$ret['orientation'] = exif_obtenir_orientation($fichier);
+
 	$ret = pipeline('image_preparer_filtre', [
 		'args' => [
 			'img' => $img,
@@ -1314,6 +1318,8 @@ function _image_ecrire_tag($valeurs, $surcharge = []) {
  *     Description de l'image, sinon null.
  */
 function _image_creer_vignette($valeurs, $maxWidth, $maxHeight, $process = 'AUTO', $force = false) {
+	include_spip('inc/exif');
+
 	$srcHeight = null;
 	$retour = [];
 	// ordre de preference des formats graphiques pour creer les vignettes
@@ -1373,7 +1379,7 @@ function _image_creer_vignette($valeurs, $maxWidth, $maxHeight, $process = 'AUTO
 		if (!defined('_RESIZE_COMMAND')) {
 			define(
 				'_RESIZE_COMMAND',
-				_CONVERT_COMMAND . ' -quality ' . _IMG_CONVERT_QUALITE . ' -orient Undefined -resize %xx%y! %src %dest'
+				_CONVERT_COMMAND . ' -quality ' . _IMG_CONVERT_QUALITE . ' -auto-orient -resize %xx%y! %src %dest'
 			);
 		}
 		$vignette = $destination . '.' . $format_sortie;
@@ -1407,11 +1413,21 @@ function _image_creer_vignette($valeurs, $maxWidth, $maxHeight, $process = 'AUTO
 		}
 		$vignette = $output . DIRECTORY_SEPARATOR . basename($destination) . '.' . $format_sortie;
 
+		// Si l'image a un EXIF d'orientation signifiant que l'image est en mode portrait,
+		// alors, on inverse les dimensions utilisées pour le redimensionnement.
+		$est_orientee_portrait = false;
+		if (
+			($orientation = $valeurs['orientation'])
+			&& exif_determiner_si_portrait($orientation)
+		) {
+			$est_orientee_portrait = true;
+		}
+
 		$imagick = new Imagick();
 		$imagick->readImage(realpath($image));
 		$imagick->resizeImage(
-			$destWidth,
-			$destHeight,
+			$est_orientee_portrait ? $destHeight : $destWidth,
+			$est_orientee_portrait ? $destWidth : $destHeight,
 			Imagick::FILTER_LANCZOS,
 			1
 		); //, IMAGICK_FILTER_LANCZOS, _IMG_IMAGICK_QUALITE / 100);
@@ -1488,6 +1504,19 @@ function _image_creer_vignette($valeurs, $maxWidth, $maxHeight, $process = 'AUTO
 		}
 		if (!$ok) {
 			$ok = ImageCopyResized($destImage, $srcImage, 0, 0, 0, 0, $destWidth, $destHeight, $srcWidth, $srcHeight);
+		}
+
+		// Dans le cas d'une image avec EXIF d'orientation...
+		if ($orientation = $valeurs['orientation']) {
+			// ...si l'image est en mode "miroir", alors on lui applique une symétrie.
+			if ($axe = exif_determiner_axe_symetrie($orientation)) {
+				imageflip($destImage,  $axe);
+			}
+
+			// ...si elle est "tournée", alors on lui applique une rotation.
+			if ($angle = exif_determiner_angle_rotation($orientation)) {
+				$destImage = imagerotate($destImage, $angle, 0);
+			}
 		}
 
 		// Sauvegarde de l'image destination
@@ -1639,7 +1668,11 @@ function process_image_svg_identite($image) {
  *     Code HTML de la balise img produite
  */
 function process_image_reduire($fonction, $img, $taille, $taille_y, $force, $process = 'AUTO') {
+	include_spip('inc/exif');
+
 	$image = false;
+	$est_orientee_portrait = false;
+
 	if ($process == 'AUTO' && isset($GLOBALS['meta']['image_process'])) {
 		$process = $GLOBALS['meta']['image_process'];
 	}
@@ -1647,6 +1680,22 @@ function process_image_reduire($fonction, $img, $taille, $taille_y, $force, $pro
 	$format_sortie = false; // le choix par defaut sera bon
 	if ($process === 'gd2') {
 		$image = _image_valeurs_trans($img, "reduire-{$taille}-{$taille_y}", $format_sortie, $fonction, false, _SVG_SUPPORTED);
+
+		// Si l'image a un EXIF d'orientation correspondant à un mode portrait,
+		// alors on inverse les valeurs de hauteur et de largeur pour le redimensionnement.
+		if (
+			is_array($image)
+			&& ($orientation = $image['orientation'])
+			&& ($est_orientee_portrait = exif_determiner_si_portrait($orientation))
+		) {
+			$x = $image['largeur'];
+			$image['largeur'] = $image['hauteur'];
+			$image['hauteur'] = $x;
+			$x = $image['largeur_dest'];
+			$image['largeur_dest'] = $image['hauteur_dest'];
+			$image['hauteur_dest'] = $x;
+		}
+
 		// on verifie que l'extension choisie est bonne (en principe oui)
 		$gd_formats = formats_image_acceptables(true);
 		if (
@@ -1730,7 +1779,11 @@ function process_image_reduire($fonction, $img, $taille, $taille_y, $force, $pro
 		// (pas de filemtime si SAFE MODE)
 		$date = test_espace_prive() ? ('?' . $date) : '';
 
-		return _image_ecrire_tag($image, ['src' => "$logo$date", 'width' => $destWidth, 'height' => $destHeight]);
+		// Si l'image est en mode portrait selon son EXIF d'orientation, alors on inverse les hauteur et largeur dans le HTML généré.
+		return $est_orientee_portrait
+			? _image_ecrire_tag($image, ['src' => "$logo$date", 'width' => $destHeight, 'height' => $destWidth])
+			: _image_ecrire_tag($image, ['src' => "$logo$date", 'width' => $destWidth, 'height' => $destHeight])
+		;
 	}
 
 	# BMP, tiff ... les redacteurs osent tout!

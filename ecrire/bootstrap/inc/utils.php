@@ -285,6 +285,20 @@ function formats_image_acceptables(?bool $gd = null, bool $svg_allowed = true): 
  */
 function spip_getimagesize($fichier) {
 	if (file_exists($fichier) && ($imagesize = @getimagesize($fichier))) {
+		include_spip('inc/exif');
+
+		// Si l'image possède un EXIF d'orientation et que ce dernier correspond à un mode portrait,
+		// alors on inverse les dimensions renvoyées.
+		if (
+			($orientation = exif_obtenir_orientation($fichier))
+			&& exif_determiner_si_portrait($orientation)
+		) {
+			$x = $imagesize[0];
+			$imagesize[0] = $imagesize[1];
+			$imagesize[1] = $x;
+
+		}
+
 		return $imagesize;
 	}
 

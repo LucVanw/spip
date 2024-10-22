@@ -50,6 +50,7 @@
     },
     "suggest": {
         "ext-curl": "*",
+        "ext-exif": "*",
         "ext-gd": "For image processing",
         "ext-iconv": "Can be used as fallback when ext-mbstring is not available",
         "ext-mbstring": "Faster than the polyfill for string actions",
