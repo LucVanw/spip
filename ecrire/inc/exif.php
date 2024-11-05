@@ -99,3 +99,84 @@ function exif_determiner_angle_rotation(int $orientation): ?int {
 
 	return $angle;
 }
+
+/**
+ * Gérer la migration des hauteur et largeur des images en mode portrait porteuses d'un EXIF d'orientation
+ *
+ * @param int $timeout
+ * @return void
+ */
+function exif_orientation_migrer_en_base(int $timeout): void {
+	// Si l'extension EXIF n'est pas disponible, on ne fait rien.
+	if (function_exists('exif_read_data')) {
+		// On désactive les revisions… (cf. logo_migrer_en_base())
+		$liste_objets_versionnes = $GLOBALS['meta']['objets_versions'] ?? '';
+		unset($GLOBALS['meta']['objets_versions']);
+		// …et le signalement des editions (cf. logo_migrer_en_base()).
+		$articles_modif = $GLOBALS['meta']['articles_modif'] ?? '';
+		$GLOBALS['meta']['articles_modif'] = 'non';
+
+		// On récupère l'id du dernier document traité par la fonction de mise à jour, sinon 1.
+		$dernier_id = $GLOBALS['meta']['medias_upgrade_images_exif_orientation_dernier_id'] ?? 1;
+
+		// On récupère tous les documents concernés à partir de l'id du dernier document traité.
+		$images = sql_allfetsel(
+			[
+				'id_document',
+				'fichier',
+				'largeur',
+				'hauteur',
+			],
+			'spip_documents',
+			[
+				'id_document > ' . $dernier_id,
+				sql_in('extension', ['jpg', 'tiff']),
+			]
+		);
+
+		spip_logger('maj_dimensions_images_exif')->info('Il reste ' . count($images) . ' images à traiter');
+
+		foreach ($images as $image) {
+			// Si l'on a bien un EXIF d'orientation, on procède à la mise à jour des largeur et hauteur.
+			if (
+				($exif = @exif_read_data(_DIR_IMG . $image['fichier']))
+				&& isset($exif['Orientation'])
+				&& ($orientation = $exif['Orientation'])
+				&& exif_determiner_si_portrait($orientation)
+			) {
+				// On ne peut se contenter d'inverser les dimensions déjà enregistrées (au cas où la migration serait rejouée).
+				[$largeur, $hauteur] = spip_getimagesize(_DIR_IMG . $image['fichier']);
+
+				$resultat = sql_updateq(
+					'spip_documents',
+					[
+						'largeur' => $largeur,
+						'hauteur' => $hauteur,
+					],
+					'id_document = ' . $image['id_document'],
+				);
+
+				$resultat ?: spip_logger('maj_dimensions_images_exif')->error('Le document ' . $image['id_document'] . 'n\'a pas pu être mis à jour.');
+			}
+
+			// On garde une trace du dernier document traité.
+			ecrire_meta('medias_upgrade_images_exif_orientation_dernier_id', $image['id_document']);
+
+			// En cas de timeout, la fonction est rappelée autoamagiquement par maj_while()
+			// (cf. logo_migrer_en_base()).
+			if ($timeout && time() > $timeout) {
+				effacer_meta('drapeau_edition');
+				return;
+			}
+		}
+
+		// Réactiver les révisions…
+		if ($liste_objets_versionnes) {
+			$GLOBALS['meta']['objets_versions'] = $liste_objets_versionnes;
+		}
+		// …et le signalement des éditions.
+		$GLOBALS['meta']['articles_modif'] = $articles_modif;
+
+		effacer_meta('drapeau_edition');
+	}
+}
