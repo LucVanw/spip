@@ -472,6 +472,15 @@ function filtre_debug(mixed $val, $key = null) {
  */
 function image_filtrer($args) {
 	$filtre = array_shift($args); # enlever $filtre
+	if (
+		!empty($GLOBALS['meta']['image_process'])
+		&& $GLOBALS['meta']['image_process'] !== 'gd2'
+		&& charger_fonction($GLOBALS['meta']['image_process'], 'filtres/image_process', true)
+		&& function_exists($f = $filtre . '__process_' . $GLOBALS['meta']['image_process'])
+	) {
+		spip_logger('images')->debug("utiliser {$f}() à la place de {$filtre}()");
+		$filtre = $f;
+	}
 	$texte = array_shift($args);
 	if ($texte === null || !strlen((string) $texte)) {
 		return '';
