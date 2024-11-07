@@ -364,20 +364,13 @@ function spip_initialisation_suite() {
 		define('_IMG_ADMIN_MAX_WIDTH', 768);
 	}
 
-	// Qualite des images calculees automatiquement. C'est un nombre entre 0 et 100, meme pour imagick (on ramene a 0..1 par la suite)
+	// Qualite des images calculees automatiquement. C'est un nombre entre 0 et 100
 	if (!defined('_IMG_QUALITE')) {
 		define('_IMG_QUALITE', 85);
 	} # valeur par defaut
 	if (!defined('_IMG_GD_QUALITE')) {
 		define('_IMG_GD_QUALITE', _IMG_QUALITE);
 	} # surcharge pour la lib GD
-	if (!defined('_IMG_CONVERT_QUALITE')) {
-		define('_IMG_CONVERT_QUALITE', _IMG_QUALITE);
-	} # surcharge pour imagick en ligne de commande
-	// Historiquement la valeur pour imagick semble differente. Si ca n'est pas necessaire, il serait preferable de garder _IMG_QUALITE
-	if (!defined('_IMG_IMAGICK_QUALITE')) {
-		define('_IMG_IMAGICK_QUALITE', 75);
-	} # surcharge pour imagick en PHP
 
 	if (!defined('_COPIE_LOCALE_MAX_SIZE')) {
 		define('_COPIE_LOCALE_MAX_SIZE', 33_554_432);

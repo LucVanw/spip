@@ -363,7 +363,7 @@ function image_select($img, $width_min = 0, $height_min = 0, $width_max = 10000,
  * @param bool $cherche_image
  *     Inutilisé
  * @param string $process
- *     Librairie graphique à utiliser (gd2, convert, imagick).
+ *     Librairie graphique à utiliser (gd2 ou autre librairie prise en charge par plugin).
  *     AUTO utilise la librairie sélectionnée dans la configuration.
  * @return string
  *     Code HTML de l'image ou du texte.
@@ -444,7 +444,7 @@ function image_passe_partout(
  * @param bool $cherche_image
  *     Inutilisé
  * @param string $process
- *     Librairie graphique à utiliser (gd2, convert, imagick).
+ *     Librairie graphique à utiliser (gd2 ou autre librairie prise en charge par plugin).
  *     AUTO utilise la librairie sélectionnée dans la configuration.
  * @return string
  *     Code HTML de l'image ou du texte.

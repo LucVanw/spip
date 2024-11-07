@@ -23,7 +23,7 @@ if (!defined('_ECRIRE_INC_VERSION')) {
  * Tester les capacités du serveur à utiliser une librairie graphique
  *
  * L'argument transmis dans la clé `arg` est le type de librairie parmi
- * gd2, imagick ou convert
+ * gd2 ou autre librairie prise en charge par plugin
  *
  * L'action crée une vignette en utilisant la librairie indiquée puis
  * redirige sur l'image ainsi créée (sinon sur une image d'echec).
@@ -56,7 +56,10 @@ function action_tester_dist() {
 	}
 
 	// et maintenant envoyer la vignette de tests
-	if (in_array($arg, ['gd2', 'imagick', 'convert'])) {
+	if (
+		$arg === 'gd2'
+		|| (!preg_match(',\W,', $arg) && charger_fonction($arg, 'filtres/image_process', true))
+	) {
 		include_spip('inc/filtres');
 		include_spip('inc/filtres_images_mini');
 		$taille_preview = 150;
