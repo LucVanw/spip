@@ -302,6 +302,12 @@ Par conséquent, il faut adapter :
  - les liens vers la page
  - les éventuelles pipelines qui la modifie (en se demandant dans ce cas la pertinence de créer une nouvelle page plutôt que d'insérer du contenu dans cette page)
 
+## Modification du comportement du formulaire d'édition des liaisons
+
+Le formulaire d'association des liens à un objet est éditable à partir du moment où l'on a l'autorisation de modifier l'objet, le test d'affichage ou non des boutons d'association se faisant désormais dans le squelette du formulaire.
+
+Pour les personnes ayant surchargé les squelettes de ce formulaire ou ayant des pipelines se branchant dessus, il convient d'effectuer les adaptations nécessaires à la modification du paramètre `editable`.
+
 
 # Suppressions des éléments dépréciés
 
