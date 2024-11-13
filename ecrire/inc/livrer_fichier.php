@@ -134,7 +134,9 @@ function spip_livrer_fichier_entier($fichier) {
 		header(sprintf('Content-Length: %d', $size));
 	}
 
-	readfile($fichier);
+	$handle = fopen($fichier, 'rb');
+	fpassthru($handle);
+
 	exit();
 }
 
