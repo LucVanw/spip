@@ -130,8 +130,19 @@ function spip_livrer_fichier_entier($fichier) {
 		throw new \Exception(sprintf('File not readable: %s', $fichier));
 	}
 
+	defined('_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT') || define('_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT', 600);
+	$download_time = _LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT;
 	if ($size = filesize($fichier)) {
 		header(sprintf('Content-Length: %d', $size));
+		// on adapte le temps maxi de telechargement en fonction de la taille du fichier
+		// en prenant une base de 500Mo / 10mn (wifi pas super rapide)
+		$go = 1024 * 1024 * 1024;
+		if ($size > $go /2) {
+			$download_time = intval(round($download_time * 2 * $size / $go));
+		}
+	}
+	if (function_exists('set_time_limit')) {
+		set_time_limit($download_time);
 	}
 
 	$handle = fopen($fichier, 'rb');
