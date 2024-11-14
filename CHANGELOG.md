@@ -4,6 +4,7 @@
 
 ### Added
 
+- #5566/#6043 `<script [type=importmap]>` et `#IMPORT_JS{module.js}` pour référencer les ressources ESM
 - #5738 Ajout d'un jeu de chaîne de langue `<:action:xx>` pour les actions fréquentes
 - #5973 Marqueur de cache `cache_bot_invalide` permettant d’invalider le cache même si un bot est à l’origine de la requête
 - #5766 Pipeline `ajouter_menus_args`, en complément au pipeline `ajouter_menus`, qui transmet les arguments de `definir_barre_boutons()`
@@ -24,6 +25,8 @@
 ### Changed
 
 - #2536 Dans un squelette, les chaînes de langue sont désormais sensibles à la casse, il est cependant recommandé de suivre la convention de garder toujours les chaînes en minuscule
+- #5566/#6043 inc/layer : les blocs dépliants présentent un markup sans jQuery
+- #5566/#6043 `jquery.form.js` et `ajaxCallback.js` n'utilisent plus les pipelines `jquery_plugins`
 - #5460 Renommer les fichiers CSS qui n’ont pas besoin de compilation SPIP
 - #4657 Renommage de `admin_tech` en `admin_bdd` et des chaînes de langue afférentes
 - !5708 Découpage des fichiers de démarrage de SPIP (non surchargeables) dans `ecrire/boostrap`
