@@ -361,6 +361,66 @@ Dans un squelette :
 [(#PARAM{spip.routes.back_office})]
 ```
 
+## Fonctions et variables Javascript 
+
+SPIP5 amorce une émancipation du code javascript hors du giron de jQuery, et se tourne vers l'adoption d'usages plus modernes via les ESM. Ce chantier débute avec le fichier `config.js` dédié au stockage de la configation de SPIP et de ses plugins, et le fichier `ajaxCallBack.js`, en charge des rechargements dynamiques.
+
+Les fonctions concernées par la migration sont les suivantes :
+`ajaxReload`,`onAjaxLoad`,`triggerAjaxLoad`,`positionner`,`animateLoading`,`endLoading`,`animateRemove`,`animateAppend`,`parametre_url`,`followLink`,`ajaxClick`
+
+Il est recommandé de passer par une directive `import` lorsque l'usage d'une balise `<script type="module">` est possible.
+```javascript
+import { parametre_url, animateLoading, onAjaxLoad } from "ajaxCallback.js";
+```
+Les balises `<script type="module">` qui contiennent une directive `import` s'exécutent de manière asynchrone et différée, une fois que toutes les ressources javascript de la page ont été résolues. Auparavant, il fallait s'assurer de différer l'exécution du code en l'encapulant dans une fonction `$(document).ready(function(){...})` ou `$(function(){...})`.
+
+### Avant 
+```html
+<script>
+  // déclaration directe d'une propriété de l'objet window (non recommandé)
+  var ajax_image_searching = "⌛"; 
+
+  // code à exécuter au chargement complet 
+  $(document).ready(function(){
+    // lecture depuis l'objet jQuery
+    console.log(jQuery.spip.load_handlers);
+    // animation d'un bloc
+    jQuery('.mon_bloc').animateLoading();
+  });
+</script>
+```
+
+### Après 
+```html
+<!-- Pour les modules ESM -->
+<script type="module">
+  import { default as spip } from "config.js"; 
+  import { animateLoading, onAjaxLoad } from "ajaxCallback.js"; 
+  // lecture
+  console.log(spip.load_handlers); 
+  // ecriture
+  spip.ajax_image_searching = "⌛"; 
+  // animation d'un bloc
+  const monbloc = document.querySelector('.mon_bloc');
+  if (monbloc) {
+    animateLoading(monbloc);
+  }
+</script>
+
+<!-- Pour le code non ESM, on peut consulter l'objet spipConfig -->
+<script>
+  // code à exécuter au chargement complet
+  document.addEventListener("DOMContentLoaded", () => {
+    // lecture
+    console.log(spipConfig.load_handlers); 
+    // ecriture
+    spipConfig.ajax_image_searching = "⌛"; 
+  });
+</script>
+```
+Un fichier `retrocompat.js` tâche d'assurer la compatibilité avec la syntaxe historique.
+Ajouter le paramètre `?var_mode=debug_js` dans l'url permet de tracer les usages dépréciés dans la console.
+ 
 ## Fichiers de langue
 
 Les fichiers de langue peuplant une variable globale sont supprimés. Retourner directement le tableau PHP.
