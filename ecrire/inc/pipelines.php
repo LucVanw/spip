@@ -48,10 +48,8 @@ function f_jQuery($texte) {
 		'jquery_plugins',
 		[
 			'javascript/jquery.js',
-			'javascript/jquery.form.js',
 			'javascript/jquery.autosave.js',
 			'javascript/jquery.placeholder-label.js',
-			'javascript/ajaxCallback.js',
 			'javascript/js.cookie.js',
 		]
 	);

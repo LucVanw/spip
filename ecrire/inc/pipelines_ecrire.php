@@ -38,12 +38,11 @@ function f_jQuery_prive($texte) {
 		'jquery_plugins',
 		[
 			'prive/javascript/jquery.js',
-			'prive/javascript/jquery.form.js',
 			'prive/javascript/jquery.autosave.js',
 			'prive/javascript/jquery.placeholder-label.js',
-			'prive/javascript/ajaxCallback.js',
 			'prive/javascript/js.cookie.js',
 			'prive/javascript/spip_barre.js',
+			'prive/javascript/jquery.browser.js'
 		]
 	);
 	foreach (array_unique($jquery_plugins) as $script) {
