@@ -94,6 +94,9 @@
 	<pipeline nom="insert_head" action="" />
 	<pipeline nom="insert_head_css" action="" />
 	<pipeline nom="jquery_plugins" action="" />
+	<pipeline nom="importmap" action="" />
+	<pipeline nom="insert_head_css" action="importmap_insert_head" inclure="inc/importmap.php" />
+	<pipeline nom="header_prive_css" action="importmap_insert_head" inclure="inc/importmap.php" />
 	<pipeline nom="exclure_id_conditionnel" action="" />
 	<pipeline nom="lister_tables_noerase" action="" />
 	<pipeline nom="lister_tables_noexport" action="" />

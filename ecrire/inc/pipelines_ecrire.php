@@ -53,18 +53,23 @@ function f_jQuery_prive($texte) {
 			|| ($script = find_in_path($script))
 		) {
 			$script = timestamp($script);
-			$x .= "\n<script src=\"$script\" type=\"text/javascript\"></script>\n";
+			$x .= "\n<script src=\"$script\"></script>\n";
 		}
 	}
-	// inserer avant le premier script externe ou a la fin
-	if (
-		preg_match(',<script[^><]*src=,', $texte, $match)
-		&& ($p = strpos($texte, (string) $match[0]))
+	if ( 
+	// après la balise qui concatène les scripts d'initialisation (javascript/_inits/*)
+	// car on y lit / écrit dans l'objet de configuration (alias window.spipConfig) 
+		defined('_MARQUEUR_POST_INIT')
+		&& str_contains($texte, _MARQUEUR_POST_INIT) 
 	) {
-		$texte = substr_replace($texte, $x, $p, 0);
+		$p = strpos($texte, _MARQUEUR_POST_INIT) + strlen(_MARQUEUR_POST_INIT);
 	} else {
-		$texte .= $x;
+	// sinon avant le premier script externe ou a la fin
+		preg_match(',<script[^><]*src=,', $texte, $match);
+		$p = strpos($texte, (string) $match[0]);
 	}
+	
+	$texte = $p ? substr_replace($texte, $x, $p, 0) : $texte . $x;
 
 	return $texte;
 }
