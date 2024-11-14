@@ -145,8 +145,25 @@ function spip_livrer_fichier_entier($fichier) {
 		set_time_limit($download_time);
 	}
 
-	$handle = fopen($fichier, 'rb');
-	fpassthru($handle);
+	if (function_exists('fpassthru')) {
+		$handle = fopen($fichier, 'rb');
+		fpassthru($handle);
+	} else {
+		// If it's a large file, readfile might not be able to do it due to memory_limit
+		$chunksize = 1 * (1024 * 1024); // how many bytes per chunk
+		if (!$size || $size > $chunksize || !function_exists('readfile')) {
+			$handle = fopen($fichier, 'rb');
+			while (!feof($handle)) {
+				$buffer = fread($handle, $chunksize);
+				echo $buffer;
+				ob_flush();
+				flush();
+			}
+			fclose($handle);
+		} else {
+			readfile($fichier);
+		}
+	}
 
 	exit();
 }
