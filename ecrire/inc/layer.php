@@ -74,19 +74,22 @@ function bouton_block_depliable($texte, $deplie, $ids = '') {
 
 	$b = (str_contains((string) $texte, '<h') ? 'div' : 'h3');
 
-	return "<$b "
+	$output = "<$b "
 	. ($bouton_id ? "id='$bouton_id' " : '')
 	. "class='titrem$class'"
-	. (
-		($deplie === -1)
+	. (($deplie === -1)
 		? ''
-		: " onmouseover=\"jQuery(this).depliant('$cible');\""
+		: " data-depliant=\"$cible\""
 	)
+	. (($deplie === 'incertain')
+		? " data-fix-depli-incertain"
+		: ""
+	)	
 	. '>'
 	// une ancre pour rendre accessible au clavier le depliage du sous bloc
-	. "<a href='#' onclick=\"return jQuery(this).depliant_clicancre('$cible');\" class='titremancre'></a>"
-	. "$texte</$b>"
-	. http_script(($deplie === 'incertain')
-		? "jQuery(function($){if ($('$cible').is(':visible')) { $('#$bouton_id').addClass('deplie').removeClass('replie'); }});"
-		: '');
+	. "<a href='#' data-depliant-clicancre=\"$cible\" class='titremancre'></a>"
+	. "$texte</$b>";
+
+	return $output;
+
 }
