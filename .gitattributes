@@ -1,17 +1,2 @@
-.DS_Store export-ignore
-.editorconfig export-ignore
-.gitignore export-ignore
-.gitattributes export-ignore
-.htaccess export-ignore
-docker-compose.override.yml export-ignore
-docker-compose.yml export-ignore
-ecs.php export-ignore
-rector.php export-ignore
-/lib/ export-ignore
-/plugins/ export-ignore
-/squelettes/ export-ignore
-/lib/ export-ignore
-/mutualisation/ export-ignore
-/sites/ export-ignore
-/ecrire/tests/ export-ignore
-/themes/ export-ignore
+# .gitignore export-ignore
+# .gitattributes export-ignore

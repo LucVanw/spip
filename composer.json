@@ -1,62 +1,24 @@
 {
+    "name": "spip/spip",
+    "description": "Système de Publication pour l’Internet",
     "license": "GPL-3.0-only",
+    "type": "project",
+    "keywords": [
+        "cms",
+        "spip"
+    ],
     "require": {
         "php": "^8.2",
-        "ext-json": "*",
-        "ext-sodium": "*",
-        "ext-xml": "*",
-        "ext-zip": "*",
-        "algo26-matthias/idna-convert": "^4.0",
-        "spip-league/cache": "^2.0",
         "spip-league/composer-installer": "^0.7",
-        "spip-league/filesystem": "^2.0",
-        "spip-league/hasher": "^2.0",
         "spip-league/kernel": "^2.x-dev",
-        "spip-league/logger": "^2.0",
-        "spip-league/path": "^2.0",
-        "spip/aide": "^3.3",
-        "spip/archiviste": "^3.0",
-        "spip/bigup": "^3.4",
-        "spip/compagnon": "^3.3",
-        "spip/compresseur": "^2.3",
-        "spip/dist": "^4.3",
-        "spip/dump": "^2.3",
-        "spip/forum": "^3.2",
-        "spip/images": "^5.0",
-        "spip/mediabox": "^3.2",
-        "spip/medias": "^5.0",
-        "spip/mots": "^4.4",
-        "spip/plan": "^4.2",
-        "spip/porte-plume": "^3.2",
-        "spip/prive": "^2.x-dev",
-        "spip/revisions": "^3.2",
-        "spip/safehtml": "^3.2",
+        "spip/classic-distribution": "^5.x-dev",
         "spip/security": "^1.6",
-        "spip/sites": "^4.4",
-        "spip/stats": "^3.2",
-        "spip/svp": "^3.3",
-        "spip/tw": "^3.4",
-        "spip/urls": "^4.3",
-        "symfony/deprecation-contracts": "^3.3",
-        "symfony/polyfill-mbstring": "^1.27",
         "symfony/polyfill-php83": "^1.31",
         "symfony/polyfill-php84": "^1.31"
     },
     "require-dev": {
         "lolli42/finediff": "^1.1",
-        "phpunit/phpunit": "^11.4",
-        "symfony/var-dumper": "^7.1",
-        "symplify/easy-coding-standard": "^12.3"
-    },
-    "suggest": {
-        "ext-curl": "*",
-        "ext-exif": "*",
-        "ext-gd": "For image processing",
-        "ext-iconv": "Can be used as fallback when ext-mbstring is not available",
-        "ext-mbstring": "Faster than the polyfill for string actions",
-        "ext-mysqli": "*",
-        "ext-pdo": "*",
-        "ext-pdo_sqlite": "*"
+        "phpunit/phpunit": "^11.4"
     },
     "repositories": {
         "spip": {
@@ -64,38 +26,20 @@
             "url": "https://get.spip.net/composer"
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Spip\\": "ecrire/src/"
-        }
-    },
+    "minimum-stability": "dev",
     "autoload-dev": {
         "psr-4": {
             "Spip\\Test\\": "ecrire/tests/"
         }
     },
     "archive": {
+        "name": "spip",
         "exclude": [
-            "!/vendor",
-            "/phpunit.xml.dist",
-            "/phpcs.xml.dist",
-            "/phpstan.neon.dist",
-            "/phpstan-baseline.neon",
+            "!/ecrire",
             "!/plugins-dist",
+            "!/prive",
             "!/squelettes-dist",
-            "/config/",
-            "!/config/ecran_securite.php",
-            "!/config/remove.txt",
-            "/IMG/",
-            "!/IMG/remove.txt",
-            "/local/",
-            "!/local/remove.txt",
-            "!/local/CACHEDIR.TAG",
-            "/tmp/",
-            "!/tmp/remove.txt",
-            "!/tmp/CACHEDIR.TAG",
-            "!/prive/",
-            "!/config/spip/"
+            "!/vendor"
         ]
     },
     "config": {
@@ -111,6 +55,7 @@
             "dev-master": "5.0.x-dev"
         },
         "spip": {
+            "back_office": "spip/ecrire",
             "extensions": [
                 "spip/aide",
                 "spip/archiviste",

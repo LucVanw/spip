@@ -1,9 +1,0 @@
-<paquet
-	prefix="test_dir_plugins_suppl"
-	categorie="squelette"
-	version="1.0.0"
-	etat="stable"
-	compatibilite="[5.0.0-dev;5.*]"
->
-	<nom>Test Dir PLugins Suppl</nom>
-</paquet>
