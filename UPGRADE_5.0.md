@@ -63,6 +63,14 @@ ou
 a[href] { background-image: url("#CHEMIN_IMAGE{img.svg}"); }
 ```
 
+### Casse des items de langues
+
+Avant SPIP 5.0, les items de langues en squelettes étaient automatiquement passées en minuscules. Ainsi `<:toto:>` était équivalent à `<:TOTO:>`.
+
+À partir de SPIP 5.0, les deux ne seront plus équivalent. Il convient de vérifier ses squelettes.
+
+Il est _fortement conseillé_ de n'utiliser que des items de langue en minuscule.
+
 # Nouvelles dépréciations
 
 

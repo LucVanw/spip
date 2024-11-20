@@ -23,6 +23,7 @@
 
 ### Changed
 
+- #2536 Dans un squelette, les chaînes de langue sont désormais sensibles à la casse, il est cependant recommandé de suivre la convention de garder toujours les chaînes en minuscule
 - #5460 Renommer les fichiers CSS qui n’ont pas besoin de compilation SPIP
 - #4657 Renommage de `admin_tech` en `admin_bdd` et des chaînes de langue afférentes
 - !5708 Découpage des fichiers de démarrage de SPIP (non surchargeables) dans `ecrire/boostrap`
