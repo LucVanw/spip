@@ -1072,6 +1072,7 @@ function phraser_placeholder_hash(string &$texte, string $placeholder_prefixe) {
 }
 
 /**
+ * Mémorise un morceau de code du squelette en le remplaçant par un placeholder, ou reinjecte les morceaux de codes à la place des placeholders.
  * @param object|string $champ
  * @param ?string $nom_champ_placeholder
  * @param ?object $boucle_ou_champ
