@@ -1074,10 +1074,11 @@ function phraser_placeholder_memoriser_ou_reinjecter(&$champ, ?string $nom_champ
 }
 
 /**
- * @deprecated
+ * @deprecated 4.4
  * @see phraser_placeholder_memoriser_ou_reinjecter()
  */
 function phraser_boucle_placeholder(&$champ, $boucle_placeholder = null, $boucle = null) {
+	trigger_deprecation('spip', '4.4', 'Using "%s" is deprecated, use "%s" instead', 'phraser_generer_boucle_placeholder', 'phraser_placeholder_memoriser_ou_reinjecter');
 	phraser_placeholder_memoriser_ou_reinjecter($champ, $boucle_placeholder, $boucle);
 }
 
@@ -1125,10 +1126,11 @@ function public_placeholder_generer(string $nom_structure, &$boucle_ou_champ, st
 
 /**
  * Generer une balise placeholder qui prend la place de la boucle pour continuer le parsing des balises
- * @deprecated
+ * @deprecated 4.4
  * @uses public_placeholder_generer()
  */
-function public_generer_boucle_placeholder($id_boucle, &$boucle, $boucle_placeholder, $nb_lignes) {
+function public_generer_boucle_placeholder($id_boucle, &$boucle, $boucle_placeholder, $nb_lignes)
+	trigger_deprecation('spip', '4.4', 'Using "%s" is deprecated, use "%s" instead', 'public_generer_boucle_placeholder', 'public_placeholder_generer');
 	return public_placeholder_generer($id_boucle, $boucle, $boucle_placeholder, $nb_lignes);
 }
 
