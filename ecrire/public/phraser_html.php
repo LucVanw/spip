@@ -1099,13 +1099,6 @@ function phraser_placeholder_memoriser_ou_reinjecter(&$champ, ?string $nom_champ
 		}
 	}
 }
-/**
- * @deprecated
- * @see phraser_placeholder_memoriser_ou_reinjecter()
- */
-function phraser_boucle_placeholder(&$champ, $boucle_placeholder = null, $boucle = null) {
-	phraser_placeholder_memoriser_ou_reinjecter($champ, $boucle_placeholder, $boucle);
-}
 
 /**
  * Memoriser un champ ou une boucle associé a son placeholder
@@ -1149,14 +1142,6 @@ function public_placeholder_generer(string $nom_structure, &$boucle_ou_champ, st
 	return $placeholder;
 }
 
-/**
- * Generer une balise placeholder qui prend la place de la boucle pour continuer le parsing des balises
- * @deprecated
- * @uses public_placeholder_generer()
- */
-function public_generer_boucle_placeholder($id_boucle, &$boucle, $boucle_placeholder, $nb_lignes) {
-	return public_placeholder_generer($id_boucle, $boucle, $boucle_placeholder, $nb_lignes);
-}
 
 /**
  * Analyseur syntaxique des squelettes HTML SPIP
