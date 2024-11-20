@@ -1065,7 +1065,6 @@ function public_trouver_fin_boucle(
  * @return string
  */
 function phraser_placeholder_hash(string &$texte, string $placeholder_prefixe) {
-	// definir un placholder pour les boucles dont on est sur d'avoir aucune occurence dans le squelette
 	do {
 		$placeholder = $placeholder_prefixe . strtoupper(substr(md5(uniqid()),0,8));
 	} while (str_contains($texte, $placeholder));
