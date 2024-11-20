@@ -2039,7 +2039,7 @@ function balise_INCLURE_dist($p) {
  * Compile la balise `#TRAD` qui traduit une clé de langue
  *
  * Signature:
- * `#TRAD{module:cle, #ARRAY{arg,val,..}}` ou `#TRAD{module:cle, #ARRAY{arg,val,..}, #ARRAY{sanitize,0}}`
+ * `#TRAD{module:cle, #ARRAY{arg,val,...}}` ou `#TRAD{module:cle, #ARRAY{arg,val,...}, #ARRAY{sanitize,0}}`
  *
  * @balise
  *
