@@ -193,8 +193,13 @@ function phraser_preparer_idiomes(string $texte, int $ligne, string $sep, array 
 		$match = array_column($match, 0);
 
 		$module = $match[2];
-		$chaine = $match[3];
-		$idiome = $match[1] . $match[3];
+		$chaine = strtolower($match[3]);
+
+		if ($chaine != $match[3]) {
+			trigger_deprecation('spip', '4.4', sprintf('La chaine de langue « %s » a été basculée en minuscule. À partir de SPIP 5.0, les chaînes de langues seront sensibles à la casse.', $match[3]));
+		}
+
+		$idiome = $match[1] . strtolower($match[3]);
 		$args = $match[5];
 		$filtres = $match[7] ?? '';
 
