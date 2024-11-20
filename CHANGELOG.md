@@ -12,6 +12,7 @@ Changelog de SPIP 4.4
 ### Added
 
 - #5560 Balise `#LAYOUT_PRIVE`
+- !5633 Balise `#TRAD{module:cle, #ARRAY{param, val, ..}, #ARRAY{option, val..}}`
 - #5933 Les actions `ajouter_lien` et `supprimer_lien` peuvent gérer un qualificatif
 - #5973 Marqueur de cache `cache_bot_invalide` permettant d’invalider le cache même si un bot est à l’origine de la requête
 - #5766 Pipeline `ajouter_menus_args`, en complément au pipeline `ajouter_menus`, qui transmet les arguments de `definir_barre_boutons()`
@@ -29,6 +30,8 @@ Changelog de SPIP 4.4
 
 ### Fixed
 
+- !5633 Possibilité de calculer dynamiquement les paramètres des chaînes de langue
+- !5633 Possibilité de calculer dynamiquement les paramètre des filtres des chaînes de langue
 - #6021 Eviter une fatale sur `inc_recherche_to_array_dist()` dans certains contextes d'appel
 - #6013 Si authentification LDAP, vérifier les mots de passe même si `$_SERVER['REMOTE_USER']` est déclarée vide
 - #6012 Passer l'`id_parent_ancien` aux pipelines `pre_edition` et `post_edition` depuis `article_instituer()`
@@ -45,6 +48,7 @@ Changelog de SPIP 4.4
 ### Deprecated
 
 - #5560 Balise `#LARGEUR_ECRAN` pour les squelettes du privé à remplacer par `#LAYOUT_PRIVE`
+- #2536 À partir de SPIP 5, l'appel des chaînes de langues en squelette sera sensible à la casse de la déclaration, il n'y aura plus de conversion automatique en minuscule
 - !5633 Fonction interne `phraser_boucle_placeholder()` à remplacer par `phraser_placeholder_memoriser_ou_reinjecter()`
 - !5633 Fonction interne `public_generer_boucle_placeholder()` à remplacer par `public_placeholder_generer()`
 - #6014 Les fichiers de langue peuplant une `$GLOBALS` sont dépréciés ; renvoyer directement un tableau
