@@ -45,6 +45,8 @@ Changelog de SPIP 4.4
 ### Deprecated
 
 - #5560 Balise `#LARGEUR_ECRAN` pour les squelettes du privé à remplacer par `#LAYOUT_PRIVE`
+- !5633 Fonction interne `phraser_boucle_placeholder()` à remplacer par `phraser_placeholder_memoriser_ou_reinjecter()`
+- !5633 Fonction interne `public_generer_boucle_placeholder()` à remplacer par `public_placeholder_generer()`
 - #6014 Les fichiers de langue peuplant une `$GLOBALS` sont dépréciés ; renvoyer directement un tableau
 - #4903 Constante obsolète `_DIR_IMG_PACK`
 - #5993 Globales `$traiter_math`, `$tex_server`, fonctions `produire_image_math()`, `traiter_math()`, utiliser le plugin `mathjax` à la place
