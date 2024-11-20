@@ -189,7 +189,7 @@ function phraser_polyglotte(string $texte, int $ligne, array $result): array {
  * @return string
  **/
 function phraser_preparer_idiomes(string $texte, int $ligne, string $sep, array $result) {
-	if (empty($texte) or !str_contains($texte, '<:')) {
+	if (empty($texte) || !str_contains($texte, '<:')) {
 		return $texte;
 	}
 
@@ -1134,7 +1134,7 @@ function phraser_placeholder_reinjecter(&$champ) {
  * @return string
  */
 function public_placeholder_generer(string $nom_structure, &$boucle_ou_champ, string $placeholder_pattern, int $nb_lignes, bool $force_balise_etendue = false): string {
-	if ($nb_lignes or $force_balise_etendue) {
+	if ($nb_lignes || $force_balise_etendue) {
 		$nom_champ = $placeholder_pattern;
 		$placeholder = "[(#{$nom_champ}{" . $nom_structure . '})' . str_pad('', $nb_lignes, "\n") . ']';
 		phraser_placeholder_memoriser($nom_structure, $nom_champ, $boucle_ou_champ);

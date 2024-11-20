@@ -2024,7 +2024,7 @@ function balise_TRAD_dist($p) {
 		}
 	}
 
-	if ($_chaine === null or $_chaine === "''") {
+	if ($_chaine === null || $_chaine === "''") {
 		$msg = ['zbug_balise_sans_argument', ['balise' => ' TRAD']];
 		erreur_squelette($msg, $p);
 	}
@@ -2068,7 +2068,7 @@ function balise_TRAD_IDIOME_dist($p) {
 		$args = ', [' . join(",\n\t", $_contexte) . ']';
 	}
 
-	if ($_chaine === null or $_chaine === "''") {
+	if ($_chaine === null || $_chaine === "''") {
 		$msg = ['zbug_balise_sans_argument', ['balise' => ' TRAD_IDIOME']];
 		erreur_squelette($msg, $p);
 	}
