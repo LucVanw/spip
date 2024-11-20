@@ -65,6 +65,9 @@
 
 ### Removed
 
+- Classe interne `Idiom`, utiliser à la place `phraser_preparer_idiomes()` et la balise interne `#TRAD_IDIOME`
+- !5633 Fonction interne `phraser_boucle_placeholder()` à remplacer par `phraser_placeholder_memoriser_ou_reinjecter()`
+- !5633 Fonction interne `public_generer_boucle_placeholder()` à remplacer par `public_placeholder_generer()`
 - #5560 Balise `#LARGEUR_ECRAN`, utiliser `#LAYOUT_PRIVE`
 - #6014 Fichiers de langue peuplant une globale ; les fichiers de langues doivent désormais renvoyer un tableau
 - #4903 Retrait de la constante obsolète `_DIR_IMG_PACK`
