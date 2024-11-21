@@ -48,6 +48,7 @@ Changelog de SPIP 4.4
 ### Deprecated
 
 - #5560 Balise `#LARGEUR_ECRAN` pour les squelettes du privé à remplacer par `#LAYOUT_PRIVE`
+- !5633 Classe interne `Idiome` depréciée, utiliser plutot `phraser_preparer_idiomes()` et la balise interne `#TRAD_IDIOME`
 - #2536 À partir de SPIP 5, l'appel des chaînes de langues en squelette sera sensible à la casse de la déclaration, il n'y aura plus de conversion automatique en minuscule
 - !5633 Fonction interne `phraser_boucle_placeholder()` à remplacer par `phraser_placeholder_memoriser_ou_reinjecter()`
 - !5633 Fonction interne `public_generer_boucle_placeholder()` à remplacer par `public_placeholder_generer()`
