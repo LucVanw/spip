@@ -532,6 +532,23 @@ La boucle `POUR` dépréciée est supprimée. Utiliser une boucle `DATA`.
 
 Le filtre `|image_typo` n'est plus livré avec SPIP. Installez le plugin [Image Typo](https://plugins.spip.net/image_typo) pour l'obtenir.
 
+## Balise `#LARGEUR_ECRAN`
+
+La balise `#LARGEUR_ECRAN` pour les squelettes de l'espace privé doit être remplacée par `#LAYOUT_PRIVE`.
+
+#### Avant
+
+```spip
+#LARGEUR_ECRAN{pleine_largeur}
+```
+
+### Après
+
+
+```spip
+#LAYOUT_PRIVE{pleine_largeur}
+```
+
 ## Fonctions PHP
 
 Dans certains cas parfois utilisées en filtres de squelettes également.
