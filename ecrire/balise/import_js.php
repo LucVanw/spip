@@ -1,8 +1,5 @@
 <?php
 
-if (!defined('_ECRIRE_INC_VERSION')) {
-    return;
-}
 
 /**
  * Compile la balise `#IMPORT_JS` qui cherche une ressource js locale ou distante

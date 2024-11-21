@@ -1,9 +1,5 @@
 <?php
 
-if (!defined('_ECRIRE_INC_VERSION')) {
-	return;
-}
-
 define('_MARQUEUR_POST_IMPORTMAP', '<!--.importmap-->');
 define('_MARQUEUR_POST_INIT', '<!--.initjs-->');
 
