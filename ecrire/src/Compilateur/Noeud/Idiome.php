@@ -88,4 +88,8 @@ class Idiome
 
 	/** Numéro de ligne dans le code source du squelette */
 	public int $ligne = 0;
+
+	public function __construct() {
+		trigger_deprecation('spip', '4.4', 'Using "Idiom" class is deprecated');
+	}
 }
