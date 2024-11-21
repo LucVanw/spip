@@ -9,6 +9,7 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
 use Spip\ErrorHandler;
 
 use function SpipLeague\Component\Kernel\{app, param};
@@ -559,8 +560,8 @@ if (
 		// Si on est dans le site public, dire que qq s'en occupe
 		include_spip('inc/lang');
 		utiliser_langue_visiteur();
-		include_spip('inc/minipres');
-		echo minipres(_T('info_travaux_titre'), "<p style='text-align: center;'>" . _T('info_travaux_texte') . '</p>', ['status' => 503]);
+		$minipage = new MinipageAdmin();
+		echo $minipage->page("<p style='text-align: center;'>" . _T('info_travaux_texte') . '</p>', ['titre' => _T('info_travaux_titre'), 'status' => 503]);
 		exit;
 	}
 	// autrement c'est une install ad hoc (spikini...), on sait pas faire

@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'affichage des pages privées en squelette
  *
@@ -32,8 +34,8 @@ if (strstr($fond, '/')) {
 		!include_spip('inc/autoriser')
 		or !autoriser('webmestre')
 	) {
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 		exit;
 	}
 } else {

@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'administration d'un SPIP
  *
@@ -109,10 +111,10 @@ function admin_verifie_session($script, $anonymous = false) {
 				!preg_match('/^(.*)_(\d+)_/', $GLOBALS['meta']['admin'], $l)
 				or intval($l[2]) != $GLOBALS['visiteur_session']['id_auteur']
 			) {
-				include_spip('inc/minipres');
 				spip_log("refus de lancer $script, priorite a $valeur");
+				$minipage = new MinipageAdmin();
 
-				return minipres(_T('info_travaux_texte'), '', ['status' => 503]);
+				return $minipage->page('', ['titre' => _T('info_travaux_texte'), 'status' => 503]);
 			}
 		}
 	}
@@ -187,9 +189,9 @@ function fichier_admin($action, $pref = 'admin_') {
  **/
 function debut_admin($script, $action = '', $corps = '') {
 	if ((!$action) || !(autoriser('webmestre') or autoriser('chargerftp'))) {
-		include_spip('inc/minipres');
+		$minipage = new MinipageAdmin();
 
-		return minipres();
+		return $minipage->page();
 	} else {
 		$dir = dir_admin();
 		$signal = fichier_admin($script);
@@ -198,7 +200,6 @@ function debut_admin($script, $action = '', $corps = '') {
 
 			return '';
 		}
-		include_spip('inc/minipres');
 
 		// Si on est un super-admin, un bouton de validation suffit
 		// sauf dans les cas destroy
@@ -250,8 +251,9 @@ function debut_admin($script, $action = '', $corps = '') {
 		}
 		$form = copy_request($script, $corps, $suivant);
 		$info_action = _T('info_action', ['action' => "$action"]);
+		$minipage = new MinipageAdmin();
 
-		return minipres($info_action, $form, ['onload' => $js]);
+		return $minipage->page($form, ['titre' => $info_action, 'onload' => $js]);
 	}
 }
 

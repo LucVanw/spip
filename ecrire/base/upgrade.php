@@ -291,7 +291,6 @@ function maj_debut_page($installee, $meta, $table) {
 	if ($done) {
 		return;
 	}
-	include_spip('inc/minipres');
 	include_spip('inc/filtres');
 	if (function_exists('ini_set')) {
 		@ini_set('zlib.output_compression', '0'); // pour permettre l'affichage au fur et a mesure

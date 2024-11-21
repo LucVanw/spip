@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Chargement (et affichage) d'une page ou d'un appel public
  *
@@ -39,8 +41,8 @@ if (isset($GLOBALS['_INC_PUBLIC']) and $GLOBALS['_INC_PUBLIC']) {
 						and include_spip('inc/autoriser')
 						and autoriser('webmestre'))
 				) {
-					include_spip('inc/minipres');
-					echo minipres();
+					$minipage = new MinipageAdmin();
+					echo $minipage->page();
 					exit;
 				}
 				// l'argument Page a priorite sur l'argument action

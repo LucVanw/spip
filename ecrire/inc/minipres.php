@@ -81,13 +81,15 @@ function install_fin_html() {
  * @uses \Spip\Afficher\Minipage\Admin
  *
  * @example
- *   ```
- *   include_spip('inc/minipres');
- *   if (!autoriser('configurer')) {
- *      echo minipres();
+ *  ```php
+ *	use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+ *
+ *  if (!autoriser('configurer')) {
+ *		$minipage = new MinipageAdmin();
+ *		echo $minipage->page();
  *      exit;
- *   }
- *   ```
+ *  }
+ *  ```
  *
  * @param string $titre
  *   Titre de la page
@@ -101,9 +103,7 @@ function install_fin_html() {
  *   HTML de la page
  */
 function minipres($titre = '', $corps = '', $options = []) {
-
-	// compat signature old
-	// minipres($titre='', $corps="", $onload='', $all_inline = false)
+	trigger_deprecation('spip', '4.4', 'Using "%s" is deprecated, use "%s" instead', __FUNCTION__, 'Spip\Afficher\Minipage\Admin::page');
 	$args = func_get_args();
 	if (isset($args[2]) and is_string($args[2])) {
 		$options = ['onload' => $args[2]];

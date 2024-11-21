@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion des documents et de leur emplacement sur le serveur
  *
@@ -47,7 +49,7 @@ function set_spip_doc(?string $fichier): string {
  */
 function get_spip_doc(?string $fichier) {
 	$fichier_demande = $fichier;
-	
+
 	if ($fichier === null) {
 		return false;
 	}
@@ -65,7 +67,7 @@ function get_spip_doc(?string $fichier) {
 	if (strncmp($fichier, _DIR_IMG, strlen(_DIR_IMG)) !== 0) {
 		$fichier = _DIR_IMG . $fichier;
 	}
-	
+
 	$fichier = pipeline('get_spip_doc', ['args' => ['fichier' => $fichier_demande], 'data' => $fichier]);
 
 	// fichier normal
@@ -278,8 +280,6 @@ function deplacer_fichier_upload($source, $dest, $move = false) {
  * @link http://php.net/manual/fr/features.file-upload.errors.php
  *     Explication sur les messages d'erreurs de chargement de fichiers.
  * @uses propre()
- * @uses minipres()
- *
  * @global string $spip_lang_right
  * @param integer $error
  * @param string $msg
@@ -336,10 +336,10 @@ function check_upload_error($error, $msg = '', $return = false) {
 		exit;
 	}
 
-	include_spip('inc/minipres');
-	echo minipres(
-		$msg,
-		"<div style='text-align: " . $GLOBALS['spip_lang_right'] . "'><a href='" . attribut_url(rawurldecode((string) $GLOBALS['redirect'])) . "'><button type='button'>" . _T('ecrire:bouton_suivant') . '</button></a></div>'
+	$minipage = new MinipageAdmin();
+	echo $minipage->page(
+		"<div style='text-align: " . $GLOBALS['spip_lang_right'] . "'><a href='" . attribut_url(rawurldecode((string) $GLOBALS['redirect'])) . "'><button type='button'>" . _T('ecrire:bouton_suivant') . '</button></a></div>',
+		['titre' => $msg]
 	);
 	exit;
 }

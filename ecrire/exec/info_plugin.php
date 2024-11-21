@@ -1,5 +1,7 @@
 <?php
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 /**
  * Gestion d'affichage d'un descriptif de plugin en ajax
  *
@@ -22,8 +24,8 @@ include_spip('inc/actions');
  */
 function exec_info_plugin_dist() {
 	if (!autoriser('configurer', '_plugins')) {
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 	} else {
 		$plug = _DIR_RACINE . htmlspecialchars(_request('plugin'));
 		$get_infos = charger_fonction('get_infos', 'plugins');

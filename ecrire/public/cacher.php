@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
@@ -462,9 +464,9 @@ function public_cacher_dist($contexte, &$use_cache, &$chemin_cache, &$page, &$la
 			$use_cache = 0;
 		} else {
 			spip_log("Erreur base de donnees, impossible utiliser $chemin_cache");
-			include_spip('inc/minipres');
+			$minipage = new MinipageAdmin();
 
-			return minipres(_T('info_travaux_titre'), _T('titre_probleme_technique'), ['status' => 503]);
+			return $minipage->page(_T('titre_probleme_technique'), ['titre' => _T('info_travaux_titre'), 'status' => 503]);
 		}
 	}
 

@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 if (!defined('_ECRIRE_INC_VERSION')) {
 	return;
 }
@@ -173,8 +175,8 @@ function install_etape_3b_dist() {
 }
 
 function echouer_etape_3b($echec) {
-	echo minipres(
-		'AUTO',
+	$minipage = new MinipageAdmin();
+	echo $minipage->page(
 		info_progression_etape(3, 'etape_', 'install/', true) .
 		"<div class='error'><h3>$echec</h3>\n" .
 		'<p>' . _T('avis_connexion_echec_2') . '</p>' .

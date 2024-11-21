@@ -9,6 +9,8 @@
  *  Ce programme est un logiciel libre distribué sous licence GNU/GPL.     *
 \***************************************************************************/
 
+use Spip\Afficher\Minipage\Admin as MinipageAdmin;
+
 use function SpipLeague\Component\Kernel\app;
 
 /**
@@ -72,8 +74,8 @@ function charger_fonction($nom, $dossier = 'exec', $continue = false) {
 		if ($continue) {
 			return false;
 		} //appel interne, on passe
-		include_spip('inc/minipres');
-		echo minipres();
+		$minipage = new MinipageAdmin();
+		echo $minipage->page();
 		exit;
 	}
 
@@ -102,17 +104,16 @@ function charger_fonction($nom, $dossier = 'exec', $continue = false) {
 	spip_log("fonction $nom ($f ou $g) indisponible" .
 		($inc ? '' : " (fichier $d absent de $dossier)"));
 
-	include_spip('inc/minipres');
 	include_spip('inc/filtres_mini');
-	echo minipres(
-		_T('forum_titre_erreur'),
+	$minipage = new MinipageAdmin();
+	echo $minipage->page(
 		$inc ?
 			_T('fonction_introuvable', ['fonction' => '<code>' . spip_htmlentities($f) . '</code>'])
 			. '<br>'
 			. _T('fonction_introuvable', ['fonction' => '<code>' . spip_htmlentities($g) . '</code>'])
 			:
 			_T('fichier_introuvable', ['fichier' => '<code>' . spip_htmlentities($d) . '</code>']),
-		['all_inline' => true,'status' => 404]
+		['all_inline' => true,'status' => 404, 'titre' => _T('forum_titre_erreur')]
 	);
 	exit;
 }
