@@ -11,7 +11,8 @@ Changelog de SPIP 4.4
 
 ### Added
 
-- #5933 les actions `ajouter_lien` et `supprimer_lien` peuvent gérer un qualificatif
+- #5560 Balise `#LAYOUT_PRIVE`
+- #5933 Les actions `ajouter_lien` et `supprimer_lien` peuvent gérer un qualificatif
 - #5973 Marqueur de cache `cache_bot_invalide` permettant d’invalider le cache même si un bot est à l’origine de la requête
 - #5766 Pipeline `ajouter_menus_args`, en complément au pipeline `ajouter_menus`, qui transmet les arguments de `definir_barre_boutons()`
 - !6064 Polyfill pour PHP 8.3 & 8.4
@@ -43,6 +44,7 @@ Changelog de SPIP 4.4
 
 ### Deprecated
 
+- #5560 Balise `#LARGEUR_ECRAN` pour les squelettes du privé à remplacer par `#LAYOUT_PRIVE`
 - #6014 Les fichiers de langue peuplant une `$GLOBALS` sont dépréciés ; renvoyer directement un tableau
 - #4903 Constante obsolète `_DIR_IMG_PACK`
 - #5993 Globales `$traiter_math`, `$tex_server`, fonctions `produire_image_math()`, `traiter_math()`, utiliser le plugin `mathjax` à la place
