@@ -280,6 +280,17 @@ function formats_image_acceptables(?bool $gd = null, bool $svg_allowed = true): 
 
 /**
  * Extension de la fonction getimagesize pour supporter aussi les images SVG
+ *
+ * Lorsque la fonction renvoie un tableau, celui-ci peut contenir jusqu'à 7 entrées
+ * (cf. https://www.php.net/manual/en/function.getimagesize.php) :
+ *  - 0 : largeur ;
+ *  - 1 : hauteur ;
+ *  - 2 : constante indiquant le type de l'image ;
+ *  - 3 : chaîne avec les hauteur et largeur utilisable sur un tag `<img>` ;
+ *  - 'bits' (pas toujours présente, en fonction du type d'image) ;
+ *  - 'channels' (pas toujours présente, en fonction du type d'image) ;
+ *  - 'mime'.
+ *
  * @param string $fichier
  * @return array|bool
  */
@@ -288,15 +299,16 @@ function spip_getimagesize($fichier) {
 		include_spip('inc/exif');
 
 		// Si l'image possède un EXIF d'orientation et que ce dernier correspond à un mode portrait,
-		// alors on inverse les dimensions renvoyées.
+		// alors on inverse les dimensions renvoyées
+		// (attention, le tableau `$imagesize` contient plus de deux clés : on ne peut se contenter d'un `array_reverse()`).
+		$orientation = exif_obtenir_orientation($fichier);
 		if (
-			($orientation = exif_obtenir_orientation($fichier))
+			$orientation
 			&& exif_determiner_si_portrait($orientation)
 		) {
 			$x = $imagesize[0];
 			$imagesize[0] = $imagesize[1];
 			$imagesize[1] = $x;
-
 		}
 
 		return $imagesize;

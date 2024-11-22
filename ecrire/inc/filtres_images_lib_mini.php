@@ -1509,12 +1509,14 @@ function _image_creer_vignette($valeurs, $maxWidth, $maxHeight, $process = 'AUTO
 		// Dans le cas d'une image avec EXIF d'orientation...
 		if ($orientation = $valeurs['orientation']) {
 			// ...si l'image est en mode "miroir", alors on lui applique une symétrie.
-			if ($axe = exif_determiner_axe_symetrie($orientation)) {
-				imageflip($destImage,  $axe);
+			$axe = exif_determiner_axe_symetrie($orientation);
+			if ($axe) {
+				imageflip($destImage, $axe);
 			}
 
 			// ...si elle est "tournée", alors on lui applique une rotation.
-			if ($angle = exif_determiner_angle_rotation($orientation)) {
+			$angle = exif_determiner_angle_rotation($orientation);
+			if ($angle) {
 				$destImage = imagerotate($destImage, $angle, 0);
 			}
 		}
