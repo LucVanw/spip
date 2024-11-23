@@ -245,9 +245,6 @@ function selecteur_rubrique_html($id_rubrique, $type, $restreint, $idem = 0) {
 		$r = '<select' . $att . " size='1'>\n$opt</select>\n";
 	}
 
-	# message pour neuneus (a supprimer ?)
-	#	if ($type != 'auteur' AND $type != 'breve')
-	#		$r .= "\n<br>"._T('texte_rappel_selection_champs');
 
 	return $r;
 }
