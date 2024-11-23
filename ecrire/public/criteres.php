@@ -343,9 +343,6 @@ function critere_recherche_dist($idb, &$boucles, $crit) {
 	';
 
 	$t = $boucle->id_table . '.' . $boucle->primary;
-	if (!in_array($t, $boucles[$idb]->select)) {
-		$boucle->select[] = $t;
-	} # pour postgres, neuneu ici
 	// jointure uniquement sur le serveur principal
 	// (on ne peut joindre une table d'un serveur distant avec la table des resultats du serveur principal)
 	if (!$boucle->sql_serveur) {
