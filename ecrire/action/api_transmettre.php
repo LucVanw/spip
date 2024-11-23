@@ -12,7 +12,7 @@
 use Spip\Afficher\Minipage\Admin as MinipageAdmin;
 
 /**
- * Gestion de l'action activer_plugins
+ * Gestion de l'action api_transmettre
  *
  * @package SPIP\Core\Action
  */
