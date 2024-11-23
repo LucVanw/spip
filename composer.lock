@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "1469b8e0105c907f5b4189a0aeb1ddb0cede7604"
+                "reference": "8a863ca39fd0233bdd21ad920027a14230c8370a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=1469b8e0105c907f5b4189a0aeb1ddb0cede7604",
-                "reference": "1469b8e0105c907f5b4189a0aeb1ddb0cede7604",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=8a863ca39fd0233bdd21ad920027a14230c8370a",
+                "reference": "8a863ca39fd0233bdd21ad920027a14230c8370a",
                 "shasum": ""
             },
             "require-dev": {
@@ -316,7 +316,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/1.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2024-11-08T22:21:05+01:00"
+            "time": "2024-11-23T10:54:49+01:00"
         },
         {
             "name": "spip/security",
