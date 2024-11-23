@@ -989,12 +989,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/aide.git",
-                "reference": "fd5b760ec7c4a47900105224b81e025befd48591"
+                "reference": "e2112e2a39d1d3ff9c8b9a39503f16f306b41621"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=fd5b760ec7c4a47900105224b81e025befd48591",
-                "reference": "fd5b760ec7c4a47900105224b81e025befd48591",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=e2112e2a39d1d3ff9c8b9a39503f16f306b41621",
+                "reference": "e2112e2a39d1d3ff9c8b9a39503f16f306b41621",
                 "shasum": ""
             },
             "require": {
@@ -1029,7 +1029,7 @@
                 "source": "https://git.spip.net/spip/aide/-/tree/master",
                 "issues": "https://git.spip.net/spip/aide/-/issues"
             },
-            "time": "2024-10-22T01:30:04+02:00"
+            "time": "2024-11-23T11:00:11+01:00"
         },
         {
             "name": "spip/archiviste",
@@ -1106,12 +1106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/bigup.git",
-                "reference": "def10bd4fa7cbc68b3a053d8407a3e7fc6fb7652"
+                "reference": "93874ce070a64b418f06b6a15889975ae09a514e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=def10bd4fa7cbc68b3a053d8407a3e7fc6fb7652",
-                "reference": "def10bd4fa7cbc68b3a053d8407a3e7fc6fb7652",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=93874ce070a64b418f06b6a15889975ae09a514e",
+                "reference": "93874ce070a64b418f06b6a15889975ae09a514e",
                 "shasum": ""
             },
             "require": {
@@ -1151,7 +1151,7 @@
                 "source": "https://git.spip.net/spip/bigup/-/tree/master",
                 "issues": "https://git.spip.net/spip/bigup/-/issues"
             },
-            "time": "2024-10-22T01:30:06+02:00"
+            "time": "2024-11-21T20:31:31+01:00"
         },
         {
             "name": "spip/compagnon",
@@ -1159,12 +1159,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compagnon.git",
-                "reference": "7fff74692b9b10aa72f6847af158b32727953c63"
+                "reference": "9b3c1f5b9274e817d3ed7d02bc0a186a9fc534f0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=7fff74692b9b10aa72f6847af158b32727953c63",
-                "reference": "7fff74692b9b10aa72f6847af158b32727953c63",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=9b3c1f5b9274e817d3ed7d02bc0a186a9fc534f0",
+                "reference": "9b3c1f5b9274e817d3ed7d02bc0a186a9fc534f0",
                 "shasum": ""
             },
             "require": {
@@ -1199,7 +1199,7 @@
                 "source": "https://git.spip.net/spip/compagnon/-/tree/master",
                 "issues": "https://git.spip.net/spip/compagnon/-/issues"
             },
-            "time": "2024-10-22T01:30:09+02:00"
+            "time": "2024-11-21T20:36:49+01:00"
         },
         {
             "name": "spip/compresseur",
@@ -1207,12 +1207,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compresseur.git",
-                "reference": "1629fb166540bb22953a4612861b4dcf7cb39587"
+                "reference": "f84ff1f0967ad671a6d9c0f94f34a348f6e448a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=1629fb166540bb22953a4612861b4dcf7cb39587",
-                "reference": "1629fb166540bb22953a4612861b4dcf7cb39587",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=f84ff1f0967ad671a6d9c0f94f34a348f6e448a9",
+                "reference": "f84ff1f0967ad671a6d9c0f94f34a348f6e448a9",
                 "shasum": ""
             },
             "require": {
@@ -1250,7 +1250,7 @@
                 "source": "https://git.spip.net/spip/compresseur/-/tree/master",
                 "issues": "https://git.spip.net/spip/compresseur/-/issues"
             },
-            "time": "2024-10-22T01:30:11+02:00"
+            "time": "2024-11-21T20:37:58+01:00"
         },
         {
             "name": "spip/dist",
@@ -1296,12 +1296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dump.git",
-                "reference": "6a7777aa69ec3b34154437d91ce2297cf3347d6a"
+                "reference": "e580189b0b3f9da36d5576a7c14232cff234eb3d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdump/repository/archive.zip?sha=6a7777aa69ec3b34154437d91ce2297cf3347d6a",
-                "reference": "6a7777aa69ec3b34154437d91ce2297cf3347d6a",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdump/repository/archive.zip?sha=e580189b0b3f9da36d5576a7c14232cff234eb3d",
+                "reference": "e580189b0b3f9da36d5576a7c14232cff234eb3d",
                 "shasum": ""
             },
             "require": {
@@ -1336,7 +1336,7 @@
                 "source": "https://git.spip.net/spip/dump/-/tree/master",
                 "issues": "https://git.spip.net/spip/dump/-/issues"
             },
-            "time": "2024-10-22T01:30:15+02:00"
+            "time": "2024-11-21T20:40:30+01:00"
         },
         {
             "name": "spip/forum",
@@ -1344,12 +1344,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/forum.git",
-                "reference": "8c0ea4dedafac6260356198be40e0feb3a1540da"
+                "reference": "5e1ea55e470763215243e64119681d42b98e0f2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=8c0ea4dedafac6260356198be40e0feb3a1540da",
-                "reference": "8c0ea4dedafac6260356198be40e0feb3a1540da",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=5e1ea55e470763215243e64119681d42b98e0f2c",
+                "reference": "5e1ea55e470763215243e64119681d42b98e0f2c",
                 "shasum": ""
             },
             "require": {
@@ -1384,7 +1384,7 @@
                 "source": "https://git.spip.net/spip/forum/-/tree/master",
                 "issues": "https://git.spip.net/spip/forum/-/issues"
             },
-            "time": "2024-10-22T01:30:17+02:00"
+            "time": "2024-11-21T20:43:41+01:00"
         },
         {
             "name": "spip/images",
@@ -1392,12 +1392,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/images.git",
-                "reference": "0ed35b235e6c6b0116b714acbace6e05aba8d672"
+                "reference": "89c4450645b7850e0ab1c151f2fea30bdb5560ea"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fimages/repository/archive.zip?sha=0ed35b235e6c6b0116b714acbace6e05aba8d672",
-                "reference": "0ed35b235e6c6b0116b714acbace6e05aba8d672",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fimages/repository/archive.zip?sha=89c4450645b7850e0ab1c151f2fea30bdb5560ea",
+                "reference": "89c4450645b7850e0ab1c151f2fea30bdb5560ea",
                 "shasum": ""
             },
             "require": {
@@ -1442,7 +1442,7 @@
                 "source": "https://git.spip.net/spip/images/-/tree/master",
                 "issues": "https://git.spip.net/spip/images/-/issues"
             },
-            "time": "2024-10-22T01:30:15+02:00"
+            "time": "2024-11-22T10:56:13+01:00"
         },
         {
             "name": "spip/mediabox",
@@ -1450,12 +1450,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/mediabox.git",
-                "reference": "f20fb9fb2df4d6269e494a289eceb07f11c5290f"
+                "reference": "6202690bda2d754b2cdb4d649f9a8510b167e7c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmediabox/repository/archive.zip?sha=f20fb9fb2df4d6269e494a289eceb07f11c5290f",
-                "reference": "f20fb9fb2df4d6269e494a289eceb07f11c5290f",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmediabox/repository/archive.zip?sha=6202690bda2d754b2cdb4d649f9a8510b167e7c5",
+                "reference": "6202690bda2d754b2cdb4d649f9a8510b167e7c5",
                 "shasum": ""
             },
             "require": {
@@ -1490,7 +1490,7 @@
                 "source": "https://git.spip.net/spip/mediabox/-/tree/master",
                 "issues": "https://git.spip.net/spip/mediabox/-/issues"
             },
-            "time": "2024-10-22T01:30:20+02:00"
+            "time": "2024-11-21T20:44:36+01:00"
         },
         {
             "name": "spip/medias",
@@ -1498,12 +1498,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/medias.git",
-                "reference": "2cba708340f6160615e36956429d8f149f924c4e"
+                "reference": "b2fc31258e02b1e0f6116e098042e6040750286a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=2cba708340f6160615e36956429d8f149f924c4e",
-                "reference": "2cba708340f6160615e36956429d8f149f924c4e",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=b2fc31258e02b1e0f6116e098042e6040750286a",
+                "reference": "b2fc31258e02b1e0f6116e098042e6040750286a",
                 "shasum": ""
             },
             "require": {
@@ -1539,7 +1539,7 @@
                 "source": "https://git.spip.net/spip/medias/-/tree/master",
                 "issues": "https://git.spip.net/spip/medias/-/issues"
             },
-            "time": "2024-10-22T01:30:21+02:00"
+            "time": "2024-11-23T16:03:42+01:00"
         },
         {
             "name": "spip/mots",
@@ -1547,12 +1547,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/mots.git",
-                "reference": "b59a2ebd900674b0d13146d2ef329d01d7467f1f"
+                "reference": "9fa5798be556f0c55848c7842b21094226be45c5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmots/repository/archive.zip?sha=b59a2ebd900674b0d13146d2ef329d01d7467f1f",
-                "reference": "b59a2ebd900674b0d13146d2ef329d01d7467f1f",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmots/repository/archive.zip?sha=9fa5798be556f0c55848c7842b21094226be45c5",
+                "reference": "9fa5798be556f0c55848c7842b21094226be45c5",
                 "shasum": ""
             },
             "require": {
@@ -1587,7 +1587,7 @@
                 "source": "https://git.spip.net/spip/mots/-/tree/master",
                 "issues": "https://git.spip.net/spip/mots/-/issues"
             },
-            "time": "2024-10-22T01:30:23+02:00"
+            "time": "2024-11-21T22:37:47+01:00"
         },
         {
             "name": "spip/plan",
@@ -1643,12 +1643,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/porte-plume.git",
-                "reference": "c9ba8b4cdf3f42151b17c6475b5502a5aafbc4de"
+                "reference": "0afb1dd3e01938f9db338c30ab9a70e96582ba58"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=c9ba8b4cdf3f42151b17c6475b5502a5aafbc4de",
-                "reference": "c9ba8b4cdf3f42151b17c6475b5502a5aafbc4de",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=0afb1dd3e01938f9db338c30ab9a70e96582ba58",
+                "reference": "0afb1dd3e01938f9db338c30ab9a70e96582ba58",
                 "shasum": ""
             },
             "require": {
@@ -1683,7 +1683,7 @@
                 "source": "https://git.spip.net/spip/porte-plume/-/tree/master",
                 "issues": "https://git.spip.net/spip/porte-plume/-/issues"
             },
-            "time": "2024-10-24T01:30:07+02:00"
+            "time": "2024-11-21T20:47:09+01:00"
         },
         {
             "name": "spip/prive",
@@ -1691,12 +1691,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "d2138d5c78ca878febdce885cc7e7558438e6939"
+                "reference": "daa26606bf224ffde65fec7e051b9cf9620f423c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=d2138d5c78ca878febdce885cc7e7558438e6939",
-                "reference": "d2138d5c78ca878febdce885cc7e7558438e6939",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=daa26606bf224ffde65fec7e051b9cf9620f423c",
+                "reference": "daa26606bf224ffde65fec7e051b9cf9620f423c",
                 "shasum": ""
             },
             "require-dev": {
@@ -1712,7 +1712,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2024-11-08T22:29:10+01:00"
+            "time": "2024-11-23T10:51:07+01:00"
         },
         {
             "name": "spip/revisions",
@@ -1720,12 +1720,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/revisions.git",
-                "reference": "4d7de5ddfd65f60a9809b10a72c34229d63ac38c"
+                "reference": "b90838a9b83eda8d257d3049293247d4b37c3b73"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Frevisions/repository/archive.zip?sha=4d7de5ddfd65f60a9809b10a72c34229d63ac38c",
-                "reference": "4d7de5ddfd65f60a9809b10a72c34229d63ac38c",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Frevisions/repository/archive.zip?sha=b90838a9b83eda8d257d3049293247d4b37c3b73",
+                "reference": "b90838a9b83eda8d257d3049293247d4b37c3b73",
                 "shasum": ""
             },
             "require": {
@@ -1760,7 +1760,7 @@
                 "source": "https://git.spip.net/spip/revisions/-/tree/master",
                 "issues": "https://git.spip.net/spip/revisions/-/issues"
             },
-            "time": "2024-10-24T01:30:08+02:00"
+            "time": "2024-11-21T11:55:18+01:00"
         },
         {
             "name": "spip/safehtml",
@@ -1768,12 +1768,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/safehtml.git",
-                "reference": "1d606a73f48b8610cf14d26abc1827c29f1c4e18"
+                "reference": "a432c8123dd42a1d2a1a705a6cecc53072cc3b80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=1d606a73f48b8610cf14d26abc1827c29f1c4e18",
-                "reference": "1d606a73f48b8610cf14d26abc1827c29f1c4e18",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=a432c8123dd42a1d2a1a705a6cecc53072cc3b80",
+                "reference": "a432c8123dd42a1d2a1a705a6cecc53072cc3b80",
                 "shasum": ""
             },
             "require": {
@@ -1808,7 +1808,7 @@
                 "source": "https://git.spip.net/spip/safehtml/-/tree/master",
                 "issues": "https://git.spip.net/spip/safehtml/-/issues"
             },
-            "time": "2024-10-24T01:30:09+02:00"
+            "time": "2024-11-23T11:53:58+01:00"
         },
         {
             "name": "spip/security",
@@ -1858,12 +1858,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/sites.git",
-                "reference": "14f92e3826e3e73e3a7f99edf2f1c0c865def4a0"
+                "reference": "845f4b59de672f782ac63bd49aa7e2801729ce0a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=14f92e3826e3e73e3a7f99edf2f1c0c865def4a0",
-                "reference": "14f92e3826e3e73e3a7f99edf2f1c0c865def4a0",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=845f4b59de672f782ac63bd49aa7e2801729ce0a",
+                "reference": "845f4b59de672f782ac63bd49aa7e2801729ce0a",
                 "shasum": ""
             },
             "require": {
@@ -1898,7 +1898,7 @@
                 "source": "https://git.spip.net/spip/sites/-/tree/master",
                 "issues": "https://git.spip.net/spip/sites/-/issues"
             },
-            "time": "2024-10-24T01:30:11+02:00"
+            "time": "2024-11-21T22:42:45+01:00"
         },
         {
             "name": "spip/stats",
@@ -1906,12 +1906,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/stats.git",
-                "reference": "0d84830e40f865052df48b31998454f2b1d28202"
+                "reference": "812726e7b7b4b146e1a5f513ec1d5ff8601dd7e8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fstats/repository/archive.zip?sha=0d84830e40f865052df48b31998454f2b1d28202",
-                "reference": "0d84830e40f865052df48b31998454f2b1d28202",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fstats/repository/archive.zip?sha=812726e7b7b4b146e1a5f513ec1d5ff8601dd7e8",
+                "reference": "812726e7b7b4b146e1a5f513ec1d5ff8601dd7e8",
                 "shasum": ""
             },
             "require": {
@@ -1946,7 +1946,7 @@
                 "source": "https://git.spip.net/spip/stats/-/tree/master",
                 "issues": "https://git.spip.net/spip/stats/-/issues"
             },
-            "time": "2024-11-04T15:29:46+01:00"
+            "time": "2024-11-23T12:14:55+01:00"
         },
         {
             "name": "spip/svp",
@@ -1954,12 +1954,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/svp.git",
-                "reference": "527bdc2565067a67e470631e5a8725a41f81a872"
+                "reference": "127eee3c612b5b4e24fc654a228d497aa1ef0b4f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=527bdc2565067a67e470631e5a8725a41f81a872",
-                "reference": "527bdc2565067a67e470631e5a8725a41f81a872",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=127eee3c612b5b4e24fc654a228d497aa1ef0b4f",
+                "reference": "127eee3c612b5b4e24fc654a228d497aa1ef0b4f",
                 "shasum": ""
             },
             "require": {
@@ -1999,7 +1999,7 @@
                 "source": "https://git.spip.net/spip/svp/-/tree/master",
                 "issues": "https://git.spip.net/spip/svp/-/issues"
             },
-            "time": "2024-10-24T01:30:14+02:00"
+            "time": "2024-11-21T22:45:03+01:00"
         },
         {
             "name": "spip/tw",
@@ -2055,12 +2055,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/urls.git",
-                "reference": "65e112caee2245d0227f84d33a35f2bb3fed2b36"
+                "reference": "f11156f3d87202179dab0b84d8fe3527180d95b4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=65e112caee2245d0227f84d33a35f2bb3fed2b36",
-                "reference": "65e112caee2245d0227f84d33a35f2bb3fed2b36",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=f11156f3d87202179dab0b84d8fe3527180d95b4",
+                "reference": "f11156f3d87202179dab0b84d8fe3527180d95b4",
                 "shasum": ""
             },
             "require": {
@@ -2096,7 +2096,7 @@
                 "source": "https://git.spip.net/spip/urls/-/tree/master",
                 "issues": "https://git.spip.net/spip/urls/-/issues"
             },
-            "time": "2024-10-25T01:30:02+02:00"
+            "time": "2024-11-21T20:51:01+01:00"
         },
         {
             "name": "symfony/clock",
