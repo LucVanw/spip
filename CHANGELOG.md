@@ -11,6 +11,7 @@ Changelog de SPIP 4.4
 
 ### Added
 
+- spip/prive#35 Chaînes de langue supplémentaire pour les listes d'articles
 - #5560 Balise `#LAYOUT_PRIVE`
 - !5633 Balise `#TRAD{module:cle, #ARRAY{param, val, ..}, #ARRAY{option, val..}}`
 - #5933 Les actions `ajouter_lien` et `supprimer_lien` peuvent gérer un qualificatif
