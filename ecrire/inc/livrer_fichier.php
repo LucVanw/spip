@@ -149,7 +149,7 @@ function spip_livrer_fichier_entier($fichier) {
 		// on adapte le temps maxi de telechargement en fonction de la taille du fichier
 		// en prenant une base de 500Mo / 10mn (wifi pas super rapide)
 		$go = 1024 * 1024 * 1024;
-		if ($size > $go /2) {
+		if ($size > $go / 2) {
 			$download_time = intval(round($download_time * 2 * $size / $go));
 		}
 	}
