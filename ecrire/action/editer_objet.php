@@ -50,7 +50,7 @@ function action_editer_objet_dist($id = null, $objet = null, $set = null) {
 
 	// si id n'est pas un nombre, c'est une creation
 	// mais on verifie qu'on a toutes les donnees qu'il faut.
-	$id = (int)$id;
+	$id = (int) $id;
 	if (!$id) {
 		// on ne sait pas si un parent existe mais on essaye
 		$id_parent = _request('id_parent');
