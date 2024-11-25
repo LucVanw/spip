@@ -18,17 +18,20 @@
     "compagnon": {
         "path": "plugins-dist/compagnon",
         "source": "https://git.spip.net/spip/compagnon.git",
-        "branch": "3.2"
+        "branch": "3.2",
+        "tag": "3.2.0"
     },
     "compresseur": {
         "path": "plugins-dist/compresseur",
         "source": "https://git.spip.net/spip/compresseur.git",
-        "branch": "2.2"
+        "branch": "2.2",
+        "tag": "2.2.0"
     },
     "dump": {
         "path": "plugins-dist/dump",
         "source": "https://git.spip.net/spip/dump.git",
-        "branch": "2.2"
+        "branch": "2.2",
+        "tag": "2.2.0"
     },
     "images": {
         "path": "plugins-dist/filtres_images",
@@ -53,17 +56,20 @@
     "mots": {
         "path": "plugins-dist/mots",
         "source": "https://git.spip.net/spip/mots.git",
-        "branch": "4.3"
+        "branch": "4.3",
+        "tag": "4.3.0"
     },
     "plan": {
         "path": "plugins-dist/plan",
         "source": "https://git.spip.net/spip/plan.git",
-        "branch": "4.1"
+        "branch": "4.1",
+        "tag": "v4.1.4"
     },
     "porte-plume": {
         "path": "plugins-dist/porte_plume",
         "source": "https://git.spip.net/spip/porte-plume.git",
-        "branch": "3.1"
+        "branch": "3.1",
+        "tag": "v3.1.7"
     },
     "revisions": {
         "path": "plugins-dist/revisions",
@@ -73,22 +79,26 @@
     "safehtml": {
         "path": "plugins-dist/safehtml",
         "source": "https://git.spip.net/spip/safehtml.git",
-        "branch": "3.1"
+        "branch": "3.1",
+        "tag": "v3.1.3"
     },
     "sites": {
         "path": "plugins-dist/sites",
         "source": "https://git.spip.net/spip/sites.git",
-        "branch": "4.3"
+        "branch": "4.3",
+        "tag": "4.3.0"
     },
     "stats": {
         "path": "plugins-dist/statistiques",
         "source": "https://git.spip.net/spip/stats.git",
-        "branch": "3.1"
+        "branch": "3.1",
+        "tag": "3.1.8"
     },
     "svp": {
         "path": "plugins-dist/svp",
         "source": "https://git.spip.net/spip/svp.git",
-        "branch": "3.2"
+        "branch": "3.2",
+        "tag": "3.2.0"
     },
     "tw": {
         "path": "plugins-dist/textwheel",
