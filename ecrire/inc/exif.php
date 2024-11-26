@@ -33,7 +33,7 @@ function exif_obtenir_orientation(string $fichier): ?int {
 		return null;
 	}
 
-	$exif = exif_read_data($fichier);
+	$exif = @exif_read_data($fichier);
 
 	if (
 		!$exif
