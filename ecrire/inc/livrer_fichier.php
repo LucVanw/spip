@@ -130,15 +130,22 @@ function spip_livrer_fichier_entier($fichier) {
 		throw new \Exception(sprintf('File not readable: %s', $fichier));
 	}
 
-	defined('_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT') || define('_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT', 600);
+	// Définition du temps de téléchargement (en secondes) pour un fichier de 512 Mio
+	if (!defined('_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT')) {
+		define('_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT', 600);
+	}
+
 	$download_time = _LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT;
 	if ($size = filesize($fichier)) {
 		header(sprintf('Content-Length: %d', $size));
+		// Pour les fichiers de taille supérieure à 512 Mio
 		// on adapte le temps maxi de telechargement en fonction de la taille du fichier
-		// en prenant une base de 500Mo / 10mn (wifi pas super rapide)
-		$go = 1024 * 1024 * 1024;
-		if ($size > $go / 2) {
-			$download_time = intval(round($download_time * 2 * $size / $go));
+		// La constante `_LIVRER_FICHIER_BASE_TEMPS_TELECHARGEMENT` indique le nombre de secondes qu'il faut pour livrer 512 Mio
+		// Sa valeur par défaut est de 600 s, c'est-à-dire 10 mn.
+		// 512 Mio / 10mn correspondant à un wifi pas super rapide
+		$gio = 1024 * 1024 * 1024;
+		if ($size > $gio / 2) {
+			$download_time = intval(round($download_time * 2 * $size / $gio));
 		}
 	}
 	if (function_exists('set_time_limit')) {
