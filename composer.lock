@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d5e46dd23cfef52792c964fea6f66d65",
+    "content-hash": "a8cd90f9d58a30c847dd4772fbfbcf1e",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -260,7 +260,7 @@
         },
         {
             "name": "spip/dist",
-            "version": "4.2.x-dev",
+            "version": "v4.2.5",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
@@ -1552,7 +1552,6 @@
     "minimum-stability": "stable",
     "stability-flags": {
         "spip-league/kernel": 20,
-        "spip/dist": 20,
         "spip/prive": 20
     },
     "prefer-stable": false,

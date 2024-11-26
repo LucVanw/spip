@@ -41,12 +41,14 @@
     "forum": {
         "path": "plugins-dist/forum",
         "source": "https://git.spip.net/spip/forum.git",
-        "branch": "3.1"
+        "branch": "3.1",
+        "tag": "3.1.10"
     },
     "mediabox": {
         "path": "plugins-dist/mediabox",
         "source": "https://git.spip.net/spip/mediabox.git",
-        "branch": "3.1"
+        "branch": "3.1",
+        "tag": "3.1.8"
     },
     "medias": {
         "path": "plugins-dist/medias",

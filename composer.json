@@ -9,7 +9,7 @@
         "algo26-matthias/idna-convert": "^3.1",
         "spip-league/composer-installer": "^0.7",
         "spip-league/kernel": "^1.x-dev",
-        "spip/dist": "^4.2.x-dev <4.3",
+        "spip/dist": "~4.2.5",
         "spip/prive": "^1.x-dev",
         "spip/security": "^1.6",
         "symfony/deprecation-contracts": "^2.5",
