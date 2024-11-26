@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1503d5ba7bade22b701a551a9eaa14eb",
+    "content-hash": "9f0c0146cd22a4ab04e0397c4de14b85",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1246,19 +1246,18 @@
         },
         {
             "name": "spip/dist",
-            "version": "dev-master",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "e7eb5616ac1691cb46190e74342d23750aef0ec9"
+                "reference": "936c5c986622324d3588b62699f6103d72264c18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=e7eb5616ac1691cb46190e74342d23750aef0ec9",
-                "reference": "e7eb5616ac1691cb46190e74342d23750aef0ec9",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=936c5c986622324d3588b62699f6103d72264c18",
+                "reference": "936c5c986622324d3588b62699f6103d72264c18",
                 "shasum": ""
             },
-            "default-branch": true,
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
@@ -1277,10 +1276,10 @@
             ],
             "description": "Squelettes par défaut de SPIP 4.0",
             "support": {
-                "source": "https://git.spip.net/spip/dist/-/tree/master",
+                "source": "https://git.spip.net/spip/dist/-/tree/4.3.0",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2024-11-14T16:43:25+01:00"
+            "time": "2024-11-26T20:22:22+01:00"
         },
         {
             "name": "spip/dump",
@@ -1330,29 +1329,27 @@
         },
         {
             "name": "spip/forum",
-            "version": "dev-master",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/forum.git",
-                "reference": "0e7351de388057e28bfc44c55bc5671f46d64018"
+                "reference": "939e0479e57096c52e57ccae4f23bcda53e49b0d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=0e7351de388057e28bfc44c55bc5671f46d64018",
-                "reference": "0e7351de388057e28bfc44c55bc5671f46d64018",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=939e0479e57096c52e57ccae4f23bcda53e49b0d",
+                "reference": "939e0479e57096c52e57ccae4f23bcda53e49b0d",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
-                "phpstan/phpstan": "^1.10",
-                "rector/rector": "^0.15.23",
+                "rector/rector": "^1.2",
                 "spip/coding-standards": "^1.3"
             },
-            "default-branch": true,
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
@@ -1371,10 +1368,10 @@
             ],
             "description": "Gestion des forums privés et publics dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/forum/-/tree/master",
+                "source": "https://git.spip.net/spip/forum/-/tree/3.2.0",
                 "issues": "https://git.spip.net/spip/forum/-/issues"
             },
-            "time": "2024-11-22T18:48:27+01:00"
+            "time": "2024-11-26T20:19:02+01:00"
         },
         {
             "name": "spip/images",
@@ -1436,29 +1433,27 @@
         },
         {
             "name": "spip/mediabox",
-            "version": "dev-master",
+            "version": "3.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/mediabox.git",
-                "reference": "24afc570f0f658d92de8ebc03e5210ce0187b430"
+                "reference": "f5f1e80e5ecbb6866db0cff4ddeba34591fe4fe8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmediabox/repository/archive.zip?sha=24afc570f0f658d92de8ebc03e5210ce0187b430",
-                "reference": "24afc570f0f658d92de8ebc03e5210ce0187b430",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmediabox/repository/archive.zip?sha=f5f1e80e5ecbb6866db0cff4ddeba34591fe4fe8",
+                "reference": "f5f1e80e5ecbb6866db0cff4ddeba34591fe4fe8",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.1"
+                "php": "^8.2"
             },
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
-                "phpstan/phpstan": "^1.10",
-                "rector/rector": "^0.15.23",
+                "rector/rector": "^1.2",
                 "spip/coding-standards": "^1.3"
             },
-            "default-branch": true,
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
@@ -1477,10 +1472,10 @@
             ],
             "description": "Boîte multimédia",
             "support": {
-                "source": "https://git.spip.net/spip/mediabox/-/tree/master",
+                "source": "https://git.spip.net/spip/mediabox/-/tree/3.2.0",
                 "issues": "https://git.spip.net/spip/mediabox/-/issues"
             },
-            "time": "2024-11-25T21:26:32+01:00"
+            "time": "2024-11-26T20:25:25+01:00"
         },
         {
             "name": "spip/medias",
@@ -1488,12 +1483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/medias.git",
-                "reference": "1348f06f9a2a2f46b4a8e18669e3aa632d1f1cdd"
+                "reference": "03ba40bb589a4390d386c62f3882610f909c1ec2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=1348f06f9a2a2f46b4a8e18669e3aa632d1f1cdd",
-                "reference": "1348f06f9a2a2f46b4a8e18669e3aa632d1f1cdd",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=03ba40bb589a4390d386c62f3882610f909c1ec2",
+                "reference": "03ba40bb589a4390d386c62f3882610f909c1ec2",
                 "shasum": ""
             },
             "require": {
@@ -1526,10 +1521,10 @@
             ],
             "description": "Gestion des medias dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/medias/-/tree/master",
+                "source": "https://git.spip.net/spip/medias/-/tree/issue_5010_warning_exifs",
                 "issues": "https://git.spip.net/spip/medias/-/issues"
             },
-            "time": "2024-11-25T10:06:57+01:00"
+            "time": "2024-11-26T10:58:17+01:00"
         },
         {
             "name": "spip/mots",
@@ -4760,10 +4755,7 @@
         "spip/aide": 20,
         "spip/bigup": 20,
         "spip/compresseur": 20,
-        "spip/dist": 20,
-        "spip/forum": 20,
         "spip/images": 20,
-        "spip/mediabox": 20,
         "spip/medias": 20,
         "spip/prive": 20,
         "spip/revisions": 20,
