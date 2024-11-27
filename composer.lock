@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9f0c0146cd22a4ab04e0397c4de14b85",
+    "content-hash": "dd88777beafb5e5957c084b6954697fc",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1199,7 +1199,7 @@
         },
         {
             "name": "spip/compresseur",
-            "version": "dev-master",
+            "version": "2.3.0",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compresseur.git",
@@ -1220,7 +1220,6 @@
                 "spip-league/kernel": "^2.x-dev",
                 "symplify/easy-coding-standard": "^11.4"
             },
-            "default-branch": true,
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
@@ -4754,7 +4753,6 @@
         "spip-league/kernel": 20,
         "spip/aide": 20,
         "spip/bigup": 20,
-        "spip/compresseur": 20,
         "spip/images": 20,
         "spip/medias": 20,
         "spip/prive": 20,

@@ -18,7 +18,7 @@
         "spip/archiviste": "^3.0",
         "spip/bigup": "^3.4.x-dev",
         "spip/compagnon": "^3.3",
-        "spip/compresseur": "^2.3.x-dev",
+        "spip/compresseur": "^2.3",
         "spip/dist": "^4.3",
         "spip/dump": "^2.3",
         "spip/forum": "^3.2",
