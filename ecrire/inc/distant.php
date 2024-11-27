@@ -164,6 +164,7 @@ function copie_locale($source, $mode = 'auto', $local = null, $taille_max = null
 			[
 				'args' => [
 					'operation' => 'copie_locale',
+					'action' => 'copie_locale',
 					'source' => $source,
 					'fichier' => $local,
 					'http_res' => $res['length'],
