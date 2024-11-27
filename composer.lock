@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b30d7a3fc462a751da115019c58d8762",
+    "content-hash": "dd88777beafb5e5957c084b6954697fc",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -1374,7 +1374,7 @@
         },
         {
             "name": "spip/images",
-            "version": "dev-refactor_convert_imagick",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/images.git",
@@ -1401,6 +1401,7 @@
             "suggest": {
                 "ext-exif": "*"
             },
+            "default-branch": true,
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
@@ -1424,7 +1425,7 @@
             ],
             "description": "Filtres de transformation d'image et de couleurs",
             "support": {
-                "source": "https://git.spip.net/spip/images/-/tree/refactor_convert_imagick",
+                "source": "https://git.spip.net/spip/images/-/tree/master",
                 "issues": "https://git.spip.net/spip/images/-/issues"
             },
             "time": "2024-11-25T09:32:31+01:00"
@@ -1668,12 +1669,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "a5332bfe88fb0b68001e4dce028c78a69e2f1074"
+                "reference": "4290618cc141e09456ba03c52eef99648b79de07"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=a5332bfe88fb0b68001e4dce028c78a69e2f1074",
-                "reference": "a5332bfe88fb0b68001e4dce028c78a69e2f1074",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=4290618cc141e09456ba03c52eef99648b79de07",
+                "reference": "4290618cc141e09456ba03c52eef99648b79de07",
                 "shasum": ""
             },
             "require-dev": {
@@ -1689,7 +1690,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2024-11-25T22:52:09+01:00"
+            "time": "2024-11-27T14:38:00+01:00"
         },
         {
             "name": "spip/revisions",
@@ -4768,7 +4769,7 @@
         "ext-xml": "*",
         "ext-zip": "*"
     },
-    "platform-dev": [],
+    "platform-dev": {},
     "platform-overrides": {
         "php": "8.2.17"
     },
