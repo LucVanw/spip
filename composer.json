@@ -1,19 +1,20 @@
 {
+    "name": "spip/spip",
+    "description": "Système de Publication pour l’Internet",
     "license": "GPL-3.0-only",
+    "type": "project",
+    "keywords": [
+        "cms",
+        "spip"
+    ],
     "require": {
         "php": "^7.4 || ^8.0 <=8.4",
-        "ext-json": "*",
-        "ext-sodium": "*",
-        "ext-xml": "*",
-        "ext-zip": "*",
-        "algo26-matthias/idna-convert": "^3.1",
         "spip-league/composer-installer": "^0.7",
-        "spip-league/kernel": "^1.x-dev",
+        "spip-league/kernel": "^1.0",
         "spip/dist": "~4.2.5",
+        "spip/ecrire": "^4.4.x-dev",
         "spip/prive": "^1.x-dev",
         "spip/security": "^1.6",
-        "symfony/deprecation-contracts": "^2.5",
-        "symfony/polyfill-mbstring": "^1.31",
         "symfony/polyfill-php80": "^1.31",
         "symfony/polyfill-php81": "^1.31",
         "symfony/polyfill-php82": "^1.31",
@@ -22,16 +23,7 @@
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-        "phpstan/phpstan": "^1.12",
         "spip/coding-standards": "^1.2"
-    },
-    "suggest": {
-        "ext-curl": "*",
-        "ext-gd": "For image processing",
-        "ext-mbstring": "Faster than the polyfill for string actions",
-        "ext-mysqli": "*",
-        "ext-pdo": "*",
-        "ext-pdo_sqlite": "*"
     },
     "repositories": {
         "spip": {
@@ -39,36 +31,15 @@
             "url": "https://get.spip.net/composer"
         }
     },
-    "autoload": {
-        "psr-4": {
-            "Spip\\": "ecrire/src/"
-        },
-        "files": [
-            "ecrire/bootstrap/deprecations.php"
-        ]
-    },
+    "minimum-stability": "dev",
     "archive": {
+        "name": "spip",
         "exclude": [
-            "!/vendor",
-            "/phpunit.xml.dist",
-            "/phpcs.xml.dist",
-            "/phpstan.neon.dist",
-            "/phpstan-baseline.neon",
+            "!/ecrire",
             "!/plugins-dist",
+            "!/prive",
             "!/squelettes-dist",
-            "/config/",
-            "!/config/ecran_securite.php",
-            "!/config/remove.txt",
-            "!/config/spip/",
-            "/IMG/",
-            "!/IMG/remove.txt",
-            "/local/",
-            "!/local/remove.txt",
-            "!/local/CACHEDIR.TAG",
-            "/tmp/",
-            "!/tmp/remove.txt",
-            "!/tmp/CACHEDIR.TAG",
-            "!/prive/"
+            "!/vendor"
         ]
     },
     "config": {
@@ -82,6 +53,7 @@
     },
     "extra": {
         "spip": {
+            "back_office": "spip/ecrire",
             "private_template": "spip/prive",
             "template": "spip/dist"
         }
