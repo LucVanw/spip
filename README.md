@@ -31,6 +31,7 @@ maintenu par sa communauté avec tendresse.
 git clone https://git.spip.net/spip/spip.git
 cd spip
 composer install --no-dev
+composer run post-create-project-cmd
 ```
 
 Mise à jour
@@ -40,14 +41,27 @@ git pull
 composer install --no-dev
 ```
 
+### Installation avec composer
+
+Cf. [composer create-project](https://getcomposer.org/doc/03-cli.md#create-project)
+
+```bash
+composer create-project \
+    --repository=https://get.spip.net/composer \
+    spip/spip \
+    spip \
+    5.0.x-dev
+```
+
 ### Installation de développement (prive et plugins-dist via git)
 
 ```bash
 git clone https://git.spip.net/spip/spip.git
 cd spip
 composer install
+composer run post-create-project-cmd
 composer --no-interaction local mode-dev # config
-rm -rf plugins-dist prive squelettes-dist vendor/spip/security
+rm -rf plugins-dist prive squelettes-dist ecrire vendor/spip/security
 composer local install
 composer local mode-dev # https->ssh
 ```
