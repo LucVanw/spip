@@ -9,7 +9,7 @@ return [
 	 */
 	'etc' => 'config/',
 	/**
-	 * Fond documunentaire permanent et accessible d'un site (logo, document, ...)
+	 * Fond documentaire permanent et accessible d'un site (logo, document, ...)
 	 */
 	'doc' => 'IMG/',
 	/**
