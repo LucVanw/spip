@@ -11,6 +11,8 @@ Changelog de SPIP 4.4
 
 ### Added
 
+- #6003 Ne pas envoyer de mot de passe en clair, mais plutôt des liens pour définir son mot de passe
+- #6049 `copie_locale()` passe une clé `action` au pipeline `post_edition`
 - spip/prive#35 Chaînes de langue supplémentaire pour les listes d'articles
 - #5560 Balise `#LAYOUT_PRIVE`
 - !5633 Balise `#TRAD{module:cle, #ARRAY{param, val, ..}, #ARRAY{option, val..}}`
@@ -27,10 +29,12 @@ Changelog de SPIP 4.4
 
 ### Changed
 
+- Le dossier `ecrire` est externalisé. `spip/spip` devient un `project` composer
 - #5979 Revert du calcul automatique des chaînes de langue du menu Créer du bandeau de l’espace privé
 
 ### Fixed
 
+- !6100 Utiliser `fpassthru()` pour livrer directement les fichiers et eviter un memory limit plutôt que `readfile()` qui passe par un chargement en memoire du fichier
 - !5633 Possibilité de calculer dynamiquement les paramètres des chaînes de langue
 - !5633 Possibilité de calculer dynamiquement les paramètre des filtres des chaînes de langue
 - #6021 Eviter une fatale sur `inc_recherche_to_array_dist()` dans certains contextes d'appel
