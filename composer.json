@@ -17,8 +17,8 @@
         "symfony/polyfill-php84": "^1.31"
     },
     "require-dev": {
-        "lolli42/finediff": "^1.1",
-        "phpunit/phpunit": "^11.4"
+        "phpunit/phpunit": "^11.4",
+        "symfony/var-dumper": "^7.2"
     },
     "repositories": {
         "spip": {
