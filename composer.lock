@@ -296,12 +296,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "747592db9e988d05daa17ef57554cb71e1dd5e15"
+                "reference": "1d8645cfa444f04af464b4f3d600d669047bc9ad"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=747592db9e988d05daa17ef57554cb71e1dd5e15",
-                "reference": "747592db9e988d05daa17ef57554cb71e1dd5e15",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=1d8645cfa444f04af464b4f3d600d669047bc9ad",
+                "reference": "1d8645cfa444f04af464b4f3d600d669047bc9ad",
                 "shasum": ""
             },
             "require": {
@@ -340,7 +340,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.0-beta",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2024-12-03T14:11:22+01:00"
+            "time": "2024-12-03T16:11:02+01:00"
         },
         {
             "name": "spip/prive",
@@ -348,12 +348,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "8baae6840aedfdc6dde492332e4d4e781d570054"
+                "reference": "d5d3adefd1954540bf2f23f4e8c831a80c4e73f6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=8baae6840aedfdc6dde492332e4d4e781d570054",
-                "reference": "8baae6840aedfdc6dde492332e4d4e781d570054",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=d5d3adefd1954540bf2f23f4e8c831a80c4e73f6",
+                "reference": "d5d3adefd1954540bf2f23f4e8c831a80c4e73f6",
                 "shasum": ""
             },
             "require-dev": {
@@ -368,7 +368,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/1.0.0-beta",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2024-12-03T11:39:44+01:00"
+            "time": "2024-12-03T16:07:48+01:00"
         },
         {
             "name": "spip/security",
