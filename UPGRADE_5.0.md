@@ -71,6 +71,43 @@ Avant SPIP 5.0, les items de langues en squelettes étaient automatiquement pass
 
 Il est _fortement conseillé_ de n'utiliser que des items de langue en minuscule.
 
+### Suppression de l'inclusion en squelette de fichier PHP
+
+L'inclusion en squelette de fichier PHP via `<INCLURE>` est supprimé
+
+#### Avant
+
+```
+<INCLURE(fichier.php)>
+```
+ou
+
+```
+<INCLURE{fond=fichier.php}>
+```
+#### Après
+
+```
+<INCLURE{fond=fichier_de_squelette}>
+```
+
+### Suppression de la balise fermante `</INCLURE>`
+
+La balise fermant `</INCLURE>` est supprimée.
+
+#### Avant
+
+````
+<INCLURE{fond=xxx}...></INCLURE>
+````
+
+après
+
+
+````
+<INCLURE{fond=xxx}... />
+````
+
 # Nouvelles dépréciations
 
 
@@ -321,6 +358,9 @@ Pour les personnes ayant surchargé les squelettes de ce formulaire ou ayant des
 
 Les éléments suivants ont été supprimés et doivent être adaptés si ce n’est pas encore le cas.
 
+## Recherche d'un fichier `ecrire/mes_options.php`.
+
+La recherhe d'un fichier `mes_options` dans `ecrire` n'est plus supporté. Le fichier `mes_options` doit forcément se trouver dans `config`.
 
 ## Constantes PHP
 
@@ -361,7 +401,7 @@ Dans un squelette :
 [(#PARAM{spip.routes.back_office})]
 ```
 
-## Fonctions et variables Javascript 
+## Fonctions et variables Javascript
 
 SPIP5 amorce une émancipation du code javascript hors du giron de jQuery, et se tourne vers l'adoption d'usages plus modernes via les ESM. Ce chantier débute avec le fichier `config.js` dédié au stockage de la configation de SPIP et de ses plugins, et le fichier `ajaxCallBack.js`, en charge des rechargements dynamiques.
 
@@ -374,13 +414,13 @@ import { parametre_url, animateLoading, onAjaxLoad } from "ajaxCallback.js";
 ```
 Les balises `<script type="module">` qui contiennent une directive `import` s'exécutent de manière asynchrone et différée, une fois que toutes les ressources javascript de la page ont été résolues. Auparavant, il fallait s'assurer de différer l'exécution du code en l'encapulant dans une fonction `$(document).ready(function(){...})` ou `$(function(){...})`.
 
-### Avant 
+### Avant
 ```html
 <script>
   // déclaration directe d'une propriété de l'objet window (non recommandé)
-  var ajax_image_searching = "⌛"; 
+  var ajax_image_searching = "⌛";
 
-  // code à exécuter au chargement complet 
+  // code à exécuter au chargement complet
   $(document).ready(function(){
     // lecture depuis l'objet jQuery
     console.log(jQuery.spip.load_handlers);
@@ -390,16 +430,16 @@ Les balises `<script type="module">` qui contiennent une directive `import` s'ex
 </script>
 ```
 
-### Après 
+### Après
 ```html
 <!-- Pour les modules ESM -->
 <script type="module">
-  import { default as spip } from "config.js"; 
-  import { animateLoading, onAjaxLoad } from "ajaxCallback.js"; 
+  import { default as spip } from "config.js";
+  import { animateLoading, onAjaxLoad } from "ajaxCallback.js";
   // lecture
-  console.log(spip.load_handlers); 
+  console.log(spip.load_handlers);
   // ecriture
-  spip.ajax_image_searching = "⌛"; 
+  spip.ajax_image_searching = "⌛";
   // animation d'un bloc
   const monbloc = document.querySelector('.mon_bloc');
   if (monbloc) {
@@ -412,15 +452,15 @@ Les balises `<script type="module">` qui contiennent une directive `import` s'ex
   // code à exécuter au chargement complet
   document.addEventListener("DOMContentLoaded", () => {
     // lecture
-    console.log(spipConfig.load_handlers); 
+    console.log(spipConfig.load_handlers);
     // ecriture
-    spipConfig.ajax_image_searching = "⌛"; 
+    spipConfig.ajax_image_searching = "⌛";
   });
 </script>
 ```
 Un fichier `retrocompat.js` tâche d'assurer la compatibilité avec la syntaxe historique.
 Ajouter le paramètre `?var_mode=debug_js` dans l'url permet de tracer les usages dépréciés dans la console.
- 
+
 ## Fichiers de langue
 
 Les fichiers de langue peuplant une variable globale sont supprimés. Retourner directement le tableau PHP.
