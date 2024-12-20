@@ -21,17 +21,13 @@
         "symfony/polyfill-php83": "^1.31",
         "symfony/polyfill-php84": "^1.31"
     },
-    "require-dev": {
-        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-        "spip/coding-standards": "^1.2"
-    },
     "repositories": {
         "spip": {
             "type": "composer",
             "url": "https://get.spip.net/composer"
         }
     },
-    "minimum-stability": "beta",
+    "minimum-stability": "dev",
     "archive": {
         "name": "spip",
         "exclude": [
@@ -44,7 +40,6 @@
     },
     "config": {
         "allow-plugins": {
-            "dealerdirect/phpcodesniffer-composer-installer": true,
             "spip-league/composer-installer": true
         },
         "platform": {
