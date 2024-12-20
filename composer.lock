@@ -535,19 +535,20 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/cache.git",
-                "reference": "42c39d06ce9e2e11194507b62707c4e9baa44d53"
+                "reference": "8a21ddefe63c038524970cf3ad45747796084de3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fcache/repository/archive.zip?sha=42c39d06ce9e2e11194507b62707c4e9baa44d53",
-                "reference": "42c39d06ce9e2e11194507b62707c4e9baa44d53",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fcache/repository/archive.zip?sha=8a21ddefe63c038524970cf3ad45747796084de3",
+                "reference": "8a21ddefe63c038524970cf3ad45747796084de3",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
                 "psr/clock": "^1.0",
                 "psr/simple-cache": "^3.0",
-                "spip-league/filesystem": "^2.0",
+                "spip-league/filesystem": "^3.0",
+                "spip-league/filesystem-contracts": "^1.0",
                 "spip-league/hasher": "^2.0",
                 "symfony/clock": "^7.2"
             },
@@ -557,8 +558,8 @@
             "require-dev": {
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "phpcompatibility/php-compatibility": "^10.0.x-dev",
-                "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^10.2",
+                "spip-league/sdk": "^1.0",
                 "spip/coding-standards": "^1.3",
                 "symfony/var-dumper": "^7.2"
             },
@@ -604,10 +605,10 @@
                 "cache"
             ],
             "support": {
-                "source": "https://git.spip.net/spip-league/cache/-/tree/2.0.1",
+                "source": "https://git.spip.net/spip-league/cache/-/tree/2.0.2",
                 "issues": "https://git.spip.net/spip-league/cache/-/issues"
             },
-            "time": "2024-11-30T08:38:19+01:00"
+            "time": "2024-12-19T11:39:11+01:00"
         },
         {
             "name": "spip-league/composer-installer",
@@ -670,18 +671,22 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/filesystem.git",
-                "reference": "dabda5029bec4588fd80ee9cd62f06cd14d95304"
+                "reference": "fbc9f1a5f12e4b1c2fe4bd2104498a957b8dec67"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Ffilesystem/repository/archive.zip?sha=dabda5029bec4588fd80ee9cd62f06cd14d95304",
-                "reference": "dabda5029bec4588fd80ee9cd62f06cd14d95304",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Ffilesystem/repository/archive.zip?sha=fbc9f1a5f12e4b1c2fe4bd2104498a957b8dec67",
+                "reference": "fbc9f1a5f12e4b1c2fe4bd2104498a957b8dec67",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
+                "spip-league/filesystem-contracts": "^1.0",
                 "symfony/filesystem": "^7.2",
                 "symfony/lock": "^7.2"
+            },
+            "provide": {
+                "spip-league/filesystem-implementation": "1.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "^11.0"
@@ -690,7 +695,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-main": "2.0.x-dev"
+                    "dev-main": "3.0.x-dev"
                 }
             },
             "autoload": {
@@ -719,9 +724,57 @@
             ],
             "support": {
                 "issues": "https://git.spip.net/spip-league/filesystem/issues",
-                "source": "https://git.spip.net/spip-league/filesystem/-/tree/2.0.1"
+                "source": "https://git.spip.net/spip-league/filesystem/-/tree/3.0.0"
             },
-            "time": "2024-11-30T08:44:39+01:00"
+            "time": "2024-12-14T20:47:58+01:00"
+        },
+        {
+            "name": "spip-league/filesystem-contracts",
+            "version": "dev-main",
+            "source": {
+                "type": "git",
+                "url": "https://git.spip.net/spip-league/filesystem-contracts.git",
+                "reference": "2e01ee8d3ac6c89ac64d304809fcddc33e944a3e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Ffilesystem-contracts/repository/archive.zip?sha=2e01ee8d3ac6c89ac64d304809fcddc33e944a3e",
+                "reference": "2e01ee8d3ac6c89ac64d304809fcddc33e944a3e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2"
+            },
+            "require-dev": {
+                "symfony/lock": "^7.2"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SpipLeague\\Contracts\\Filesystem\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "JamesRezo",
+                    "email": "james@rezo.net"
+                }
+            ],
+            "description": "Contrats d'Interfaces SpipLeague pour le filesystem",
+            "support": {
+                "source": "https://git.spip.net/spip-league/filesystem-contracts/-/tree/1.0.0",
+                "issues": "https://git.spip.net/spip-league/filesystem-contracts/-/issues"
+            },
+            "time": "2024-12-14T20:35:37+01:00"
         },
         {
             "name": "spip-league/hasher",
@@ -865,22 +918,24 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/logger.git",
-                "reference": "abcb5c3808969332adafed0d537f988de4a49928"
+                "reference": "1134f9bf6468bd8b9eddb78a633538ddcfe39df3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Flogger/repository/archive.zip?sha=abcb5c3808969332adafed0d537f988de4a49928",
-                "reference": "abcb5c3808969332adafed0d537f988de4a49928",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Flogger/repository/archive.zip?sha=1134f9bf6468bd8b9eddb78a633538ddcfe39df3",
+                "reference": "1134f9bf6468bd8b9eddb78a633538ddcfe39df3",
                 "shasum": ""
             },
             "require": {
                 "monolog/monolog": "^3.5",
                 "php": ">=8.2",
-                "spip-league/filesystem": "^2.0"
+                "spip-league/filesystem-contracts": "^1.0"
             },
             "require-dev": {
-                "phpstan/phpstan": "^1.10",
-                "phpunit/phpunit": "^11.0"
+                "phpunit/phpunit": "^11.0",
+                "spip-league/sdk": "^1.0",
+                "symfony/filesystem": "^7.2",
+                "symfony/lock": "^7.2"
             },
             "default-branch": true,
             "type": "library",
@@ -917,7 +972,7 @@
                 "issues": "https://git.spip.net/spip-league/logger/issues",
                 "source": "https://git.spip.net/spip-league/logger/-/tree/main"
             },
-            "time": "2024-08-26T18:12:34+02:00"
+            "time": "2024-12-14T21:43:11+01:00"
         },
         {
             "name": "spip-league/path",
@@ -925,19 +980,20 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/path.git",
-                "reference": "0f1003c6d0dd55545338f4af58b10539e33cd836"
+                "reference": "8d96b723f8ad49aea329d0c27d5e1c5178088225"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fpath/repository/archive.zip?sha=0f1003c6d0dd55545338f4af58b10539e33cd836",
-                "reference": "0f1003c6d0dd55545338f4af58b10539e33cd836",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fpath/repository/archive.zip?sha=8d96b723f8ad49aea329d0c27d5e1c5178088225",
+                "reference": "8d96b723f8ad49aea329d0c27d5e1c5178088225",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2",
                 "psr/container": "^2.0",
                 "spip-league/cache": "^2.0",
-                "spip-league/filesystem": "^2.0",
+                "spip-league/filesystem": "^3.0",
+                "spip-league/filesystem-contracts": "^1.0",
                 "spip-league/hasher": "^2.0"
             },
             "require-dev": {
@@ -987,10 +1043,10 @@
             ],
             "description": "SPIP Path Component",
             "support": {
-                "source": "https://git.spip.net/spip-league/path/-/tree/2.0.1",
+                "source": "https://git.spip.net/spip-league/path/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/path/-/issues"
             },
-            "time": "2024-11-30T08:51:07+01:00"
+            "time": "2024-12-19T14:41:56+01:00"
         },
         {
             "name": "spip/aide",
@@ -998,12 +1054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/aide.git",
-                "reference": "fa500ad8fe0c77072c04d1102b4367d48759ed42"
+                "reference": "5fe07a7640b52e902218bae22a318abddd0fed1c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=fa500ad8fe0c77072c04d1102b4367d48759ed42",
-                "reference": "fa500ad8fe0c77072c04d1102b4367d48759ed42",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=5fe07a7640b52e902218bae22a318abddd0fed1c",
+                "reference": "5fe07a7640b52e902218bae22a318abddd0fed1c",
                 "shasum": ""
             },
             "require": {
@@ -1013,6 +1069,7 @@
                 "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
                 "phpcompatibility/php-compatibility": "dev-develop",
                 "rector/rector": "^1.2",
+                "spip-league/sdk": "^1.0",
                 "spip/coding-standards": "^1.3"
             },
             "default-branch": true,
@@ -1021,6 +1078,17 @@
                 "branch-alias": {
                     "dev-master": "3.3.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1034,10 +1102,10 @@
             ],
             "description": "Aide en ligne de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/aide/-/tree/3.3.0",
+                "source": "https://git.spip.net/spip/aide/-/tree/master",
                 "issues": "https://git.spip.net/spip/aide/-/issues"
             },
-            "time": "2024-11-27T15:20:52+01:00"
+            "time": "2024-12-15T00:16:21+01:00"
         },
         {
             "name": "spip/archiviste",
@@ -1045,12 +1113,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/archiviste.git",
-                "reference": "f0584ca8f650d263feef58e338618be30110b956"
+                "reference": "56b07e5145d54fe1c84aeaee5e9a289243b92cf7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Farchiviste/repository/archive.zip?sha=f0584ca8f650d263feef58e338618be30110b956",
-                "reference": "f0584ca8f650d263feef58e338618be30110b956",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Farchiviste/repository/archive.zip?sha=56b07e5145d54fe1c84aeaee5e9a289243b92cf7",
+                "reference": "56b07e5145d54fe1c84aeaee5e9a289243b92cf7",
                 "shasum": ""
             },
             "require": {
@@ -1060,11 +1128,10 @@
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "^10.x-dev",
                 "phpunit/phpunit": "^10.1",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1081,7 +1148,10 @@
             "autoload-dev": {
                 "psr-4": {
                     "Spip\\Test\\Archiver\\": "tests/"
-                }
+                },
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1103,9 +1173,9 @@
             ],
             "support": {
                 "issues": "https://git.spip.net/spip/archiviste/issues",
-                "source": "https://git.spip.net/spip/archiviste/-/tree/3.0.0"
+                "source": "https://git.spip.net/spip/archiviste/-/tree/master"
             },
-            "time": "2024-11-25T13:13:04+01:00"
+            "time": "2024-12-16T15:22:37+01:00"
         },
         {
             "name": "spip/bigup",
@@ -1113,22 +1183,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/bigup.git",
-                "reference": "5a5f9f4859f2bfeab11655632ff0dde6e4f77329"
+                "reference": "b9d23162bd6f0298045823d15f3b76696e18b3bf"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=5a5f9f4859f2bfeab11655632ff0dde6e4f77329",
-                "reference": "5a5f9f4859f2bfeab11655632ff0dde6e4f77329",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=b9d23162bd6f0298045823d15f3b76696e18b3bf",
+                "reference": "b9d23162bd6f0298045823d15f3b76696e18b3bf",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1142,6 +1211,26 @@
                     "Spip\\Bigup\\": "src/"
                 }
             },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_documents.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
+            },
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -1154,10 +1243,10 @@
             ],
             "description": "Téléverser des gros fichiers",
             "support": {
-                "source": "https://git.spip.net/spip/bigup/-/tree/3.4.0",
+                "source": "https://git.spip.net/spip/bigup/-/tree/master",
                 "issues": "https://git.spip.net/spip/bigup/-/issues"
             },
-            "time": "2024-11-27T15:27:34+01:00"
+            "time": "2024-12-16T15:08:47+01:00"
         },
         {
             "name": "spip/classic-distribution",
@@ -1216,22 +1305,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compagnon.git",
-                "reference": "8c602c28aee4cf58a7208b871815c68b229d03f1"
+                "reference": "5aaf0760ce48e25cc23b9f921152784419ca1f20"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=8c602c28aee4cf58a7208b871815c68b229d03f1",
-                "reference": "8c602c28aee4cf58a7208b871815c68b229d03f1",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=5aaf0760ce48e25cc23b9f921152784419ca1f20",
+                "reference": "5aaf0760ce48e25cc23b9f921152784419ca1f20",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1239,6 +1327,22 @@
                 "branch-alias": {
                     "dev-master": "3.3.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1252,10 +1356,10 @@
             ],
             "description": "Compagnon",
             "support": {
-                "source": "https://git.spip.net/spip/compagnon/-/tree/3.3.0",
+                "source": "https://git.spip.net/spip/compagnon/-/tree/master",
                 "issues": "https://git.spip.net/spip/compagnon/-/issues"
             },
-            "time": "2024-11-25T12:36:51+01:00"
+            "time": "2024-12-16T20:12:19+01:00"
         },
         {
             "name": "spip/compresseur",
@@ -1263,12 +1367,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compresseur.git",
-                "reference": "ca9426340e81a9c7575f3fa2aae70efcee39fc1b"
+                "reference": "367c4175fbab77795e503bb64db4d823d7946bc9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=ca9426340e81a9c7575f3fa2aae70efcee39fc1b",
-                "reference": "ca9426340e81a9c7575f3fa2aae70efcee39fc1b",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=367c4175fbab77795e503bb64db4d823d7946bc9",
+                "reference": "367c4175fbab77795e503bb64db4d823d7946bc9",
                 "shasum": ""
             },
             "require": {
@@ -1276,9 +1380,12 @@
                 "php": ">=8.2"
             },
             "require-dev": {
+                "phpunit/phpunit": "^11.5",
                 "rector/rector": "^1.2",
-                "spip-league/kernel": "^2.x-dev",
-                "symplify/easy-coding-standard": "^11.4"
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/kernel": "^2.0",
+                "spip-league/sdk": "^1.0",
+                "symfony/var-dumper": "^7.2"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1286,6 +1393,25 @@
                 "branch-alias": {
                     "dev-master": "2.3.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "compresseur_fonctions.php",
+                    "inc/compresseur_minifier.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_client.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1299,10 +1425,10 @@
             ],
             "description": "Compression des css et javascript",
             "support": {
-                "source": "https://git.spip.net/spip/compresseur/-/tree/2.3.0",
+                "source": "https://git.spip.net/spip/compresseur/-/tree/master",
                 "issues": "https://git.spip.net/spip/compresseur/-/issues"
             },
-            "time": "2024-11-25T13:26:06+01:00"
+            "time": "2024-12-17T11:59:14+01:00"
         },
         {
             "name": "spip/dist",
@@ -1348,22 +1474,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dump.git",
-                "reference": "e4df6a44acfe2a7b3185d37443ab913e07646cac"
+                "reference": "47da5cc37aa4659619667aad0cce1cc83b5ed5a8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdump/repository/archive.zip?sha=e4df6a44acfe2a7b3185d37443ab913e07646cac",
-                "reference": "e4df6a44acfe2a7b3185d37443ab913e07646cac",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdump/repository/archive.zip?sha=47da5cc37aa4659619667aad0cce1cc83b5ed5a8",
+                "reference": "47da5cc37aa4659619667aad0cce1cc83b5ed5a8",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^0.15.23",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1371,6 +1496,22 @@
                 "branch-alias": {
                     "dev-master": "2.3.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1387,7 +1528,7 @@
                 "source": "https://git.spip.net/spip/dump/-/tree/master",
                 "issues": "https://git.spip.net/spip/dump/-/issues"
             },
-            "time": "2024-12-13T11:25:05+01:00"
+            "time": "2024-12-16T20:04:49+01:00"
         },
         {
             "name": "spip/ecrire",
@@ -1395,12 +1536,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "45a7b168ce984a43f15dced902bd1d7ebd2a9b6f"
+                "reference": "8ef1c1672195ade4f5fd316a2d7a964ab5c6bee8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=45a7b168ce984a43f15dced902bd1d7ebd2a9b6f",
-                "reference": "45a7b168ce984a43f15dced902bd1d7ebd2a9b6f",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=8ef1c1672195ade4f5fd316a2d7a964ab5c6bee8",
+                "reference": "8ef1c1672195ade4f5fd316a2d7a964ab5c6bee8",
                 "shasum": ""
             },
             "require": {
@@ -1410,7 +1551,7 @@
                 "ext-zip": "*",
                 "php": "^8.2",
                 "spip-league/cache": "^2.0",
-                "spip-league/filesystem": "^2.0",
+                "spip-league/filesystem": "^3.0",
                 "spip-league/hasher": "^2.0",
                 "spip-league/logger": "^2.0",
                 "spip-league/path": "^2.0",
@@ -1421,9 +1562,10 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^11.4",
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.0",
                 "spip-league/kernel": "^2.x-dev",
-                "symfony/var-dumper": "^7.2",
-                "symplify/easy-coding-standard": "^12.3"
+                "symfony/var-dumper": "^7.2"
             },
             "default-branch": true,
             "type": "spip-ecrire",
@@ -1431,6 +1573,14 @@
                 "psr-4": {
                     "Spip\\": "src/"
                 }
+            },
+            "scripts": {
+                "check-cs": [
+                    "vendor/bin/ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "vendor/bin/ecs check --fix --ansi"
+                ]
             },
             "license": [
                 "GPL-3.0-only"
@@ -1440,7 +1590,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2024-12-13T11:44:04+01:00"
+            "time": "2024-12-20T17:40:43+01:00"
         },
         {
             "name": "spip/forum",
@@ -1448,22 +1598,23 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/forum.git",
-                "reference": "939e0479e57096c52e57ccae4f23bcda53e49b0d"
+                "reference": "ea5e2c694ce9f79d5cb715fec33fb888fe1fa327"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=939e0479e57096c52e57ccae4f23bcda53e49b0d",
-                "reference": "939e0479e57096c52e57ccae4f23bcda53e49b0d",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=ea5e2c694ce9f79d5cb715fec33fb888fe1fa327",
+                "reference": "ea5e2c694ce9f79d5cb715fec33fb888fe1fa327",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.2"
+                "php": "^8.2",
+                "spip/medias": "^5.0",
+                "spip/mots": "^4.4"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1471,6 +1622,29 @@
                 "branch-alias": {
                     "dev-master": "3.2.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_cache.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_notification.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_documents.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_mots.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1484,10 +1658,10 @@
             ],
             "description": "Gestion des forums privés et publics dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/forum/-/tree/3.2.0",
+                "source": "https://git.spip.net/spip/forum/-/tree/master",
                 "issues": "https://git.spip.net/spip/forum/-/issues"
             },
-            "time": "2024-11-26T20:19:02+01:00"
+            "time": "2024-12-17T15:13:11+01:00"
         },
         {
             "name": "spip/images",
@@ -1495,12 +1669,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/images.git",
-                "reference": "7e604d092ebe4e4c95a35a1b0ca371c4fbe41406"
+                "reference": "d522343a46a0728a31ccf8e33dfe240ef176fd12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fimages/repository/archive.zip?sha=7e604d092ebe4e4c95a35a1b0ca371c4fbe41406",
-                "reference": "7e604d092ebe4e4c95a35a1b0ca371c4fbe41406",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fimages/repository/archive.zip?sha=d522343a46a0728a31ccf8e33dfe240ef176fd12",
+                "reference": "d522343a46a0728a31ccf8e33dfe240ef176fd12",
                 "shasum": ""
             },
             "require": {
@@ -1508,8 +1682,9 @@
             },
             "require-dev": {
                 "phpunit/phpunit": "^10.1",
-                "rector/rector": "^1.2",
-                "symplify/easy-coding-standard": "^11.4"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "suggest": {
                 "ext-exif": "*"
@@ -1524,7 +1699,17 @@
             "autoload-dev": {
                 "psr-4": {
                     "Spip\\Test\\Images\\": "tests/"
-                }
+                },
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1541,7 +1726,7 @@
                 "source": "https://git.spip.net/spip/images/-/tree/master",
                 "issues": "https://git.spip.net/spip/images/-/issues"
             },
-            "time": "2024-12-02T16:22:05+01:00"
+            "time": "2024-12-16T19:45:17+01:00"
         },
         {
             "name": "spip/mediabox",
@@ -1549,22 +1734,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/mediabox.git",
-                "reference": "f5f1e80e5ecbb6866db0cff4ddeba34591fe4fe8"
+                "reference": "626a335dc748becd8f40de820e5b981610572319"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmediabox/repository/archive.zip?sha=f5f1e80e5ecbb6866db0cff4ddeba34591fe4fe8",
-                "reference": "f5f1e80e5ecbb6866db0cff4ddeba34591fe4fe8",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmediabox/repository/archive.zip?sha=626a335dc748becd8f40de820e5b981610572319",
+                "reference": "626a335dc748becd8f40de820e5b981610572319",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1572,6 +1756,22 @@
                 "branch-alias": {
                     "dev-master": "3.2.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_articles.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1585,10 +1785,10 @@
             ],
             "description": "Boîte multimédia",
             "support": {
-                "source": "https://git.spip.net/spip/mediabox/-/tree/3.2.0",
+                "source": "https://git.spip.net/spip/mediabox/-/tree/master",
                 "issues": "https://git.spip.net/spip/mediabox/-/issues"
             },
-            "time": "2024-11-26T20:25:25+01:00"
+            "time": "2024-12-16T19:42:44+01:00"
         },
         {
             "name": "spip/medias",
@@ -1596,23 +1796,24 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/medias.git",
-                "reference": "38b0753232da8ff124c1ad90b74a646ff113e54a"
+                "reference": "c280d7b99024864792911376fb2a28ad1c95a28a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=38b0753232da8ff124c1ad90b74a646ff113e54a",
-                "reference": "38b0753232da8ff124c1ad90b74a646ff113e54a",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=c280d7b99024864792911376fb2a28ad1c95a28a",
+                "reference": "c280d7b99024864792911376fb2a28ad1c95a28a",
                 "shasum": ""
             },
             "require": {
                 "james-heinrich/getid3": "^1.9",
-                "php": "^8.2"
+                "php": "^8.2",
+                "spip/archiviste": "^3.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0",
+                "symfony/console": "^7.2"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1620,6 +1821,31 @@
                 "branch-alias": {
                     "dev-master": "5.0.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_cache.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_client.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_documents.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_rubriques.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1633,10 +1859,10 @@
             ],
             "description": "Gestion des medias dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/medias/-/tree/master",
+                "source": "https://git.spip.net/spip/medias/-/tree/fix_notice_image_absente_mediatheque",
                 "issues": "https://git.spip.net/spip/medias/-/issues"
             },
-            "time": "2024-12-09T12:04:43+01:00"
+            "time": "2024-12-18T15:31:34+01:00"
         },
         {
             "name": "spip/mots",
@@ -1644,22 +1870,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/mots.git",
-                "reference": "0097d58f3eb6f0e2c3fc682b64de1b73adfa11f6"
+                "reference": "e9f1af07c6216745368ccf0c1ec760a8d0aea346"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmots/repository/archive.zip?sha=0097d58f3eb6f0e2c3fc682b64de1b73adfa11f6",
-                "reference": "0097d58f3eb6f0e2c3fc682b64de1b73adfa11f6",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmots/repository/archive.zip?sha=e9f1af07c6216745368ccf0c1ec760a8d0aea346",
+                "reference": "e9f1af07c6216745368ccf0c1ec760a8d0aea346",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1667,6 +1892,27 @@
                 "branch-alias": {
                     "dev-master": "4.4.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_cache.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1680,10 +1926,10 @@
             ],
             "description": "Gestion des mots et groupes de mots dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/mots/-/tree/4.4.0",
+                "source": "https://git.spip.net/spip/mots/-/tree/master",
                 "issues": "https://git.spip.net/spip/mots/-/issues"
             },
-            "time": "2024-11-25T11:42:35+01:00"
+            "time": "2024-12-16T19:37:57+01:00"
         },
         {
             "name": "spip/plan",
@@ -1691,22 +1937,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/plan.git",
-                "reference": "baa78928dbdfca7ff6fa40f8c21cb278002f9e01"
+                "reference": "470745f012216f8a98cc57890a7e0fc127b2b163"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fplan/repository/archive.zip?sha=baa78928dbdfca7ff6fa40f8c21cb278002f9e01",
-                "reference": "baa78928dbdfca7ff6fa40f8c21cb278002f9e01",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fplan/repository/archive.zip?sha=470745f012216f8a98cc57890a7e0fc127b2b163",
+                "reference": "470745f012216f8a98cc57890a7e0fc127b2b163",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1714,6 +1959,18 @@
                 "branch-alias": {
                     "dev-master": "4.2.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_articles.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1727,10 +1984,10 @@
             ],
             "description": "Améliore la page plan du site de l'espace privé",
             "support": {
-                "source": "https://git.spip.net/spip/plan/-/tree/4.2.0",
+                "source": "https://git.spip.net/spip/plan/-/tree/master",
                 "issues": "https://git.spip.net/spip/plan/-/issues"
             },
-            "time": "2024-11-25T11:30:10+01:00"
+            "time": "2024-12-16T19:32:23+01:00"
         },
         {
             "name": "spip/porte-plume",
@@ -1738,22 +1995,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/porte-plume.git",
-                "reference": "83669c762e5a807497d31df0d336b47138d12375"
+                "reference": "f928e13799e23cd6329f12ace1cd7193817fdb13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=83669c762e5a807497d31df0d336b47138d12375",
-                "reference": "83669c762e5a807497d31df0d336b47138d12375",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=f928e13799e23cd6329f12ace1cd7193817fdb13",
+                "reference": "f928e13799e23cd6329f12ace1cd7193817fdb13",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1761,6 +2017,21 @@
                 "branch-alias": {
                     "dev-master": "3.2.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1774,10 +2045,10 @@
             ],
             "description": "Une barre d'outil pour bien écrire",
             "support": {
-                "source": "https://git.spip.net/spip/porte-plume/-/tree/3.2.0",
+                "source": "https://git.spip.net/spip/porte-plume/-/tree/master",
                 "issues": "https://git.spip.net/spip/porte-plume/-/issues"
             },
-            "time": "2024-11-25T12:13:21+01:00"
+            "time": "2024-12-17T19:44:56+01:00"
         },
         {
             "name": "spip/prive",
@@ -1785,19 +2056,56 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "2a8092095e7119a8facb5f937a2fc85285f733c5"
+                "reference": "1daab2895dab710a179a26bea60695a7d246cd12"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=2a8092095e7119a8facb5f937a2fc85285f733c5",
-                "reference": "2a8092095e7119a8facb5f937a2fc85285f733c5",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=1daab2895dab710a179a26bea60695a7d246cd12",
+                "reference": "1daab2895dab710a179a26bea60695a7d246cd12",
                 "shasum": ""
             },
+            "require": {
+                "spip/aide": "^3.3"
+            },
             "require-dev": {
-                "spip-league/kernel": "^2.x-dev"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/kernel": "^2.0",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-prive",
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_cache.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_client.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_installation.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_jobs.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_notification.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_articles.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_auteurs.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_documents.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_rubriques.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_validation.php"
+                ]
+            },
             "license": [
                 "GPL-3.0-only"
             ],
@@ -1806,7 +2114,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2024-12-04T19:02:46+01:00"
+            "time": "2024-12-19T10:38:31+01:00"
         },
         {
             "name": "spip/revisions",
@@ -1814,22 +2122,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/revisions.git",
-                "reference": "f934a329ac7918770b24490c49ea673824c4dab7"
+                "reference": "d96bef3cfe92a41ea44a89afbbe8831a50a437c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Frevisions/repository/archive.zip?sha=f934a329ac7918770b24490c49ea673824c4dab7",
-                "reference": "f934a329ac7918770b24490c49ea673824c4dab7",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Frevisions/repository/archive.zip?sha=d96bef3cfe92a41ea44a89afbbe8831a50a437c7",
+                "reference": "d96bef3cfe92a41ea44a89afbbe8831a50a437c7",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "dev-main",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1837,6 +2144,26 @@
                 "branch-alias": {
                     "dev-master": "3.2.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1850,10 +2177,10 @@
             ],
             "description": "Suivi des modifications des objets éditoriaux",
             "support": {
-                "source": "https://git.spip.net/spip/revisions/-/tree/3.2.0",
+                "source": "https://git.spip.net/spip/revisions/-/tree/master",
                 "issues": "https://git.spip.net/spip/revisions/-/issues"
             },
-            "time": "2024-11-27T16:11:32+01:00"
+            "time": "2024-12-17T20:13:38+01:00"
         },
         {
             "name": "spip/safehtml",
@@ -1861,22 +2188,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/safehtml.git",
-                "reference": "f6a42444807a13c00ac49de8e41e6d2ed41a8a97"
+                "reference": "9cf808033326dce32c236fd0703954eedb93c240"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=f6a42444807a13c00ac49de8e41e6d2ed41a8a97",
-                "reference": "f6a42444807a13c00ac49de8e41e6d2ed41a8a97",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=9cf808033326dce32c236fd0703954eedb93c240",
+                "reference": "9cf808033326dce32c236fd0703954eedb93c240",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1884,6 +2210,22 @@
                 "branch-alias": {
                     "dev-master": "3.2.x-dev"
                 }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spip\\Plugin\\Safehtml\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_image_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1897,10 +2239,10 @@
             ],
             "description": "Protection des forums contre le cross-site scripting",
             "support": {
-                "source": "https://git.spip.net/spip/safehtml/-/tree/3.2.0",
+                "source": "https://git.spip.net/spip/safehtml/-/tree/master",
                 "issues": "https://git.spip.net/spip/safehtml/-/issues"
             },
-            "time": "2024-11-25T12:57:13+01:00"
+            "time": "2024-12-17T21:10:32+01:00"
         },
         {
             "name": "spip/security",
@@ -1951,22 +2293,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/sites.git",
-                "reference": "0a1713e3dca202cfb559683cfa349b311ed7fde0"
+                "reference": "7673a35199d1acd040dc13258c7767e56e41b7db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=0a1713e3dca202cfb559683cfa349b311ed7fde0",
-                "reference": "0a1713e3dca202cfb559683cfa349b311ed7fde0",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=7673a35199d1acd040dc13258c7767e56e41b7db",
+                "reference": "7673a35199d1acd040dc13258c7767e56e41b7db",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -1974,6 +2315,29 @@
                 "branch-alias": {
                     "dev-master": "4.4.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_client.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_jobs.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_documents.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_rubriques.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -1987,10 +2351,10 @@
             ],
             "description": "Gestion des sites et de la syndication dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/sites/-/tree/4.4.0",
+                "source": "https://git.spip.net/spip/sites/-/tree/master",
                 "issues": "https://git.spip.net/spip/sites/-/issues"
             },
-            "time": "2024-11-25T11:52:24+01:00"
+            "time": "2024-12-16T19:09:00+01:00"
         },
         {
             "name": "spip/stats",
@@ -1998,22 +2362,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/stats.git",
-                "reference": "ece5d69fbffb1997f8858603e4b4cb4093b85b50"
+                "reference": "3048e1e11f52424d8441b8f21affa6e205ba0267"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fstats/repository/archive.zip?sha=ece5d69fbffb1997f8858603e4b4cb4093b85b50",
-                "reference": "ece5d69fbffb1997f8858603e4b4cb4093b85b50",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fstats/repository/archive.zip?sha=3048e1e11f52424d8441b8f21affa6e205ba0267",
+                "reference": "3048e1e11f52424d8441b8f21affa6e205ba0267",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -2021,6 +2384,27 @@
                 "branch-alias": {
                     "dev-master": "3.2.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -2034,10 +2418,10 @@
             ],
             "description": "Gestion des statistiques dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/stats/-/tree/3.2.0",
+                "source": "https://git.spip.net/spip/stats/-/tree/master",
                 "issues": "https://git.spip.net/spip/stats/-/issues"
             },
-            "time": "2024-11-25T13:06:53+01:00"
+            "time": "2024-12-16T18:56:08+01:00"
         },
         {
             "name": "spip/svp",
@@ -2045,22 +2429,22 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/svp.git",
-                "reference": "b8315f4ca370dea44ac281eae28f192c555decc5"
+                "reference": "d099e4b934131705efce5bea7f8a0320e82491b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=b8315f4ca370dea44ac281eae28f192c555decc5",
-                "reference": "b8315f4ca370dea44ac281eae28f192c555decc5",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=d099e4b934131705efce5bea7f8a0320e82491b1",
+                "reference": "d099e4b934131705efce5bea7f8a0320e82491b1",
                 "shasum": ""
             },
             "require": {
-                "php": "^8.2"
+                "php": "^8.2",
+                "spip/archiviste": "^3.0"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -2068,6 +2452,29 @@
                 "branch-alias": {
                     "dev-master": "3.3.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_cache.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_client.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -2086,10 +2493,10 @@
             ],
             "description": "SerVeur d'information et de téléchargement des Plugins",
             "support": {
-                "source": "https://git.spip.net/spip/svp/-/tree/master",
+                "source": "https://git.spip.net/spip/svp/-/tree/fix_rector_assignment",
                 "issues": "https://git.spip.net/spip/svp/-/issues"
             },
-            "time": "2024-12-05T15:43:31+01:00"
+            "time": "2024-12-19T16:12:47+01:00"
         },
         {
             "name": "spip/tw",
@@ -2097,22 +2504,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/tw.git",
-                "reference": "c1b64522e550f235be27eee8216c54af8e229835"
+                "reference": "0df15ee42a6b14a95e75898e3b1164dd6bd5a57f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=c1b64522e550f235be27eee8216c54af8e229835",
-                "reference": "c1b64522e550f235be27eee8216c54af8e229835",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=0df15ee42a6b14a95e75898e3b1164dd6bd5a57f",
+                "reference": "0df15ee42a6b14a95e75898e3b1164dd6bd5a57f",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
-                "rector/rector": "^1.2",
-                "spip/coding-standards": "^1.3"
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -2120,6 +2526,24 @@
                 "branch-alias": {
                     "dev-master": "3.4.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_filesystem.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_templating.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_validation.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -2133,10 +2557,10 @@
             ],
             "description": "Gestion de la typographie SPIP avec TextWheel",
             "support": {
-                "source": "https://git.spip.net/spip/tw/-/tree/master",
+                "source": "https://git.spip.net/spip/tw/-/tree/fix_rector_assignment",
                 "issues": "https://git.spip.net/spip/tw/-/issues"
             },
-            "time": "2024-11-28T10:31:29+01:00"
+            "time": "2024-12-19T12:19:20+01:00"
         },
         {
             "name": "spip/urls",
@@ -2144,23 +2568,22 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/urls.git",
-                "reference": "23c7bc4f40373c4e73fcbaea4f2e102795728985"
+                "reference": "3d4598f39568772aacb854ee8f0b943e3d687e4d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=23c7bc4f40373c4e73fcbaea4f2e102795728985",
-                "reference": "23c7bc4f40373c4e73fcbaea4f2e102795728985",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=3d4598f39568772aacb854ee8f0b943e3d687e4d",
+                "reference": "3d4598f39568772aacb854ee8f0b943e3d687e4d",
                 "shasum": ""
             },
             "require": {
-                "php": ">=8.2"
+                "php": "^8.2"
             },
             "require-dev": {
-                "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
-                "phpcompatibility/php-compatibility": "dev-develop",
                 "rector/rector": "^1.2",
-                "spip-league/kernel": "^2.x-dev",
-                "spip/coding-standards": "^1.3"
+                "spip-league/easy-coding-standard": "^1.1",
+                "spip-league/kernel": "^2.0",
+                "spip-league/sdk": "^1.0"
             },
             "default-branch": true,
             "type": "spip-plugin",
@@ -2168,6 +2591,25 @@
                 "branch-alias": {
                     "dev-master": "4.3.x-dev"
                 }
+            },
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_config.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_event_dispatching.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_http_server.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_i18n.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_logger.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_metas.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_objects_base.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_path.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_plugin_management.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_admin.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_text_processing.php",
+                    "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
             },
             "license": [
                 "GPL-3.0-or-later"
@@ -2181,10 +2623,10 @@
             ],
             "description": "Gestion des variantes d'URL signifiantes ou non",
             "support": {
-                "source": "https://git.spip.net/spip/urls/-/tree/4.3.0",
+                "source": "https://git.spip.net/spip/urls/-/tree/master",
                 "issues": "https://git.spip.net/spip/urls/-/issues"
             },
-            "time": "2024-11-27T15:08:42+01:00"
+            "time": "2024-12-16T15:48:33+01:00"
         },
         {
             "name": "symfony/clock",
@@ -3273,12 +3715,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "418c59fd080954f8c4aa5631d9502ecda2387118"
+                "reference": "2b2dd4ed5ccc0328b27d876397d0aded2c3461c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/418c59fd080954f8c4aa5631d9502ecda2387118",
-                "reference": "418c59fd080954f8c4aa5631d9502ecda2387118",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/2b2dd4ed5ccc0328b27d876397d0aded2c3461c8",
+                "reference": "2b2dd4ed5ccc0328b27d876397d0aded2c3461c8",
                 "shasum": ""
             },
             "require": {
@@ -3335,7 +3777,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0.8"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/11.0"
             },
             "funding": [
                 {
@@ -3343,7 +3785,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-12-11T12:34:27+00:00"
+            "time": "2024-12-20T06:20:05+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3600,12 +4042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "4c40dd02c6146fe9ed0b540f25724ce82d0baabd"
+                "reference": "c0185b7ea6d036ba53e301b688bca8ac4f10a6c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/4c40dd02c6146fe9ed0b540f25724ce82d0baabd",
-                "reference": "4c40dd02c6146fe9ed0b540f25724ce82d0baabd",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/c0185b7ea6d036ba53e301b688bca8ac4f10a6c0",
+                "reference": "c0185b7ea6d036ba53e301b688bca8ac4f10a6c0",
                 "shasum": ""
             },
             "require": {
@@ -3693,7 +4135,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-12T10:00:07+00:00"
+            "time": "2024-12-20T14:03:05+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -4690,12 +5132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "876b6303a5f2f6156a9497eb72f5131c8fdbaa92"
+                "reference": "ee43df6370a35da55d191bf2e066cf8c89f9a7d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/876b6303a5f2f6156a9497eb72f5131c8fdbaa92",
-                "reference": "876b6303a5f2f6156a9497eb72f5131c8fdbaa92",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/ee43df6370a35da55d191bf2e066cf8c89f9a7d0",
+                "reference": "ee43df6370a35da55d191bf2e066cf8c89f9a7d0",
                 "shasum": ""
             },
             "require": {
@@ -4765,7 +5207,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-12-12T06:45:37+00:00"
+            "time": "2024-12-14T16:08:18+00:00"
         },
         {
             "name": "theseer/tokenizer",
