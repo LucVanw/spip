@@ -401,6 +401,26 @@ Dans un squelette :
 [(#PARAM{spip.routes.back_office})]
 ```
 
+### `_ROOT_CWD`
+
+La constante `_ROOT_CWD` est dépréciée en SPIP4.4 et supprimée en SPIP5
+
+#### Avant
+
+```php
+$cwd = _ROOT_CWD;
+```
+
+#### Après
+
+```php
+use function \SpipLeague\Component\Kernel\app;
+
+$cwd = app()->getCwd();
+// ou
+$cwd = \SpipLeague\Component\Kernel\app()->getCwd();
+```
+
 ## Fonctions et variables Javascript
 
 SPIP5 amorce une émancipation du code javascript hors du giron de jQuery, et se tourne vers l'adoption d'usages plus modernes via les ESM. Ce chantier débute avec le fichier `config.js` dédié au stockage de la configation de SPIP et de ses plugins, et le fichier `ajaxCallBack.js`, en charge des rechargements dynamiques.
