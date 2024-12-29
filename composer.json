@@ -29,7 +29,7 @@
     "minimum-stability": "dev",
     "autoload-dev": {
         "psr-4": {
-            "Spip\\Test\\": "ecrire/tests/"
+            "Spip\\Test\\": "ecrire/tests/integration/"
         }
     },
     "archive": {

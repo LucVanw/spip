@@ -13,7 +13,7 @@
     colors="true">
   <testsuites>
     <testsuite name="default">
-      <directory>ecrire/tests</directory>
+      <directory>ecrire/tests/integration</directory>
     </testsuite>
     <testsuite name="spip/compresseur">
       <directory>./plugins-dist/spip/compresseur/tests</directory>
