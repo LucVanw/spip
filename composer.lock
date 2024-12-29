@@ -535,12 +535,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/cache.git",
-                "reference": "062f81afe94ede13ee9527cbb5a11bc9b75e9020"
+                "reference": "b3aca281bf85f9527acb478c4953e661c6c3cc53"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fcache/repository/archive.zip?sha=062f81afe94ede13ee9527cbb5a11bc9b75e9020",
-                "reference": "062f81afe94ede13ee9527cbb5a11bc9b75e9020",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fcache/repository/archive.zip?sha=b3aca281bf85f9527acb478c4953e661c6c3cc53",
+                "reference": "b3aca281bf85f9527acb478c4953e661c6c3cc53",
                 "shasum": ""
             },
             "require": {
@@ -613,7 +613,7 @@
                 "source": "https://git.spip.net/spip-league/cache/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/cache/-/issues"
             },
-            "time": "2024-12-21T10:49:05+01:00"
+            "time": "2024-12-27T13:21:43+01:00"
         },
         {
             "name": "spip-league/composer-installer",
@@ -837,20 +837,21 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/hasher.git",
-                "reference": "2b1e5cef907a21c2cbb1b4192344a54cc43cacc8"
+                "reference": "a8f28aeb2df8c93ff8faeb83010b44fc80d35ee1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhasher/repository/archive.zip?sha=2b1e5cef907a21c2cbb1b4192344a54cc43cacc8",
-                "reference": "2b1e5cef907a21c2cbb1b4192344a54cc43cacc8",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhasher/repository/archive.zip?sha=a8f28aeb2df8c93ff8faeb83010b44fc80d35ee1",
+                "reference": "a8f28aeb2df8c93ff8faeb83010b44fc80d35ee1",
                 "shasum": ""
             },
             "require": {
                 "php": ">=8.2"
             },
             "require-dev": {
-                "dragon-code/benchmark": "^2.5",
+                "dragon-code/benchmark": "^3.0",
                 "fakerphp/faker": "^1.23",
+                "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.0",
                 "rector/rector": "^2.0",
                 "spip-league/easy-coding-standard": "^1.1"
@@ -892,12 +893,12 @@
                 "test": [
                     "phpunit --colors --no-coverage"
                 ],
-                "test-coverage": [
-                    "@php -d xdebug.mode=coverage vendor/bin/phpunit --colors"
-                ],
                 "test-benchmark": [
                     "@php benchmark/stringify.php",
                     "@php benchmark/hasher.php"
+                ],
+                "test-coverage": [
+                    "@php -d xdebug.mode=coverage vendor/bin/phpunit --colors"
                 ]
             },
             "license": [
@@ -911,7 +912,7 @@
                 "source": "https://git.spip.net/spip-league/hasher/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/hasher/-/issues"
             },
-            "time": "2024-12-21T10:47:29+01:00"
+            "time": "2024-12-26T23:55:54+01:00"
         },
         {
             "name": "spip-league/kernel",
@@ -919,12 +920,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/kernel.git",
-                "reference": "35bb75a4ac81e27939f532f7c7f251df9a9af2c3"
+                "reference": "f491cceb9c4334782a751eb058b7ae382aeca400"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=35bb75a4ac81e27939f532f7c7f251df9a9af2c3",
-                "reference": "35bb75a4ac81e27939f532f7c7f251df9a9af2c3",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=f491cceb9c4334782a751eb058b7ae382aeca400",
+                "reference": "f491cceb9c4334782a751eb058b7ae382aeca400",
                 "shasum": ""
             },
             "require": {
@@ -933,6 +934,7 @@
                 "symfony/filesystem": "^7.2"
             },
             "require-dev": {
+                "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.4",
                 "rector/rector": "^2.0",
                 "spip-league/easy-coding-standard": "^1.1",
@@ -994,7 +996,7 @@
                 "source": "https://git.spip.net/spip-league/kernel/-/tree/2.x",
                 "issues": "https://git.spip.net/spip-league/kernel/-/issues"
             },
-            "time": "2024-12-25T12:09:26+01:00"
+            "time": "2024-12-27T14:44:42+01:00"
         },
         {
             "name": "spip-league/logger",
@@ -1002,12 +1004,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/logger.git",
-                "reference": "60eb394433b011da1f3d8c946345ed0e50490224"
+                "reference": "ddaf1e1b1cfce64821d4aed6e4821605868dd638"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Flogger/repository/archive.zip?sha=60eb394433b011da1f3d8c946345ed0e50490224",
-                "reference": "60eb394433b011da1f3d8c946345ed0e50490224",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Flogger/repository/archive.zip?sha=ddaf1e1b1cfce64821d4aed6e4821605868dd638",
+                "reference": "ddaf1e1b1cfce64821d4aed6e4821605868dd638",
                 "shasum": ""
             },
             "require": {
@@ -1016,6 +1018,7 @@
                 "spip-league/filesystem-contracts": "^1.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.0",
                 "rector/rector": "^2.0",
                 "spip-league/easy-coding-standard": "^1.1",
@@ -1079,9 +1082,9 @@
             ],
             "support": {
                 "issues": "https://git.spip.net/spip-league/logger/issues",
-                "source": "https://git.spip.net/spip-league/logger/-/tree/2.0.2"
+                "source": "https://git.spip.net/spip-league/logger/-/tree/main"
             },
-            "time": "2024-12-25T14:17:14+01:00"
+            "time": "2024-12-27T14:49:14+01:00"
         },
         {
             "name": "spip-league/path",
@@ -1089,12 +1092,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/path.git",
-                "reference": "1ec4b668d4fad94fd0bc916c19f6f2d96aeb9e85"
+                "reference": "51bc6c6ddcf42911c931a51c4e8b58cac1e3f9dd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fpath/repository/archive.zip?sha=1ec4b668d4fad94fd0bc916c19f6f2d96aeb9e85",
-                "reference": "1ec4b668d4fad94fd0bc916c19f6f2d96aeb9e85",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fpath/repository/archive.zip?sha=51bc6c6ddcf42911c931a51c4e8b58cac1e3f9dd",
+                "reference": "51bc6c6ddcf42911c931a51c4e8b58cac1e3f9dd",
                 "shasum": ""
             },
             "require": {
@@ -1106,6 +1109,7 @@
                 "spip-league/hasher": "^2.0"
             },
             "require-dev": {
+                "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.4",
                 "rector/rector": "^2.0",
                 "spip-league/easy-coding-standard": "^1.1",
@@ -1156,10 +1160,10 @@
             ],
             "description": "SPIP Path Component",
             "support": {
-                "source": "https://git.spip.net/spip-league/path/-/tree/2.1.0",
+                "source": "https://git.spip.net/spip-league/path/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/path/-/issues"
             },
-            "time": "2024-12-21T14:46:00+01:00"
+            "time": "2024-12-27T14:48:29+01:00"
         },
         {
             "name": "spip/aide",
@@ -1653,12 +1657,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "e5f0d944433bb772548d5812c416009f7d0b0275"
+                "reference": "d628b7ccf64d208c974da960152f81a56f09521c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=e5f0d944433bb772548d5812c416009f7d0b0275",
-                "reference": "e5f0d944433bb772548d5812c416009f7d0b0275",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=d628b7ccf64d208c974da960152f81a56f09521c",
+                "reference": "d628b7ccf64d208c974da960152f81a56f09521c",
                 "shasum": ""
             },
             "require": {
@@ -1680,6 +1684,7 @@
                 "symfony/polyfill-php84": "^1.31"
             },
             "require-dev": {
+                "phpstan/phpstan": "^2.0",
                 "phpunit/phpunit": "^11.4",
                 "rector/rector": "^2.0",
                 "spip-league/easy-coding-standard": "^1.0",
@@ -1724,7 +1729,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2024-12-26T14:43:02+01:00"
+            "time": "2024-12-29T10:57:22+01:00"
         },
         {
             "name": "spip/forum",
@@ -1930,12 +1935,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/medias.git",
-                "reference": "d44d4ba78d18fdcb019d04a2e0ed37557c82a9c2"
+                "reference": "0592bf124db25a1469a1cdfc67f3b69e8283aabe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=d44d4ba78d18fdcb019d04a2e0ed37557c82a9c2",
-                "reference": "d44d4ba78d18fdcb019d04a2e0ed37557c82a9c2",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=0592bf124db25a1469a1cdfc67f3b69e8283aabe",
+                "reference": "0592bf124db25a1469a1cdfc67f3b69e8283aabe",
                 "shasum": ""
             },
             "require": {
@@ -2013,7 +2018,7 @@
                 "source": "https://git.spip.net/spip/medias/-/tree/master",
                 "issues": "https://git.spip.net/spip/medias/-/issues"
             },
-            "time": "2024-12-26T14:45:19+01:00"
+            "time": "2024-12-26T15:13:47+01:00"
         },
         {
             "name": "spip/mots",
@@ -2953,12 +2958,12 @@
             "default-branch": true,
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.6-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -3486,12 +3491,12 @@
             "default-branch": true,
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "3.6-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
