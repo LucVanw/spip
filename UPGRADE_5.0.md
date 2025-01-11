@@ -366,6 +366,9 @@ La recherhe d'un fichier `mes_options` dans `ecrire` n'est plus supporté. Le fi
 
 ### `_DIR_RESTREINT_ABS`
 
+
+Certaines constantes sont dépréciées en SPIP4.4 et supprimée en SPIP5
+
 La constante `_DIR_RESTREINT_ABS` est dépréciée en SPIP4.4 et supprimée en SPIP5 au profit de paramètres gérés dans un [conteneur de services](https://symfony.com/doc/current/service_container.html).
 
 [Voir aussi la documentation de développement](https://symfony.com/doc/current/components/dependency_injection.html)
@@ -403,7 +406,6 @@ Dans un squelette :
 
 ### `_ROOT_CWD`
 
-La constante `_ROOT_CWD` est dépréciée en SPIP4.4 et supprimée en SPIP5
 
 #### Avant
 
@@ -419,6 +421,26 @@ use function \SpipLeague\Component\Kernel\app;
 $cwd = app()->getCwd();
 // ou
 $cwd = \SpipLeague\Component\Kernel\app()->getCwd();
+
+```
+
+### `_DIR_LOG`
+
+
+#### Avant
+
+```php
+
+_DIR_LOG
+
+```
+
+#### Après
+
+```php
+
+use function \SpipLeague\Component\Kernel\app;
+app()->getLogDir()
 ```
 
 ## Fonctions et variables Javascript
