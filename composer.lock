@@ -153,12 +153,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/composer-installer.git",
-                "reference": "d64df8d5711d73128a2bafc91274ad3c8b82a60f"
+                "reference": "bd783266751ccff086b239cf51295236d7ba5ba9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fcomposer-installer/repository/archive.zip?sha=d64df8d5711d73128a2bafc91274ad3c8b82a60f",
-                "reference": "d64df8d5711d73128a2bafc91274ad3c8b82a60f",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fcomposer-installer/repository/archive.zip?sha=bd783266751ccff086b239cf51295236d7ba5ba9",
+                "reference": "bd783266751ccff086b239cf51295236d7ba5ba9",
                 "shasum": ""
             },
             "require": {
@@ -166,7 +166,9 @@
             },
             "require-dev": {
                 "composer/composer": "^2.8",
-                "phpunit/phpunit": "^11.4"
+                "phpunit/phpunit": "^11.4",
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1"
             },
             "default-branch": true,
             "type": "composer-plugin",
@@ -186,6 +188,29 @@
                     "SpipLeague\\Test\\Composer\\": "tests/"
                 }
             },
+            "scripts": {
+                "analyse": [
+                    "vendor/bin/phpstan"
+                ],
+                "check-cs": [
+                    "vendor/bin/ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "vendor/bin/ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "vendor/bin/rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "vendor/bin/rector process --dry-run --ansi"
+                ],
+                "test": [
+                    "phpunit --colors --no-coverage"
+                ],
+                "test-coverage": [
+                    "@php -d xdebug.mode=coverage vendor/bin/phpunit --colors"
+                ]
+            },
             "license": [
                 "MIT"
             ],
@@ -197,10 +222,10 @@
             ],
             "description": "SPIP Composer Installer Plugin",
             "support": {
-                "source": "https://git.spip.net/spip-league/composer-installer/-/tree/0.8.1",
+                "source": "https://git.spip.net/spip-league/composer-installer/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/composer-installer/-/issues"
             },
-            "time": "2024-12-10T11:03:41+01:00"
+            "time": "2024-12-21T11:02:08+01:00"
         },
         {
             "name": "spip-league/kernel",
@@ -297,12 +322,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "81eab380400daa81c117b3f6888cad084501e6a7"
+                "reference": "c7a1198368a0875012ddc4830706cdf142b5a8f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=81eab380400daa81c117b3f6888cad084501e6a7",
-                "reference": "81eab380400daa81c117b3f6888cad084501e6a7",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=c7a1198368a0875012ddc4830706cdf142b5a8f2",
+                "reference": "c7a1198368a0875012ddc4830706cdf142b5a8f2",
                 "shasum": ""
             },
             "require": {
@@ -341,7 +366,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/4.4",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2024-12-13T19:05:31+01:00"
+            "time": "2024-12-25T10:04:46+01:00"
         },
         {
             "name": "spip/prive",
@@ -349,12 +374,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "8b26f31eed070b5f7f7be0f12f60954fc6515c46"
+                "reference": "9809d62fc75474531e2615905c3d7e765c259b7b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=8b26f31eed070b5f7f7be0f12f60954fc6515c46",
-                "reference": "8b26f31eed070b5f7f7be0f12f60954fc6515c46",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=9809d62fc75474531e2615905c3d7e765c259b7b",
+                "reference": "9809d62fc75474531e2615905c3d7e765c259b7b",
                 "shasum": ""
             },
             "require-dev": {
@@ -369,7 +394,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/1.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2024-12-13T19:32:10+01:00"
+            "time": "2025-01-06T15:51:06+01:00"
         },
         {
             "name": "spip/security",
@@ -522,12 +547,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
@@ -723,15 +748,16 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-mbstring.git",
-                "reference": "2369cb908b33d7b7518cce042615de430142497f"
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/2369cb908b33d7b7518cce042615de430142497f",
-                "reference": "2369cb908b33d7b7518cce042615de430142497f",
+                "url": "https://api.github.com/repos/symfony/polyfill-mbstring/zipball/6d857f4d76bd4b343eac26d6b539585d2bc56493",
+                "reference": "6d857f4d76bd4b343eac26d6b539585d2bc56493",
                 "shasum": ""
             },
             "require": {
+                "ext-iconv": "*",
                 "php": ">=7.2"
             },
             "provide": {
@@ -796,7 +822,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-10T14:38:51+00:00"
+            "time": "2024-12-23T08:48:59+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
@@ -1116,12 +1142,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php84.git",
-                "reference": "48e55b8ecb3a52432be17bcac66eaaa3c3336f68"
+                "reference": "6f7d7d5d6fba86c59105abea438b6459e567f64f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/48e55b8ecb3a52432be17bcac66eaaa3c3336f68",
-                "reference": "48e55b8ecb3a52432be17bcac66eaaa3c3336f68",
+                "url": "https://api.github.com/repos/symfony/polyfill-php84/zipball/6f7d7d5d6fba86c59105abea438b6459e567f64f",
+                "reference": "6f7d7d5d6fba86c59105abea438b6459e567f64f",
                 "shasum": ""
             },
             "require": {
@@ -1185,7 +1211,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2024-09-10T14:38:51+00:00"
+            "time": "2024-12-21T18:37:24+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -1214,12 +1240,12 @@
             },
             "type": "library",
             "extra": {
+                "thanks": {
+                    "url": "https://github.com/symfony/contracts",
+                    "name": "symfony/contracts"
+                },
                 "branch-alias": {
                     "dev-main": "2.5-dev"
-                },
-                "thanks": {
-                    "name": "symfony/contracts",
-                    "url": "https://github.com/symfony/contracts"
                 }
             },
             "autoload": {
