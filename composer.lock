@@ -322,12 +322,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "c7a1198368a0875012ddc4830706cdf142b5a8f2"
+                "reference": "363780f70201c57bf05b7940c2117f390c9741ef"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=c7a1198368a0875012ddc4830706cdf142b5a8f2",
-                "reference": "c7a1198368a0875012ddc4830706cdf142b5a8f2",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=363780f70201c57bf05b7940c2117f390c9741ef",
+                "reference": "363780f70201c57bf05b7940c2117f390c9741ef",
                 "shasum": ""
             },
             "require": {
@@ -366,7 +366,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/4.4",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2024-12-25T10:04:46+01:00"
+            "time": "2025-01-16T15:41:09+01:00"
         },
         {
             "name": "spip/prive",
@@ -374,12 +374,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "9809d62fc75474531e2615905c3d7e765c259b7b"
+                "reference": "6372aa994e28800afd5f1d08f3d81bdd8bebb7db"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=9809d62fc75474531e2615905c3d7e765c259b7b",
-                "reference": "9809d62fc75474531e2615905c3d7e765c259b7b",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=6372aa994e28800afd5f1d08f3d81bdd8bebb7db",
+                "reference": "6372aa994e28800afd5f1d08f3d81bdd8bebb7db",
                 "shasum": ""
             },
             "require-dev": {
@@ -394,7 +394,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/1.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2025-01-06T15:51:06+01:00"
+            "time": "2025-01-16T14:34:07+01:00"
         },
         {
             "name": "spip/security",
@@ -402,12 +402,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-contrib-outils/securite.git",
-                "reference": "b66f202b614a456258a8a3d1bd95271aff13b5ad"
+                "reference": "99d757ecea83df3e63ea453bb6d18810fffbc153"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-contrib-outils%2Fsecurite/repository/archive.zip?sha=b66f202b614a456258a8a3d1bd95271aff13b5ad",
-                "reference": "b66f202b614a456258a8a3d1bd95271aff13b5ad",
+                "url": "https://git.spip.net/api/v4/projects/spip-contrib-outils%2Fsecurite/repository/archive.zip?sha=99d757ecea83df3e63ea453bb6d18810fffbc153",
+                "reference": "99d757ecea83df3e63ea453bb6d18810fffbc153",
                 "shasum": ""
             },
             "require": {
@@ -434,10 +434,10 @@
             ],
             "description": "Protection du site par blocage de certaines attaques",
             "support": {
-                "source": "https://git.spip.net/spip-contrib-outils/securite/-/tree/1.6.3",
+                "source": "https://git.spip.net/spip-contrib-outils/securite/-/tree/1.6.4",
                 "issues": "https://git.spip.net/spip-contrib-outils/securite/-/issues"
             },
-            "time": "2024-08-20T11:36:52+02:00"
+            "time": "2025-01-16T16:00:59+01:00"
         },
         {
             "name": "symfony/dependency-injection",
