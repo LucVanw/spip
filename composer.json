@@ -27,7 +27,7 @@
             "url": "https://get.spip.net/composer"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "beta",
     "archive": {
         "name": "spip",
         "exclude": [
