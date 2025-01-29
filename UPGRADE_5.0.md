@@ -1,4 +1,4 @@
-# UPGRADE de SPIP 4.2 à 5.0
+# UPGRADE de SPIP 4.x à 5.0
 
 ## Préliminaires
 
