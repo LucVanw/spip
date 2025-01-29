@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.4.0-beta4 - 2025-01-29
+
+### Changed
+
+- Mise à jour des dépendances (ecrire).
+
 ## 4.4.0-beta3 - 2025-01-17
 
 ### Changed
