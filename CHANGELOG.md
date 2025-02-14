@@ -1,5 +1,11 @@
 # Changelog
 
+## 4.4.0 - 2025-02-14
+
+### Changed
+
+- Mise à jour des dépendances.
+
 ## 4.4.0-beta4 - 2025-01-29
 
 ### Changed
