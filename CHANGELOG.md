@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.2 - 2025-02-18
+
+- Mise à jour des dépendances (ecrire).
+ 
 ## 4.4.1 - 2025-02-18
 
 - Mise à jour des dépendances (ecrire, dump, medias, sites).
