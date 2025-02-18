@@ -33,7 +33,7 @@
         "path": "plugins-dist/dump",
         "source": "https://git.spip.net/spip/dump.git",
         "branch": "2.2",
-        "tag": "2.2.0"
+        "tag": "2.2.1"
     },
     "filtres_images": {
         "path": "plugins-dist/filtres_images",
@@ -57,7 +57,7 @@
         "path": "plugins-dist/medias",
         "source": "https://git.spip.net/spip/medias.git",
         "branch": "4.4",
-        "tag": "4.4.2"
+        "tag": "4.4.3"
     },
     "mots": {
         "path": "plugins-dist/mots",
@@ -93,7 +93,7 @@
         "path": "plugins-dist/sites",
         "source": "https://git.spip.net/spip/sites.git",
         "branch": "4.3",
-        "tag": "4.3.2"
+        "tag": "4.3.3"
     },
     "statistiques": {
         "path": "plugins-dist/statistiques",
