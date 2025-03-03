@@ -443,6 +443,41 @@ use function \SpipLeague\Component\Kernel\app;
 app()->getLogDir()
 ```
 
+### `_ESPACE_PRIVE`
+
+#### Avant
+
+```php
+if (defined('_ESPACE_PRIVE')) {
+    ...
+} else {
+    ...
+}
+```
+
+En squelette :
+
+```spip
+[(#CONST{_ESPACE_PRIVE}|?{oui,non})]
+```
+
+#### Après
+
+```php
+if (\SpipLeague\Component\Kernel\App()
+		->isBackOffice()) {
+    ...
+} else {
+    ...
+}
+```
+En squelette :
+
+```spip
+[(#NULL|test_espace_prive|?{oui,non})]
+```
+
+
 ## Fonctions et variables Javascript
 
 SPIP5 amorce une émancipation du code javascript hors du giron de jQuery, et se tourne vers l'adoption d'usages plus modernes via les ESM. Ce chantier débute avec le fichier `config.js` dédié au stockage de la configation de SPIP et de ses plugins, et le fichier `ajaxCallBack.js`, en charge des rechargements dynamiques.
