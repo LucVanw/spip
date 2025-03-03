@@ -353,6 +353,40 @@ Le formulaire d'association des liens à un objet est éditable à partir du mom
 
 Pour les personnes ayant surchargé les squelettes de ce formulaire ou ayant des pipelines se branchant dessus, il convient d'effectuer les adaptations nécessaires à la modification du paramètre `editable`.
 
+## Le menu « Squelettes » de l'espace privé devient « Apparence »
+
+Le menu « Squelettes » (identifiant `menu_squelette`) de l'espace privé est renommé « Apparence » (identifiant `menu_apparence`).
+
+Bien qu'une rétrocompatibilité soit assurée, il convient de corriger dès maintenant les appels.
+
+### Avant
+
+```
+<menu nom="..." titre="..." parent="menu_squelette" icone="..." action="..." />
+```
+
+### Après
+
+```
+<menu nom="..." titre="..." parent="menu_apparence" icone="..." action="..." />
+```
+
+## Les menus préfixés par `bando_` doivent être préfixés par `menu_`
+
+Si un menu a pour parent un menu dont l'identifiant commençe par `bando_`, celui-ci continue d'être automatiquement converti en menu commençant par `menu_`. Mais cette conversion est dépréciée et sera supprimée en 6.0. Il convient de corriger les appels.
+
+
+### Avant
+
+```
+<menu nom="..." titre="..." parent="bando_xxx" icone="..." action="..." />
+```
+
+### Après
+
+```
+<menu nom="..." titre="..." parent="menu_xxx" icone="..." action="..." />
+```
 
 # Suppressions des éléments dépréciés
 
@@ -464,8 +498,8 @@ En squelette :
 #### Après
 
 ```php
-if (\SpipLeague\Component\Kernel\App()
-		->isBackOffice()) {
+use function \SpipLeague\Component\Kernel\app;
+if (app()->isBackOffice()) {
     ...
 } else {
     ...
