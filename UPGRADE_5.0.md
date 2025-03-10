@@ -455,7 +455,6 @@ use function \SpipLeague\Component\Kernel\app;
 $cwd = app()->getCwd();
 // ou
 $cwd = \SpipLeague\Component\Kernel\app()->getCwd();
-
 ```
 
 ### `_DIR_LOG`
@@ -464,15 +463,12 @@ $cwd = \SpipLeague\Component\Kernel\app()->getCwd();
 #### Avant
 
 ```php
-
 _DIR_LOG
-
 ```
 
 #### Après
 
 ```php
-
 use function \SpipLeague\Component\Kernel\app;
 app()->getLogDir()
 ```
@@ -511,6 +507,25 @@ En squelette :
 [(#NULL|test_espace_prive|?{oui,non})]
 ```
 
+
+### `_ROOT_IMG_PACK` & `_DIR_IMG_PACK`
+
+#### Avant
+
+```php
+$absolute = _ROOT_IMG_PACK;
+$relative = _DIR_IMG_PACK;
+```
+
+#### Après
+
+```php
+use function \SpipLeague\Component\Kernel\app;
+$absolute = app()->getPrivateTemplateDir() . _NOM_IMG_PACK;
+$relative = app()->relative()->getPrivateTemplateDir() . _NOM_IMG_PACK;
+```
+
+Préferez cependant `find_in_theme()` ou `chemin_image()` (qui recherchent dans des dossiers différents).
 
 ## Fonctions et variables Javascript
 
