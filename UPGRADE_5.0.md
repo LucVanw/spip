@@ -317,6 +317,29 @@ $url = url_absolue($url);
 [(#URL_ARTICLE|url_absolue)]
 ```
 
+## Test HTML5
+
+Les tests pour envoyer un code différent selon que l'on est où pas en HTML5 sont dépréciés et seront supprimés en SPIP 6.
+
+### Avant
+
+En squelette
+```spip
+[(#HTML5|oui) <code_specifique_html5>]
+```
+
+En php
+
+```php
+if (html5_permis()) {
+    <code_specifique_html5>
+}
+```
+
+### Après
+
+Utiliser directement du code HTML5.
+
 # Renommage / changement de configurations
 
 ## Nettoyage des paramètres d’URI
