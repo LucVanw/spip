@@ -645,6 +645,25 @@ Les éléments suivants sont dépréciés et seront supprimés dans une future v
 
 Le surlignage des mots de recherche est déplacé dans [le nouveau plugin Surligne](https://plugins.spip.net/surligne)
 
+## Détection automatique de la valeur du 5eme argument de `calculer_parties()`.
+
+Le 5eme argument de la fonction `calculer_parties()` utilisée pour compiler certains critères doit désormais être passé explicitement.
+
+### Avant
+
+```php
+
+$boucle->total_parties = $pas;
+calculer_parties($boucles, $idb, $partie, $mode);
+```
+
+### Après
+
+```php
+
+$boucle->total_parties = $pas;
+calculer_parties($boucles, $idb, $partie, $mode, $pas);
+```
 
 ## Fonction `formulaire_recherche()`
 
