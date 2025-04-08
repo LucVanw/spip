@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.3 - 2025-04-08
+
+- Mise à jour des dépendances (ecrire, prive, compagnon, forum, medias, textwheel).
+- 
 ## 4.4.2 - 2025-02-18
 
 - Mise à jour des dépendances (ecrire).
