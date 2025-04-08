@@ -21,7 +21,7 @@
         "path": "plugins-dist/compagnon",
         "source": "https://git.spip.net/spip/compagnon.git",
         "branch": "3.2",
-        "tag": "3.2.0"
+        "tag": "3.2.1"
     },
     "compresseur": {
         "path": "plugins-dist/compresseur",
@@ -45,7 +45,7 @@
         "path": "plugins-dist/forum",
         "source": "https://git.spip.net/spip/forum.git",
         "branch": "3.1",
-        "tag": "v3.1.11"
+        "tag": "3.1.12"
     },
     "mediabox": {
         "path": "plugins-dist/mediabox",
@@ -57,7 +57,7 @@
         "path": "plugins-dist/medias",
         "source": "https://git.spip.net/spip/medias.git",
         "branch": "4.4",
-        "tag": "4.4.3"
+        "tag": "4.4.4"
     },
     "mots": {
         "path": "plugins-dist/mots",
@@ -111,7 +111,7 @@
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
         "branch": "3.3",
-        "tag": "3.3.2"
+        "tag": "3.3.3"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
