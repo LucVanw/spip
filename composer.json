@@ -19,27 +19,7 @@
         "symfony/polyfill-php81": "^1.31",
         "symfony/polyfill-php82": "^1.31",
         "symfony/polyfill-php83": "^1.31",
-        "symfony/polyfill-php84": "^1.31",
-        "spip/aide": "^3.2",
-        "spip/archiviste": "^2.2",
-        "spip/bigup": "^3.3",
-        "spip/compagnon": "^3.2",
-        "spip/compresseur": "^2.2",
-        "spip/dump": "^2.2",
-        "spip/images": "^4.3",
-        "spip/forum": "^3.1",
-        "spip/mediabox": "^3.1",
-        "spip/medias": "^4.4",
-        "spip/mots": "^4.3",
-        "spip/plan": "^4.1",
-        "spip/porte-plume": "^3.1",
-        "spip/revisions": "^3.1",
-        "spip/safehtml": "^3.1",
-        "spip/sites": "^4.3",
-        "spip/stats": "^3.1",
-        "spip/svp": "^3.2",
-        "spip/tw": "^3.3",
-        "spip/urls": "^4.2"
+        "symfony/polyfill-php84": "^1.31"
     },
     "repositories": {
         "spip": {
@@ -70,8 +50,7 @@
         "spip": {
             "back_office": "spip/ecrire",
             "private_template": "spip/prive",
-            "template": "spip/dist",
-            "extensions": ["spip/aide", "spip/archiviste", "spip/bigup", "spip/compagnon", "spip/compresseur", "spip/dump", "spip/images", "spip/forum", "spip/mediabox", "spip/medias", "spip/mots", "spip/plan", "spip/porte-plume", "spip/revisions", "spip/safehtml", "spip/sites", "spip/stats", "spip/svp", "spip/tw", "spip/urls"]
+            "template": "spip/dist"
         }
     }
 }

@@ -1,0 +1,16 @@
+#composer & outils
+/vendor/
+/composer.phar
+/composer.local.*
+/phpunit.xml
+/.phpunit.cache
+/docker-compose.override.yml
+/docker-compose.yml
+/*.zip
+
+# SPIP
+/config/*.php
+/plugins-dist/
+/squelettes-dist/
+/prive/
+/ecrire/
