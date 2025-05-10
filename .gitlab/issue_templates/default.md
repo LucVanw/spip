@@ -4,10 +4,9 @@
 2. ...
 3. ...
 
-## Comportement attendu / Comportement obtenu
+## Comportement attendu
 
-_Qu'est ce que vous vous attendez à obtenir ?_\
-_Quel est le résultat réellement obtenu ?_
+_Que devrait-on obtenir ?_
 
 ## Piste de résolution
 
