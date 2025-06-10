@@ -927,6 +927,25 @@ $json = var2js($data);
 $json = json_encode($data);
 ```
 
+
+### Filtre `regledetrois`
+
+La fonction ou filtre `regledetrois` est supprimée.
+Elle ne servait plus dans le core et n’a pas vraiment d’utilité.
+
+#### Avant
+
+```html
+[(#VAL{6}|regledetrois{4,3})] retourne 8
+```
+
+#### Après
+
+```html
+[(#VAL{6}|div{3}|mult{4})] retourne 8
+```
+
+
 ## Variables globales
 
 ### `auteur_session`
