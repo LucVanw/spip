@@ -340,6 +340,22 @@ if (html5_permis()) {
 
 Utiliser directement du code HTML5.
 
+## Fonction `mail_embarquer_pieces_jointes()`
+
+La création d'une fonction `mail_embarquer_pieces_jointes()` est dépréciée.
+
+### Avant
+
+```php
+function mail_embarquer_pieces_jointes(....) {
+    ....
+}
+```
+
+### Après
+
+Utiliser le plugin `facteur`.
+
 # Renommage / changement de configurations
 
 ## Nettoyage des paramètres d’URI
