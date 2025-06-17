@@ -1065,12 +1065,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/kernel.git",
-                "reference": "56b8687be86409f528cce5db788d2aaa685119a0"
+                "reference": "5d4d24f1cb164be6c340c273ce486e0b0d529c33"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=56b8687be86409f528cce5db788d2aaa685119a0",
-                "reference": "56b8687be86409f528cce5db788d2aaa685119a0",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=5d4d24f1cb164be6c340c273ce486e0b0d529c33",
+                "reference": "5d4d24f1cb164be6c340c273ce486e0b0d529c33",
                 "shasum": ""
             },
             "require": {
@@ -1141,7 +1141,7 @@
                 "source": "https://git.spip.net/spip-league/kernel/-/tree/2.x",
                 "issues": "https://git.spip.net/spip-league/kernel/-/issues"
             },
-            "time": "2025-03-19T11:41:12+01:00"
+            "time": "2025-06-06T12:51:07+02:00"
         },
         {
             "name": "spip-league/logger",
@@ -1316,12 +1316,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/aide.git",
-                "reference": "fc7f71875897e094e417adbc745cf2b3f954a3c2"
+                "reference": "fd3aaa1368155c2de4db0e405cbaae1731fc3bdc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=fc7f71875897e094e417adbc745cf2b3f954a3c2",
-                "reference": "fc7f71875897e094e417adbc745cf2b3f954a3c2",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=fd3aaa1368155c2de4db0e405cbaae1731fc3bdc",
+                "reference": "fd3aaa1368155c2de4db0e405cbaae1731fc3bdc",
                 "shasum": ""
             },
             "require": {
@@ -1373,7 +1373,7 @@
                 "source": "https://git.spip.net/spip/aide/-/tree/master",
                 "issues": "https://git.spip.net/spip/aide/-/issues"
             },
-            "time": "2025-06-02T14:16:30+02:00"
+            "time": "2025-06-12T01:30:03+02:00"
         },
         {
             "name": "spip/archiviste",
@@ -1451,12 +1451,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/bigup.git",
-                "reference": "a65d3c3b6ed5487fca588b960c5c6a08f372ebc6"
+                "reference": "1f7112295aa64fe0da5b947fdc60c88283c1e882"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=a65d3c3b6ed5487fca588b960c5c6a08f372ebc6",
-                "reference": "a65d3c3b6ed5487fca588b960c5c6a08f372ebc6",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=1f7112295aa64fe0da5b947fdc60c88283c1e882",
+                "reference": "1f7112295aa64fe0da5b947fdc60c88283c1e882",
                 "shasum": ""
             },
             "require": {
@@ -1511,10 +1511,10 @@
             ],
             "description": "Téléverser des gros fichiers",
             "support": {
-                "source": "https://git.spip.net/spip/bigup/-/tree/master",
+                "source": "https://git.spip.net/spip/bigup/-/tree/HTML5",
                 "issues": "https://git.spip.net/spip/bigup/-/issues"
             },
-            "time": "2025-02-16T21:48:32+01:00"
+            "time": "2025-06-15T14:42:44+02:00"
         },
         {
             "name": "spip/classic-distribution",
@@ -1571,12 +1571,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compagnon.git",
-                "reference": "a90d8faffabf443afef38881884b95f5702866db"
+                "reference": "a064ca6812e071e8d711dcebf6c4d16077315c82"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=a90d8faffabf443afef38881884b95f5702866db",
-                "reference": "a90d8faffabf443afef38881884b95f5702866db",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=a064ca6812e071e8d711dcebf6c4d16077315c82",
+                "reference": "a064ca6812e071e8d711dcebf6c4d16077315c82",
                 "shasum": ""
             },
             "require": {
@@ -1625,7 +1625,7 @@
                 "source": "https://git.spip.net/spip/compagnon/-/tree/master",
                 "issues": "https://git.spip.net/spip/compagnon/-/issues"
             },
-            "time": "2025-03-25T01:30:02+01:00"
+            "time": "2025-06-12T01:30:05+02:00"
         },
         {
             "name": "spip/compresseur",
@@ -1633,12 +1633,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compresseur.git",
-                "reference": "3c565614f04651899c4f48284849faf9fbdd1755"
+                "reference": "a60f665d06f075940914896f6a76e9af3bd1e398"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=3c565614f04651899c4f48284849faf9fbdd1755",
-                "reference": "3c565614f04651899c4f48284849faf9fbdd1755",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=a60f665d06f075940914896f6a76e9af3bd1e398",
+                "reference": "a60f665d06f075940914896f6a76e9af3bd1e398",
                 "shasum": ""
             },
             "require": {
@@ -1691,10 +1691,10 @@
             ],
             "description": "Compression des css et javascript",
             "support": {
-                "source": "https://git.spip.net/spip/compresseur/-/tree/master",
+                "source": "https://git.spip.net/spip/compresseur/-/tree/HTML5",
                 "issues": "https://git.spip.net/spip/compresseur/-/issues"
             },
-            "time": "2025-02-03T01:30:04+01:00"
+            "time": "2025-06-15T14:41:22+02:00"
         },
         {
             "name": "spip/dist",
@@ -1702,12 +1702,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "33b54d350785d7b7eef2dca45359db484d0c8980"
+                "reference": "463836f801396613315184f8699a3e8ca82fc345"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=33b54d350785d7b7eef2dca45359db484d0c8980",
-                "reference": "33b54d350785d7b7eef2dca45359db484d0c8980",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=463836f801396613315184f8699a3e8ca82fc345",
+                "reference": "463836f801396613315184f8699a3e8ca82fc345",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1729,10 +1729,10 @@
             ],
             "description": "Squelettes par défaut de SPIP 4.0",
             "support": {
-                "source": "https://git.spip.net/spip/dist/-/tree/issue_ecrire_61",
+                "source": "https://git.spip.net/spip/dist/-/tree/html5",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2025-03-19T18:10:38+01:00"
+            "time": "2025-06-15T20:22:57+02:00"
         },
         {
             "name": "spip/dump",
@@ -1802,12 +1802,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "2d9dac96ec6219216b21b898d9c3553cae17fc47"
+                "reference": "44013a8070a22881c3bf7007d5be7ab33a5adf22"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=2d9dac96ec6219216b21b898d9c3553cae17fc47",
-                "reference": "2d9dac96ec6219216b21b898d9c3553cae17fc47",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=44013a8070a22881c3bf7007d5be7ab33a5adf22",
+                "reference": "44013a8070a22881c3bf7007d5be7ab33a5adf22",
                 "shasum": ""
             },
             "require": {
@@ -1880,7 +1880,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2025-06-10T15:57:47+02:00"
+            "time": "2025-06-16T11:58:35+02:00"
         },
         {
             "name": "spip/forum",
@@ -1888,12 +1888,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/forum.git",
-                "reference": "51469daf3d8f9ea0446a7ea1fa2199e96d4afe39"
+                "reference": "b0d67cf136378dd37f55c8453e12848f52b8ea3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=51469daf3d8f9ea0446a7ea1fa2199e96d4afe39",
-                "reference": "51469daf3d8f9ea0446a7ea1fa2199e96d4afe39",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=b0d67cf136378dd37f55c8453e12848f52b8ea3b",
+                "reference": "b0d67cf136378dd37f55c8453e12848f52b8ea3b",
                 "shasum": ""
             },
             "require": {
@@ -1948,10 +1948,10 @@
             ],
             "description": "Gestion des forums privés et publics dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/forum/-/tree/master",
+                "source": "https://git.spip.net/spip/forum/-/tree/HTML5",
                 "issues": "https://git.spip.net/spip/forum/-/issues"
             },
-            "time": "2025-02-23T10:01:18+01:00"
+            "time": "2025-06-15T14:39:25+02:00"
         },
         {
             "name": "spip/images",
@@ -1959,12 +1959,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/images.git",
-                "reference": "e02c486882478d3f9bea070499c8bf4746694e90"
+                "reference": "ed143128a0f76271ce90ece4e65dedd3c6f169e3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fimages/repository/archive.zip?sha=e02c486882478d3f9bea070499c8bf4746694e90",
-                "reference": "e02c486882478d3f9bea070499c8bf4746694e90",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fimages/repository/archive.zip?sha=ed143128a0f76271ce90ece4e65dedd3c6f169e3",
+                "reference": "ed143128a0f76271ce90ece4e65dedd3c6f169e3",
                 "shasum": ""
             },
             "require": {
@@ -2017,7 +2017,7 @@
                 "source": "https://git.spip.net/spip/images/-/tree/master",
                 "issues": "https://git.spip.net/spip/images/-/issues"
             },
-            "time": "2025-02-07T13:18:38+01:00"
+            "time": "2025-06-16T15:15:46+02:00"
         },
         {
             "name": "spip/mediabox",
@@ -2178,12 +2178,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/mots.git",
-                "reference": "ce1e0e45af50aed02d260b2ade7c6dd59bd42442"
+                "reference": "9e5aea3299c98f8fb3e25aad7d6f3a2f3e0960d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmots/repository/archive.zip?sha=ce1e0e45af50aed02d260b2ade7c6dd59bd42442",
-                "reference": "ce1e0e45af50aed02d260b2ade7c6dd59bd42442",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmots/repository/archive.zip?sha=9e5aea3299c98f8fb3e25aad7d6f3a2f3e0960d4",
+                "reference": "9e5aea3299c98f8fb3e25aad7d6f3a2f3e0960d4",
                 "shasum": ""
             },
             "require": {
@@ -2235,10 +2235,10 @@
             ],
             "description": "Gestion des mots et groupes de mots dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/mots/-/tree/issue_prive_83-editer-liens-liste-parfois-vide",
+                "source": "https://git.spip.net/spip/mots/-/tree/HTML5",
                 "issues": "https://git.spip.net/spip/mots/-/issues"
             },
-            "time": "2025-06-02T12:39:49+02:00"
+            "time": "2025-06-15T14:34:41+02:00"
         },
         {
             "name": "spip/plan",
@@ -2304,12 +2304,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/porte-plume.git",
-                "reference": "04bc0b8571bca4a9b602caa5e29bdfebe0823824"
+                "reference": "26ad8d5a569c9568a7cf560668cdd2f3716b5a13"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=04bc0b8571bca4a9b602caa5e29bdfebe0823824",
-                "reference": "04bc0b8571bca4a9b602caa5e29bdfebe0823824",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=26ad8d5a569c9568a7cf560668cdd2f3716b5a13",
+                "reference": "26ad8d5a569c9568a7cf560668cdd2f3716b5a13",
                 "shasum": ""
             },
             "require": {
@@ -2357,7 +2357,7 @@
                 "source": "https://git.spip.net/spip/porte-plume/-/tree/master",
                 "issues": "https://git.spip.net/spip/porte-plume/-/issues"
             },
-            "time": "2025-04-03T01:30:02+02:00"
+            "time": "2025-06-12T01:30:10+02:00"
         },
         {
             "name": "spip/prive",
@@ -2365,12 +2365,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "8179d52508149e898cdef2a7bcd0808c9cc7b4f8"
+                "reference": "9ee64f7b9f156fbc11b57df94230754d1bad79d6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=8179d52508149e898cdef2a7bcd0808c9cc7b4f8",
-                "reference": "8179d52508149e898cdef2a7bcd0808c9cc7b4f8",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=9ee64f7b9f156fbc11b57df94230754d1bad79d6",
+                "reference": "9ee64f7b9f156fbc11b57df94230754d1bad79d6",
                 "shasum": ""
             },
             "require": {
@@ -2440,7 +2440,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2025-06-02T13:30:22+02:00"
+            "time": "2025-06-17T14:19:44+02:00"
         },
         {
             "name": "spip/revisions",
@@ -2619,12 +2619,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/sites.git",
-                "reference": "154353bc64166525187c804efc4d7a8056e8a9e6"
+                "reference": "19556b31c0bf22f632d9b8381c1a2648da83d6a2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=154353bc64166525187c804efc4d7a8056e8a9e6",
-                "reference": "154353bc64166525187c804efc4d7a8056e8a9e6",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=19556b31c0bf22f632d9b8381c1a2648da83d6a2",
+                "reference": "19556b31c0bf22f632d9b8381c1a2648da83d6a2",
                 "shasum": ""
             },
             "require": {
@@ -2695,10 +2695,10 @@
             ],
             "description": "Gestion des sites et de la syndication dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/sites/-/tree/master",
+                "source": "https://git.spip.net/spip/sites/-/tree/HTML5",
                 "issues": "https://git.spip.net/spip/sites/-/issues"
             },
-            "time": "2025-02-17T11:05:43+01:00"
+            "time": "2025-06-15T14:45:10+02:00"
         },
         {
             "name": "spip/stats",
@@ -2912,12 +2912,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/urls.git",
-                "reference": "7c2a6d97bde3ed4aa47b0ea57b4b2eaa386ed1bb"
+                "reference": "7db6cb7a76ebe66c549d59be5ee84a1f444d4971"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=7c2a6d97bde3ed4aa47b0ea57b4b2eaa386ed1bb",
-                "reference": "7c2a6d97bde3ed4aa47b0ea57b4b2eaa386ed1bb",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=7db6cb7a76ebe66c549d59be5ee84a1f444d4971",
+                "reference": "7db6cb7a76ebe66c549d59be5ee84a1f444d4971",
                 "shasum": ""
             },
             "require": {
@@ -2970,7 +2970,7 @@
                 "source": "https://git.spip.net/spip/urls/-/tree/master",
                 "issues": "https://git.spip.net/spip/urls/-/issues"
             },
-            "time": "2025-06-07T01:30:01+02:00"
+            "time": "2025-06-12T01:30:11+02:00"
         },
         {
             "name": "symfony/clock",
@@ -4396,12 +4396,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "be3a59004b36dca5a37df26a6ab31693e09c589e"
+                "reference": "91f3e44276139a3fe6b1937f5a455dac1e8a380a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/be3a59004b36dca5a37df26a6ab31693e09c589e",
-                "reference": "be3a59004b36dca5a37df26a6ab31693e09c589e",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/91f3e44276139a3fe6b1937f5a455dac1e8a380a",
+                "reference": "91f3e44276139a3fe6b1937f5a455dac1e8a380a",
                 "shasum": ""
             },
             "require": {
@@ -4497,7 +4497,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-08T07:04:27+00:00"
+            "time": "2025-06-16T03:07:40+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -5521,12 +5521,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "f1813bfada160ee4eef03244d417bcac201212d8"
+                "reference": "f3c60ef73a09e7f181b954cbc50a6a4cdbd43558"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f1813bfada160ee4eef03244d417bcac201212d8",
-                "reference": "f1813bfada160ee4eef03244d417bcac201212d8",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/f3c60ef73a09e7f181b954cbc50a6a4cdbd43558",
+                "reference": "f3c60ef73a09e7f181b954cbc50a6a4cdbd43558",
                 "shasum": ""
             },
             "require": {
@@ -5597,7 +5597,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-06-06T16:10:14+00:00"
+            "time": "2025-06-09T15:40:54+00:00"
         },
         {
             "name": "theseer/tokenizer",
