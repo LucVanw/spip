@@ -1006,3 +1006,20 @@ function <prefix_plugin>_image_extension_logos(array $flux): array {
 	return $flux;
 }
 ```
+
+### Constante `_SPIP_LOCK_MODE`
+
+La constante `_SPIP_LOCK_MODE` réglée a `2` permettait une gestion spécifique des locks de fichiers dans le cadre d'un SPIP installé sur point de montage NFS.
+
+Cette fonctionnalité n'est plus disponible, utilisez le plugin `nfslock` pour en bénéficier de nouveau.
+
+### Avant
+
+```php
+define('_SPIP_LOCK_MODE', 2);
+```
+
+### Après
+
+Utiliser le plugin `nfslock`
+
