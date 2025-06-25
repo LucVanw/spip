@@ -655,7 +655,6 @@ return [
 ];
 ```
 
-Les éléments suivants sont dépréciés et seront supprimés dans une future version.
 
 ## Surlignage des mots de recherches
 
