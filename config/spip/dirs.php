@@ -46,4 +46,16 @@ return [
 	 * Jeu de Squelette de l'espace privé SPIP par défaut de la distribution
 	 */
 	'private_template' => 'prive/',
+	/**
+	 * Répertoire des caches.
+	 */
+	'cache' => '%spip.dirs.tmp%/cache/',
+	/**
+	 * Répertoire des log.
+	 */
+	'log' => '%spip.dirs.tmp%/log/',
+	/**
+	 * Répertoire des sessions.
+	 */
+	'sessions' => '%spip.dirs.tmp%/sessions/',
 ];
