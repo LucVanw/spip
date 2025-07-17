@@ -566,6 +566,26 @@ $relative = app()->relative()->getPrivateTemplateDir() . _NOM_IMG_PACK;
 
 Préferez cependant `find_in_theme()` ou `chemin_image()` (qui recherchent dans des dossiers différents).
 
+### `_IS_CLI`
+
+#### Avant
+
+```php
+if (_IS_CLI) {
+  // ...
+}
+
+```
+
+#### Après
+
+```php
+if (PHP_SAPI === 'cli') {
+  // ...
+}
+
+```
+
 ## Fonctions et variables Javascript
 
 SPIP5 amorce une émancipation du code javascript hors du giron de jQuery, et se tourne vers l'adoption d'usages plus modernes via les ESM. Ce chantier débute avec le fichier `config.js` dédié au stockage de la configation de SPIP et de ses plugins, et le fichier `ajaxCallBack.js`, en charge des rechargements dynamiques.
