@@ -1043,3 +1043,17 @@ define('_SPIP_LOCK_MODE', 2);
 
 Utiliser le plugin `nfslock`
 
+
+# Autres suppressions
+
+## Champ PGP sur les auteurs
+
+Le champ 'pgp' sur les auteurs n’est plus créé / défini : il n’était plus utilisé.
+
+Dans le cadre d’une migration d’un site existant vers SPIP 5, 
+si vous utilisiez auparavant ce champ `pgp` sur la table `spip_auteurs` 
+pour stocker des données, vous pouvez utiliser le plugin Champs Extras Interfaces
+pour le gérer à nouveau. C’est un champ "Bloc de texte" (textearea) standard, que vous
+pouvez activer comme cela depuis l’interface d’administration : 
+
+> Configuration > Champs Extras > Liste des champs présents non gérés > Auteurs > Pgp > Gérer ce champ
