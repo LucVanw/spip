@@ -317,16 +317,16 @@
         },
         {
             "name": "spip/ecrire",
-            "version": "4.4.4",
+            "version": "4.4.5",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "d6f9234a4fd7e1a6c30537355c5daa98e608146c"
+                "reference": "82e66103c4be90218a831d7703d6c231fcc21b3e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=d6f9234a4fd7e1a6c30537355c5daa98e608146c",
-                "reference": "d6f9234a4fd7e1a6c30537355c5daa98e608146c",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=82e66103c4be90218a831d7703d6c231fcc21b3e",
+                "reference": "82e66103c4be90218a831d7703d6c231fcc21b3e",
                 "shasum": ""
             },
             "require": {
@@ -362,23 +362,23 @@
             ],
             "description": "Noyau de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.4",
+                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.5",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2025-06-10T11:24:22+02:00"
+            "time": "2025-09-08T10:31:00+02:00"
         },
         {
             "name": "spip/prive",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "1cca47fdb4dff5d1c1d49db241b31f25628e1e41"
+                "reference": "50faa696ef67b97fb1b6ffde1f0b6b36849779da"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=1cca47fdb4dff5d1c1d49db241b31f25628e1e41",
-                "reference": "1cca47fdb4dff5d1c1d49db241b31f25628e1e41",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=50faa696ef67b97fb1b6ffde1f0b6b36849779da",
+                "reference": "50faa696ef67b97fb1b6ffde1f0b6b36849779da",
                 "shasum": ""
             },
             "require-dev": {
@@ -390,23 +390,23 @@
             ],
             "description": "Squelettes de l'espace privé",
             "support": {
-                "source": "https://git.spip.net/spip/prive/-/tree/1.0.2",
+                "source": "https://git.spip.net/spip/prive/-/tree/1.0.3",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2025-06-10T11:25:04+02:00"
+            "time": "2025-09-08T09:47:56+02:00"
         },
         {
             "name": "spip/security",
-            "version": "1.6.6",
+            "version": "1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-contrib-outils/securite.git",
-                "reference": "3a701d304cfa27d13747fca089720b370979ea21"
+                "reference": "12bb638dcb305586552e59a1e2564160cc7d902e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-contrib-outils%2Fsecurite/repository/archive.zip?sha=3a701d304cfa27d13747fca089720b370979ea21",
-                "reference": "3a701d304cfa27d13747fca089720b370979ea21",
+                "url": "https://git.spip.net/api/v4/projects/spip-contrib-outils%2Fsecurite/repository/archive.zip?sha=12bb638dcb305586552e59a1e2564160cc7d902e",
+                "reference": "12bb638dcb305586552e59a1e2564160cc7d902e",
                 "shasum": ""
             },
             "require": {
@@ -432,10 +432,10 @@
             ],
             "description": "Protection du site par blocage de certaines attaques",
             "support": {
-                "source": "https://git.spip.net/spip-contrib-outils/securite/-/tree/1.6.6",
+                "source": "https://git.spip.net/spip-contrib-outils/securite/-/tree/1.6.7",
                 "issues": "https://git.spip.net/spip-contrib-outils/securite/-/issues"
             },
-            "time": "2025-06-10T11:16:22+02:00"
+            "time": "2025-09-08T10:02:27+02:00"
         },
         {
             "name": "symfony/dependency-injection",
