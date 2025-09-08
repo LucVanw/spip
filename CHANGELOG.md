@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.5 - 2025-09-08
+
+- Mise à jour des dépendances (ecrire, prive, security, aide, bigup, compresseur, images, stats, svp, tw).
+
 ## 4.4.4 - 2025-06-10
 
 - Mise à jour des dépendances (ecrire, prive, security, medias).
