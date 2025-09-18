@@ -675,6 +675,25 @@ return [
 ];
 ```
 
+## Paramètre des fonctions de traductions _T et _L
+
+Le 3è paramètre (options) des fonctions `_T` et `_L` ne peut
+plus être une chaîne (nom d’une classe CSS) et doit toujours
+être un tableau.
+
+### Avant
+
+```php
+_T('cle', [], 'classe_css');
+_L('texte', [], 'classe_css');
+```
+
+### Apres
+
+```php
+_T('cle', [], ['class' => 'classe_css']);
+_L('texte', [], ['class' => 'classe_css']);
+```
 
 ## Surlignage des mots de recherches
 
