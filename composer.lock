@@ -1703,12 +1703,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "998eef4789ba5894f5e439afe1b91f322f87f351"
+                "reference": "a37dbacd6251b1d0729dbd1d127b310afbe1ebb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=998eef4789ba5894f5e439afe1b91f322f87f351",
-                "reference": "998eef4789ba5894f5e439afe1b91f322f87f351",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=a37dbacd6251b1d0729dbd1d127b310afbe1ebb9",
+                "reference": "a37dbacd6251b1d0729dbd1d127b310afbe1ebb9",
                 "shasum": ""
             },
             "default-branch": true,
@@ -1733,7 +1733,7 @@
                 "source": "https://git.spip.net/spip/dist/-/tree/master",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2025-07-11T11:01:47+02:00"
+            "time": "2025-10-09T08:46:59+02:00"
         },
         {
             "name": "spip/dump",
@@ -1803,12 +1803,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "fe518762c4b42b28b5c0740063e3fafcc6192e80"
+                "reference": "166b58194a8d4e0681185b0856b9e2516151087c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=fe518762c4b42b28b5c0740063e3fafcc6192e80",
-                "reference": "fe518762c4b42b28b5c0740063e3fafcc6192e80",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=166b58194a8d4e0681185b0856b9e2516151087c",
+                "reference": "166b58194a8d4e0681185b0856b9e2516151087c",
                 "shasum": ""
             },
             "require": {
@@ -1881,7 +1881,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2025-09-19T14:02:38+02:00"
+            "time": "2025-10-09T15:31:49+02:00"
         },
         {
             "name": "spip/forum",
@@ -2366,12 +2366,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "5d006a29d8f9e8e5fe11c415bf4c7768ff5aa897"
+                "reference": "1178e6d28e13bb9076f3358497e3a8519816a19c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=5d006a29d8f9e8e5fe11c415bf4c7768ff5aa897",
-                "reference": "5d006a29d8f9e8e5fe11c415bf4c7768ff5aa897",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=1178e6d28e13bb9076f3358497e3a8519816a19c",
+                "reference": "1178e6d28e13bb9076f3358497e3a8519816a19c",
                 "shasum": ""
             },
             "require": {
@@ -2441,7 +2441,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2025-09-29T08:50:22+02:00"
+            "time": "2025-10-03T10:09:50+02:00"
         },
         {
             "name": "spip/revisions",
@@ -2620,12 +2620,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/sites.git",
-                "reference": "a12b8c81fa9a1c157abd25b518f4449525331ef4"
+                "reference": "64b593230c829175b81842a784fd3eaaf3135039"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=a12b8c81fa9a1c157abd25b518f4449525331ef4",
-                "reference": "a12b8c81fa9a1c157abd25b518f4449525331ef4",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=64b593230c829175b81842a784fd3eaaf3135039",
+                "reference": "64b593230c829175b81842a784fd3eaaf3135039",
                 "shasum": ""
             },
             "require": {
@@ -2699,7 +2699,7 @@
                 "source": "https://git.spip.net/spip/sites/-/tree/master",
                 "issues": "https://git.spip.net/spip/sites/-/issues"
             },
-            "time": "2025-09-11T01:30:09+02:00"
+            "time": "2025-10-06T11:09:18+02:00"
         },
         {
             "name": "spip/stats",
@@ -3057,12 +3057,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "5ececce04f381e0792760cae9de395b567e5054a"
+                "reference": "ac4e4da60d93a113b752541c6a54235240cf06bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/5ececce04f381e0792760cae9de395b567e5054a",
-                "reference": "5ececce04f381e0792760cae9de395b567e5054a",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/ac4e4da60d93a113b752541c6a54235240cf06bc",
+                "reference": "ac4e4da60d93a113b752541c6a54235240cf06bc",
                 "shasum": ""
             },
             "require": {
@@ -3090,6 +3090,7 @@
             "type": "library",
             "autoload": {
                 "psr-4": {
+                    "Symfony\\Config\\": "Loader/Config/",
                     "Symfony\\Component\\DependencyInjection\\": ""
                 },
                 "exclude-from-classmap": [
@@ -3133,7 +3134,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-30T17:19:09+00:00"
+            "time": "2025-10-07T15:47:16+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -4491,12 +4492,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "1c6cb5dfe412af3d0dfd414cfd110e3b9cfdbc3c"
+                "reference": "3d69b3a261d7200272b59a2984cdcf4fc6fb89cd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/1c6cb5dfe412af3d0dfd414cfd110e3b9cfdbc3c",
-                "reference": "1c6cb5dfe412af3d0dfd414cfd110e3b9cfdbc3c",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/3d69b3a261d7200272b59a2984cdcf4fc6fb89cd",
+                "reference": "3d69b3a261d7200272b59a2984cdcf4fc6fb89cd",
                 "shasum": ""
             },
             "require": {
@@ -4568,7 +4569,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.42"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5"
             },
             "funding": [
                 {
@@ -4592,7 +4593,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2025-09-28T12:09:13+00:00"
+            "time": "2025-10-08T05:52:26+00:00"
         },
         {
             "name": "sebastian/cli-parser",
