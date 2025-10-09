@@ -879,6 +879,17 @@ La balise `#LARGEUR_ECRAN` pour les squelettes de l'espace privé doit être rem
 #LAYOUT_PRIVE{pleine_largeur}
 ```
 
+## Support typo de la balise `<math>` 
+
+Les traitements typographiques ne gèrent plus la balise `<math>` nativement.
+
+Le plugin MathJax procure cette fonctionnalité : https://plugins.spip.net/mathjax.html
+en récupérant certaines fonctions comme `traiter_math()`.
+
+En parallèle une fonction non utilisée est supprimée, 
+`mathml2unicode` et le fichier de définition de charset associé.
+
+
 ## Fonctions PHP
 
 Dans certains cas parfois utilisées en filtres de squelettes également.
@@ -998,7 +1009,6 @@ Elle ne servait plus dans le core et n’a pas vraiment d’utilité.
 ```html
 [(#VAL{6}|div{3}|mult{4})] retourne 8
 ```
-
 
 ## Variables globales
 
