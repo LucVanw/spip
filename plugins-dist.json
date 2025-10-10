@@ -50,7 +50,7 @@
     "mediabox": {
         "path": "plugins-dist/mediabox",
         "source": "https://git.spip.net/spip/mediabox.git",
-        "branch": "3.1",
+        "branch": "3.x",
         "tag": "v3.1.9"
     },
     "medias": {
