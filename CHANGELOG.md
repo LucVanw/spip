@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.6 - 2025-10-10
+
+- Mise à jour des dépendances (ecrire, prive, images, mediabox, medias, plan, revisions, sites, squelettes-dist).
+
 ## 4.4.5 - 2025-09-08
 
 - Mise à jour des dépendances (ecrire, prive, security, aide, bigup, compresseur, images, stats, svp, tw).
