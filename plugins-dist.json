@@ -92,7 +92,7 @@
     "sites": {
         "path": "plugins-dist/sites",
         "source": "https://git.spip.net/spip/sites.git",
-        "branch": "4.3",
+        "branch": "4.x",
         "tag": "4.3.3"
     },
     "statistiques": {
