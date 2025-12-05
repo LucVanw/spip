@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.7 - 2025-12-05
+
+- Mise à jour des dépendances (ecrire, prive, forum, mediabox, medias, sites, squelettes-dist)
+
 ## 4.4.6 - 2025-10-10
 
 - Mise à jour des dépendances (ecrire, prive, images, mediabox, medias, plan, revisions, sites, squelettes-dist).
