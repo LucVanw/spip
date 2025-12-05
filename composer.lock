@@ -285,16 +285,16 @@
         },
         {
             "name": "spip/dist",
-            "version": "4.2.7",
+            "version": "4.2.8",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "11f63df02af8807687068a663e4322457c8bf880"
+                "reference": "650c6d2f7d9338e1c97fd197a4e8a6575b07a635"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=11f63df02af8807687068a663e4322457c8bf880",
-                "reference": "11f63df02af8807687068a663e4322457c8bf880",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=650c6d2f7d9338e1c97fd197a4e8a6575b07a635",
+                "reference": "650c6d2f7d9338e1c97fd197a4e8a6575b07a635",
                 "shasum": ""
             },
             "type": "spip-plugin",
@@ -310,23 +310,23 @@
             ],
             "description": "Squelettes par défaut de SPIP 4.0",
             "support": {
-                "source": "https://git.spip.net/spip/dist/-/tree/4.2.7",
+                "source": "https://git.spip.net/spip/dist/-/tree/4.2.8",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2025-10-10T10:58:05+02:00"
+            "time": "2025-12-05T09:53:12+01:00"
         },
         {
             "name": "spip/ecrire",
-            "version": "4.4.6",
+            "version": "4.4.7",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "3a238533386a736e6132036579f72feea57328d8"
+                "reference": "6807615c8210e8fbf56a3cd5ee74ca3573ab4b18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=3a238533386a736e6132036579f72feea57328d8",
-                "reference": "3a238533386a736e6132036579f72feea57328d8",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=6807615c8210e8fbf56a3cd5ee74ca3573ab4b18",
+                "reference": "6807615c8210e8fbf56a3cd5ee74ca3573ab4b18",
                 "shasum": ""
             },
             "require": {
@@ -362,23 +362,23 @@
             ],
             "description": "Noyau de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.6",
+                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.7",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2025-10-10T11:26:56+02:00"
+            "time": "2025-12-05T10:07:15+01:00"
         },
         {
             "name": "spip/prive",
-            "version": "1.0.4",
+            "version": "1.0.5",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "f1c8edabd893dd79563f7c4b76c7a034a84a48ba"
+                "reference": "c0fde1c3e7de7523e2b24939f9d2f5e5ff6ec12d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=f1c8edabd893dd79563f7c4b76c7a034a84a48ba",
-                "reference": "f1c8edabd893dd79563f7c4b76c7a034a84a48ba",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=c0fde1c3e7de7523e2b24939f9d2f5e5ff6ec12d",
+                "reference": "c0fde1c3e7de7523e2b24939f9d2f5e5ff6ec12d",
                 "shasum": ""
             },
             "require-dev": {
@@ -390,10 +390,10 @@
             ],
             "description": "Squelettes de l'espace privé",
             "support": {
-                "source": "https://git.spip.net/spip/prive/-/tree/1.0.4",
+                "source": "https://git.spip.net/spip/prive/-/tree/1.0.5",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2025-10-10T11:01:53+02:00"
+            "time": "2025-12-05T09:57:20+01:00"
         },
         {
             "name": "spip/security",
@@ -1329,5 +1329,5 @@
     "platform-overrides": {
         "php": "7.4.33"
     },
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
