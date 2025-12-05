@@ -45,19 +45,19 @@
         "path": "plugins-dist/forum",
         "source": "https://git.spip.net/spip/forum.git",
         "branch": "3.1",
-        "tag": "3.1.12"
+        "tag": "3.1.13"
     },
     "mediabox": {
         "path": "plugins-dist/mediabox",
         "source": "https://git.spip.net/spip/mediabox.git",
         "branch": "3.x",
-        "tag": "3.2.0"
+        "tag": "3.2.1"
     },
     "medias": {
         "path": "plugins-dist/medias",
         "source": "https://git.spip.net/spip/medias.git",
         "branch": "4.4",
-        "tag": "4.4.6"
+        "tag": "4.4.7"
     },
     "mots": {
         "path": "plugins-dist/mots",
@@ -93,7 +93,7 @@
         "path": "plugins-dist/sites",
         "source": "https://git.spip.net/spip/sites.git",
         "branch": "4.x",
-        "tag": "4.4.0"
+        "tag": "4.4.1"
     },
     "statistiques": {
         "path": "plugins-dist/statistiques",
