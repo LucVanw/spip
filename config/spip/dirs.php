@@ -33,15 +33,23 @@ return [
 	 */
 	'plugins' => 'plugins/',
 	/**
+	 * Plugins SPIP installables pour un site mutualisé
+	 * Cf. _DIR_PLUGINS_SUPPL
+	 */
+	'extra_plugins' => '',
+	/**
 	 * Jeu de Squelette SPIP par défaut de la distribution
 	 */
 	'template' => 'squelettes-dist/',
 	/**
-	 * Personalisaation de la distribution (ou d'un site ?)
-	 *
-	 * @todo gérer $GLOBALS['dossier_squelettes']
+	 * Personalisaation de la distribution
 	 */
 	'custom' => 'squelettes/',
+	/**
+	 * Personalisaation d'un site mutualisé
+	 * Cf. $GLOBALS['dossier_squelettes'] = 'path1:path2:...:pathN'
+	 */
+	'extra_custom' => '',
 	/**
 	 * Jeu de Squelette de l'espace privé SPIP par défaut de la distribution
 	 */
