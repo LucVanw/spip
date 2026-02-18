@@ -45,7 +45,7 @@
         "path": "plugins-dist/forum",
         "source": "https://git.spip.net/spip/forum.git",
         "branch": "3.1",
-        "tag": "3.1.13"
+        "tag": "3.1.14"
     },
     "mediabox": {
         "path": "plugins-dist/mediabox",
@@ -57,7 +57,7 @@
         "path": "plugins-dist/medias",
         "source": "https://git.spip.net/spip/medias.git",
         "branch": "4.4",
-        "tag": "4.4.8"
+        "tag": "4.4.9"
     },
     "mots": {
         "path": "plugins-dist/mots",
@@ -87,13 +87,13 @@
         "path": "plugins-dist/safehtml",
         "source": "https://git.spip.net/spip/safehtml.git",
         "branch": "3.1",
-        "tag": "3.1.4"
+        "tag": "3.1.5"
     },
     "sites": {
         "path": "plugins-dist/sites",
         "source": "https://git.spip.net/spip/sites.git",
         "branch": "4.x",
-        "tag": "4.4.2"
+        "tag": "4.4.3"
     },
     "statistiques": {
         "path": "plugins-dist/statistiques",
@@ -111,12 +111,12 @@
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
         "branch": "3.3",
-        "tag": "3.3.5"
+        "tag": "3.3.6"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
         "source": "https://git.spip.net/spip/urls.git",
         "branch": "4.2",
-        "tag": "4.2.0"
+        "tag": "4.2.1"
     }
 }
