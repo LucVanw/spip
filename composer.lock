@@ -1420,12 +1420,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/aide.git",
-                "reference": "c06d2b3e581f17e22d53bcb30d0e892b2dac8625"
+                "reference": "47abbe8b1b06cf60f7d956bd9c0dbb5a7d0b1db8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=c06d2b3e581f17e22d53bcb30d0e892b2dac8625",
-                "reference": "c06d2b3e581f17e22d53bcb30d0e892b2dac8625",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=47abbe8b1b06cf60f7d956bd9c0dbb5a7d0b1db8",
+                "reference": "47abbe8b1b06cf60f7d956bd9c0dbb5a7d0b1db8",
                 "shasum": ""
             },
             "require": {
@@ -1455,11 +1455,23 @@
                 ]
             },
             "scripts": {
+                "analyse": [
+                    "phpstan --memory-limit=-1"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=-1 --generate-baseline --allow-empty-baseline"
+                ],
                 "check-cs": [
-                    "vendor/bin/ecs check --ansi"
+                    "ecs check --ansi"
                 ],
                 "fix-cs": [
-                    "vendor/bin/ecs check --fix --ansi"
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
                 ]
             },
             "license": [
@@ -1477,7 +1489,7 @@
                 "source": "https://git.spip.net/spip/aide/-/tree/master",
                 "issues": "https://git.spip.net/spip/aide/-/issues"
             },
-            "time": "2025-11-11T20:09:35+01:00"
+            "time": "2026-02-16T12:02:04+01:00"
         },
         {
             "name": "spip/archiviste",
@@ -1555,12 +1567,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/bigup.git",
-                "reference": "758a69cd2fa9cc46681348d33bf5e95d55d8c41e"
+                "reference": "808383dba35f3698993e6f640343a5348de6eb09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=758a69cd2fa9cc46681348d33bf5e95d55d8c41e",
-                "reference": "758a69cd2fa9cc46681348d33bf5e95d55d8c41e",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=808383dba35f3698993e6f640343a5348de6eb09",
+                "reference": "808383dba35f3698993e6f640343a5348de6eb09",
                 "shasum": ""
             },
             "require": {
@@ -1635,10 +1647,10 @@
             ],
             "description": "Téléverser des gros fichiers",
             "support": {
-                "source": "https://git.spip.net/spip/bigup/-/tree/fix_deprecated_php85",
+                "source": "https://git.spip.net/spip/bigup/-/tree/master",
                 "issues": "https://git.spip.net/spip/bigup/-/issues"
             },
-            "time": "2026-02-07T14:52:07+01:00"
+            "time": "2026-02-16T11:55:33+01:00"
         },
         {
             "name": "spip/classic-distribution",
@@ -1695,12 +1707,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compagnon.git",
-                "reference": "6091de66ba4cf8a4ed16d37bfb88590763995a61"
+                "reference": "688d8470ea0d7b36ccfc70a4b1443356a8163b1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=6091de66ba4cf8a4ed16d37bfb88590763995a61",
-                "reference": "6091de66ba4cf8a4ed16d37bfb88590763995a61",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=688d8470ea0d7b36ccfc70a4b1443356a8163b1f",
+                "reference": "688d8470ea0d7b36ccfc70a4b1443356a8163b1f",
                 "shasum": ""
             },
             "require": {
@@ -1734,6 +1746,26 @@
                     "vendor/spip-league/sdk/src/Stub/functions_text_processing.php"
                 ]
             },
+            "scripts": {
+                "analyse": [
+                    "phpstan --memory-limit=-1"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=-1 --generate-baseline --allow-empty-baseline"
+                ],
+                "check-cs": [
+                    "ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
+                ]
+            },
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -1749,7 +1781,7 @@
                 "source": "https://git.spip.net/spip/compagnon/-/tree/master",
                 "issues": "https://git.spip.net/spip/compagnon/-/issues"
             },
-            "time": "2025-11-11T20:22:06+01:00"
+            "time": "2026-02-12T17:43:18+01:00"
         },
         {
             "name": "spip/compresseur",
@@ -1929,12 +1961,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "ae96ce525ef8da23e34eacab7787f0f7cf2fd0f0"
+                "reference": "0c6f1c2633f74da3cd4a4f13a4a02400b1aab38d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=ae96ce525ef8da23e34eacab7787f0f7cf2fd0f0",
-                "reference": "ae96ce525ef8da23e34eacab7787f0f7cf2fd0f0",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=0c6f1c2633f74da3cd4a4f13a4a02400b1aab38d",
+                "reference": "0c6f1c2633f74da3cd4a4f13a4a02400b1aab38d",
                 "shasum": ""
             },
             "require": {
@@ -2014,7 +2046,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-02-10T01:30:02+01:00"
+            "time": "2026-02-17T15:50:18+01:00"
         },
         {
             "name": "spip/forum",
@@ -2022,12 +2054,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/forum.git",
-                "reference": "c3eeed3ddbbfed874a68dcd4ab65835f9d720f08"
+                "reference": "4bd8f4d64f947f5923707a66473d16c9d350a758"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=c3eeed3ddbbfed874a68dcd4ab65835f9d720f08",
-                "reference": "c3eeed3ddbbfed874a68dcd4ab65835f9d720f08",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fforum/repository/archive.zip?sha=4bd8f4d64f947f5923707a66473d16c9d350a758",
+                "reference": "4bd8f4d64f947f5923707a66473d16c9d350a758",
                 "shasum": ""
             },
             "require": {
@@ -2085,7 +2117,7 @@
                 "source": "https://git.spip.net/spip/forum/-/tree/master",
                 "issues": "https://git.spip.net/spip/forum/-/issues"
             },
-            "time": "2026-02-10T01:30:03+01:00"
+            "time": "2026-02-17T23:05:03+01:00"
         },
         {
             "name": "spip/frontend",
@@ -2205,7 +2237,7 @@
             ],
             "description": "Filtres de transformation d'image et de couleurs",
             "support": {
-                "source": "https://git.spip.net/spip/images/-/tree/fix_deprecated_php85_next",
+                "source": "https://git.spip.net/spip/images/-/tree/master",
                 "issues": "https://git.spip.net/spip/images/-/issues"
             },
             "time": "2026-02-08T10:50:32+01:00"
@@ -2278,12 +2310,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/medias.git",
-                "reference": "8eacfc8ee929de87b54bbfd2290e2faa92160361"
+                "reference": "69681f3b463d791f16768afe970a95666fd938c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=8eacfc8ee929de87b54bbfd2290e2faa92160361",
-                "reference": "8eacfc8ee929de87b54bbfd2290e2faa92160361",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=69681f3b463d791f16768afe970a95666fd938c4",
+                "reference": "69681f3b463d791f16768afe970a95666fd938c4",
                 "shasum": ""
             },
             "require": {
@@ -2361,7 +2393,7 @@
                 "source": "https://git.spip.net/spip/medias/-/tree/master",
                 "issues": "https://git.spip.net/spip/medias/-/issues"
             },
-            "time": "2026-02-10T01:30:04+01:00"
+            "time": "2026-02-12T09:13:22+01:00"
         },
         {
             "name": "spip/mots",
@@ -2437,12 +2469,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/plan.git",
-                "reference": "8c246ed21f56f6f5a8becfb2d3f9424f0c78ae51"
+                "reference": "bbdeae16e89aa28d363e6b3695bc55bbaf9b3f94"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fplan/repository/archive.zip?sha=8c246ed21f56f6f5a8becfb2d3f9424f0c78ae51",
-                "reference": "8c246ed21f56f6f5a8becfb2d3f9424f0c78ae51",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fplan/repository/archive.zip?sha=bbdeae16e89aa28d363e6b3695bc55bbaf9b3f94",
+                "reference": "bbdeae16e89aa28d363e6b3695bc55bbaf9b3f94",
                 "shasum": ""
             },
             "require": {
@@ -2461,6 +2493,9 @@
                 }
             },
             "autoload-dev": {
+                "psr-4": {
+                    "Spip\\Compilateur\\Noeud;\\": "tests/fixtures/"
+                },
                 "files": [
                     "vendor/spip-league/sdk/src/Stub/functions_autoloading.php",
                     "vendor/spip-league/sdk/src/Stub/functions_compiler.php",
@@ -2470,6 +2505,26 @@
                     "vendor/spip-league/sdk/src/Stub/functions_objects_articles.php",
                     "vendor/spip-league/sdk/src/Stub/functions_sql_query.php",
                     "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
+                ]
+            },
+            "scripts": {
+                "analyse": [
+                    "phpstan --memory-limit=-1"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=-1 --generate-baseline --allow-empty-baseline"
+                ],
+                "check-cs": [
+                    "ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
                 ]
             },
             "license": [
@@ -2487,7 +2542,7 @@
                 "source": "https://git.spip.net/spip/plan/-/tree/master",
                 "issues": "https://git.spip.net/spip/plan/-/issues"
             },
-            "time": "2025-12-18T11:33:40+01:00"
+            "time": "2026-02-16T12:10:16+01:00"
         },
         {
             "name": "spip/porte-plume",
@@ -2556,12 +2611,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "17ef3050fa8d337ff4536be57893f6a4c3bf5686"
+                "reference": "59421b7a6844ca063fe768493993d5623b7b8c52"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=17ef3050fa8d337ff4536be57893f6a4c3bf5686",
-                "reference": "17ef3050fa8d337ff4536be57893f6a4c3bf5686",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=59421b7a6844ca063fe768493993d5623b7b8c52",
+                "reference": "59421b7a6844ca063fe768493993d5623b7b8c52",
                 "shasum": ""
             },
             "require": {
@@ -2636,7 +2691,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2026-02-07T18:07:11+01:00"
+            "time": "2026-02-17T12:24:10+01:00"
         },
         {
             "name": "spip/revisions",
@@ -2710,12 +2765,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/safehtml.git",
-                "reference": "4ec07995a70f0518bae7c1263fea68e18b966933"
+                "reference": "c3b6b91ccccc65986d6882b5c37ce1f76a8e900b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=4ec07995a70f0518bae7c1263fea68e18b966933",
-                "reference": "4ec07995a70f0518bae7c1263fea68e18b966933",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=c3b6b91ccccc65986d6882b5c37ce1f76a8e900b",
+                "reference": "c3b6b91ccccc65986d6882b5c37ce1f76a8e900b",
                 "shasum": ""
             },
             "require": {
@@ -2784,7 +2839,7 @@
                 "source": "https://git.spip.net/spip/safehtml/-/tree/master",
                 "issues": "https://git.spip.net/spip/safehtml/-/issues"
             },
-            "time": "2026-02-10T07:58:00+01:00"
+            "time": "2026-02-16T18:13:12+01:00"
         },
         {
             "name": "spip/security",
@@ -2835,12 +2890,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/sites.git",
-                "reference": "a468c14ca73c165e15ecd8cf8a63ebfceb306e23"
+                "reference": "e1c060eb1336f0068eb32cbcf97564a80fe701f4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=a468c14ca73c165e15ecd8cf8a63ebfceb306e23",
-                "reference": "a468c14ca73c165e15ecd8cf8a63ebfceb306e23",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsites/repository/archive.zip?sha=e1c060eb1336f0068eb32cbcf97564a80fe701f4",
+                "reference": "e1c060eb1336f0068eb32cbcf97564a80fe701f4",
                 "shasum": ""
             },
             "require": {
@@ -2914,7 +2969,7 @@
                 "source": "https://git.spip.net/spip/sites/-/tree/master",
                 "issues": "https://git.spip.net/spip/sites/-/issues"
             },
-            "time": "2025-12-05T11:41:28+01:00"
+            "time": "2026-02-16T15:30:53+01:00"
         },
         {
             "name": "spip/stats",
@@ -2989,12 +3044,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/svp.git",
-                "reference": "c9fc43de799d585c2359eecbcab705646d7c59e5"
+                "reference": "40046fd1ba0ce4a44b2bbcbc62da9d002f65121c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=c9fc43de799d585c2359eecbcab705646d7c59e5",
-                "reference": "c9fc43de799d585c2359eecbcab705646d7c59e5",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=40046fd1ba0ce4a44b2bbcbc62da9d002f65121c",
+                "reference": "40046fd1ba0ce4a44b2bbcbc62da9d002f65121c",
                 "shasum": ""
             },
             "require": {
@@ -3071,7 +3126,7 @@
                 "source": "https://git.spip.net/spip/svp/-/tree/master",
                 "issues": "https://git.spip.net/spip/svp/-/issues"
             },
-            "time": "2026-02-10T01:30:07+01:00"
+            "time": "2026-02-18T13:05:41+01:00"
         },
         {
             "name": "spip/tw",
@@ -3079,12 +3134,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/tw.git",
-                "reference": "9b9dcdc1b7fd1b614ab164ace532a98c890e72f6"
+                "reference": "495dcce4a4d6ed6b2db712d361ff3865ac5441b2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=9b9dcdc1b7fd1b614ab164ace532a98c890e72f6",
-                "reference": "9b9dcdc1b7fd1b614ab164ace532a98c890e72f6",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=495dcce4a4d6ed6b2db712d361ff3865ac5441b2",
+                "reference": "495dcce4a4d6ed6b2db712d361ff3865ac5441b2",
                 "shasum": ""
             },
             "require": {
@@ -3156,7 +3211,7 @@
                 "source": "https://git.spip.net/spip/tw/-/tree/master",
                 "issues": "https://git.spip.net/spip/tw/-/issues"
             },
-            "time": "2026-02-08T16:33:07+01:00"
+            "time": "2026-02-17T15:55:01+01:00"
         },
         {
             "name": "spip/urls",
@@ -3164,19 +3219,20 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/urls.git",
-                "reference": "875c0fd27e52d9878ff490084dda295a01c77276"
+                "reference": "cc3897fc6858eb8028c32d0d6172c71ae7d54396"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=875c0fd27e52d9878ff490084dda295a01c77276",
-                "reference": "875c0fd27e52d9878ff490084dda295a01c77276",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=cc3897fc6858eb8028c32d0d6172c71ae7d54396",
+                "reference": "cc3897fc6858eb8028c32d0d6172c71ae7d54396",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2"
             },
             "require-dev": {
-                "rector/rector": "^1.2",
+                "phpstan/phpstan": "^2.1",
+                "rector/rector": "^2.0",
                 "spip-league/easy-coding-standard": "^1.1",
                 "spip-league/kernel": "^2.0",
                 "spip-league/sdk": "^2.0"
@@ -3207,6 +3263,26 @@
                     "vendor/spip-league/sdk/src/Stub/functions_user_management.php"
                 ]
             },
+            "scripts": {
+                "analyse": [
+                    "phpstan --memory-limit=-1"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=-1 --generate-baseline --allow-empty-baseline"
+                ],
+                "check-cs": [
+                    "ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
+                ]
+            },
             "license": [
                 "GPL-3.0-or-later"
             ],
@@ -3222,7 +3298,7 @@
                 "source": "https://git.spip.net/spip/urls/-/tree/master",
                 "issues": "https://git.spip.net/spip/urls/-/issues"
             },
-            "time": "2026-02-10T01:30:08+01:00"
+            "time": "2026-02-16T16:32:05+01:00"
         },
         {
             "name": "symfony/clock",
@@ -3308,12 +3384,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "3da58342b94f0814f5fbb5898b385d5d7a910e85"
+                "reference": "15c7ce9cf9aa2dfccb7bf6468c399b369b4416bd"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/3da58342b94f0814f5fbb5898b385d5d7a910e85",
-                "reference": "3da58342b94f0814f5fbb5898b385d5d7a910e85",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/15c7ce9cf9aa2dfccb7bf6468c399b369b4416bd",
+                "reference": "15c7ce9cf9aa2dfccb7bf6468c399b369b4416bd",
                 "shasum": ""
             },
             "require": {
@@ -3384,7 +3460,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-09T19:33:31+00:00"
+            "time": "2026-02-17T07:53:42+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -3534,12 +3610,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/lock.git",
-                "reference": "73d87c2aef610fb5907ff2b7373abda3343411af"
+                "reference": "c39d02f61a039ef660e44f36719b1440414fe493"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/lock/zipball/73d87c2aef610fb5907ff2b7373abda3343411af",
-                "reference": "73d87c2aef610fb5907ff2b7373abda3343411af",
+                "url": "https://api.github.com/repos/symfony/lock/zipball/c39d02f61a039ef660e44f36719b1440414fe493",
+                "reference": "c39d02f61a039ef660e44f36719b1440414fe493",
                 "shasum": ""
             },
             "require": {
@@ -3609,7 +3685,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-29T09:40:50+00:00"
+            "time": "2026-02-17T07:53:42+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -4030,12 +4106,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/service-contracts.git",
-                "reference": "c15f92d1a2d7cb61a7ca885f3ed1b0906435aac1"
+                "reference": "639fa48ea277babeb67e1432ce60a029d795bd63"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/c15f92d1a2d7cb61a7ca885f3ed1b0906435aac1",
-                "reference": "c15f92d1a2d7cb61a7ca885f3ed1b0906435aac1",
+                "url": "https://api.github.com/repos/symfony/service-contracts/zipball/639fa48ea277babeb67e1432ce60a029d795bd63",
+                "reference": "639fa48ea277babeb67e1432ce60a029d795bd63",
                 "shasum": ""
             },
             "require": {
@@ -4110,7 +4186,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-06T20:22:04+00:00"
+            "time": "2026-02-13T20:42:21+00:00"
         },
         {
             "name": "symfony/var-exporter",
@@ -4822,12 +4898,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "a997a653a82845f1240d73ee73a8a4e97e4b0607"
+                "reference": "adc7262fccc12de2b30f12a8aa0b33775d814f00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/a997a653a82845f1240d73ee73a8a4e97e4b0607",
-                "reference": "a997a653a82845f1240d73ee73a8a4e97e4b0607",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/adc7262fccc12de2b30f12a8aa0b33775d814f00",
+                "reference": "adc7262fccc12de2b30f12a8aa0b33775d814f00",
                 "shasum": ""
             },
             "require": {
@@ -4900,7 +4976,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5.53"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/11.5"
             },
             "funding": [
                 {
@@ -4924,7 +5000,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-02-10T12:28:25+00:00"
+            "time": "2026-02-18T12:37:06+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -6092,12 +6168,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/var-dumper.git",
-                "reference": "0e4769b46a0c3c62390d124635ce59f66874b282"
+                "reference": "045321c440ac18347b136c63d2e9bf28a2dc0291"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/0e4769b46a0c3c62390d124635ce59f66874b282",
-                "reference": "0e4769b46a0c3c62390d124635ce59f66874b282",
+                "url": "https://api.github.com/repos/symfony/var-dumper/zipball/045321c440ac18347b136c63d2e9bf28a2dc0291",
+                "reference": "045321c440ac18347b136c63d2e9bf28a2dc0291",
                 "shasum": ""
             },
             "require": {
@@ -6171,7 +6247,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-01-01T22:13:48+00:00"
+            "time": "2026-02-15T10:53:20+00:00"
         },
         {
             "name": "theseer/tokenizer",
