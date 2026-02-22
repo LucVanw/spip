@@ -431,6 +431,18 @@ Si un menu a pour parent un menu dont l'identifiant commençe par `bando_`, celu
 
 Les éléments suivants ont été supprimés et doivent être adaptés si ce n’est pas encore le cas.
 
+## Unserialization dans `table_valeur` et dans la boucle `(DATA)` source `tableau`
+
+Le filtre `|table_valeur` tentait d'appliquer la fonction PHP `unserialize()` si une chaîne lui était passée.
+
+De même pour une boucle `(DATA)`, la source `{source tableau,}` passait par `unserialize()` si elle n'était pas déjà un tableau.
+
+Cette fonctionnalité est supprimée. Passez directement un tableau à `|table_valeur` et à `{source tableau,}`.
+
+ATTENTION : ne jamais unserializer une chaîne provenant de `#ENV` ou de toute source non contrôlée. Cela peut conduire à des failles de sécurité.
+
+
+
 ## Recherche d'un fichier `ecrire/mes_options.php`.
 
 La recherhe d'un fichier `mes_options` dans `ecrire` n'est plus supporté. Le fichier `mes_options` doit forcément se trouver dans `config`.
@@ -879,14 +891,14 @@ La balise `#LARGEUR_ECRAN` pour les squelettes de l'espace privé doit être rem
 #LAYOUT_PRIVE{pleine_largeur}
 ```
 
-## Support typo de la balise `<math>` 
+## Support typo de la balise `<math>`
 
 Les traitements typographiques ne gèrent plus la balise `<math>` nativement.
 
 Le plugin MathJax procure cette fonctionnalité : https://plugins.spip.net/mathjax.html
 en récupérant certaines fonctions comme `traiter_math()`.
 
-En parallèle une fonction non utilisée est supprimée, 
+En parallèle une fonction non utilisée est supprimée,
 `mathml2unicode` et le fichier de définition de charset associé.
 
 
@@ -1079,10 +1091,10 @@ Utiliser le plugin `nfslock`
 
 Le champ 'pgp' sur les auteurs n’est plus créé / défini : il n’était plus utilisé.
 
-Dans le cadre d’une migration d’un site existant vers SPIP 5, 
-si vous utilisiez auparavant ce champ `pgp` sur la table `spip_auteurs` 
+Dans le cadre d’une migration d’un site existant vers SPIP 5,
+si vous utilisiez auparavant ce champ `pgp` sur la table `spip_auteurs`
 pour stocker des données, vous pouvez utiliser le plugin Champs Extras Interfaces
 pour le gérer à nouveau. C’est un champ "Bloc de texte" (textearea) standard, que vous
-pouvez activer comme cela depuis l’interface d’administration : 
+pouvez activer comme cela depuis l’interface d’administration :
 
 > Configuration > Champs Extras > Liste des champs présents non gérés > Auteurs > Pgp > Gérer ce champ
