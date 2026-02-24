@@ -30,6 +30,9 @@
     <testsuite name="spip/tw">
       <directory>./plugins-dist/spip/tw/tests</directory>
     </testsuite>
+    <testsuite name="spip/safehtml">
+      <directory>./plugins-dist/spip/safehtml/tests</directory>
+    </testsuite>
   </testsuites>
   <source restrictNotices="false" restrictWarnings="false">
     <include>
