@@ -9,7 +9,7 @@
         "path": "plugins-dist/archiviste",
         "source": "https://git.spip.net/spip/archiviste.git",
         "branch": "2.2",
-        "tag": "2.2.3"
+        "tag": "2.2.4"
     },
     "bigup": {
         "path": "plugins-dist/bigup",
@@ -27,7 +27,7 @@
         "path": "plugins-dist/compresseur",
         "source": "https://git.spip.net/spip/compresseur.git",
         "branch": "2.2",
-        "tag": "2.2.1"
+        "tag": "2.2.2"
     },
     "dump": {
         "path": "plugins-dist/dump",
@@ -39,7 +39,7 @@
         "path": "plugins-dist/filtres_images",
         "source": "https://git.spip.net/spip/images.git",
         "branch": "4.3",
-        "tag": "4.3.5"
+        "tag": "4.3.6"
     },
     "forum": {
         "path": "plugins-dist/forum",
@@ -75,7 +75,7 @@
         "path": "plugins-dist/porte_plume",
         "source": "https://git.spip.net/spip/porte-plume.git",
         "branch": "3.1",
-        "tag": "3.1.9"
+        "tag": "3.1.10"
     },
     "revisions": {
         "path": "plugins-dist/revisions",
@@ -111,7 +111,7 @@
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
         "branch": "3.3",
-        "tag": "3.3.6"
+        "tag": "3.3.7"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
