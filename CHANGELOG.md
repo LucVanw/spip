@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.11 - 2026-02-27
+
+- Mise à jour des dépendances (ecrire, prive, tw)
+ 
 ## 4.4.10 - 2026-02-26
 
 - Mise à jour des dépendances (ecrire, prive, archiviste, tw) et tests (compresseur, filtres_images, porte_plume)
