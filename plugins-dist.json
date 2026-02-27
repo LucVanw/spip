@@ -111,7 +111,7 @@
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
         "branch": "3.3",
-        "tag": "3.3.7"
+        "tag": "3.3.8"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
