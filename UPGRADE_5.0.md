@@ -1071,6 +1071,23 @@ Elle ne servait plus dans le core et n’a pas vraiment d’utilité.
 [(#VAL{6}|div{3}|mult{4})] retourne 8
 ```
 
+### Fonctions `debut_cadre_xx()`, `fin_cadre_xx()`, `debut_boite_xx()`, `fin_boite_xx()` et apparentées
+
+Les fonctions de mise en page de l'espace privé suivantes étaient depréciées et sont maintenant supprimées :
+
+- `debut_cadre()` / `fin_cadre()`
+- `debut_cadre_relief()` / `fin_cadre_relief()`
+- `debut_cadre_enfonce()` / `fin_cadre_enfonce()`
+- `debut_cadre_sous_rub()` / `fin_cadre_sous_rub()`
+- `debut_cadre_couleur()` / `fin_cadre_couleur()`
+- `debut_cadre_trait_couleur()` / `fin_cadre_trait_couleur()`
+- `debut_boite_alerte()` / `fin_boite_alerte()`
+- `debut_boite_info()` / `fin_boite_info()`
+- `cadre_depliable()`
+- `bloc_des_raccourcis()`
+
+Leurs usages doivent être remplacés par `boite_ouvrir()` / `boite_fermer()`.
+
 ## Variables globales
 
 ### `auteur_session`
