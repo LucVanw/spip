@@ -746,6 +746,21 @@ NETPBM n'est plus disponible pour la génération des vignettes. Adapter la conf
 - les appels à ces fichiers, via `include_spip('base/serial');` par exemple, seront sans effet.
   Ils sont à remplacer par l'appel à la fonction `lister_tables_objets_sql();`.
 
+## Classes PHP à la racine de l'espace de nom
+
+Certaines classes PHP du compilateur de SPIP disposaient d'un alias à la racine de l'espace de nom. Ces alias sont supprimés.
+Il convient de faire explicitement appel à `use` en début des fichiers qui utilisent ces classes.
+
+Ainsi selon les besoins :
+```php
+use Spip\Compilateur\Noeud\Boucle;
+use Spip\Compilateur\Noeud\Champ;
+use Spip\Compilateur\Noeud\Contexte;
+use Spip\Compilateur\Noeud\Critere;
+use Spip\Compilateur\Noeud\Polyglotte;
+use Spip\Compilateur\Noeud\Texte;
+```
+
 ## Syntaxes de squelettes
 
 ### Filtres de `#LOGO_` (dépréciés en 2.1)
