@@ -687,7 +687,7 @@ return [
 ];
 ```
 
-## Paramètre des fonctions de traductions _T et _L
+## Paramètre des fonctions de traductions `_T()` et `_L()`
 
 Le 3è paramètre (options) des fonctions `_T` et `_L` ne peut
 plus être une chaîne (nom d’une classe CSS) et doit toujours
@@ -760,6 +760,27 @@ use Spip\Compilateur\Noeud\Critere;
 use Spip\Compilateur\Noeud\Polyglotte;
 use Spip\Compilateur\Noeud\Texte;
 ```
+
+## Second argument de `spip_sanitize_from_request()`
+
+La fonction `spip_sanitize_from_request($valeur, $cle)` nettoie une valeur, si elle provient de l'environnement. La clé est passée en second argument.
+Par le passé, cette fonction pouvait recevoir un tableau ou un
+simple astérique (`'*'`) comme second argument. Ce n'est plus le cas.
+
+Pour sanitizer un _table de valeur_ issues de `_request()`,  utiliser `spip_sanitize_env_from_request()`.
+
+### Avant
+
+```php
+$env = spip_sanitize_from_request($env, ['key1', 'key2']);//Sanitization partielle
+$env = spip_sanitize_from_request($env, '*');//Sanitization de tout env
+```
+
+### Après
+
+```php
+$env = spip_sanitize_env_from_request($env, ['key1', 'key2']); // Sanitization partielle
+$env = spip_sanitize_env_from_request($env); // Sanitization complète
 
 ## Syntaxes de squelettes
 
@@ -965,7 +986,7 @@ $url = generer_objet_url_ecrire(3, 'article');
 
 ### Fonctions `generer_{x}_entite` et `generer_{x}_{objet}`
 
-De même que  `generer_url_ecrire_objet` les fonctions `generer_*_entite` dépréciées sont supprimées. Les fonctions remplaçantes ont les mêmes arguments. 
+De même que  `generer_url_ecrire_objet` les fonctions `generer_*_entite` dépréciées sont supprimées. Les fonctions remplaçantes ont les mêmes arguments.
 
 | Supprimé | Remplacé par |
 | - | - |
