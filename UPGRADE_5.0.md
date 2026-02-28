@@ -950,17 +950,18 @@ $url = generer_objet_url_ecrire(3, 'article');
 
 ### Fonctions `generer_{x}_entite`
 
-De même que  `generer_url_ecrire_objet` les fonctions dépréciées
+De même que  `generer_url_ecrire_objet` les fonctions `generer_*_entite` dépréciées sont supprimées. Les fonctions remplaçantes ont les mêmes arguments. 
 
-- `generer_lien_entite`
-- `generer_introduction_entite`
-- `generer_info_entite`
+| Supprimé | Remplacé par |
+| - | - |
+| `generer_url_entite` | `generer_objet_url` |
+| `generer_url_entite_absolue` | `generer_objet_url_absolue` |
+| `generer_url_ecrire_objet` | `generer_objet_url_ecrire` |
+| `generer_url_ecrire_entite_edit` | `generer_objet_url_ecrire_edit` |
+| `generer_introduction_entite` | `generer_objet_introduction` |
+| `generer_info_entite` | `generer_objet_info` |
+| `generer_lien_entite` | `generer_objet_lien` |
 
-Sont supprimées et remplacées (renommées) par
-
-- `generer_objet_lien`
-- `generer_objet_introduction`
-- `generer_objet_info`
 
 ### Fonction de liste `inc_lister_objets_dist`
 
