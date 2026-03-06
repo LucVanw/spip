@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.12 - 2026-03-06
+
+- Mise à jour des dépendances (ecrire, prive, compresseur, revisions, urls)
+
 ## 4.4.11 - 2026-02-27
 
 - Mise à jour des dépendances (ecrire, prive, tw)
