@@ -27,7 +27,7 @@
         "path": "plugins-dist/compresseur",
         "source": "https://git.spip.net/spip/compresseur.git",
         "branch": "2.2",
-        "tag": "2.2.2"
+        "tag": "2.2.3"
     },
     "dump": {
         "path": "plugins-dist/dump",
@@ -81,7 +81,7 @@
         "path": "plugins-dist/revisions",
         "source": "https://git.spip.net/spip/revisions.git",
         "branch": "3.1",
-        "tag": "3.1.10"
+        "tag": "3.1.11"
     },
     "safehtml": {
         "path": "plugins-dist/safehtml",
@@ -117,6 +117,6 @@
         "path": "plugins-dist/urls_etendues",
         "source": "https://git.spip.net/spip/urls.git",
         "branch": "4.2",
-        "tag": "4.2.1"
+        "tag": "4.2.2"
     }
 }
