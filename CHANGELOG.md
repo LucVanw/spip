@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.13 - 2026-03-06
+
+- Mise à jour des dépendances (ecrire) -- Compatibilité PHP 7.4
+
 ## 4.4.12 - 2026-03-06
 
 - Mise à jour des dépendances (ecrire, prive, compresseur, revisions, urls)
