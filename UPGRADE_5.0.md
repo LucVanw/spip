@@ -449,10 +449,11 @@ La recherhe d'un fichier `mes_options` dans `ecrire` n'est plus supporté. Le fi
 
 ## Constantes PHP
 
+Certaines constantes sont dépréciées en SPIP4.4 et supprimée en SPIP5
+
 ### `_DIR_RESTREINT_ABS`
 
 
-Certaines constantes sont dépréciées en SPIP4.4 et supprimée en SPIP5
 
 La constante `_DIR_RESTREINT_ABS` est dépréciée en SPIP4.4 et supprimée en SPIP5 au profit de paramètres gérés dans un [conteneur de services](https://symfony.com/doc/current/service_container.html).
 
