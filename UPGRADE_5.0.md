@@ -490,6 +490,38 @@ Dans un squelette :
 [(#PARAM{spip.routes.back_office})]
 ```
 
+### `_ROOT_RACINE`
+
+#### Avant
+
+```php
+$path = _ROOT_RACINE;
+```
+
+#### Après
+
+
+```php
+use function \SpipLeague\Component\Kernel\app;
+$path = app()->getRootDir();
+```
+
+### `_ROOT_RESTREINT`
+
+#### Avant
+
+```php
+$path = _ROOT_RESTREINT;
+```
+
+#### Après
+
+
+```php
+use function \SpipLeague\Component\Kernel\app;
+$path = app()->getCoreDir();
+```
+
 ### `_ROOT_CWD`
 
 
@@ -508,6 +540,7 @@ $cwd = app()->getCwd();
 // ou
 $cwd = \SpipLeague\Component\Kernel\app()->getCwd();
 ```
+
 
 ### `_DIR_LOG`
 
