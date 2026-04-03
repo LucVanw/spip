@@ -74,7 +74,7 @@
     "porte_plume": {
         "path": "plugins-dist/porte_plume",
         "source": "https://git.spip.net/spip/porte-plume.git",
-        "branch": "3.1",
+        "branch": "3.x",
         "tag": "3.1.10"
     },
     "revisions": {
