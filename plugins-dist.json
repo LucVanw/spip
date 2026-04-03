@@ -68,7 +68,7 @@
     "plan": {
         "path": "plugins-dist/plan",
         "source": "https://git.spip.net/spip/plan.git",
-        "branch": "4.1",
+        "branch": "4.x",
         "tag": "4.1.6"
     },
     "porte_plume": {
