@@ -80,7 +80,7 @@
     "revisions": {
         "path": "plugins-dist/revisions",
         "source": "https://git.spip.net/spip/revisions.git",
-        "branch": "3.1",
+        "branch": "3.x",
         "tag": "3.1.11"
     },
     "safehtml": {
