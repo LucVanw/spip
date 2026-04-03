@@ -110,13 +110,13 @@
     "textwheel": {
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
-        "branch": "3.3",
+        "branch": "3.x",
         "tag": "3.3.8"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
         "source": "https://git.spip.net/spip/urls.git",
-        "branch": "4.2",
+        "branch": "4.x",
         "tag": "4.2.2"
     }
 }
