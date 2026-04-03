@@ -1658,37 +1658,37 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/classic-distribution.git",
-                "reference": "307f61261521aef01e22d2ccdba863bb765ad68a"
+                "reference": "1617fb1662bfd4bb9a2a98e60bb7285420c31928"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fclassic-distribution/repository/archive.zip?sha=307f61261521aef01e22d2ccdba863bb765ad68a",
-                "reference": "307f61261521aef01e22d2ccdba863bb765ad68a",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fclassic-distribution/repository/archive.zip?sha=1617fb1662bfd4bb9a2a98e60bb7285420c31928",
+                "reference": "1617fb1662bfd4bb9a2a98e60bb7285420c31928",
                 "shasum": ""
             },
             "require": {
-                "spip/aide": "^4.0@dev",
-                "spip/bigup": "^4.0@dev",
-                "spip/compagnon": "^4.0@dev",
-                "spip/compresseur": "^3.0@dev",
-                "spip/dist": "^4.3",
-                "spip/dump": "^3.0@dev",
-                "spip/ecrire": "^5.0@dev",
-                "spip/forum": "^4.0@dev",
+                "spip/aide": "^4.0",
+                "spip/bigup": "^4.0",
+                "spip/compagnon": "^4.0",
+                "spip/compresseur": "^3.0",
+                "spip/dist": "^5.0",
+                "spip/dump": "^3.0",
+                "spip/ecrire": "^5.0",
+                "spip/forum": "^4.0",
                 "spip/images": "^5.0",
-                "spip/mediabox": "^4.0@dev",
+                "spip/mediabox": "^4.0",
                 "spip/medias": "^5.0",
-                "spip/mots": "^5.0@dev",
-                "spip/plan": "^5.0@dev",
-                "spip/porte-plume": "^3.2",
-                "spip/prive": "^2.0@dev",
-                "spip/revisions": "^3.2",
-                "spip/safehtml": "^3.2",
-                "spip/sites": "^5.0@dev",
-                "spip/stats": "^3.2",
-                "spip/svp": "^3.3",
-                "spip/tw": "^3.4",
-                "spip/urls": "^4.3"
+                "spip/mots": "^5.0",
+                "spip/plan": "^5.0",
+                "spip/porte-plume": "^4.0",
+                "spip/prive": "^2.0",
+                "spip/revisions": "^4.0",
+                "spip/safehtml": "^4.0",
+                "spip/sites": "^5.0",
+                "spip/stats": "^4.0",
+                "spip/svp": "^4.0",
+                "spip/tw": "^4.0",
+                "spip/urls": "^5.0"
             },
             "default-branch": true,
             "type": "metapackage",
@@ -1700,7 +1700,7 @@
                 "source": "https://git.spip.net/spip/classic-distribution/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/classic-distribution/-/issues"
             },
-            "time": "2026-04-03T15:44:36+02:00"
+            "time": "2026-04-03T19:20:46+02:00"
         },
         {
             "name": "spip/compagnon",
@@ -1888,12 +1888,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "f805e31f16291798cd949245ac5bb291b307dc51"
+                "reference": "222b93d252cd6a6b38d889c9544547b7d24e8d5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=f805e31f16291798cd949245ac5bb291b307dc51",
-                "reference": "f805e31f16291798cd949245ac5bb291b307dc51",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=222b93d252cd6a6b38d889c9544547b7d24e8d5b",
+                "reference": "222b93d252cd6a6b38d889c9544547b7d24e8d5b",
                 "shasum": ""
             },
             "require": {
@@ -1903,7 +1903,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3.x-dev"
+                    "dev-master": "5.x-dev"
                 }
             },
             "license": [
@@ -1921,7 +1921,7 @@
                 "source": "https://git.spip.net/spip/dist/-/tree/master",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2026-03-05T01:30:02+01:00"
+            "time": "2026-04-03T19:08:18+02:00"
         },
         {
             "name": "spip/dump",
@@ -2616,12 +2616,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/porte-plume.git",
-                "reference": "0af0a62ca75ab050c2ef3c6b085753f2ed448532"
+                "reference": "7d6565c31db9530d40dab7242aa33211693caddb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=0af0a62ca75ab050c2ef3c6b085753f2ed448532",
-                "reference": "0af0a62ca75ab050c2ef3c6b085753f2ed448532",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fporte-plume/repository/archive.zip?sha=7d6565c31db9530d40dab7242aa33211693caddb",
+                "reference": "7d6565c31db9530d40dab7242aa33211693caddb",
                 "shasum": ""
             },
             "require": {
@@ -2636,7 +2636,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload-dev": {
@@ -2669,7 +2669,7 @@
                 "source": "https://git.spip.net/spip/porte-plume/-/tree/master",
                 "issues": "https://git.spip.net/spip/porte-plume/-/issues"
             },
-            "time": "2026-02-10T01:30:06+01:00"
+            "time": "2026-04-03T17:12:36+02:00"
         },
         {
             "name": "spip/prive",
@@ -2764,12 +2764,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/revisions.git",
-                "reference": "654bf567dc95760144f2ad347cc169d84156cf4d"
+                "reference": "dcebf8b987ad19d1216449ae656792e90f85d9c6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Frevisions/repository/archive.zip?sha=654bf567dc95760144f2ad347cc169d84156cf4d",
-                "reference": "654bf567dc95760144f2ad347cc169d84156cf4d",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Frevisions/repository/archive.zip?sha=dcebf8b987ad19d1216449ae656792e90f85d9c6",
+                "reference": "dcebf8b987ad19d1216449ae656792e90f85d9c6",
                 "shasum": ""
             },
             "require": {
@@ -2784,7 +2784,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload-dev": {
@@ -2822,7 +2822,7 @@
                 "source": "https://git.spip.net/spip/revisions/-/tree/master",
                 "issues": "https://git.spip.net/spip/revisions/-/issues"
             },
-            "time": "2026-03-06T09:34:49+01:00"
+            "time": "2026-04-03T17:13:33+02:00"
         },
         {
             "name": "spip/safehtml",
@@ -2830,12 +2830,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/safehtml.git",
-                "reference": "4f20231e6cd4a10717409bf45098446ea06476e3"
+                "reference": "9fb3cff4a0e752378d4371b253e73b1d095f1997"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=4f20231e6cd4a10717409bf45098446ea06476e3",
-                "reference": "4f20231e6cd4a10717409bf45098446ea06476e3",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsafehtml/repository/archive.zip?sha=9fb3cff4a0e752378d4371b253e73b1d095f1997",
+                "reference": "9fb3cff4a0e752378d4371b253e73b1d095f1997",
                 "shasum": ""
             },
             "require": {
@@ -2850,7 +2850,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload": {
@@ -2904,7 +2904,7 @@
                 "source": "https://git.spip.net/spip/safehtml/-/tree/master",
                 "issues": "https://git.spip.net/spip/safehtml/-/issues"
             },
-            "time": "2026-03-06T09:21:45+01:00"
+            "time": "2026-04-03T17:58:34+02:00"
         },
         {
             "name": "spip/security",
@@ -3042,12 +3042,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/stats.git",
-                "reference": "4c826b18405b402f1e2ec9d0964520f36de8769b"
+                "reference": "95517781297f771047dffce7223f118ab74f4674"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fstats/repository/archive.zip?sha=4c826b18405b402f1e2ec9d0964520f36de8769b",
-                "reference": "4c826b18405b402f1e2ec9d0964520f36de8769b",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fstats/repository/archive.zip?sha=95517781297f771047dffce7223f118ab74f4674",
+                "reference": "95517781297f771047dffce7223f118ab74f4674",
                 "shasum": ""
             },
             "require": {
@@ -3062,7 +3062,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.2.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload-dev": {
@@ -3124,7 +3124,7 @@
                 "source": "https://git.spip.net/spip/stats/-/tree/master",
                 "issues": "https://git.spip.net/spip/stats/-/issues"
             },
-            "time": "2026-03-11T16:07:25+01:00"
+            "time": "2026-04-03T18:30:33+02:00"
         },
         {
             "name": "spip/svp",
@@ -3132,12 +3132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/svp.git",
-                "reference": "468bd8ce9e1bd54727409f224d54f2b4660d0ba1"
+                "reference": "8b8d641c5048a8d4e3fc6708744fc810309ff1bc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=468bd8ce9e1bd54727409f224d54f2b4660d0ba1",
-                "reference": "468bd8ce9e1bd54727409f224d54f2b4660d0ba1",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fsvp/repository/archive.zip?sha=8b8d641c5048a8d4e3fc6708744fc810309ff1bc",
+                "reference": "8b8d641c5048a8d4e3fc6708744fc810309ff1bc",
                 "shasum": ""
             },
             "require": {
@@ -3154,7 +3154,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.3.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload-dev": {
@@ -3223,7 +3223,7 @@
                 "source": "https://git.spip.net/spip/svp/-/tree/master",
                 "issues": "https://git.spip.net/spip/svp/-/issues"
             },
-            "time": "2026-04-02T15:55:31+02:00"
+            "time": "2026-04-03T18:43:06+02:00"
         },
         {
             "name": "spip/tw",
@@ -3231,12 +3231,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/tw.git",
-                "reference": "720251753887cdb1f0e1c82e150524564267e67e"
+                "reference": "df15328814e9a2988b9aee1475bb500d95b0b47a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=720251753887cdb1f0e1c82e150524564267e67e",
-                "reference": "720251753887cdb1f0e1c82e150524564267e67e",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=df15328814e9a2988b9aee1475bb500d95b0b47a",
+                "reference": "df15328814e9a2988b9aee1475bb500d95b0b47a",
                 "shasum": ""
             },
             "require": {
@@ -3252,7 +3252,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "3.4.x-dev"
+                    "dev-master": "4.x-dev"
                 }
             },
             "autoload-dev": {
@@ -3308,7 +3308,7 @@
                 "source": "https://git.spip.net/spip/tw/-/tree/master",
                 "issues": "https://git.spip.net/spip/tw/-/issues"
             },
-            "time": "2026-02-26T11:00:15+01:00"
+            "time": "2026-04-03T18:53:41+02:00"
         },
         {
             "name": "spip/urls",
@@ -3316,12 +3316,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/urls.git",
-                "reference": "cc3897fc6858eb8028c32d0d6172c71ae7d54396"
+                "reference": "0790d8f7513c2acd46894f424e11288b18478c1f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=cc3897fc6858eb8028c32d0d6172c71ae7d54396",
-                "reference": "cc3897fc6858eb8028c32d0d6172c71ae7d54396",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Furls/repository/archive.zip?sha=0790d8f7513c2acd46894f424e11288b18478c1f",
+                "reference": "0790d8f7513c2acd46894f424e11288b18478c1f",
                 "shasum": ""
             },
             "require": {
@@ -3338,7 +3338,7 @@
             "type": "spip-plugin",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.3.x-dev"
+                    "dev-master": "5.x-dev"
                 }
             },
             "autoload-dev": {
@@ -3395,7 +3395,7 @@
                 "source": "https://git.spip.net/spip/urls/-/tree/master",
                 "issues": "https://git.spip.net/spip/urls/-/issues"
             },
-            "time": "2026-02-16T16:32:05+01:00"
+            "time": "2026-04-03T18:56:16+02:00"
         },
         {
             "name": "symfony/clock",
