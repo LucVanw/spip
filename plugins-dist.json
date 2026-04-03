@@ -8,7 +8,7 @@
     "archiviste": {
         "path": "plugins-dist/archiviste",
         "source": "https://git.spip.net/spip/archiviste.git",
-        "branch": "2.2",
+        "branch": "2.x",
         "tag": "2.2.4"
     },
     "bigup": {
