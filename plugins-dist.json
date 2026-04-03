@@ -86,7 +86,7 @@
     "safehtml": {
         "path": "plugins-dist/safehtml",
         "source": "https://git.spip.net/spip/safehtml.git",
-        "branch": "3.1",
+        "branch": "3.x",
         "tag": "3.1.5"
     },
     "sites": {
