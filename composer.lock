@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3d0099e45b1637bcb5f6b7069727530e",
+    "content-hash": "ce7884796d61f74c10b8ffc939ed4351",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -228,16 +228,16 @@
         },
         {
             "name": "spip-league/kernel",
-            "version": "1.0.1",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/kernel.git",
-                "reference": "375feee2d7c4c0d4ac86d3c1635bf46ccae7f909"
+                "reference": "4f275f3504ae95892fc41412a0c62021251f2a2f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=375feee2d7c4c0d4ac86d3c1635bf46ccae7f909",
-                "reference": "375feee2d7c4c0d4ac86d3c1635bf46ccae7f909",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=4f275f3504ae95892fc41412a0c62021251f2a2f",
+                "reference": "4f275f3504ae95892fc41412a0c62021251f2a2f",
                 "shasum": ""
             },
             "require": {
@@ -278,10 +278,10 @@
                 "kernel"
             ],
             "support": {
-                "source": "https://git.spip.net/spip-league/kernel/-/tree/1.0.1",
+                "source": "https://git.spip.net/spip-league/kernel/-/tree/1.1.0",
                 "issues": "https://git.spip.net/spip-league/kernel/-/issues"
             },
-            "time": "2025-03-19T11:54:48+01:00"
+            "time": "2026-03-07T16:31:19+01:00"
         },
         {
             "name": "spip/dist",
