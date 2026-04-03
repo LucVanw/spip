@@ -98,7 +98,7 @@
     "statistiques": {
         "path": "plugins-dist/statistiques",
         "source": "https://git.spip.net/spip/stats.git",
-        "branch": "3.1",
+        "branch": "3.x",
         "tag": "3.1.11"
     },
     "svp": {
