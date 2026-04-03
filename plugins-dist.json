@@ -2,7 +2,7 @@
     "aide": {
         "path": "plugins-dist/aide",
         "source": "https://git.spip.net/spip/aide.git",
-        "branch": "3.2",
+        "branch": "3.x",
         "tag": "3.2.6"
     },
     "archiviste": {
