@@ -62,7 +62,7 @@
     "mots": {
         "path": "plugins-dist/mots",
         "source": "https://git.spip.net/spip/mots.git",
-        "branch": "4.3",
+        "branch": "4.x",
         "tag": "4.3.0"
     },
     "plan": {
