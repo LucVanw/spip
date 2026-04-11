@@ -10,13 +10,22 @@
  * Pour plus de détails voir le fichier LICENSE ou l'aide en ligne.
  */
 
+use SpipLeague\Component\HttpKernel\Bootstrapper\LegacyBootstrapper;
+use SpipLeague\Component\HttpKernel\Handler\LegacyHandler;
+use SpipLeague\Component\HttpKernel\SpipHttpKernel;
+use Symfony\Component\HttpFoundation\Request;
 use function SpipLeague\Component\Kernel\app;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-include_once app()->getcoreDir() . 'inc_version.php';
-/** @todo Replace by $app = boot() call  */
+$kernel = app();
+$request = Request::createFromGlobals();
 
-# au travail...
-include app()->getcoreDir() . 'public.php';
-/** @todo Replace by $app->run() */
+$httpKernel = new SpipHttpKernel(
+    $kernel,
+    new LegacyHandler($kernel->getCoreDir() . 'public.php'),
+    new LegacyBootstrapper(),
+);
+
+$response = $httpKernel->handle($request);
+$response->send();
