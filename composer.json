@@ -9,11 +9,15 @@
     ],
     "require": {
         "php": "^8.2",
+        "spip/ecrire": "dev-plugin_config as 5.0",
+        "spip/prive": "dev-plugin_config as 2.x-dev",
+        "spip/mots": "dev-event_dispatcher as 5.0",
         "spip-league/composer-installer": "^0.8",
-        "spip-league/kernel": "dev-dev_http as 2.1",
-        "spip-league/http-kernel": "1.0.x-dev",
+        "spip-league/kernel": "dev-plugin_config as 2.1",
+        "spip-league/http-kernel": "dev-plugin_config as 1.0.x-dev",
+        "spip-league/pipeline-bridge": "@dev",
         "spip/classic-distribution": "^5.0",
-        "spip/security": "^1.6",
+        "spip/security": "dev-spip-5 as 1.6",
         "symfony/polyfill-php83": "^1.31",
         "symfony/polyfill-php84": "^1.31"
     },
