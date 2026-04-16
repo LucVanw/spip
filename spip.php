@@ -10,7 +10,7 @@
  * Pour plus de détails voir le fichier LICENSE ou l'aide en ligne.
  */
 
-use SpipLeague\Component\HttpKernel\Bootstrapper\LegacyBootstrapper;
+use Spip\HttpKernel\SpipBootstrapper;
 use SpipLeague\Component\HttpKernel\Handler\LegacyHandler;
 use SpipLeague\Component\HttpKernel\SpipHttpKernel;
 use Symfony\Component\HttpFoundation\Request;
@@ -24,8 +24,9 @@ $request = Request::createFromGlobals();
 $httpKernel = new SpipHttpKernel(
     $kernel,
     new LegacyHandler($kernel->getCoreDir() . 'public.php'),
-    new LegacyBootstrapper(),
+    new SpipBootstrapper(),
 );
 
 $response = $httpKernel->handle($request);
 $response->send();
+$httpKernel->terminate($request, $response);
