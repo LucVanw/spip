@@ -1149,100 +1149,25 @@ $css = minifier($css, 'css');
 
 ## Variables globales
 
-### Globales remplacées par des paramètres du conteneur
+### Migration progressive vers le conteneur de services
 
-SPIP 5.0 commence à migrer plusieurs globales historiques de configuration
-vers le **conteneur de services** (Symfony Dependency Injection). Ces
-globales restent reconnues — leur valeur est automatiquement propagée au
-conteneur par le mécanisme `applyDeprecations()` — mais :
+SPIP 5.0 amorce une migration de plusieurs configurations historiques
+(globales, constantes) vers le **conteneur de services** (Symfony
+Dependency Injection). À ce stade, cette migration est ponctuelle et se
+fait au cas par cas, sans mécanisme automatique de dépréciation.
 
-- un avertissement de dépréciation (`E_USER_DEPRECATED`) est émis la première
-  fois qu'une globale dépréciée est détectée dans un fichier d'options
-  (`config/mes_options.php` ou `*_options.php` d'un plugin) ;
-- elles seront supprimées dans une version ultérieure.
+Exemple déjà en place : le logger lit ses paramètres de rotation depuis
+[`config/spip/logger.php`](config/spip/logger.php)
+(`spip.logger.max_files`, `spip.logger.max_size`), avec un fallback sur
+les globales historiques `$nombre_de_logs` / `$taille_des_logs` si elles
+sont définies.
 
-Deux passes sont effectuées :
-
-1. Après `config/mes_options.php` (chemin indiqué dans le message).
-2. Après le cache des options de plugins (`_CACHE_PLUGINS_OPT`), ce qui
-   permet aussi de capter les globales posées par un plugin et d'alerter
-   son auteur·e.
-
-#### Table de correspondance (5.0)
-
-Globale / constante → paramètre du conteneur (fichier de config cible) :
-
-- `$nombre_de_logs` → `spip.logger.max_files` (`config/spip/logger.php`, clé `max_files`)
-- `$taille_des_logs` → `spip.logger.max_size` (`config/spip/logger.php`, clé `max_size`)
-- `$cookie_prefix` → `spip.cookie.prefix` (`config/spip/cookie.php`, clé `prefix`)
-- `$dossier_squelettes` → `spip.dirs.extra_custom` (`config/spip/dirs.php`, clé `extra_custom`)
-- `$spip_header_silencieux` → `spip.http.silent` (`config/spip/http.php`, clé `silent`)
-- `_PASS_LONGUEUR_MINI` → `spip.security.password_min_length` (`config/spip/security.php`)
-- `_IMG_QUALITE` → `spip.image.quality` (`config/spip/image.php`, clé `quality`)
-- `_SPIP_PAGE` → `spip.routing.page_parameter` (`config/spip/routing.php`, clé `page_parameter`)
-
-> Les fichiers du répertoire `config/spip/` sont **réservés à la
-> distribution SPIP** : ils contiennent les défauts livrés avec le cœur
-> et peuvent être réécrits à chaque mise à jour. Les surcharges
-> utilisateur se font **exclusivement** dans `config/custom.php`
-> (écrasé uniquement si vous le modifiez vous-même).
->
-> À ce stade, seul le logger (`$nombre_de_logs` / `$taille_des_logs`) est
-> entièrement migré côté cœur : ses défauts ont été retirés de
-> `ecrire/bootstrap/config/globals.php` et vivent dans
-> [`config/spip/logger.php`](config/spip/logger.php). Les autres entrées
-> sont captées par le mécanisme de dépréciation mais leur défaut historique
-> reste, pour l'instant, dans `globals.php`. Chaque globale sera bascule
-> complètement dans un commit dédié.
-
-#### Comment migrer
-
-**Avant** (dans `config/mes_options.php`) :
-
-```php
-$GLOBALS['nombre_de_logs'] = 10;
-$GLOBALS['taille_des_logs'] = 200;
-```
-
-**Après**, dans `config/custom.php` (le fichier de surcharge utilisateur) :
-
-```php
-<?php
-return [
-    'spip.logger.max_files' => 10,
-    'spip.logger.max_size'  => 200,
-];
-```
-
-La lecture côté code SPIP se fait ensuite via le helper transitoire
-`param()` :
-
-```php
-use function SpipLeague\Component\Kernel\param;
-
-$maxFiles = (int) param('spip.logger.max_files');
-```
-
-#### Pour les développeuses et développeurs de plugins
-
-Si votre plugin positionne une de ces globales dans son fichier
-`monprefixe_options.php`, vous verrez à chaque boot un avertissement du
-type :
-
-```
-Since spip/spip 5.0: Using global "$nombre_de_logs" (detected while loading
-"/.../tmp/cache/charger_plugins_options.php") is deprecated, set
-"spip.logger.max_files" in "/.../config/custom.php".
-```
-
-La globale continue de fonctionner (dernière valeur posée gagne), mais il
-est recommandé de :
-
-- retirer l'affectation de la globale depuis votre `*_options.php` ;
-- soit écrire la valeur dans le conteneur le temps de la transition :
-  `app()->getContainer()->setParameter('spip.logger.max_files', …);` ;
-- soit laisser l'utilisateur·rice configurer la valeur dans
-  `config/custom.php` (voir ci-dessus).
+> Un mécanisme automatique de dépréciation (détection + rehydratation
+> des globales/constantes historiques depuis les paramètres du
+> conteneur) a été expérimenté puis retiré ; il pourra être réintroduit
+> ultérieurement avec une approche mieux adaptée à l'historique de
+> SPIP. D'ici là, les migrations se feront au fil de l'eau, documentées
+> individuellement.
 
 ### `auteur_session`
 
