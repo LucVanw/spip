@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+if (\PHP_SAPI !== 'cli') {
+    \fwrite(\STDERR, "bin/spip doit être exécuté en CLI.\n");
+    exit(1);
+}
+
+$autoload = __DIR__ . '/../vendor/autoload.php';
+if (!\is_file($autoload)) {
+    \fwrite(\STDERR, "Autoloader absent. Lancer `composer install`.\n");
+    exit(1);
+}
+
+require $autoload;
+
+$app = new SpipLeague\Component\Console\Application(
+    __DIR__ . '/../ecrire/inc_version.php',
+);
+
+exit($app->run());
