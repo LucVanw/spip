@@ -9,16 +9,27 @@
     ],
     "require": {
         "php": "^8.2",
-        "spip/ecrire": "dev-plugin_config as 5.0",
-        "spip/prive": "dev-plugin_config as 2.x-dev",
-        "spip/mots": "dev-event_dispatcher as 5.0",
-        "spip-league/composer-installer": "^0.8",
+        "spip-league/composer-installer": "dev-plugin_config as 0.8",
         "spip-league/console": "@dev",
-        "spip-league/kernel": "dev-plugin_config as 2.1",
         "spip-league/http-kernel": "dev-plugin_config as 1.0.x-dev",
+        "spip-league/kernel": "dev-plugin_config as 2.1",
         "spip-league/pipeline-bridge": "@dev",
         "spip/classic-distribution": "^5.0",
+        "spip/bigup": "dev-plugin_config as 4.x-dev",
+        "spip/compresseur": "dev-plugin_config as 3.x-dev",
+        "spip/dump": "dev-plugin_config as 3.0",
+        "spip/ecrire": "dev-plugin_config as 5.0",
+        "spip/forum": "dev-plugin_config as 4.x-dev",
+        "spip/images": "dev-plugin_config as 5.x-dev",
+        "spip/medias": "dev-plugin_config as 5.0.x-dev",
+        "spip/mots": "dev-plugin_config as 5.0",
+        "spip/revisions": "dev-plugin_config as 4.x-dev",
+        "spip/prive": "dev-plugin_config as 2.x-dev",
         "spip/security": "dev-spip-5 as 1.6",
+        "spip/sites": "dev-plugin_config as 5.0",
+        "spip/svp": "dev-plugin_config as 4.x-dev",
+        "spip/tw": "dev-plugin_config as 4.x-dev",
+        "spip/urls": "dev-plugin_config as 5.x-dev",
         "symfony/polyfill-php83": "^1.31",
         "symfony/polyfill-php84": "^1.31"
     },
@@ -33,15 +44,15 @@
             "name": "spip"
         }
     ],
-    "bin": [
-        "bin/spip"
-    ],
     "minimum-stability": "dev",
     "autoload-dev": {
         "psr-4": {
             "Spip\\Test\\": "ecrire/tests/integration/"
         }
     },
+    "bin": [
+        "bin/spip"
+    ],
     "archive": {
         "name": "spip",
         "exclude": [
