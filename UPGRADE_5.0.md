@@ -1172,6 +1172,11 @@ Les goblales ou constantes historiques sont supprimées (et ignorées).
 | constante `_LOG_BRUT` | `spip.logger.brut` |
 | constantes `_FILE_LOG`, `_FILE_LOG_SUFFIX` | `spip.logger.log_path` |
 
+| Anciennement | Nouveau paramètre |
+| - | - |
+| globale `controler_dates_rss` | `spip.sites.rss_controler_dates` ou option de `analyser_backend()` |
+| constante `_SYNDICATION_DEREFERENCER_URL` | `spip.sites.rss_dereferencer_url` ou option de `analyser_backend()` |
+| constante `_SYNDICATION_MAX_ITEMS` | `spip.sites.rss_max_items` ou option de `analyser_backend()` |
 
 > Un mécanisme automatique de dépréciation (détection + rehydratation
 > des globales/constantes historiques depuis les paramètres du
