@@ -10,24 +10,15 @@
  * Pour plus de détails voir le fichier LICENSE ou l'aide en ligne.
  */
 
-use Spip\HttpKernel\HandlerResolver;
-use Spip\HttpKernel\SpipBootstrapper;
 use SpipLeague\Component\HttpKernel\SpipHttpKernel;
+use function SpipLeague\Component\Kernel\service;
 use Symfony\Component\HttpFoundation\Request;
-use function SpipLeague\Component\Kernel\app;
 
 require_once __DIR__ . '/vendor/autoload.php';
 
-$kernel = app();
+/** @var SpipHttpKernel $httpKernel */
+$httpKernel = service('http_kernel');
 $request = Request::createFromGlobals();
-$handler = (new HandlerResolver($kernel))->resolve($request);
-
-$httpKernel = new SpipHttpKernel(
-    $kernel,
-    $handler,
-    new SpipBootstrapper(),
-);
-
 $response = $httpKernel->handle($request);
 $response->send();
 $httpKernel->terminate($request, $response);
