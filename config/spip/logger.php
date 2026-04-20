@@ -27,14 +27,14 @@ return [
 	 * Rotation des journaux : nombre maximum de fichiers conservés
 	 * par canal. `0` désactive complètement le log.
 	 *
-	 * Remplace la globale dépréciée `$nombre_de_logs`.
+	 * Remplace la globale `$nombre_de_logs`.
 	 */
 	'max_files' => 4,
 	/**
 	 * Rotation des journaux : taille maximale d'un fichier de log,
 	 * exprimée en kilo-octets. `0` désactive l'écriture.
 	 *
-	 * Remplace la globale dépréciée `$taille_des_logs`.
+	 * Remplace la globale `$taille_des_logs`.
 	 */
 	'max_size' => 100,
 	/**

@@ -1158,9 +1158,20 @@ fait au cas par cas, sans mécanisme automatique de dépréciation.
 
 Exemple déjà en place : le logger lit ses paramètres de rotation depuis
 [`config/spip/logger.php`](config/spip/logger.php)
-(`spip.logger.max_files`, `spip.logger.max_size`), avec un fallback sur
-les globales historiques `$nombre_de_logs` / `$taille_des_logs` si elles
-sont définies.
+(`spip.logger.max_files`, `spip.logger.max_size`). Les paramètres par défaut peuvent être surchargés dans `config/custom.php`. 
+
+Les goblales ou constantes historiques sont supprimées (et ignorées).
+
+| Anciennement | Nouveau paramètre |
+| - | - |
+| globale `nombre_de_logs` | `spip.logger.max_files` |
+| globale `taille_des_logs` | `spip.logger.max_size` |
+| constante `_LOG_FILTRE_GRAVITE` | `spip.logger.max_level` |
+| constante `_MAX_LOG` | `spip.logger.max_log` |
+| constante `_LOG_FILELINE` | `spip.logger.fileline` |
+| constante `_LOG_BRUT` | `spip.logger.brut` |
+| constantes `_FILE_LOG`, `_FILE_LOG_SUFFIX` | `spip.logger.log_path` |
+
 
 > Un mécanisme automatique de dépréciation (détection + rehydratation
 > des globales/constantes historiques depuis les paramètres du
