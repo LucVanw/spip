@@ -1185,6 +1185,64 @@ Les goblales ou constantes historiques sont supprimées (et ignorées).
 > SPIP. D'ici là, les migrations se feront au fil de l'eau, documentées
 > individuellement.
 
+### Version SPIP (`SpipVersion`)
+
+Les informations de version SPIP sont centralisées dans la classe `Spip\SpipVersion`.
+
+#### Changements
+
+- `SpipVersion::VERSION` remplace les usages de version complète (`5.0.0-beta`…)
+- `SpipVersion::branch()` retourne la branche mineure (`5.0`)
+- `SpipVersion::BASE` remplace les usages de version de schéma SQL
+- `SpipVersion::CODE` remplace les usages de version de signatures de compilation
+- `SpipVersion::PHP_MIN` et `SpipVersion::PHP_MAX` remplacent les constantes historiques
+
+#### Symboles legacy conservés (dépréciés)
+
+Les symboles suivants restent exposés temporairement pour compatibilité :
+
+- globale `spip_version_branche` (**dépréciée**)
+- globale `spip_version_base` (**dépréciée**)
+- constante `_SPIP_VERSION_ID` (**dépréciée**)
+
+#### Symboles legacy supprimés
+
+Les symboles suivants ne doivent plus être utilisés :
+
+- globale `spip_version_code`
+- globale `spip_version_affichee`
+- constante `_SPIP_EXTRA_VERSION`
+- constantes `_PHP_MIN` et `_PHP_MAX`
+
+#### Avant
+
+```php
+$version = $GLOBALS['spip_version_branche'];
+$version_affichee = $GLOBALS['spip_version_affichee'];
+$version_base = $GLOBALS['spip_version_base'];
+$version_code = $GLOBALS['spip_version_code'];
+
+if (version_compare(PHP_VERSION, _PHP_MIN, '<')) {
+	// ...
+}
+```
+
+#### Après
+
+```php
+use Spip\SpipVersion;
+
+$version = SpipVersion::VERSION;
+$branche = SpipVersion::branch();
+$version_affichee = SpipVersion::display();
+$version_base = SpipVersion::BASE;
+$version_code = SpipVersion::CODE;
+
+if (version_compare(PHP_VERSION, SpipVersion::PHP_MIN, '<')) {
+	// ...
+}
+```
+
 ### `auteur_session`
 
 La globale `auteur_session` est supprimée, utilisez `visiteur_session` à la place.
