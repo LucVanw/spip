@@ -1122,6 +1122,31 @@ Les fonctions de mise en page de l'espace privé suivantes étaient depréciées
 
 Leurs usages doivent être remplacés par `boite_ouvrir()` / `boite_fermer()`.
 
+### Fonction `compacte`
+
+La fonction dépréciée `compacte` est supprimée.
+Utiliser `minifier`.
+
+#### Avant
+
+```php
+$css = compacte($css, 'css');
+```
+
+```spip
+[(#INCLURE{css/perso.css}|compacte{css})]
+```
+
+#### Après
+
+```php
+$css = minifier($css, 'css');
+```
+
+```spip
+[(#INCLURE{css/perso.css}|minifier{css})]
+```
+
 ## Variables globales
 
 ### `auteur_session`
