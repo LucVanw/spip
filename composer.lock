@@ -1103,7 +1103,7 @@
                 "cache"
             ],
             "support": {
-                "source": "https://git.spip.net/spip-league/hasher/-/tree/issue_1",
+                "source": "https://git.spip.net/spip-league/hasher/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/hasher/-/issues"
             },
             "time": "2026-04-16T12:25:27+02:00"
@@ -1930,7 +1930,7 @@
             ],
             "description": "Compagnon",
             "support": {
-                "source": "https://git.spip.net/spip/compagnon/-/tree/feat_qa_tools",
+                "source": "https://git.spip.net/spip/compagnon/-/tree/master",
                 "issues": "https://git.spip.net/spip/compagnon/-/issues"
             },
             "time": "2026-04-11T16:39:22+02:00"
@@ -2036,12 +2036,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "222b93d252cd6a6b38d889c9544547b7d24e8d5b"
+                "reference": "1e7f3dbbd39ca24527ec97312adc8fc853f8616f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=222b93d252cd6a6b38d889c9544547b7d24e8d5b",
-                "reference": "222b93d252cd6a6b38d889c9544547b7d24e8d5b",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=1e7f3dbbd39ca24527ec97312adc8fc853f8616f",
+                "reference": "1e7f3dbbd39ca24527ec97312adc8fc853f8616f",
                 "shasum": ""
             },
             "require": {
@@ -2069,7 +2069,7 @@
                 "source": "https://git.spip.net/spip/dist/-/tree/master",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2026-04-03T19:08:18+02:00"
+            "time": "2026-04-26T20:38:16+02:00"
         },
         {
             "name": "spip/dump",
@@ -2519,12 +2519,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/medias.git",
-                "reference": "aec9b0e3be51e9f1e3e94222f9cbb094de63dbed"
+                "reference": "2d0a15e96d5966b602012b530011caab3c5beed4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=aec9b0e3be51e9f1e3e94222f9cbb094de63dbed",
-                "reference": "aec9b0e3be51e9f1e3e94222f9cbb094de63dbed",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fmedias/repository/archive.zip?sha=2d0a15e96d5966b602012b530011caab3c5beed4",
+                "reference": "2d0a15e96d5966b602012b530011caab3c5beed4",
                 "shasum": ""
             },
             "require": {
@@ -2602,10 +2602,10 @@
             ],
             "description": "Gestion des medias dans SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/medias/-/tree/fix_env_to_uid",
+                "source": "https://git.spip.net/spip/medias/-/tree/master",
                 "issues": "https://git.spip.net/spip/medias/-/issues"
             },
-            "time": "2026-04-16T20:56:18+02:00"
+            "time": "2026-04-24T20:01:50+02:00"
         },
         {
             "name": "spip/mots",
@@ -2823,12 +2823,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "6ba40b170c468ae96369631efd4baadada6ebf4b"
+                "reference": "5d09ab9bdca3260e5a46f5bf4b82bf3c07f6a679"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=6ba40b170c468ae96369631efd4baadada6ebf4b",
-                "reference": "6ba40b170c468ae96369631efd4baadada6ebf4b",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=5d09ab9bdca3260e5a46f5bf4b82bf3c07f6a679",
+                "reference": "5d09ab9bdca3260e5a46f5bf4b82bf3c07f6a679",
                 "shasum": ""
             },
             "require": {
@@ -2903,7 +2903,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2026-04-20T15:34:03+02:00"
+            "time": "2026-04-24T19:55:09+02:00"
         },
         {
             "name": "spip/revisions",
@@ -4351,12 +4351,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php85.git",
-                "reference": "2c408a6bb0313e6001a83628dc5506100474254e"
+                "reference": "fcfa4973a9917cef23f2e38774da74a2b7d115ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php85/zipball/2c408a6bb0313e6001a83628dc5506100474254e",
-                "reference": "2c408a6bb0313e6001a83628dc5506100474254e",
+                "url": "https://api.github.com/repos/symfony/polyfill-php85/zipball/fcfa4973a9917cef23f2e38774da74a2b7d115ee",
+                "reference": "fcfa4973a9917cef23f2e38774da74a2b7d115ee",
                 "shasum": ""
             },
             "require": {
@@ -4424,7 +4424,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-04-10T16:50:15+00:00"
+            "time": "2026-04-26T13:10:57+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -5284,12 +5284,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "918f0ec5b141db08892b28b897031331ce5d4fa9"
+                "reference": "aa07a084c48ef52ef4d456798c0117317fa0e1c8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/918f0ec5b141db08892b28b897031331ce5d4fa9",
-                "reference": "918f0ec5b141db08892b28b897031331ce5d4fa9",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/aa07a084c48ef52ef4d456798c0117317fa0e1c8",
+                "reference": "aa07a084c48ef52ef4d456798c0117317fa0e1c8",
                 "shasum": ""
             },
             "require": {
@@ -5370,7 +5370,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-04-21T10:02:56+00:00"
+            "time": "2026-04-23T12:32:42+00:00"
         },
         {
             "name": "sebastian/cli-parser",
