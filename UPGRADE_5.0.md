@@ -4,6 +4,24 @@
 
 SPIP 5.0 nécessite PHP 8.2 minimum.
 
+### Variables d'environnement du kernel
+
+Le bootstrap du kernel charge automatiquement les fichiers `.env` (et variantes Symfony : `.env.local`, `.env.<APP_ENV>`, `.env.<APP_ENV>.local`) via `symfony/dotenv` quand ils sont présents à la racine du projet.
+
+Variables reconnues :
+
+- `APP_ENV` : environnement d'exécution (`prod` par défaut, `test` pour les tests).
+- `SPIP_CACHE_DIR` : surcharge du répertoire de cache structurel.
+- `SPIP_ETC_DIR` : surcharge du répertoire de configuration (`config/`).
+
+Exemple minimal :
+
+```env
+APP_ENV=prod
+# SPIP_CACHE_DIR=/var/spip/cache
+# SPIP_ETC_DIR=/etc/spip
+```
+
 ### Migration BDD
 
 SPIP 5.0 ne contient pas les mises à jour de BDD antérieures à SPIP 4.0.
