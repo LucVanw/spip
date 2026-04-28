@@ -1180,7 +1180,10 @@ Exemple déjà en place : le logger lit ses paramètres de rotation depuis
 peuvent être surchargés dans [`config/custom.php`](config/custom.php), qui
 utilise désormais le format Symfony `ContainerConfigurator`.
 
-Les goblales ou constantes historiques sont supprimées (et ignorées).
+Toutes les configurations du core passent désormais par le builder du conteneur Symfony
+(`ContainerConfigurator`) et non plus par des fichiers de cache legacy.
+
+Les globales ou constantes historiques sont supprimées (et ignorées).
 
 | Anciennement | Nouveau paramètre |
 | - | - |
@@ -1198,7 +1201,7 @@ Les goblales ou constantes historiques sont supprimées (et ignorées).
 | constante `_SYNDICATION_DEREFERENCER_URL` | `spip.sites.rss_dereferencer_url` ou option de `analyser_backend()` |
 | constante `_SYNDICATION_MAX_ITEMS` | `spip.sites.rss_max_items` ou option de `analyser_backend()` |
 
-> Un mécanisme automatique de dépréciation (détection + rehydratation
+> Un mécanisme automatique de dépréciation (détection + réhydratation
 > des globales/constantes historiques depuis les paramètres du
 > conteneur) a été expérimenté puis retiré ; il pourra être réintroduit
 > ultérieurement avec une approche mieux adaptée à l'historique de
