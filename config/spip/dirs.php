@@ -17,6 +17,6 @@ return static function (ContainerConfigurator $container): void {
 		->set('spip.dirs.custom', 'squelettes/')
 		->set('spip.dirs.extra_custom', '')
 		->set('spip.dirs.private_template', 'prive/')
-		->set('spip.dirs.log', '%spip.dirs.tmp%/log/')
-		->set('spip.dirs.sessions', '%spip.dirs.tmp%/sessions/');
+		->set('spip.dirs.log', '%spip.dirs.tmp%log/')
+		->set('spip.dirs.sessions', '%spip.dirs.tmp%sessions/');
 };
