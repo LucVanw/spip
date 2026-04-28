@@ -12,13 +12,9 @@
 
 use SpipLeague\Component\HttpKernel\SpipHttpKernel;
 use function SpipLeague\Component\Kernel\service;
-use Symfony\Component\HttpFoundation\Request;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload_runtime.php';
 
-/** @var SpipHttpKernel $httpKernel */
-$httpKernel = service('http_kernel');
-$request = Request::createFromGlobals();
-$response = $httpKernel->handle($request);
-$response->send();
-$httpKernel->terminate($request, $response);
+return static function (array $context): SpipHttpKernel {
+	return service('http_kernel');
+};

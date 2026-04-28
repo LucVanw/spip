@@ -1,4 +1,4 @@
 <?php
 
 # appel SPIP
-include('spip.php');
+return include __DIR__ . '/spip.php';

@@ -30,6 +30,7 @@
         "spip/svp": "dev-plugin_config as 4.x-dev",
         "spip/tw": "dev-plugin_config as 4.x-dev",
         "spip/urls": "dev-plugin_config as 5.x-dev",
+        "symfony/runtime": "^7.4",
         "symfony/polyfill-php83": "^1.31",
         "symfony/polyfill-php84": "^1.31"
     },
@@ -65,7 +66,8 @@
     },
     "config": {
         "allow-plugins": {
-            "spip-league/composer-installer": true
+            "spip-league/composer-installer": true,
+            "symfony/runtime": true
         },
         "platform": {
             "php": "8.2.30"
