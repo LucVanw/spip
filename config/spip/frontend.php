@@ -1,17 +1,11 @@
 <?php
 
-/**
- * Paramètres du frontend SPIP
- * 
- * Répertoires physiques, routes HTTP, autres ...
- */
-return [
-    /**
-     * Nom du répertoire des bibliothèques JavaScript fournies par un plugin pour l'espace public
-     */
-    'js_subdir' => 'javascript/',
-    /**
-     * Nom du répertoire des bibliothèques JavaScript fournies par un plugin pour l'espace privé
-     */
-    'private_js_subdir' => 'prive/javascript/',
-];
+declare(strict_types=1);
+
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+
+return static function (ContainerConfigurator $container): void {
+    $container->parameters()
+        ->set('spip.frontend.js_subdir', 'javascript/')
+        ->set('spip.frontend.private_js_subdir', 'prive/javascript/');
+};

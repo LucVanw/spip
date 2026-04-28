@@ -1,20 +1,11 @@
 <?php
 
-/**
- * Paramètres des liens documentaires SPIP.
- */
-return [
-	/**
-	 * URL de la documentation officielle SPIP.
-	 *
-	 * Remplace la globale `$home_server`.
-	 */
-	'home_server' => 'https://www.spip.net',
-	/**
-	 * URL de glossaire utilisée pour les raccourcis `[?X]`.
-	 * Le placeholder `%s` est remplacé par le terme.
-	 *
-	 * Remplace la globale `$url_glossaire_externe`.
-	 */
-	'url_glossaire' => 'https://@lang@.wikipedia.org/wiki/%s',
-];
+declare(strict_types=1);
+
+use Symfony\Component\DependencyInjection\Loader\Configurator\ContainerConfigurator;
+
+return static function (ContainerConfigurator $container): void {
+	$container->parameters()
+		->set('spip.docs.home_server', 'https://www.spip.net')
+		->set('spip.docs.url_glossaire', 'https://@lang@.wikipedia.org/wiki/%s');
+};

@@ -1176,7 +1176,9 @@ fait au cas par cas, sans mécanisme automatique de dépréciation.
 
 Exemple déjà en place : le logger lit ses paramètres de rotation depuis
 [`config/spip/logger.php`](config/spip/logger.php)
-(`spip.logger.max_files`, `spip.logger.max_size`). Les paramètres par défaut peuvent être surchargés dans `config/custom.php`. 
+(`spip.logger.max_files`, `spip.logger.max_size`). Les paramètres par défaut
+peuvent être surchargés dans [`config/custom.php`](config/custom.php), qui
+utilise désormais le format Symfony `ContainerConfigurator`.
 
 Les goblales ou constantes historiques sont supprimées (et ignorées).
 
