@@ -1200,6 +1200,13 @@ Les globales ou constantes historiques sont supprimées (et ignorées).
 | globale `controler_dates_rss` | `spip.sites.rss_controler_dates` ou option de `analyser_backend()` |
 | constante `_SYNDICATION_DEREFERENCER_URL` | `spip.sites.rss_dereferencer_url` ou option de `analyser_backend()` |
 | constante `_SYNDICATION_MAX_ITEMS` | `spip.sites.rss_max_items` ou option de `analyser_backend()` |
+| constante `_PERIODE_SYNDICATION` | `spip.sites.periode_syndication` |
+| constante `_PERIODE_SYNDICATION_SUSPENDUE` | `spip.sites.periode_syndication_suspendue` |
+| constante `_SYNDIC_ARTICLE_DESCRIPTIF_MAX_LONGUEUR` | `spip.sites.article_descriptif_max_longueur` |
+| constante `_SYNDICATION_URL_UNIQUE` | `spip.sites.syndication_url_unique` |
+| constante `_SYNDICATION_CORRECTION` | `spip.sites.syndication_correction` |
+| constante `_CRON_LOT_FICHIERS_VISITE` | `spip.stats.cron_lot_fichiers_visite` |
+| constante `_IP_FLOOD_TTL` | `spip.stats.ip_flood_ttl` |
 
 > Un mécanisme automatique de dépréciation (détection + réhydratation
 > des globales/constantes historiques depuis les paramètres du
