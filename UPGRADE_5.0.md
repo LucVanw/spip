@@ -1207,6 +1207,13 @@ Les globales ou constantes historiques sont supprimées (et ignorées).
 | constante `_SYNDICATION_CORRECTION` | `spip.sites.syndication_correction` |
 | constante `_CRON_LOT_FICHIERS_VISITE` | `spip.stats.cron_lot_fichiers_visite` |
 | constante `_IP_FLOOD_TTL` | `spip.stats.ip_flood_ttl` |
+| constante `_SVP_CRON_ACTUALISATION_DEPOTS` | `spip.cron.svp_actualiser_depots.enabled` |
+| constante `_SVP_PERIODE_ACTUALISATION_DEPOTS` (en heures) | `spip.cron.svp_actualiser_depots.period` (en secondes) |
+
+Convention générique de surcharge des tâches cron :
+
+- `spip.cron.{tache}.enabled` : active/désactive la tâche
+- `spip.cron.{tache}.period` : surcharge la période en secondes
 
 > Un mécanisme automatique de dépréciation (détection + réhydratation
 > des globales/constantes historiques depuis les paramètres du
