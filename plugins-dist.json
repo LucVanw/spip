@@ -33,7 +33,7 @@
         "path": "plugins-dist/dump",
         "source": "https://git.spip.net/spip/dump.git",
         "branch": "2.x",
-        "tag": "2.2.2"
+        "tag": "2.2.3"
     },
     "filtres_images": {
         "path": "plugins-dist/filtres_images",
