@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.15 - 2026-05-22
+
+- Mise à jour des dépendances (ecrire, dump)
+
 ## 4.4.14 - 2026-05-12
 
 - Mise à jour des dépendances (ecrire, prive, aide, archiviste, bigup, compagnon, dump, images, medias, revisions, safehtml, sites, statistiques, svp)
