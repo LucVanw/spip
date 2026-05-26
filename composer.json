@@ -9,12 +9,12 @@
     ],
     "require": {
         "php": "^8.2",
-        "spip-league/composer-installer": "^0.8",
-        "spip-league/kernel": "^2.0",
+        "spip-league/composer-installer": "0.8.x-dev",
+        "spip-league/console": "@dev",
         "spip/classic-distribution": "^5.0",
-        "spip/security": "^1.6",
-        "symfony/polyfill-php83": "^1.31",
-        "symfony/polyfill-php84": "^1.31"
+        "spip/framework": "5.x-dev",
+        "spip/security": "dev-spip-5 as 1.6",
+        "symfony/runtime": "^7.4"
     },
     "require-dev": {
         "phpunit/phpunit": "^11.4",
@@ -28,11 +28,15 @@
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "autoload-dev": {
         "psr-4": {
             "Spip\\Test\\": "ecrire/tests/integration/"
         }
     },
+    "bin": [
+        "bin/spip"
+    ],
     "archive": {
         "name": "spip",
         "exclude": [
@@ -45,7 +49,8 @@
     },
     "config": {
         "allow-plugins": {
-            "spip-league/composer-installer": true
+            "spip-league/composer-installer": true,
+            "symfony/runtime": true
         },
         "platform": {
             "php": "8.2.30"

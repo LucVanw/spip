@@ -10,13 +10,11 @@
  * Pour plus de détails voir le fichier LICENSE ou l'aide en ligne.
  */
 
-use function SpipLeague\Component\Kernel\app;
+use SpipLeague\Component\HttpKernel\SpipHttpKernel;
+use function SpipLeague\Component\Kernel\service;
 
-require_once __DIR__ . '/vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload_runtime.php';
 
-include_once app()->getcoreDir() . 'inc_version.php';
-/** @todo Replace by $app = boot() call  */
-
-# au travail...
-include app()->getcoreDir() . 'public.php';
-/** @todo Replace by $app->run() */
+return static function (array $context): SpipHttpKernel {
+	return service('http_kernel');
+};
