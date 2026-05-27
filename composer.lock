@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ceb43f3770641b30817e102251e92c35",
+    "content-hash": "020bb57d23c1568023f36fd48c4d80b9",
     "packages": [
         {
             "name": "algo26-matthias/idna-convert",
@@ -930,17 +930,101 @@
             "time": "2026-05-26T14:31:59+02:00"
         },
         {
+            "name": "spip-league/config",
+            "version": "1.x-dev",
+            "source": {
+                "type": "git",
+                "url": "https://git.spip.net/spip-league/config.git",
+                "reference": "22a09543f2d56e48f9be59af955994902e46860c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fconfig/repository/archive.zip?sha=22a09543f2d56e48f9be59af955994902e46860c",
+                "reference": "22a09543f2d56e48f9be59af955994902e46860c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.2",
+                "psr/simple-cache": "^3.0",
+                "spip-league/cache": "^2.0",
+                "spip-league/serializer": "^1.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^2.0",
+                "phpunit/phpunit": "^11.0",
+                "rector/rector": "^2.0",
+                "spip-league/easy-coding-standard": "^1.1"
+            },
+            "default-branch": true,
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "SpipLeague\\Component\\Config\\": "src/"
+                }
+            },
+            "autoload-dev": {
+                "psr-4": {
+                    "SpipLeague\\Test\\Component\\Config\\": "tests/"
+                }
+            },
+            "scripts": {
+                "analyse": [
+                    "phpstan analyse --memory-limit=1G"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=1G --generate-baseline --allow-empty-baseline"
+                ],
+                "check-cs": [
+                    "ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
+                ],
+                "test": [
+                    "phpunit --colors --no-coverage"
+                ],
+                "test-coverage": [
+                    "XDEBUG_MODE=coverage phpunit --display-warnings --display-deprecations --colors"
+                ]
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "SPIP configuration and meta storage (stores, repositories, manager)",
+            "keywords": [
+                "config",
+                "meta",
+                "spip"
+            ],
+            "support": {
+                "source": "https://git.spip.net/spip-league/config/-/tree/1.x",
+                "issues": "https://git.spip.net/spip-league/config/-/issues"
+            },
+            "time": "2026-05-29T17:27:19+02:00"
+        },
+        {
             "name": "spip-league/console",
             "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/console.git",
-                "reference": "e716f9c0ed2d1832d7c391344fbe6baa24f9812c"
+                "reference": "794452c2d1b3d7209f5cc1d31ba1115e52ca56ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fconsole/repository/archive.zip?sha=e716f9c0ed2d1832d7c391344fbe6baa24f9812c",
-                "reference": "e716f9c0ed2d1832d7c391344fbe6baa24f9812c",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fconsole/repository/archive.zip?sha=794452c2d1b3d7209f5cc1d31ba1115e52ca56ec",
+                "reference": "794452c2d1b3d7209f5cc1d31ba1115e52ca56ec",
                 "shasum": ""
             },
             "require": {
@@ -1009,7 +1093,7 @@
                 "source": "https://git.spip.net/spip-league/console/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/console/-/issues"
             },
-            "time": "2026-05-26T16:57:48+02:00"
+            "time": "2026-05-29T18:09:39+02:00"
         },
         {
             "name": "spip-league/filesystem",
@@ -1310,12 +1394,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/http-kernel.git",
-                "reference": "1c412e7b1cce19c4c7d8ea34bfda3f2ead679ebf"
+                "reference": "7fa6efd8e089cb5fe0e2e895e103304dfa7644a1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhttp-kernel/repository/archive.zip?sha=1c412e7b1cce19c4c7d8ea34bfda3f2ead679ebf",
-                "reference": "1c412e7b1cce19c4c7d8ea34bfda3f2ead679ebf",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhttp-kernel/repository/archive.zip?sha=7fa6efd8e089cb5fe0e2e895e103304dfa7644a1",
+                "reference": "7fa6efd8e089cb5fe0e2e895e103304dfa7644a1",
                 "shasum": ""
             },
             "require": {
@@ -1391,7 +1475,7 @@
                 "source": "https://git.spip.net/spip-league/http-kernel/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/http-kernel/-/issues"
             },
-            "time": "2026-05-26T17:03:44+02:00"
+            "time": "2026-05-29T18:03:48+02:00"
         },
         {
             "name": "spip-league/kernel",
@@ -1399,20 +1483,23 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/kernel.git",
-                "reference": "007dd13320ac06b0e1b5b8888f9bcb8e6a6b1986"
+                "reference": "86eb5e74dad27961ba32fe178ec815a539426ac6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=007dd13320ac06b0e1b5b8888f9bcb8e6a6b1986",
-                "reference": "007dd13320ac06b0e1b5b8888f9bcb8e6a6b1986",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=86eb5e74dad27961ba32fe178ec815a539426ac6",
+                "reference": "86eb5e74dad27961ba32fe178ec815a539426ac6",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2",
                 "psr/log": "^3.0",
+                "spip-league/cache": "^2.0",
+                "spip-league/config": "^1.x-dev",
                 "spip-league/filesystem": "^3.2",
                 "spip-league/http": "^0.1",
                 "spip-league/logger": "2.0.x-dev",
+                "spip-league/serializer": "^1.0",
                 "symfony/config": "^7.4",
                 "symfony/dependency-injection": "^7.4",
                 "symfony/dotenv": "^7.4",
@@ -1483,7 +1570,7 @@
                 "source": "https://git.spip.net/spip-league/kernel/-/tree/2.x",
                 "issues": "https://git.spip.net/spip-league/kernel/-/issues"
             },
-            "time": "2026-05-26T15:36:51+02:00"
+            "time": "2026-05-29T18:03:13+02:00"
         },
         {
             "name": "spip-league/logger",
@@ -2488,12 +2575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "8a9d22efce3c93ce743251f597fe69858a5242a8"
+                "reference": "e17d39497baadbcca2bb979a803cd3a076b1192e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=8a9d22efce3c93ce743251f597fe69858a5242a8",
-                "reference": "8a9d22efce3c93ce743251f597fe69858a5242a8",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=e17d39497baadbcca2bb979a803cd3a076b1192e",
+                "reference": "e17d39497baadbcca2bb979a803cd3a076b1192e",
                 "shasum": ""
             },
             "require": {
@@ -2504,7 +2591,6 @@
                 "php": "^8.2",
                 "spip-league/console": "1.x-dev",
                 "spip-league/hasher": "^2.0",
-                "spip-league/serializer": "^1.0",
                 "spip/compresseur": "^3.0@dev",
                 "spip/framework": "5.x-dev",
                 "spip/sites": "^5.0@dev",
@@ -2513,7 +2599,7 @@
                 "symfony/routing": "^7.4"
             },
             "require-dev": {
-                "spip-league/sdk": "dev-plugin_config as 2.x-dev",
+                "spip-league/sdk": "^2.3",
                 "symfony/finder": "^7.4"
             },
             "default-branch": true,
@@ -2564,7 +2650,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-05-26T17:28:30+02:00"
+            "time": "2026-05-29T18:19:30+02:00"
         },
         {
             "name": "spip/forum",
@@ -2661,17 +2747,18 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/framework.git",
-                "reference": "23bd320d794be9d6a12213fb54a129ddc3eff857"
+                "reference": "7f44779b912543bab70a5b0982c67e4024496d8a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fframework/repository/archive.zip?sha=23bd320d794be9d6a12213fb54a129ddc3eff857",
-                "reference": "23bd320d794be9d6a12213fb54a129ddc3eff857",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fframework/repository/archive.zip?sha=7f44779b912543bab70a5b0982c67e4024496d8a",
+                "reference": "7f44779b912543bab70a5b0982c67e4024496d8a",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2",
                 "spip-league/cache": "^2.1",
+                "spip-league/config": "^1.x-dev",
                 "spip-league/filesystem": "^3.2",
                 "spip-league/http-kernel": "1.0.x-dev",
                 "spip-league/kernel": "2.x-dev",
@@ -2746,7 +2833,7 @@
                 "source": "https://git.spip.net/spip/framework/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/framework/-/issues"
             },
-            "time": "2026-05-26T17:06:30+02:00"
+            "time": "2026-05-29T18:06:36+02:00"
         },
         {
             "name": "spip/frontend",
@@ -4241,16 +4328,16 @@
         },
         {
             "name": "symfony/console",
-            "version": "v7.4.11",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/console.git",
-                "reference": "ed0107e43ab452aa77ae99e005b95e56b556e075"
+                "reference": "85095d2573eaefaf35e40b9513a9bf09f72cd217"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/console/zipball/ed0107e43ab452aa77ae99e005b95e56b556e075",
-                "reference": "ed0107e43ab452aa77ae99e005b95e56b556e075",
+                "url": "https://api.github.com/repos/symfony/console/zipball/85095d2573eaefaf35e40b9513a9bf09f72cd217",
+                "reference": "85095d2573eaefaf35e40b9513a9bf09f72cd217",
                 "shasum": ""
             },
             "require": {
@@ -4315,7 +4402,7 @@
                 "terminal"
             ],
             "support": {
-                "source": "https://github.com/symfony/console/tree/v7.4.11"
+                "source": "https://github.com/symfony/console/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -4335,20 +4422,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-13T12:04:42+00:00"
+            "time": "2026-05-24T08:56:14+00:00"
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v7.4.10",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "4eb0d9dfa9d4f7c59216baf49b3ed6b1fb72293d"
+                "reference": "f299e20ce983be6c0744952533c6dfeaaa1448e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/4eb0d9dfa9d4f7c59216baf49b3ed6b1fb72293d",
-                "reference": "4eb0d9dfa9d4f7c59216baf49b3ed6b1fb72293d",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/f299e20ce983be6c0744952533c6dfeaaa1448e2",
+                "reference": "f299e20ce983be6c0744952533c6dfeaaa1448e2",
                 "shasum": ""
             },
             "require": {
@@ -4399,7 +4486,7 @@
             "description": "Allows you to standardize and centralize the way objects are constructed in your application",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/dependency-injection/tree/v7.4.10"
+                "source": "https://github.com/symfony/dependency-injection/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -4419,7 +4506,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-06T11:55:30+00:00"
+            "time": "2026-05-20T14:07:29+00:00"
         },
         {
             "name": "symfony/deprecation-contracts",
@@ -4889,16 +4976,16 @@
         },
         {
             "name": "symfony/http-foundation",
-            "version": "v7.4.8",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-foundation.git",
-                "reference": "9381209597ec66c25be154cbf2289076e64d1eab"
+                "reference": "bc354f47c62301e990b7874fa662326368508e2c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/9381209597ec66c25be154cbf2289076e64d1eab",
-                "reference": "9381209597ec66c25be154cbf2289076e64d1eab",
+                "url": "https://api.github.com/repos/symfony/http-foundation/zipball/bc354f47c62301e990b7874fa662326368508e2c",
+                "reference": "bc354f47c62301e990b7874fa662326368508e2c",
                 "shasum": ""
             },
             "require": {
@@ -4947,7 +5034,7 @@
             "description": "Defines an object-oriented layer for the HTTP specification",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-foundation/tree/v7.4.8"
+                "source": "https://github.com/symfony/http-foundation/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -4967,20 +5054,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-03-24T13:12:05+00:00"
+            "time": "2026-05-24T11:20:33+00:00"
         },
         {
             "name": "symfony/http-kernel",
-            "version": "v7.4.12",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/http-kernel.git",
-                "reference": "7922b53e70d2ba2027af8bb6a59d91eb3541ea4d"
+                "reference": "9df847980c436451f4f51d1284491bb4356dd989"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/7922b53e70d2ba2027af8bb6a59d91eb3541ea4d",
-                "reference": "7922b53e70d2ba2027af8bb6a59d91eb3541ea4d",
+                "url": "https://api.github.com/repos/symfony/http-kernel/zipball/9df847980c436451f4f51d1284491bb4356dd989",
+                "reference": "9df847980c436451f4f51d1284491bb4356dd989",
                 "shasum": ""
             },
             "require": {
@@ -5066,7 +5153,7 @@
             "description": "Provides a structured process for converting a Request into a Response",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/http-kernel/tree/v7.4.12"
+                "source": "https://github.com/symfony/http-kernel/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -5086,7 +5173,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-20T09:27:11+00:00"
+            "time": "2026-05-27T08:31:43+00:00"
         },
         {
             "name": "symfony/lock",
@@ -5748,16 +5835,16 @@
         },
         {
             "name": "symfony/routing",
-            "version": "v7.4.12",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/routing.git",
-                "reference": "3b04a5ec4887a8135a12ebf0f4cbc5b8fc8ee204"
+                "reference": "3a162171bb008e5e0f15dce6581373a4c0e8390d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/routing/zipball/3b04a5ec4887a8135a12ebf0f4cbc5b8fc8ee204",
-                "reference": "3b04a5ec4887a8135a12ebf0f4cbc5b8fc8ee204",
+                "url": "https://api.github.com/repos/symfony/routing/zipball/3a162171bb008e5e0f15dce6581373a4c0e8390d",
+                "reference": "3a162171bb008e5e0f15dce6581373a4c0e8390d",
                 "shasum": ""
             },
             "require": {
@@ -5809,7 +5896,7 @@
                 "url"
             ],
             "support": {
-                "source": "https://github.com/symfony/routing/tree/v7.4.12"
+                "source": "https://github.com/symfony/routing/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -5829,20 +5916,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-20T07:20:23+00:00"
+            "time": "2026-05-24T11:20:33+00:00"
         },
         {
             "name": "symfony/runtime",
-            "version": "v7.4.12",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/runtime.git",
-                "reference": "0b032fa77359745db793df5aff626779180c5f3b"
+                "reference": "1a24cf8aab3a9378117718b35525c4126ad3adec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/runtime/zipball/0b032fa77359745db793df5aff626779180c5f3b",
-                "reference": "0b032fa77359745db793df5aff626779180c5f3b",
+                "url": "https://api.github.com/repos/symfony/runtime/zipball/1a24cf8aab3a9378117718b35525c4126ad3adec",
+                "reference": "1a24cf8aab3a9378117718b35525c4126ad3adec",
                 "shasum": ""
             },
             "require": {
@@ -5893,7 +5980,7 @@
                 "runtime"
             ],
             "support": {
-                "source": "https://github.com/symfony/runtime/tree/v7.4.12"
+                "source": "https://github.com/symfony/runtime/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -5913,7 +6000,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-20T07:20:23+00:00"
+            "time": "2026-05-23T18:04:28+00:00"
         },
         {
             "name": "symfony/service-contracts",
@@ -6004,16 +6091,16 @@
         },
         {
             "name": "symfony/string",
-            "version": "v7.4.11",
+            "version": "v7.4.13",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/string.git",
-                "reference": "965f7306a43383d02c6aca1e3f3bd2f0ea5dee15"
+                "reference": "961683010db3b27ec6ebcd7308e6e1ee8fa7ffde"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/string/zipball/965f7306a43383d02c6aca1e3f3bd2f0ea5dee15",
-                "reference": "965f7306a43383d02c6aca1e3f3bd2f0ea5dee15",
+                "url": "https://api.github.com/repos/symfony/string/zipball/961683010db3b27ec6ebcd7308e6e1ee8fa7ffde",
+                "reference": "961683010db3b27ec6ebcd7308e6e1ee8fa7ffde",
                 "shasum": ""
             },
             "require": {
@@ -6071,7 +6158,7 @@
                 "utf8"
             ],
             "support": {
-                "source": "https://github.com/symfony/string/tree/v7.4.11"
+                "source": "https://github.com/symfony/string/tree/v7.4.13"
             },
             "funding": [
                 {
@@ -6091,7 +6178,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-13T12:04:42+00:00"
+            "time": "2026-05-23T15:23:29+00:00"
         },
         {
             "name": "symfony/var-dumper",
@@ -7127,7 +7214,6 @@
                     "type": "github"
                 }
             ],
-            "abandoned": true,
             "time": "2025-03-19T07:56:08+00:00"
         },
         {
@@ -7184,7 +7270,6 @@
                     "type": "github"
                 }
             ],
-            "abandoned": true,
             "time": "2024-07-03T04:45:54+00:00"
         },
         {

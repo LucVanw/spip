@@ -10,7 +10,7 @@
     "require": {
         "php": "^8.2",
         "spip-league/composer-installer": "0.8.x-dev",
-        "spip-league/console": "@dev",
+        "spip-league/console": "1.x-dev",
         "spip/classic-distribution": "^5.0",
         "spip/framework": "5.x-dev",
         "spip/security": "dev-spip-5 as 1.6",

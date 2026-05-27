@@ -6,7 +6,7 @@ Cette page présente les points clés de la migration vers SPIP 5.0. La document
 
 - **[Index de la documentation SPIP 5.0](https://doc.spip.net/fr/5.0/)**
 - **[Guide de migration détaillé](https://doc.spip.net/fr/5.0/upgrade/)**
-- **[Nouvelles fonctionnalités (Symfony, Events, Cron...)](https://doc.spip.net/spip/docs/fr/5.0/features/)**
+- **[Nouvelles fonctionnalités (Symfony, Events, Cron...)](https://doc.spip.net/fr/5.0/features/)**
 
 ---
 
@@ -20,6 +20,7 @@ Cette page présente les points clés de la migration vers SPIP 5.0. La document
 SPIP 5.0 intègre des composants Symfony et adopte de nouveaux standards :
 - **Kernel & Environnement :** Support des fichiers `.env`.
 - **Injection de dépendances :** Utilisation d'un conteneur de services (`config/services.php`).
+- **Configuration :** Paquet `spip-league/config` — services `spip.config`, `spip.config.manager`, cache PSR-16 (`spip.cache.config`). Voir la doc [Configuration](https://doc.spip.net/fr/5.0/features/config/) et [migration config](https://doc.spip.net/fr/5.0/upgrade/config/).
 - **Event Dispatcher :** Remplacement progressif des pipelines par des événements typés et des attributs `#[AsPipelineListener]`.
 - **Tâches Cron :** Déclaration simplifiée via l'attribut `#[AsCronTask]`.
 
@@ -32,7 +33,3 @@ SPIP 5.0 intègre des composants Symfony et adopte de nouveaux standards :
 - Menu « Squelettes » renommé en **« Apparence »**.
 - Page `admin_tech` renommée en **`admin_bdd`**.
 - Simplification des fonctions de boîtes et cadres (`boite_ouvrir` / `boite_fermer`).
-
----
-
-Pour chaque sujet, veuillez vous référer aux guides détaillés dans le dépot [spip/docs](https://git.spip.net/spip/docs/-/tree/main/docs/fr/5.0).
