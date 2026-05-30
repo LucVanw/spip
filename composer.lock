@@ -1311,16 +1311,16 @@
         },
         {
             "name": "spip-league/http",
-            "version": "0.1.0",
+            "version": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/http.git",
-                "reference": "75879277e1e4c8506c8dd47977d13d4bc1deb463"
+                "reference": "99d5ee2cc947d5891f137e29ff142a1b3029e896"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhttp/repository/archive.zip?sha=75879277e1e4c8506c8dd47977d13d4bc1deb463",
-                "reference": "75879277e1e4c8506c8dd47977d13d4bc1deb463",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhttp/repository/archive.zip?sha=99d5ee2cc947d5891f137e29ff142a1b3029e896",
+                "reference": "99d5ee2cc947d5891f137e29ff142a1b3029e896",
                 "shasum": ""
             },
             "require": {
@@ -1328,12 +1328,9 @@
                 "symfony/http-foundation": "^7.4"
             },
             "require-dev": {
-                "phpstan/phpstan": "^2.0",
-                "phpunit/phpunit": "^11.4",
-                "rector/rector": "^2.0",
-                "spip-league/easy-coding-standard": "^1.1",
-                "symfony/var-dumper": "^7.4"
+                "spip-league/qa-tools": "^1.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1352,25 +1349,28 @@
             },
             "scripts": {
                 "analyse": [
-                    "vendor/bin/phpstan"
+                    "phpstan --memory-limit=1G"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=1G --generate-baseline --allow-empty-baseline"
                 ],
                 "check-cs": [
-                    "vendor/bin/ecs check --ansi"
+                    "ecs check --ansi"
                 ],
                 "fix-cs": [
-                    "vendor/bin/ecs check --fix --ansi"
+                    "ecs check --fix --ansi"
                 ],
                 "rector": [
-                    "vendor/bin/rector process --ansi"
+                    "rector process --ansi"
                 ],
                 "rector-dry-run": [
-                    "vendor/bin/rector process --dry-run --ansi"
+                    "rector process --dry-run --ansi"
                 ],
                 "test": [
                     "phpunit --colors --no-coverage"
                 ],
                 "test-coverage": [
-                    "@php -d xdebug.mode=coverage vendor/bin/phpunit --colors"
+                    "XDEBUG_MODE=coverage phpunit --display-warnings --display-deprecations --colors"
                 ]
             },
             "license": [
@@ -1383,10 +1383,10 @@
                 "symfony"
             ],
             "support": {
-                "source": "https://git.spip.net/spip-league/http/-/tree/0.1.0",
+                "source": "https://git.spip.net/spip-league/http/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/http/-/issues"
             },
-            "time": "2026-04-08T22:55:12+02:00"
+            "time": "2026-05-30T15:44:31+02:00"
         },
         {
             "name": "spip-league/http-kernel",
@@ -1394,17 +1394,17 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/http-kernel.git",
-                "reference": "7fa6efd8e089cb5fe0e2e895e103304dfa7644a1"
+                "reference": "8064298022038982e58a88cc3b28f8049e6bd2c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhttp-kernel/repository/archive.zip?sha=7fa6efd8e089cb5fe0e2e895e103304dfa7644a1",
-                "reference": "7fa6efd8e089cb5fe0e2e895e103304dfa7644a1",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fhttp-kernel/repository/archive.zip?sha=8064298022038982e58a88cc3b28f8049e6bd2c3",
+                "reference": "8064298022038982e58a88cc3b28f8049e6bd2c3",
                 "shasum": ""
             },
             "require": {
                 "php": "^8.2",
-                "spip-league/http": "^0.1",
+                "spip-league/http": "1.0.x-dev",
                 "spip-league/kernel": "2.x-dev",
                 "spip-league/logger": "2.0.x-dev",
                 "symfony/http-foundation": "^7.4",
@@ -1475,7 +1475,7 @@
                 "source": "https://git.spip.net/spip-league/http-kernel/-/tree/main",
                 "issues": "https://git.spip.net/spip-league/http-kernel/-/issues"
             },
-            "time": "2026-05-29T18:03:48+02:00"
+            "time": "2026-05-30T22:26:14+02:00"
         },
         {
             "name": "spip-league/kernel",
@@ -1483,12 +1483,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/kernel.git",
-                "reference": "86eb5e74dad27961ba32fe178ec815a539426ac6"
+                "reference": "baaed93641c5da3d58c8765d29f638ae9aa3653d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=86eb5e74dad27961ba32fe178ec815a539426ac6",
-                "reference": "86eb5e74dad27961ba32fe178ec815a539426ac6",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=baaed93641c5da3d58c8765d29f638ae9aa3653d",
+                "reference": "baaed93641c5da3d58c8765d29f638ae9aa3653d",
                 "shasum": ""
             },
             "require": {
@@ -1497,7 +1497,7 @@
                 "spip-league/cache": "^2.0",
                 "spip-league/config": "^1.x-dev",
                 "spip-league/filesystem": "^3.2",
-                "spip-league/http": "^0.1",
+                "spip-league/http": "1.0.x-dev",
                 "spip-league/logger": "2.0.x-dev",
                 "spip-league/serializer": "^1.0",
                 "symfony/config": "^7.4",
@@ -1570,7 +1570,7 @@
                 "source": "https://git.spip.net/spip-league/kernel/-/tree/2.x",
                 "issues": "https://git.spip.net/spip-league/kernel/-/issues"
             },
-            "time": "2026-05-29T18:03:13+02:00"
+            "time": "2026-05-30T22:17:33+02:00"
         },
         {
             "name": "spip-league/logger",
@@ -2575,12 +2575,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "e17d39497baadbcca2bb979a803cd3a076b1192e"
+                "reference": "a01c361617baff60a934e55f8c6cae248c34f31a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=e17d39497baadbcca2bb979a803cd3a076b1192e",
-                "reference": "e17d39497baadbcca2bb979a803cd3a076b1192e",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=a01c361617baff60a934e55f8c6cae248c34f31a",
+                "reference": "a01c361617baff60a934e55f8c6cae248c34f31a",
                 "shasum": ""
             },
             "require": {
@@ -2650,7 +2650,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-05-29T18:19:30+02:00"
+            "time": "2026-05-30T22:25:59+02:00"
         },
         {
             "name": "spip/forum",
@@ -2747,12 +2747,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/framework.git",
-                "reference": "7f44779b912543bab70a5b0982c67e4024496d8a"
+                "reference": "aa274be396deda5bc4bd29629b6c17600505c916"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fframework/repository/archive.zip?sha=7f44779b912543bab70a5b0982c67e4024496d8a",
-                "reference": "7f44779b912543bab70a5b0982c67e4024496d8a",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fframework/repository/archive.zip?sha=aa274be396deda5bc4bd29629b6c17600505c916",
+                "reference": "aa274be396deda5bc4bd29629b6c17600505c916",
                 "shasum": ""
             },
             "require": {
@@ -2782,6 +2782,7 @@
                     "Spip\\Framework\\": "src/"
                 },
                 "files": [
+                    "bootstrap/inc/facade.php",
                     "bootstrap/inc/sanitize.php",
                     "bootstrap/inc/pipeline.php"
                 ]
@@ -2833,7 +2834,7 @@
                 "source": "https://git.spip.net/spip/framework/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/framework/-/issues"
             },
-            "time": "2026-05-29T18:06:36+02:00"
+            "time": "2026-05-30T16:00:17+02:00"
         },
         {
             "name": "spip/frontend",
