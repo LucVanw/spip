@@ -20,7 +20,7 @@ Cette page présente les points clés de la migration vers SPIP 5.0. La document
 SPIP 5.0 intègre des composants Symfony et adopte de nouveaux standards :
 - **Kernel & Environnement :** Support des fichiers `.env`.
 - **Injection de dépendances :** Utilisation d'un conteneur de services (`config/services.php`).
-- **Configuration :** Paquet `spip-league/config` — services `spip.config`, `spip.config.manager`, cache PSR-16 (`spip.cache.config`). Voir la doc [Configuration](https://doc.spip.net/fr/5.0/features/config/) et [migration config](https://doc.spip.net/fr/5.0/upgrade/config/).
+- **Configuration :** Paquet `spip-league/config` — services `spip.config`, `spip.config.manager`, cache PSR-16 (`spip.cache.config`). Voir la doc [Configuration](https://doc.spip.net/fr/5.0/features/config/) et [migration config](https://doc.spip.net/fr/5.0/upgrade/config/). L’usage direct du legacy `$GLOBALS['meta']` est déprécié et contient un **Breaking Change**. voir [Sérialisation et `$GLOBALS['meta']`](https://doc.spip.net/fr/5.0/upgrade/config/#sérialisation-des-valeurs-et-globalmeta).
 - **Event Dispatcher :** Remplacement progressif des pipelines par des événements typés et des attributs `#[AsPipelineListener]`.
 - **Tâches Cron :** Déclaration simplifiée via l'attribut `#[AsCronTask]`.
 
