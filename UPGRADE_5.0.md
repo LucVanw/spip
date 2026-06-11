@@ -13,7 +13,7 @@ Cette page présente les points clés de la migration vers SPIP 5.0. La document
 ## Résumé des changements majeurs
 
 ### Prérequis techniques
-- **PHP 8.2** minimum requis.
+- **PHP 8.4** minimum requis.
 - Migration de base de données possible depuis SPIP 3.2+ (SPIP 4.1+ conseillé).
 
 ### Modernisation de l'architecture
