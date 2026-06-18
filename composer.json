@@ -13,7 +13,6 @@
         "spip-league/console": "1.x-dev",
         "spip/classic-distribution": "^5.0",
         "spip/framework": "5.x-dev",
-        "spip/security": "dev-spip-5 as 1.6",
         "symfony/runtime": "^7.4"
     },
     "require-dev": {
