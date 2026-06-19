@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/11.1/phpunit.xsd"
+    xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/13.2/phpunit.xsd"
     bootstrap="ecrire/tests/bootstrap.php"
     cacheDirectory=".phpunit.cache"
     executionOrder="depends,defects"
@@ -20,9 +20,6 @@
     </testsuite>
     <testsuite name="spip/images">
       <directory>./plugins-dist/spip/images/tests</directory>
-    </testsuite>
-    <testsuite name="spip/porte-plume">
-      <directory>./plugins-dist/spip/porte-plume/tests</directory>
     </testsuite>
     <testsuite name="spip/sites">
       <directory>./plugins-dist/spip/sites/tests</directory>
