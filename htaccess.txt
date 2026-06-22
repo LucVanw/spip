@@ -45,6 +45,8 @@ RewriteCond %{REQUEST_URI} !^/.well-known/
 RewriteRule "(^|/)\." - [R=404,NC,L]
 # bloquer les informations Composer
 RedirectMatch 404 ^/composer\.(json|lock|phar)$
+# bloquer les fichiers php dans IMG & local
+RewriteRule ^(local|IMG)/.*\.ph(p[0-9]?|tml)$ - [F,L]
 
 # Si le fichier ou repertoire demande existe
 # ignorer toutes les regles qui suivent
