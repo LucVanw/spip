@@ -16,6 +16,9 @@ if (!\is_file($autoload)) {
 
 require $autoload;
 
+// Pré-boot unifié HTTP/CLI : conteneur compilé ou minimal avant toute commande.
+\SpipLeague\Component\Kernel\Kernel::boot();
+
 $app = new SpipLeague\Component\Console\Application(
     __DIR__ . '/../ecrire/inc_version.php',
 );
