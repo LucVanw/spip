@@ -3,24 +3,17 @@
 
 declare(strict_types=1);
 
-if (\PHP_SAPI !== 'cli') {
-    \fwrite(\STDERR, "bin/spip doit être exécuté en CLI.\n");
-    exit(1);
+use SpipLeague\Component\Console\Application;
+
+if (
+    !is_dir(dirname(__DIR__).'/vendor')
+    || !is_file(dirname(__DIR__).'/vendor/autoload_runtime.php')
+) {
+    throw new LogicException('Dependencies are missing. Try running "composer install".');
 }
 
-$autoload = __DIR__ . '/../vendor/autoload.php';
-if (!\is_file($autoload)) {
-    \fwrite(\STDERR, "Autoloader absent. Lancer `composer install`.\n");
-    exit(1);
-}
+require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
-require $autoload;
-
-// Pré-boot unifié HTTP/CLI : conteneur compilé ou minimal avant toute commande.
-\SpipLeague\Component\Kernel\Kernel::boot();
-
-$app = new SpipLeague\Component\Console\Application(
-    __DIR__ . '/../ecrire/inc_version.php',
-);
-
-exit($app->run());
+return static function (array $context): Application {
+    return new Application( __DIR__ . '/../ecrire/inc_version.php');
+};
