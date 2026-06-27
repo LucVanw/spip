@@ -11,10 +11,9 @@
  */
 
 use SpipLeague\Component\HttpKernel\SpipHttpKernel;
-use function SpipLeague\Component\Kernel\service;
 
 require_once __DIR__ . '/vendor/autoload_runtime.php';
 
 return static function (array $context): SpipHttpKernel {
-	return service('http_kernel');
+	return SpipHttpKernel::boot();
 };

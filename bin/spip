@@ -4,6 +4,7 @@
 declare(strict_types=1);
 
 use SpipLeague\Component\Console\Application;
+use SpipLeague\Component\Kernel\Kernel;
 
 if (
     !is_dir(dirname(__DIR__).'/vendor')
@@ -15,5 +16,7 @@ if (
 require_once dirname(__DIR__).'/vendor/autoload_runtime.php';
 
 return static function (array $context): Application {
-    return new Application( __DIR__ . '/../ecrire/inc_version.php');
+    $kernel = Kernel::boot();
+
+    return new Application($kernel, __DIR__ . '/../ecrire/inc_version.php');
 };
