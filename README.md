@@ -61,7 +61,7 @@ cd spip
 composer install
 composer run post-create-project-cmd
 composer --no-interaction local mode-dev # config
-rm -rf plugins-dist prive squelettes-dist ecrire vendor/spip/security
+rm -rf plugins-dist prive squelettes-dist ecrire
 composer local install
 composer local mode-dev # https->ssh
 ```
