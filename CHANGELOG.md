@@ -1,5 +1,12 @@
 # Changelog
 
+## 4.4.16 - 2026-07-06
+
+### Security
+
+- Mise à jour des dépendances (ecrire, prive, bigup, images, tw)
+- spip-security/securite#4880 interdire l'accès aux fichiers PHP dans IMG et local (htaccess.txt)
+
 ## 4.4.15 - 2026-05-22
 
 - Mise à jour des dépendances (ecrire, dump)
