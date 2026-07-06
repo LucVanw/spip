@@ -15,7 +15,7 @@
         "path": "plugins-dist/bigup",
         "source": "https://git.spip.net/spip/bigup.git",
         "branch": "3.x",
-        "tag": "3.3.10"
+        "tag": "3.3.11"
     },
     "compagnon": {
         "path": "plugins-dist/compagnon",
@@ -39,7 +39,7 @@
         "path": "plugins-dist/filtres_images",
         "source": "https://git.spip.net/spip/images.git",
         "branch": "4.x",
-        "tag": "4.3.7"
+        "tag": "4.3.8"
     },
     "forum": {
         "path": "plugins-dist/forum",
@@ -111,7 +111,7 @@
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
         "branch": "3.x",
-        "tag": "3.3.8"
+        "tag": "3.3.9"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
