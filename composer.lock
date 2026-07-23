@@ -1566,12 +1566,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip-league/kernel.git",
-                "reference": "92bc1c551bc5247d286fc9c97e8cdc8d7fc8b13f"
+                "reference": "e0e80032b7fcb0d6d84f2fc53088119c6f1b2ab3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=92bc1c551bc5247d286fc9c97e8cdc8d7fc8b13f",
-                "reference": "92bc1c551bc5247d286fc9c97e8cdc8d7fc8b13f",
+                "url": "https://git.spip.net/api/v4/projects/spip-league%2Fkernel/repository/archive.zip?sha=e0e80032b7fcb0d6d84f2fc53088119c6f1b2ab3",
+                "reference": "e0e80032b7fcb0d6d84f2fc53088119c6f1b2ab3",
                 "shasum": ""
             },
             "require": {
@@ -1655,7 +1655,7 @@
                 "source": "https://git.spip.net/spip-league/kernel/-/tree/2.x",
                 "issues": "https://git.spip.net/spip-league/kernel/-/issues"
             },
-            "time": "2026-06-30T21:11:17+02:00"
+            "time": "2026-07-07T14:45:00+02:00"
         },
         {
             "name": "spip-league/logger",
@@ -2154,12 +2154,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/aide.git",
-                "reference": "9eecaf9f04ef6e8ebf3b791d24157c31b5d365bc"
+                "reference": "45f900a86d2919dee77239c4b1333bd1dc657e69"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=9eecaf9f04ef6e8ebf3b791d24157c31b5d365bc",
-                "reference": "9eecaf9f04ef6e8ebf3b791d24157c31b5d365bc",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Faide/repository/archive.zip?sha=45f900a86d2919dee77239c4b1333bd1dc657e69",
+                "reference": "45f900a86d2919dee77239c4b1333bd1dc657e69",
                 "shasum": ""
             },
             "require": {
@@ -2227,7 +2227,7 @@
                 "source": "https://git.spip.net/spip/aide/-/tree/master",
                 "issues": "https://git.spip.net/spip/aide/-/issues"
             },
-            "time": "2026-06-30T21:43:20+02:00"
+            "time": "2026-07-10T14:17:52+02:00"
         },
         {
             "name": "spip/archiviste",
@@ -2328,12 +2328,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/bigup.git",
-                "reference": "9fb67801fbbb01d42effbaa76d78ad95d1022f43"
+                "reference": "046186579cdb24d5eafb1723e89d79d3774014c0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=9fb67801fbbb01d42effbaa76d78ad95d1022f43",
-                "reference": "9fb67801fbbb01d42effbaa76d78ad95d1022f43",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fbigup/repository/archive.zip?sha=046186579cdb24d5eafb1723e89d79d3774014c0",
+                "reference": "046186579cdb24d5eafb1723e89d79d3774014c0",
                 "shasum": ""
             },
             "require": {
@@ -2408,7 +2408,7 @@
                 "source": "https://git.spip.net/spip/bigup/-/tree/master",
                 "issues": "https://git.spip.net/spip/bigup/-/issues"
             },
-            "time": "2026-06-30T21:44:25+02:00"
+            "time": "2026-07-06T14:04:17+02:00"
         },
         {
             "name": "spip/classic-distribution",
@@ -2466,12 +2466,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compagnon.git",
-                "reference": "d84a07c9d4f074854e740d4391c90aa449a1c623"
+                "reference": "10c0780a57f1c83e4af83d6c78e6834a9953316b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=d84a07c9d4f074854e740d4391c90aa449a1c623",
-                "reference": "d84a07c9d4f074854e740d4391c90aa449a1c623",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompagnon/repository/archive.zip?sha=10c0780a57f1c83e4af83d6c78e6834a9953316b",
+                "reference": "10c0780a57f1c83e4af83d6c78e6834a9953316b",
                 "shasum": ""
             },
             "require": {
@@ -2540,7 +2540,7 @@
                 "source": "https://git.spip.net/spip/compagnon/-/tree/master",
                 "issues": "https://git.spip.net/spip/compagnon/-/issues"
             },
-            "time": "2026-06-19T21:40:59+02:00"
+            "time": "2026-07-10T14:24:36+02:00"
         },
         {
             "name": "spip/compresseur",
@@ -2548,12 +2548,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/compresseur.git",
-                "reference": "b41335667d04eb33a0a4eb43119210d62c7913cf"
+                "reference": "0f0004b282912e64dbfce2c5a53f78d648143651"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=b41335667d04eb33a0a4eb43119210d62c7913cf",
-                "reference": "b41335667d04eb33a0a4eb43119210d62c7913cf",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fcompresseur/repository/archive.zip?sha=0f0004b282912e64dbfce2c5a53f78d648143651",
+                "reference": "0f0004b282912e64dbfce2c5a53f78d648143651",
                 "shasum": ""
             },
             "require": {
@@ -2630,7 +2630,7 @@
                 "source": "https://git.spip.net/spip/compresseur/-/tree/master",
                 "issues": "https://git.spip.net/spip/compresseur/-/issues"
             },
-            "time": "2026-06-19T21:10:22+02:00"
+            "time": "2026-07-11T01:59:02+02:00"
         },
         {
             "name": "spip/dist",
@@ -2769,12 +2769,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "354839066bfa25c966a18ae382824288827b4da0"
+                "reference": "99113f06221c8fc293686eca499c77946a4d9f76"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=354839066bfa25c966a18ae382824288827b4da0",
-                "reference": "354839066bfa25c966a18ae382824288827b4da0",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=99113f06221c8fc293686eca499c77946a4d9f76",
+                "reference": "99113f06221c8fc293686eca499c77946a4d9f76",
                 "shasum": ""
             },
             "require": {
@@ -2844,7 +2844,7 @@
                 "source": "https://git.spip.net/spip/ecrire/-/tree/5.x",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-06-30T21:34:13+02:00"
+            "time": "2026-07-06T14:11:29+02:00"
         },
         {
             "name": "spip/forum",
@@ -3590,12 +3590,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "41a88cce034f9482f0343feb4b1ca67e7bb720b1"
+                "reference": "7fbbc7b07d3b997d90d4f0cc98bd331d6e46cd5e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=41a88cce034f9482f0343feb4b1ca67e7bb720b1",
-                "reference": "41a88cce034f9482f0343feb4b1ca67e7bb720b1",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=7fbbc7b07d3b997d90d4f0cc98bd331d6e46cd5e",
+                "reference": "7fbbc7b07d3b997d90d4f0cc98bd331d6e46cd5e",
                 "shasum": ""
             },
             "require": {
@@ -3672,7 +3672,7 @@
                 "source": "https://git.spip.net/spip/prive/-/tree/2.x",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2026-06-30T21:34:22+02:00"
+            "time": "2026-07-06T10:56:27+02:00"
         },
         {
             "name": "spip/revisions",
@@ -4138,12 +4138,12 @@
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/tw.git",
-                "reference": "9d74166658d58a32ecfa13039c320af35cce2089"
+                "reference": "3268769753957a9446b2e043926c681e4c73e040"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=9d74166658d58a32ecfa13039c320af35cce2089",
-                "reference": "9d74166658d58a32ecfa13039c320af35cce2089",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Ftw/repository/archive.zip?sha=3268769753957a9446b2e043926c681e4c73e040",
+                "reference": "3268769753957a9446b2e043926c681e4c73e040",
                 "shasum": ""
             },
             "require": {
@@ -4222,7 +4222,7 @@
                 "source": "https://git.spip.net/spip/tw/-/tree/master",
                 "issues": "https://git.spip.net/spip/tw/-/issues"
             },
-            "time": "2026-06-30T21:34:28+02:00"
+            "time": "2026-07-06T14:08:28+02:00"
         },
         {
             "name": "spip/urls",
@@ -6513,20 +6513,19 @@
         },
         {
             "name": "nikic/php-parser",
-            "version": "v5.7.0",
+            "version": "v5.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nikic/PHP-Parser.git",
-                "reference": "dca41cd15c2ac9d055ad70dbfd011130757d1f82"
+                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/dca41cd15c2ac9d055ad70dbfd011130757d1f82",
-                "reference": "dca41cd15c2ac9d055ad70dbfd011130757d1f82",
+                "url": "https://api.github.com/repos/nikic/PHP-Parser/zipball/044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
+                "reference": "044a6a392ff8ad0d61f14370a5fbbd0a0107152f",
                 "shasum": ""
             },
             "require": {
-                "ext-ctype": "*",
                 "ext-json": "*",
                 "ext-tokenizer": "*",
                 "php": ">=7.4"
@@ -6565,9 +6564,9 @@
             ],
             "support": {
                 "issues": "https://github.com/nikic/PHP-Parser/issues",
-                "source": "https://github.com/nikic/PHP-Parser/tree/v5.7.0"
+                "source": "https://github.com/nikic/PHP-Parser/tree/v5.8.0"
             },
-            "time": "2025-12-06T11:56:16+00:00"
+            "time": "2026-07-04T14:30:18+00:00"
         },
         {
             "name": "phar-io/manifest",
@@ -6689,16 +6688,16 @@
         },
         {
             "name": "phpunit/php-code-coverage",
-            "version": "14.2.2",
+            "version": "14.2.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/php-code-coverage.git",
-                "reference": "10d7da3628a99289cdf4c662dd7f0d73f1baec83"
+                "reference": "82f6e49ff224e2cde923d74425e583a883910783"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/10d7da3628a99289cdf4c662dd7f0d73f1baec83",
-                "reference": "10d7da3628a99289cdf4c662dd7f0d73f1baec83",
+                "url": "https://api.github.com/repos/sebastianbergmann/php-code-coverage/zipball/82f6e49ff224e2cde923d74425e583a883910783",
+                "reference": "82f6e49ff224e2cde923d74425e583a883910783",
                 "shasum": ""
             },
             "require": {
@@ -6706,7 +6705,7 @@
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
                 "ext-xmlwriter": "*",
-                "nikic/php-parser": "^5.7.0",
+                "nikic/php-parser": "^5.8.0",
                 "php": ">=8.4",
                 "phpunit/php-text-template": "^6.0",
                 "sebastian/complexity": "^6.0",
@@ -6717,7 +6716,7 @@
                 "theseer/tokenizer": "^2.0.1"
             },
             "require-dev": {
-                "phpunit/phpunit": "^13.2.0"
+                "phpunit/phpunit": "^13.2.2"
             },
             "suggest": {
                 "ext-pcov": "PHP extension that provides line coverage",
@@ -6755,7 +6754,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/php-code-coverage/issues",
                 "security": "https://github.com/sebastianbergmann/php-code-coverage/security/policy",
-                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/14.2.2"
+                "source": "https://github.com/sebastianbergmann/php-code-coverage/tree/14.2.3"
             },
             "funding": [
                 {
@@ -6775,7 +6774,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-06-08T11:50:38+00:00"
+            "time": "2026-07-06T15:04:02+00:00"
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -7072,30 +7071,30 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "13.2.2",
+            "version": "13.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "492c067e618de7b3c76105082c90f9d2833401b7"
+                "reference": "8f5180f4627fc1978be2f61d8d9979dbe37e0c10"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/492c067e618de7b3c76105082c90f9d2833401b7",
-                "reference": "492c067e618de7b3c76105082c90f9d2833401b7",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/8f5180f4627fc1978be2f61d8d9979dbe37e0c10",
+                "reference": "8f5180f4627fc1978be2f61d8d9979dbe37e0c10",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
+                "ext-filter": "*",
                 "ext-json": "*",
                 "ext-libxml": "*",
                 "ext-mbstring": "*",
-                "ext-xml": "*",
                 "ext-xmlwriter": "*",
                 "myclabs/deep-copy": "^1.13.4",
                 "phar-io/manifest": "^2.0.4",
                 "phar-io/version": "^3.2.1",
                 "php": ">=8.4.1",
-                "phpunit/php-code-coverage": "^14.2.2",
+                "phpunit/php-code-coverage": "^14.2.3",
                 "phpunit/php-file-iterator": "^7.0.0",
                 "phpunit/php-invoker": "^7.0.0",
                 "phpunit/php-text-template": "^6.0.0",
@@ -7152,7 +7151,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
-                "source": "https://github.com/sebastianbergmann/phpunit/tree/13.2.2"
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/13.2.4"
             },
             "funding": [
                 {
@@ -7160,7 +7159,7 @@
                     "type": "other"
                 }
             ],
-            "time": "2026-06-29T13:36:29+00:00"
+            "time": "2026-07-08T08:36:51+00:00"
         },
         {
             "name": "sebastian/cli-parser",
@@ -7550,16 +7549,16 @@
         },
         {
             "name": "sebastian/exporter",
-            "version": "8.1.0",
+            "version": "8.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/exporter.git",
-                "reference": "c0d29a945f8cf82f300a05e69874508e307ca4c6"
+                "reference": "cfaa77c750dcad6f44c9bac8f62ac486e1c82c26"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/c0d29a945f8cf82f300a05e69874508e307ca4c6",
-                "reference": "c0d29a945f8cf82f300a05e69874508e307ca4c6",
+                "url": "https://api.github.com/repos/sebastianbergmann/exporter/zipball/cfaa77c750dcad6f44c9bac8f62ac486e1c82c26",
+                "reference": "cfaa77c750dcad6f44c9bac8f62ac486e1c82c26",
                 "shasum": ""
             },
             "require": {
@@ -7568,7 +7567,7 @@
                 "sebastian/recursion-context": "^8.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "^13.1.10"
+                "phpunit/phpunit": "^13.2.4"
             },
             "type": "library",
             "extra": {
@@ -7616,7 +7615,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/exporter/issues",
                 "security": "https://github.com/sebastianbergmann/exporter/security/policy",
-                "source": "https://github.com/sebastianbergmann/exporter/tree/8.1.0"
+                "source": "https://github.com/sebastianbergmann/exporter/tree/8.1.1"
             },
             "funding": [
                 {
@@ -7636,7 +7635,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-21T11:50:56+00:00"
+            "time": "2026-07-13T11:35:11+00:00"
         },
         {
             "name": "sebastian/file-filter",
@@ -7852,24 +7851,24 @@
         },
         {
             "name": "sebastian/lines-of-code",
-            "version": "5.0.1",
+            "version": "5.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/lines-of-code.git",
-                "reference": "d2cff273a90c79b0eb590baa682d4b5c318bdbb7"
+                "reference": "d1b6f8fce682505dbd048977f1abedf1b8ad3ff8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/lines-of-code/zipball/d2cff273a90c79b0eb590baa682d4b5c318bdbb7",
-                "reference": "d2cff273a90c79b0eb590baa682d4b5c318bdbb7",
+                "url": "https://api.github.com/repos/sebastianbergmann/lines-of-code/zipball/d1b6f8fce682505dbd048977f1abedf1b8ad3ff8",
+                "reference": "d1b6f8fce682505dbd048977f1abedf1b8ad3ff8",
                 "shasum": ""
             },
             "require": {
-                "nikic/php-parser": "^5.7.0",
+                "nikic/php-parser": "^5.8.0",
                 "php": ">=8.4"
             },
             "require-dev": {
-                "phpunit/phpunit": "^13.1.10"
+                "phpunit/phpunit": "^13.2.4"
             },
             "type": "library",
             "extra": {
@@ -7898,7 +7897,7 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/lines-of-code/issues",
                 "security": "https://github.com/sebastianbergmann/lines-of-code/security/policy",
-                "source": "https://github.com/sebastianbergmann/lines-of-code/tree/5.0.1"
+                "source": "https://github.com/sebastianbergmann/lines-of-code/tree/5.0.2"
             },
             "funding": [
                 {
@@ -7918,7 +7917,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2026-05-19T16:23:37+00:00"
+            "time": "2026-07-09T08:42:34+00:00"
         },
         {
             "name": "sebastian/object-enumerator",
