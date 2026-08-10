@@ -317,16 +317,16 @@
         },
         {
             "name": "spip/ecrire",
-            "version": "4.4.17",
+            "version": "4.4.18",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "3be3fb3b200c2b7d67da2033731547d6987ff9d5"
+                "reference": "7f14df3074202dbb0ae5272302e014e4745a12ec"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=3be3fb3b200c2b7d67da2033731547d6987ff9d5",
-                "reference": "3be3fb3b200c2b7d67da2033731547d6987ff9d5",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=7f14df3074202dbb0ae5272302e014e4745a12ec",
+                "reference": "7f14df3074202dbb0ae5272302e014e4745a12ec",
                 "shasum": ""
             },
             "require": {
@@ -362,10 +362,10 @@
             ],
             "description": "Noyau de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.17",
+                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.18",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-08-10T10:50:33+02:00"
+            "time": "2026-08-10T14:50:33+02:00"
         },
         {
             "name": "spip/prive",
