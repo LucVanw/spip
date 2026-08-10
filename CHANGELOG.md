@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.17 - 2026-08-10
+
+- Mise à jour des dépendances (ecrire, prive et plugins-dist)
+
 ## 4.4.16 - 2026-07-06
 
 ### Security
