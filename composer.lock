@@ -317,16 +317,16 @@
         },
         {
             "name": "spip/ecrire",
-            "version": "4.4.18",
+            "version": "4.4.19",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "7f14df3074202dbb0ae5272302e014e4745a12ec"
+                "reference": "caf95af25a70cfa37bc6e2c34dac30adc9037203"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=7f14df3074202dbb0ae5272302e014e4745a12ec",
-                "reference": "7f14df3074202dbb0ae5272302e014e4745a12ec",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=caf95af25a70cfa37bc6e2c34dac30adc9037203",
+                "reference": "caf95af25a70cfa37bc6e2c34dac30adc9037203",
                 "shasum": ""
             },
             "require": {
@@ -362,23 +362,23 @@
             ],
             "description": "Noyau de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.18",
+                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.19",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-08-10T14:50:33+02:00"
+            "time": "2026-08-12T11:18:10+02:00"
         },
         {
             "name": "spip/prive",
-            "version": "1.1.2",
+            "version": "1.1.3",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "c8bc0eb342f31cb52a9fddac56ed7cdf03778049"
+                "reference": "7679959803b8e40ae029a15f757c4ae171802cae"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=c8bc0eb342f31cb52a9fddac56ed7cdf03778049",
-                "reference": "c8bc0eb342f31cb52a9fddac56ed7cdf03778049",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=7679959803b8e40ae029a15f757c4ae171802cae",
+                "reference": "7679959803b8e40ae029a15f757c4ae171802cae",
                 "shasum": ""
             },
             "require-dev": {
@@ -390,10 +390,10 @@
             ],
             "description": "Squelettes de l'espace privé",
             "support": {
-                "source": "https://git.spip.net/spip/prive/-/tree/1.1.2",
+                "source": "https://git.spip.net/spip/prive/-/tree/1.1.3",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2026-08-10T10:22:17+02:00"
+            "time": "2026-08-12T11:11:37+02:00"
         },
         {
             "name": "spip/security",
