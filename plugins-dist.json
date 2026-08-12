@@ -33,13 +33,13 @@
         "path": "plugins-dist/dump",
         "source": "https://git.spip.net/spip/dump.git",
         "branch": "2.x",
-        "tag": "2.2.4"
+        "tag": "2.2.5"
     },
     "filtres_images": {
         "path": "plugins-dist/filtres_images",
         "source": "https://git.spip.net/spip/images.git",
         "branch": "4.x",
-        "tag": "4.3.9"
+        "tag": "4.3.10"
     },
     "forum": {
         "path": "plugins-dist/forum",
