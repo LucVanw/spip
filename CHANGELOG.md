@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.20 - 2026-08-17
+
+- Mise à jour des dépendances (ecrire, bigup, dist)
+
 ## 4.4.19 - 2026-08-12
 
 - Mise à jour des dépendances (ecrire, prive, dump, images)
