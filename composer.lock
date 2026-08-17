@@ -285,16 +285,16 @@
         },
         {
             "name": "spip/dist",
-            "version": "4.2.9",
+            "version": "4.2.10",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/dist.git",
-                "reference": "17ccff3feef0f5f5bfeef4d0553317d388781ac4"
+                "reference": "c2beb84a446949e5a4fbb0c310c05e0abdcbf3a5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=17ccff3feef0f5f5bfeef4d0553317d388781ac4",
-                "reference": "17ccff3feef0f5f5bfeef4d0553317d388781ac4",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fdist/repository/archive.zip?sha=c2beb84a446949e5a4fbb0c310c05e0abdcbf3a5",
+                "reference": "c2beb84a446949e5a4fbb0c310c05e0abdcbf3a5",
                 "shasum": ""
             },
             "type": "spip-plugin",
@@ -310,23 +310,23 @@
             ],
             "description": "Squelettes par défaut de SPIP 4.0",
             "support": {
-                "source": "https://git.spip.net/spip/dist/-/tree/4.2.9",
+                "source": "https://git.spip.net/spip/dist/-/tree/4.2.10",
                 "issues": "https://git.spip.net/spip/dist/-/issues"
             },
-            "time": "2026-02-12T09:32:22+01:00"
+            "time": "2026-08-17T11:52:11+02:00"
         },
         {
             "name": "spip/ecrire",
-            "version": "4.4.19",
+            "version": "4.4.20",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "caf95af25a70cfa37bc6e2c34dac30adc9037203"
+                "reference": "74a3d926c272783d106637ab4c2371c0cc7b7ceb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=caf95af25a70cfa37bc6e2c34dac30adc9037203",
-                "reference": "caf95af25a70cfa37bc6e2c34dac30adc9037203",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=74a3d926c272783d106637ab4c2371c0cc7b7ceb",
+                "reference": "74a3d926c272783d106637ab4c2371c0cc7b7ceb",
                 "shasum": ""
             },
             "require": {
@@ -362,10 +362,10 @@
             ],
             "description": "Noyau de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.19",
+                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.20",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-08-12T11:18:10+02:00"
+            "time": "2026-08-17T12:03:21+02:00"
         },
         {
             "name": "spip/prive",
