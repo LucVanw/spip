@@ -39,7 +39,7 @@
         "path": "plugins-dist/filtres_images",
         "source": "https://git.spip.net/spip/images.git",
         "branch": "4.x",
-        "tag": "4.3.10"
+        "tag": "4.3.11"
     },
     "forum": {
         "path": "plugins-dist/forum",
