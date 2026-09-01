@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.22 - 2026-09-01
+
+- Mise à jour des dépendances (ecrire, prive, compresseur, images, forum, medias, tw, urls)
+
 ## 4.4.21 - 2026-08-20
 
 - Mise à jour des dépendances (ecrire, images)
