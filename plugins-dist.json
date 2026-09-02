@@ -15,7 +15,7 @@
         "path": "plugins-dist/bigup",
         "source": "https://git.spip.net/spip/bigup.git",
         "branch": "3.x",
-        "tag": "3.3.13"
+        "tag": "3.3.14"
     },
     "compagnon": {
         "path": "plugins-dist/compagnon",
@@ -45,7 +45,7 @@
         "path": "plugins-dist/forum",
         "source": "https://git.spip.net/spip/forum.git",
         "branch": "3.x",
-        "tag": "3.1.16"
+        "tag": "3.1.17"
     },
     "mediabox": {
         "path": "plugins-dist/mediabox",
@@ -57,7 +57,7 @@
         "path": "plugins-dist/medias",
         "source": "https://git.spip.net/spip/medias.git",
         "branch": "4.x",
-        "tag": "4.4.12"
+        "tag": "4.4.13"
     },
     "mots": {
         "path": "plugins-dist/mots",
