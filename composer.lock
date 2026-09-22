@@ -64,16 +64,16 @@
         },
         {
             "name": "jakeasmith/http_build_url",
-            "version": "1.0.1",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jakeasmith/http_build_url.git",
-                "reference": "93c273e77cb1edead0cf8bcf8cd2003428e74e37"
+                "reference": "18627808c80621219f80337fa4adcee7a31aff7d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jakeasmith/http_build_url/zipball/93c273e77cb1edead0cf8bcf8cd2003428e74e37",
-                "reference": "93c273e77cb1edead0cf8bcf8cd2003428e74e37",
+                "url": "https://api.github.com/repos/jakeasmith/http_build_url/zipball/18627808c80621219f80337fa4adcee7a31aff7d",
+                "reference": "18627808c80621219f80337fa4adcee7a31aff7d",
                 "shasum": ""
             },
             "type": "library",
@@ -89,15 +89,17 @@
             "authors": [
                 {
                     "name": "Jake A. Smith",
-                    "email": "theman@jakeasmith.com"
+                    "email": "theman@jakeasmith.com",
+                    "homepage": "https://jakeasmith.com"
                 }
             ],
-            "description": "Provides functionality for http_build_url() to environments without pecl_http.",
+            "description": "Deprecated: use PHP 8.5's built-in Uri\\Rfc3986\\Uri instead. Provides http_build_url() for environments without pecl_http.",
             "support": {
                 "issues": "https://github.com/jakeasmith/http_build_url/issues",
                 "source": "https://github.com/jakeasmith/http_build_url"
             },
-            "time": "2017-05-01T15:36:40+00:00"
+            "abandoned": true,
+            "time": "2026-09-15T07:48:37+00:00"
         },
         {
             "name": "psr/container",
@@ -317,16 +319,16 @@
         },
         {
             "name": "spip/ecrire",
-            "version": "4.4.23",
+            "version": "4.4.24",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/ecrire.git",
-                "reference": "f315d717675c54ad2c84411bb8c2d3c26297a0b5"
+                "reference": "835658caea798614000afa8168d477caa9cd7d35"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=f315d717675c54ad2c84411bb8c2d3c26297a0b5",
-                "reference": "f315d717675c54ad2c84411bb8c2d3c26297a0b5",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fecrire/repository/archive.zip?sha=835658caea798614000afa8168d477caa9cd7d35",
+                "reference": "835658caea798614000afa8168d477caa9cd7d35",
                 "shasum": ""
             },
             "require": {
@@ -343,10 +345,11 @@
                 "symfony/polyfill-php81": "^1.31",
                 "symfony/polyfill-php82": "^1.31",
                 "symfony/polyfill-php83": "^1.31",
-                "symfony/polyfill-php84": "^1.31"
+                "symfony/polyfill-php84": "^1.31",
+                "symfony/polyfill-php85": "^1.31"
             },
             "require-dev": {
-                "symplify/easy-coding-standard": "^12.3"
+                "spip-league/qa-tools": "^1.0"
             },
             "type": "spip-ecrire",
             "autoload": {
@@ -357,43 +360,89 @@
                     "bootstrap/deprecations.php"
                 ]
             },
+            "scripts": {
+                "analyse": [
+                    "phpstan --memory-limit=1G"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=1G --generate-baseline --allow-empty-baseline"
+                ],
+                "check-cs": [
+                    "ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
+                ]
+            },
             "license": [
                 "GPL-3.0-only"
             ],
             "description": "Noyau de SPIP",
             "support": {
-                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.23",
+                "source": "https://git.spip.net/spip/ecrire/-/tree/4.4.24",
                 "issues": "https://git.spip.net/spip/ecrire/-/issues"
             },
-            "time": "2026-09-02T13:56:18+02:00"
+            "time": "2026-09-22T15:34:00+02:00"
         },
         {
             "name": "spip/prive",
-            "version": "1.1.5",
+            "version": "1.1.6",
             "source": {
                 "type": "git",
                 "url": "https://git.spip.net/spip/prive.git",
-                "reference": "7ed90bbcf72fc33213bc0257bc3e805bd6c5a067"
+                "reference": "f7457302bfed42abe62351fded8e1a7b5f8e05e2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=7ed90bbcf72fc33213bc0257bc3e805bd6c5a067",
-                "reference": "7ed90bbcf72fc33213bc0257bc3e805bd6c5a067",
+                "url": "https://git.spip.net/api/v4/projects/spip%2Fprive/repository/archive.zip?sha=f7457302bfed42abe62351fded8e1a7b5f8e05e2",
+                "reference": "f7457302bfed42abe62351fded8e1a7b5f8e05e2",
                 "shasum": ""
             },
             "require-dev": {
-                "spip-league/kernel": "^1.x-dev"
+                "spip-league/kernel": "1.x-dev",
+                "spip-league/sdk": "^1.1"
             },
             "type": "spip-prive",
+            "autoload-dev": {
+                "files": [
+                    "vendor/spip-league/sdk/src/Stub/functions.php"
+                ]
+            },
+            "scripts": {
+                "analyse": [
+                    "phpstan --memory-limit=1G"
+                ],
+                "baseline": [
+                    "phpstan --memory-limit=1G --generate-baseline --allow-empty-baseline"
+                ],
+                "check-cs": [
+                    "ecs check --ansi"
+                ],
+                "fix-cs": [
+                    "ecs check --fix --ansi"
+                ],
+                "rector": [
+                    "rector process --ansi"
+                ],
+                "rector-dry-run": [
+                    "rector process --dry-run --ansi"
+                ]
+            },
             "license": [
                 "GPL-3.0-only"
             ],
             "description": "Squelettes de l'espace privé",
             "support": {
-                "source": "https://git.spip.net/spip/prive/-/tree/1.1.5",
+                "source": "https://git.spip.net/spip/prive/-/tree/1.1.6",
                 "issues": "https://git.spip.net/spip/prive/-/issues"
             },
-            "time": "2026-09-02T13:45:16+02:00"
+            "time": "2026-09-22T15:15:31+02:00"
         },
         {
             "name": "spip/security",
