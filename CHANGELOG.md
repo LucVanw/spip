@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.25 - 2026-09-25
+
+- Mise à jour des dépendances (ecrire, sites)
+
 ## 4.4.24 - 2026-09-22
 
 - Mise à jour des dépendances (ecrire, prive, forum, medias, urls)
