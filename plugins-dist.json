@@ -45,7 +45,7 @@
         "path": "plugins-dist/forum",
         "source": "https://git.spip.net/spip/forum.git",
         "branch": "3.x",
-        "tag": "3.1.18"
+        "tag": "3.1.19"
     },
     "mediabox": {
         "path": "plugins-dist/mediabox",
@@ -57,7 +57,7 @@
         "path": "plugins-dist/medias",
         "source": "https://git.spip.net/spip/medias.git",
         "branch": "4.x",
-        "tag": "4.4.14"
+        "tag": "4.4.15"
     },
     "mots": {
         "path": "plugins-dist/mots",
@@ -75,43 +75,43 @@
         "path": "plugins-dist/porte_plume",
         "source": "https://git.spip.net/spip/porte-plume.git",
         "branch": "3.x",
-        "tag": "3.1.11"
+        "tag": "3.1.12"
     },
     "revisions": {
         "path": "plugins-dist/revisions",
         "source": "https://git.spip.net/spip/revisions.git",
         "branch": "3.x",
-        "tag": "3.1.13"
+        "tag": "3.1.14"
     },
     "safehtml": {
         "path": "plugins-dist/safehtml",
         "source": "https://git.spip.net/spip/safehtml.git",
         "branch": "3.x",
-        "tag": "3.1.7"
+        "tag": "3.2.0"
     },
     "sites": {
         "path": "plugins-dist/sites",
         "source": "https://git.spip.net/spip/sites.git",
         "branch": "4.x",
-        "tag": "4.4.6"
+        "tag": "4.4.7"
     },
     "statistiques": {
         "path": "plugins-dist/statistiques",
         "source": "https://git.spip.net/spip/stats.git",
         "branch": "3.x",
-        "tag": "3.1.13"
+        "tag": "3.2.0"
     },
     "svp": {
         "path": "plugins-dist/svp",
         "source": "https://git.spip.net/spip/svp.git",
         "branch": "3.x",
-        "tag": "3.2.6"
+        "tag": "3.2.7"
     },
     "textwheel": {
         "path": "plugins-dist/textwheel",
         "source": "https://git.spip.net/spip/tw.git",
         "branch": "3.x",
-        "tag": "3.3.11"
+        "tag": "3.4.0"
     },
     "urls_etendues": {
         "path": "plugins-dist/urls_etendues",
