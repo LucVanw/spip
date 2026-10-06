@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.27 - 2026-10-06
+
+- Mise à jour des dépendances (ecrire)
+
 ## 4.4.26 - 2026-10-06
 
 - Mise à jour des dépendances (ecrire, prive, forum, medias, porte-plume, revisions, safehtml, sites, stats, svp, tw)
