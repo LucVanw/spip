@@ -1,5 +1,9 @@
 # Changelog
 
+## 4.4.28 - 2026-10-07
+
+- Mise à jour des dépendances (ecrire, safehtml)
+
 ## 4.4.27 - 2026-10-06
 
 - Mise à jour des dépendances (ecrire)
