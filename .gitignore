@@ -20,5 +20,6 @@
 # Local
 /IMG/
 /local/
-/plugins/
+/plugins/*
+!/plugins/twofa/
 /tmp/

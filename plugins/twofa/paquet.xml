@@ -1,0 +1,23 @@
+<paquet
+	prefix="twofa"
+	categorie="auteur"
+	version="1.0.0"
+	etat="dev"
+	compatibilite="[5.0.0-dev;6["
+	schema="1.0.0"
+>
+	<nom>Double authentification (2FA)</nom>
+
+	<auteur lien="https://www.alkivi.fr">Alkivi</auteur>
+
+	<licence lien="https://spdx.org/licenses/GPL-3.0-or-later.html">GPL-3.0-or-later</licence>
+
+	<pipeline nom="autoriser" inclure="twofa_autorisations.php" />
+	<pipeline nom="declarer_tables_objets_sql" inclure="base/twofa.php" />
+	<pipeline nom="formulaire_charger" inclure="twofa_pipelines.php" />
+	<pipeline nom="formulaire_verifier" inclure="twofa_pipelines.php" />
+	<pipeline nom="formulaire_fond" inclure="twofa_pipelines.php" />
+	<pipeline nom="preparer_visiteur_session" inclure="twofa_pipelines.php" />
+	<pipeline nom="preparer_fichier_session" inclure="twofa_pipelines.php" />
+	<pipeline nom="affiche_milieu" inclure="twofa_pipelines.php" />
+</paquet>

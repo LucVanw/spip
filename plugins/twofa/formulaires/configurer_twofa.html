@@ -1,0 +1,43 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+<h3 class="titrem"><:twofa:titre_twofa:></h3>
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+
+	[(#ENV{editable})
+	<form method="post" action="#ENV{action}"><div>
+		[(#REM) declarer les hidden qui declencheront le service du formulaire
+		parametre : url d'action ]
+		#ACTION_FORMULAIRE
+		[(#ENV{_actif}|oui)
+		<p class="explication"><:twofa:explication_active:></p>
+		<p><:twofa:info_nb_codes_secours{nb=#ENV{_nb_codes_secours}}:></p>
+		]
+		[(#ENV{_actif}|non)
+		<p class="explication"><:twofa:explication_activation:></p>
+		<div class="twofa_qrcode" style="display: inline-block; background: #fff; line-height: 0;" data-otpauth="[(#ENV{_otpauth}|attribut_html)]" data-alt="<:twofa:alt_qrcode|attribut_html:>"></div>
+		<script src="[(#CHEMIN{javascript/qrcode.js}|timestamp)]"></script>
+		<script src="[(#CHEMIN{javascript/twofa.js}|timestamp)]"></script>
+		<p><a href="[(#ENV{_otpauth})]"><:twofa:lien_ouvrir_application:></a></p>
+		<p><:twofa:label_secret:> <code class="twofa_secret">#ENV{_secret}</code></p>
+		]
+		<div class="editer-groupe">
+			#SET{name,code}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+			<div class="editer editer_twofa_[(#GET{name})][ (#GET{erreurs}|oui)erreur]">
+				<label for="twofa_[(#GET{name})]">[(#ENV{_actif}|?{<:twofa:label_code_confirmation:>,<:twofa:label_code_activation:>})]</label>[
+				<span class="erreur_message">(#GET{erreurs})</span>
+				]<input type="text" class="text" name="#GET{name}" id="twofa_[(#GET{name})]" value="" size="12" autocomplete="one-time-code" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" />
+			</div>
+		</div>
+		<p class="boutons">
+		[(#ENV{_actif}|oui)
+			<button type="submit" class="btn submit" name="twofa_action" value="codes"><:twofa:bouton_regenerer_codes:></button>
+			<button type="submit" class="btn btn_danger" name="twofa_action" value="desactiver"><:twofa:bouton_desactiver:></button>
+		]
+		[(#ENV{_actif}|non)
+			<button type="submit" class="btn btn_secondaire" name="twofa_action" value="regenerer" formnovalidate="formnovalidate"><:twofa:bouton_regenerer_secret:></button>
+			<button type="submit" class="btn submit" name="twofa_action" value="activer"><:twofa:bouton_activer:></button>
+		]
+		</p>
+	</div></form>
+	]
+</div>

@@ -1,0 +1,34 @@
+{
+    "name": "alkivi/twofa",
+    "description": "Double authentification (TOTP) pour le login de SPIP",
+    "license": "GPL-3.0-or-later",
+    "type": "spip-plugin",
+    "keywords": [
+        "spip",
+        "2fa",
+        "totp"
+    ],
+    "authors": [
+        {
+            "name": "Luc Vanwaelscappel",
+            "email": "luc@alkivi.fr",
+            "role": "Maintainer"
+        }
+    ],
+    "require": {
+        "spip/framework": "^5.x-dev"
+    },
+    "repositories": {
+        "spip": {
+            "type": "composer",
+            "url": "https://get.spip.net/composer"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    }
+}
