@@ -1,0 +1,115 @@
+<div class="formulaire_spip formulaire_configurer formulaire_#FORM">
+<h3 class="titrem"><:twofa:titre_config_sms:></h3>
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV*{message_ok})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert">(#ENV*{message_erreur})</div>]
+	[<div class="reponse_formulaire reponse_formulaire_erreur" role="alert"><:twofa:erreur_api:> (#ENV{_erreur_api})</div>]
+
+	[(#ENV{editable})
+	<form method="post" action="#ENV{action}"><div>
+		#ACTION_FORMULAIRE
+
+		[(#REM) Étape 1 : créer la clé API chez OVHcloud ]
+		[(#ENV{_constantes}|non)
+		<fieldset>
+			<legend><:twofa:legend_etape_cle:></legend>
+			<p class="explication"><:twofa:explication_creer_cle:></p>
+			<p><a class="btn" href="[(#ENV{_url_creer_cle})]" target="_blank" rel="noopener"><:twofa:bouton_creer_cle:></a></p>
+			<ul class="spip">
+				<li><:twofa:aide_cle_nom:></li>
+				<li><:twofa:aide_cle_validite:></li>
+				<li><:twofa:aide_cle_droits:>
+					<ul><BOUCLE_droits(DATA){source table, #ENV{_droits}}><li><code>#VALEUR{methode} #VALEUR{chemin}</code></li></BOUCLE_droits></ul>
+				</li>
+				<li><:twofa:aide_cle_ip:></li>
+			</ul>
+		</fieldset>
+
+		[(#REM) Étape 2 : coller les clés ]
+		<fieldset>
+			<legend><:twofa:legend_etape_coller:></legend>
+			<div class="editer-groupe">
+				#SET{name,application_key}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+				<div class="editer editer_[(#GET{name})] obligatoire[ (#GET{erreurs}|oui)erreur]">
+					<label for="[(#GET{name})]">Application key</label>[
+					<span class="erreur_message">(#GET{erreurs})</span>
+					]<input type="text" class="text" name="#GET{name}" id="#GET{name}" value="#ENV{#GET{name}}" autocomplete="off" spellcheck="false" />
+				</div>
+				#SET{name,application_secret}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+				<div class="editer editer_[(#GET{name})] obligatoire[ (#GET{erreurs}|oui)erreur]">
+					<label for="[(#GET{name})]">Application secret</label>[
+					<p class="explication">(#ENV{_configure}|?{<:twofa:explication_secret_enregistre:>})</p>][
+					<span class="erreur_message">(#GET{erreurs})</span>
+					]<input type="password" class="text" name="#GET{name}" id="#GET{name}" value="" autocomplete="new-password" />
+				</div>
+				#SET{name,consumer_key}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+				<div class="editer editer_[(#GET{name})] obligatoire[ (#GET{erreurs}|oui)erreur]">
+					<label for="[(#GET{name})]">Consumer key</label>[
+					<p class="explication">(#ENV{_configure}|?{<:twofa:explication_secret_enregistre:>})</p>][
+					<span class="erreur_message">(#GET{erreurs})</span>
+					]<input type="password" class="text" name="#GET{name}" id="#GET{name}" value="" autocomplete="new-password" />
+				</div>
+				[(#ENV{_services}|count|>{1}|oui)
+				#SET{name,service}
+				<div class="editer editer_[(#GET{name})]">
+					<label for="[(#GET{name})]"><:twofa:label_service:></label>
+					<select name="#GET{name}" id="#GET{name}">
+					<BOUCLE_services(DATA){source table, #ENV{_services}}>
+						<option value="#VALEUR"[(#VALEUR|=={#ENV{service}}|oui)selected="selected"]>#VALEUR</option>
+					</BOUCLE_services>
+					</select>
+				</div>
+				]
+				#SET{name,sender}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+				<div class="editer editer_[(#GET{name})][ (#GET{erreurs}|oui)erreur]">
+					<label for="[(#GET{name})]"><:twofa:label_sender:></label>
+					<p class="explication"><:twofa:explication_sender:></p>[
+					<span class="erreur_message">(#GET{erreurs})</span>
+					]<input type="text" class="text" name="#GET{name}" id="#GET{name}" value="#ENV{#GET{name}}" maxlength="11" />
+				</div>
+			</div>
+			<p class="boutons">
+				<button type="submit" class="btn submit" name="twofa_action" value="enregistrer"><:twofa:bouton_enregistrer_cles:></button>
+				[(#ENV{_configure}|oui)<button type="submit" class="btn btn_danger" name="twofa_action" value="effacer"><:twofa:bouton_effacer_config:></button>]
+			</p>
+		</fieldset>
+		]
+		[(#ENV{_constantes}|oui)<p class="notice"><:twofa:info_config_constantes:></p>]
+
+		[(#REM) Étape 3 : compte SMS configuré ]
+		[(#ENV{_credits}|strlen|oui)
+		<fieldset>
+			<legend><:twofa:legend_etape_compte:></legend>
+			<p><:twofa:info_compte_sms{service=#ENV{service},credits=#ENV{_credits}}:></p>
+
+			<div class="editer-groupe">
+				#SET{name,telephone_test}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+				<div class="editer editer_[(#GET{name})][ (#GET{erreurs}|oui)erreur]">
+					<label for="[(#GET{name})]"><:twofa:label_telephone_test:></label>[
+					<span class="erreur_message">(#GET{erreurs})</span>
+					]<input type="tel" class="text" name="#GET{name}" id="#GET{name}" value="#ENV{#GET{name}}" autocomplete="tel" />
+				</div>
+			</div>
+			<p class="boutons"><button type="submit" class="btn btn_secondaire" name="twofa_action" value="tester"><:twofa:bouton_sms_test:></button></p>
+
+			<div class="editer-groupe">
+				#SET{name,quantite}#SET{erreurs,#ENV**{erreurs/#GET{name}}}
+				<div class="editer editer_[(#GET{name})][ (#GET{erreurs}|oui)erreur]">
+					<label for="[(#GET{name})]"><:twofa:label_quantite:></label>
+					<p class="explication"><:twofa:explication_commande:></p>[
+					<span class="erreur_message">(#GET{erreurs})</span>
+					]<select name="#GET{name}" id="#GET{name}">
+					<BOUCLE_quantites(DATA){source table, #ENV{_quantites}}>
+						<option value="#VALEUR"[(#VALEUR|=={#ENV{quantite}}|oui)selected="selected"]>#VALEUR</option>
+					</BOUCLE_quantites>
+					</select>
+				</div>
+			</div>
+			<p class="boutons">
+				<button type="submit" class="btn btn_secondaire" name="twofa_action" value="commander"><:twofa:bouton_commander_credits:></button>
+				[<a class="btn btn_secondaire" href="(#ENV{_url_manager})" target="_blank" rel="noopener"><:twofa:bouton_manager:></a>]
+			</p>
+		</fieldset>
+		]
+	</div></form>
+	]
+</div>
