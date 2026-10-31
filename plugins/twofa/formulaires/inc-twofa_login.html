@@ -5,6 +5,7 @@
 #HTTP_HEADER{"Pragma: no-cache"}
 
 <div class='formulaire_spip formulaire_login formulaire_login_twofa'>
+	[<div class="reponse_formulaire reponse_formulaire_ok" role="status">(#ENV**{message_ok})</div>]
 	[<div class='reponse_formulaire reponse_formulaire_erreur' role="alert">(#ENV**{message_erreur})</div>]
 
 	<form id='formulaire_login' method='post' action='#ENV{action}'>
@@ -13,19 +14,22 @@
 	<input type="hidden" name="twofa_jeton" value="[(#ENV{twofa_jeton})]" />
 	<fieldset>
 		<legend><:twofa:titre_verification:></legend>
-		<p class="explication"><:twofa:explication_login:></p>
+		<p class="explication">[(#ENV{_methode}|=={sms}|oui)<:twofa:explication_login_sms{telephone=#ENV{_telephone}}:>][(#ENV{_methode}|=={sms}|non)<:twofa:explication_login:>]</p>
 		<div class="editer-groupe">
 			<div class="editer editer_twofa_code obligatoire[(#ENV*{erreurs/twofa_code}|trim|oui)erreur]">
 				<label for="twofa_code"><:twofa:label_code:> <span class="etoile" title="<:info_obligatoire_02|attribut_html:>" aria-label="<:info_obligatoire_02|attribut_html:>">*</span></label>[
 				<span class="erreur_message">(#ENV*{erreurs/twofa_code,''}|trim)</span>
-				]<input type='text' class='text' name='twofa_code' id='twofa_code' value="" size='12' required='required' autofocus='autofocus' autocomplete="one-time-code" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" />
+				]<input type='text' class='text' name='twofa_code' id='twofa_code' value="" size='12' autofocus='autofocus' autocomplete="one-time-code" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" />
 				<p class='details'><:twofa:explication_code_secours:></p>
 			</div>
 		</div>
 	</fieldset>
 	<p class="boutons">
-		<a class="btn btn_secondaire" href="[(#SELF|parametre_url{var_login,#ENV{var_login}})]"><:twofa:bouton_annuler:></a>
 		<input type="submit" class="btn submit" value="<:twofa:bouton_verifier|attribut_html:>" />
+		[(#ENV{_methode}|=={sms}|oui)
+		<button type="submit" class="btn btn_secondaire" name="twofa_renvoyer" value="1"><:twofa:bouton_renvoyer_sms:></button>
+		]
+		<a class="btn btn_secondaire" href="[(#SELF|parametre_url{var_login,#ENV{var_login}})]"><:twofa:bouton_annuler:></a>
 	</p>
 	</form>
 </div>

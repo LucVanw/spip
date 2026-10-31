@@ -41,13 +41,53 @@ if (!defined('_TWOFA_NB_CODES_SECOURS')) {
 	define('_TWOFA_NB_CODES_SECOURS', 10);
 }
 
+/** Durée de validité d'un code envoyé par SMS, en secondes */
+if (!defined('_TWOFA_SMS_DUREE')) {
+	define('_TWOFA_SMS_DUREE', 300);
+}
+/** Nombre d'envois de SMS par connexion en attente (ou par enrôlement) */
+if (!defined('_TWOFA_SMS_ENVOIS_MAX')) {
+	define('_TWOFA_SMS_ENVOIS_MAX', 3);
+}
+/** Délai minimal entre deux envois de SMS, en secondes */
+if (!defined('_TWOFA_SMS_DELAI_RENVOI')) {
+	define('_TWOFA_SMS_DELAI_RENVOI', 30);
+}
+/** Nombre maximal de SMS par auteur et par heure (protège le crédit SMS) */
+if (!defined('_TWOFA_SMS_MAX_HEURE')) {
+	define('_TWOFA_SMS_MAX_HEURE', 10);
+}
+/** Indicatif pays des numéros saisis au format national (06…) */
+if (!defined('_TWOFA_SMS_INDICATIF')) {
+	define('_TWOFA_SMS_INDICATIF', '33');
+}
+
 /**
  * Champs 2FA de spip_auteurs, à ne jamais exposer en session
  *
  * @return string[]
  */
 function twofa_champs(): array {
-	return ['twofa_secret', 'twofa_actif', 'twofa_secours', 'twofa_dernier', 'twofa_attente'];
+	return [
+		'twofa_secret', 'twofa_actif', 'twofa_secours', 'twofa_dernier', 'twofa_attente',
+		'twofa_methode', 'twofa_telephone', 'twofa_enrolement', 'twofa_quota',
+	];
+}
+
+/**
+ * Méthode de second facteur d'un auteur : 'totp' (application) ou 'sms'
+ */
+function twofa_methode(array $auteur): string {
+	return (($auteur['twofa_methode'] ?? '') === 'sms') ? 'sms' : 'totp';
+}
+
+/**
+ * Lire un champ JSON de spip_auteurs
+ */
+function twofa_lire_json(?string $json): array {
+	$valeur = json_decode((string) $json, true);
+
+	return is_array($valeur) ? $valeur : [];
 }
 
 /** ----------------------------------------------------------------------------
@@ -257,8 +297,33 @@ function twofa_preparer_activation(int $id_auteur): string {
  * @return string[] Codes de secours en clair, à afficher une seule fois
  */
 function twofa_activer(int $id_auteur, int $pas): array {
-	sql_updateq('spip_auteurs', ['twofa_actif' => 'oui', 'twofa_dernier' => $pas], 'id_auteur=' . $id_auteur);
-	spip_logger('twofa')->notice("2FA activée pour l'auteur $id_auteur");
+	sql_updateq('spip_auteurs', [
+		'twofa_actif' => 'oui',
+		'twofa_methode' => 'totp',
+		'twofa_telephone' => '',
+		'twofa_enrolement' => '',
+		'twofa_dernier' => $pas,
+	], 'id_auteur=' . $id_auteur);
+	spip_logger('twofa')->notice("2FA (application) activée pour l'auteur $id_auteur");
+
+	return twofa_generer_codes_secours($id_auteur);
+}
+
+/**
+ * Activer la double authentification par SMS après validation d'un premier code
+ *
+ * @param string $telephone Numéro au format international
+ * @return string[] Codes de secours en clair, à afficher une seule fois
+ */
+function twofa_activer_sms(int $id_auteur, string $telephone): array {
+	sql_updateq('spip_auteurs', [
+		'twofa_actif' => 'oui',
+		'twofa_methode' => 'sms',
+		'twofa_telephone' => $telephone,
+		'twofa_secret' => '',
+		'twofa_enrolement' => '',
+	], 'id_auteur=' . $id_auteur);
+	spip_logger('twofa')->notice("2FA (SMS) activée pour l'auteur $id_auteur");
 
 	return twofa_generer_codes_secours($id_auteur);
 }
@@ -273,24 +338,155 @@ function twofa_desactiver(int $id_auteur): void {
 		'twofa_secours' => '',
 		'twofa_dernier' => 0,
 		'twofa_attente' => '',
+		'twofa_methode' => '',
+		'twofa_telephone' => '',
+		'twofa_enrolement' => '',
 	], 'id_auteur=' . $id_auteur);
 	spip_logger('twofa')->notice("2FA désactivée pour l'auteur $id_auteur");
 }
 
 /**
- * Vérifier un code saisi (TOTP ou code de secours) et le consommer
+ * Vérifier un code saisi (TOTP, code SMS ou code de secours) et le consommer
+ *
+ * Le code SMS est à usage unique : l'appelant doit effacer `$etat_sms` après succès.
+ *
+ * @param array $etat_sms État contenant le code SMS envoyé (connexion en attente ou enrôlement)
  */
-function twofa_valider_code(array $auteur, string $code): bool {
-	$secret = twofa_dechiffrer_secret((string) $auteur['twofa_secret']);
-	if (
-		$secret !== null
-		&& ($pas = twofa_verifier_totp($secret, $code, (int) $auteur['twofa_dernier'])) !== null
-	) {
-		sql_updateq('spip_auteurs', ['twofa_dernier' => $pas], 'id_auteur=' . (int) $auteur['id_auteur']);
-		return true;
+function twofa_valider_code(array $auteur, string $code, array $etat_sms = []): bool {
+	if (twofa_methode($auteur) === 'sms') {
+		if (twofa_sms_verifier_code($etat_sms, $code)) {
+			return true;
+		}
+	} else {
+		$secret = twofa_dechiffrer_secret((string) $auteur['twofa_secret']);
+		if (
+			$secret !== null
+			&& ($pas = twofa_verifier_totp($secret, $code, (int) $auteur['twofa_dernier'])) !== null
+		) {
+			sql_updateq('spip_auteurs', ['twofa_dernier' => $pas], 'id_auteur=' . (int) $auteur['id_auteur']);
+			return true;
+		}
 	}
 
 	return twofa_consommer_code_secours($auteur, $code);
+}
+
+/** ----------------------------------------------------------------------------
+ * SMS
+ */
+
+/**
+ * Normaliser un numéro de téléphone au format international (+33612345678)
+ *
+ * @return string Numéro normalisé, chaîne vide s'il est invalide
+ */
+function twofa_normaliser_telephone(string $telephone): string {
+	$telephone = (string) preg_replace('/[\s.\-()]/', '', $telephone);
+	if (str_starts_with($telephone, '00')) {
+		$telephone = '+' . substr($telephone, 2);
+	} elseif (preg_match('/^0\d{9}$/', $telephone)) {
+		$telephone = '+' . _TWOFA_SMS_INDICATIF . substr($telephone, 1);
+	}
+
+	return preg_match('/^\+[1-9]\d{7,14}$/', $telephone) ? $telephone : '';
+}
+
+/**
+ * Masquer un numéro pour l'affichage (+336••••••78)
+ */
+function twofa_masquer_telephone(string $telephone): string {
+	if (strlen($telephone) < 7) {
+		return $telephone;
+	}
+
+	return substr($telephone, 0, 4) . str_repeat('•', strlen($telephone) - 6) . substr($telephone, -2);
+}
+
+/**
+ * Générer un code, l'envoyer par SMS et le mémoriser (haché) dans l'état
+ *
+ * Limites : _TWOFA_SMS_ENVOIS_MAX envois par état, _TWOFA_SMS_DELAI_RENVOI secondes
+ * entre deux envois, _TWOFA_SMS_MAX_HEURE envois par auteur et par heure.
+ *
+ * @param array $etat État à compléter (connexion en attente ou enrôlement), modifié par référence
+ * @return string|null Message d'erreur, null si le SMS est parti
+ */
+function twofa_sms_envoyer_code(array $auteur, string $telephone, array &$etat): ?string {
+	include_spip('inc/twofa_ovh');
+	if (!twofa_sms_disponible()) {
+		return _T('twofa:erreur_sms_indisponible');
+	}
+	if (($etat['envois'] ?? 0) >= _TWOFA_SMS_ENVOIS_MAX) {
+		return _T('twofa:erreur_sms_trop_envois');
+	}
+	if (time() - ($etat['dernier_envoi'] ?? 0) < _TWOFA_SMS_DELAI_RENVOI) {
+		return _T('twofa:erreur_sms_delai', ['nb' => _TWOFA_SMS_DELAI_RENVOI]);
+	}
+
+	// quota horaire par auteur
+	$id_auteur = (int) $auteur['id_auteur'];
+	$quota = twofa_lire_json(sql_getfetsel('twofa_quota', 'spip_auteurs', 'id_auteur=' . $id_auteur));
+	if (($quota['debut'] ?? 0) < time() - 3600) {
+		$quota = ['debut' => time(), 'nb' => 0];
+	}
+	if ($quota['nb'] >= _TWOFA_SMS_MAX_HEURE) {
+		spip_logger('twofa')->notice("quota horaire de SMS atteint pour l'auteur $id_auteur");
+		return _T('twofa:erreur_sms_quota');
+	}
+
+	$code = str_pad((string) random_int(0, 10 ** _TWOFA_CHIFFRES - 1), _TWOFA_CHIFFRES, '0', STR_PAD_LEFT);
+	include_spip('inc/filtres');
+	include_spip('inc/texte');
+	$message = _T('twofa:sms_message', [
+		'code' => $code,
+		'site' => couper(textebrut($GLOBALS['meta']['nom_site'] ?? '') ?: 'SPIP', 40, ''),
+		'minutes' => intdiv(_TWOFA_SMS_DUREE, 60),
+	]);
+
+	$quota['nb']++;
+	sql_updateq('spip_auteurs', ['twofa_quota' => json_encode($quota)], 'id_auteur=' . $id_auteur);
+	if (twofa_ovh_envoyer_sms($telephone, $message) !== null) {
+		return _T('twofa:erreur_sms_envoi');
+	}
+
+	$etat['sms'] = password_hash($code, PASSWORD_DEFAULT);
+	$etat['sms_expire'] = time() + _TWOFA_SMS_DUREE;
+	$etat['envois'] = ($etat['envois'] ?? 0) + 1;
+	$etat['dernier_envoi'] = time();
+
+	return null;
+}
+
+/**
+ * Vérifier un code reçu par SMS
+ *
+ * @param array $etat État contenant le code envoyé
+ */
+function twofa_sms_verifier_code(array $etat, string $code): bool {
+	$code = (string) preg_replace('/\s+/', '', $code);
+
+	return preg_match('/^\d{' . _TWOFA_CHIFFRES . '}$/', $code)
+		&& !empty($etat['sms'])
+		&& ($etat['sms_expire'] ?? 0) >= time()
+		&& password_verify($code, $etat['sms']);
+}
+
+/**
+ * Enregistrer l'état d'un enrôlement ou d'une demande de code SMS hors login
+ */
+function twofa_ecrire_enrolement(int $id_auteur, array $etat): void {
+	sql_updateq('spip_auteurs', ['twofa_enrolement' => $etat ? json_encode($etat) : ''], 'id_auteur=' . $id_auteur);
+}
+
+/**
+ * Compter un code raté hors login : le code SMS envoyé est oublié après _TWOFA_ESSAIS_MAX échecs
+ */
+function twofa_compter_echec_enrolement(int $id_auteur, array $etat): void {
+	$etat['essais'] = ($etat['essais'] ?? 0) + 1;
+	if ($etat['essais'] >= _TWOFA_ESSAIS_MAX) {
+		unset($etat['sms'], $etat['sms_expire'], $etat['essais']);
+	}
+	twofa_ecrire_enrolement($id_auteur, $etat);
 }
 
 /** ----------------------------------------------------------------------------
@@ -473,6 +669,24 @@ function twofa_lire_attente(#[\SensitiveParameter] string $jeton): ?array {
 	}
 
 	return [$auteur, $attente];
+}
+
+/**
+ * Envoyer (ou renvoyer) par SMS le code d'une connexion en attente
+ *
+ * @return string|null Message d'erreur, null si le SMS est parti
+ */
+function twofa_envoyer_sms_attente(#[\SensitiveParameter] string $jeton): ?string {
+	if (!$attente = twofa_lire_attente($jeton)) {
+		return _T('twofa:erreur_attente_expiree');
+	}
+	[$auteur, $etat] = $attente;
+	$erreur = twofa_sms_envoyer_code($auteur, (string) $auteur['twofa_telephone'], $etat);
+	if ($erreur === null) {
+		sql_updateq('spip_auteurs', ['twofa_attente' => json_encode($etat)], 'id_auteur=' . (int) $auteur['id_auteur']);
+	}
+
+	return $erreur;
 }
 
 /**

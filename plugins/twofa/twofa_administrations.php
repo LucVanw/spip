@@ -21,6 +21,10 @@ function twofa_upgrade($nom_meta_base_version, $version_cible) {
 	$maj['create'] = [
 		['maj_tables', ['spip_auteurs']],
 	];
+	// codes par SMS
+	$maj['1.1.0'] = [
+		['maj_tables', ['spip_auteurs']],
+	];
 
 	include_spip('base/upgrade');
 	maj_plugin($nom_meta_base_version, $version_cible, $maj);

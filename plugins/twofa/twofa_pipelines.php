@@ -46,21 +46,45 @@ function twofa_formulaire_verifier($flux) {
 	}
 	include_spip('inc/twofa');
 
-	// étape 2 : saisie du code
+	// étape 2 : saisie du code, ou demande de renvoi du SMS
 	$jeton = (string) Spip::input('twofa_jeton');
 	if ($jeton !== '') {
-		$flux['data'] = twofa_verifier_login($jeton, (string) Spip::input('twofa_code'), $flux['args']['args'] ?? []);
+		$flux['data'] = Spip::input('twofa_renvoyer')
+			? twofa_renvoyer_sms_login($jeton)
+			: twofa_verifier_login($jeton, (string) Spip::input('twofa_code'), $flux['args']['args'] ?? []);
 		return $flux;
 	}
 
 	// étape 1 : mot de passe correct, mais session refusée par autoriser('loger')
 	if ($auteur = twofa_connexion_bloquee()) {
-		Spip::setInput('twofa_jeton', twofa_creer_attente($auteur));
+		$jeton = twofa_creer_attente($auteur);
+		Spip::setInput('twofa_jeton', $jeton);
 		// erreurs non vides pour bloquer traiter(), sans message à afficher
 		$flux['data'] = ['twofa_code' => '', 'message_erreur' => ''];
+		if (twofa_methode($auteur) === 'sms') {
+			$flux['data']['message_erreur'] = (string) twofa_envoyer_sms_attente($jeton);
+		}
 	}
 
 	return $flux;
+}
+
+/**
+ * Renvoyer le code SMS de la seconde étape
+ *
+ * @param string $jeton Jeton de la connexion en attente
+ * @return array Erreurs du formulaire de login
+ */
+function twofa_renvoyer_sms_login(#[\SensitiveParameter] string $jeton): array {
+	if (!twofa_lire_attente($jeton)) {
+		Spip::setInput('twofa_jeton', '');
+		return ['message_erreur' => _T('twofa:erreur_attente_expiree')];
+	}
+	if ($erreur = twofa_envoyer_sms_attente($jeton)) {
+		return ['twofa_code' => '', 'message_erreur' => $erreur];
+	}
+
+	return ['twofa_code' => '', 'message_erreur' => '', 'message_ok' => _T('twofa:message_sms_renvoye')];
 }
 
 /**
@@ -79,7 +103,7 @@ function twofa_verifier_login(#[\SensitiveParameter] string $jeton, #[\Sensitive
 	[$auteur, $etat] = $attente;
 	$id_auteur = (int) $auteur['id_auteur'];
 
-	if (!twofa_valider_code($auteur, $code)) {
+	if (!twofa_valider_code($auteur, $code, $etat)) {
 		if (!twofa_compter_echec($auteur, $etat)) {
 			twofa_effacer_attente($id_auteur);
 			Spip::setInput('twofa_jeton', '');
@@ -130,7 +154,14 @@ function twofa_formulaire_fond($flux) {
 		($flux['args']['form'] ?? '') === 'login'
 		&& !empty($flux['args']['contexte']['twofa_jeton'])
 	) {
-		$flux['data'] = recuperer_fond('formulaires/inc-twofa_login', $flux['args']['contexte']);
+		include_spip('inc/twofa');
+		$contexte = $flux['args']['contexte'];
+		if ($attente = twofa_lire_attente(html_entity_decode((string) $contexte['twofa_jeton']))) {
+			[$auteur] = $attente;
+			$contexte['_methode'] = twofa_methode($auteur);
+			$contexte['_telephone'] = twofa_masquer_telephone((string) $auteur['twofa_telephone']);
+		}
+		$flux['data'] = recuperer_fond('formulaires/inc-twofa_login', $contexte);
 	}
 
 	return $flux;
