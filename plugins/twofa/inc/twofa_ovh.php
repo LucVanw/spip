@@ -14,7 +14,7 @@
  * define('_TWOFA_OVH_CONSUMER_KEY', '…');
  * define('_TWOFA_OVH_SMS_SERVICE', 'sms-xx12345-1');
  * // optionnels
- * define('_TWOFA_OVH_ENDPOINT', 'ovh-eu'); // ovh-eu, ovh-ca, ovh-us ou URL de l'API
+ * define('_TWOFA_OVH_ENDPOINT', 'ovh-eu'); // ovh-eu, ovh-ca ou ovh-us
  * define('_TWOFA_OVH_SMS_SENDER', 'MONSITE'); // expéditeur déclaré chez OVH, sinon numéro court
  * ```
  *
@@ -143,7 +143,7 @@ function twofa_ovh_endpoint(): string {
 	];
 	$endpoint = defined('_TWOFA_OVH_ENDPOINT') ? _TWOFA_OVH_ENDPOINT : 'ovh-eu';
 
-	return $endpoints[$endpoint] ?? rtrim($endpoint, '/');
+	return $endpoints[$endpoint] ?? $endpoints['ovh-eu'];
 }
 
 /**
